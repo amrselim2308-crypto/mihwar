@@ -220,7 +220,7 @@ export default function HomePage({ lang, setLang, user, onLogin }: SharedPagePro
                     {t(lang, "🔥 TRENDING ON LINKEDIN", "🔥 الكورس الأكثر طلباً على LinkedIn")}
                   </span>
                   <span className="bg-[#10b981]/20 text-[#6ee7b7] text-xs font-bold px-3 py-0.5 rounded-full border border-[#10b981]/30">
-                    {t(lang, "100% Practical · 12 Yrs GCC Experience", "عملي 100% · خبرة 12 سنة بمشاريع دبي وأبوظبي")}
+                    {t(lang, "100% Practical · 11+ Yrs UAE & Egypt", "عملي 100% · خبرة 11+ عاماً بمشاريع الإمارات ومصر")}
                   </span>
                 </div>
                 <h2 className="text-xl sm:text-3xl font-black text-white">
@@ -233,10 +233,19 @@ export default function HomePage({ lang, setLang, user, onLogin }: SharedPagePro
                 <p className="text-xs sm:text-sm text-[#cbd5e1] leading-relaxed max-w-2xl">
                   {t(
                     lang,
-                    "Automate drawings, BOQs, schedules, and clash coordination with AI prompts and scripts. By Eng. Amr Abdelshafi.",
-                    "كورس عملي للمهندسين: أتمتة المخططات، الجداول، حصر الكميات، والـ Clash Coordination بضغطة زر. للمدرب م. عمرو سليم."
+                    "Automate drawings, BOQs, schedules, and clash coordination with AI prompts and scripts. By Eng. Amr Selim.",
+                    "كورس عملي للمهندسين: أتمتة المخططات، الجداول، حصر الكميات، والـ Clash Coordination بضغطة زر. إشراف وتدريب م. عمرو سليم."
                   )}
                 </p>
+                <div className="flex items-center gap-3 pt-1">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-[#2dd4bf]/40 flex-shrink-0">
+                    <img src="/images/eng_amr_selim.jpg" alt="م. عمرو سليم" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="text-xs text-[#a7f3d0]">
+                    <strong className="text-white block font-bold">{t(lang, "Eng. Amr Selim", "م. عمرو سليم")}</strong>
+                    <span className="text-[10px] text-[#cbd5e1]">{t(lang, "Senior Landscape & Infrastructure Engineer", "استشاري وخبير هندسة البنية التحتية واللاندسكيب")}</span>
+                  </div>
+                </div>
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <a
                     href="/previews/ai_engineering_masterclass.html"
