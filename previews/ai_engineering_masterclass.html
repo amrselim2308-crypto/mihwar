@@ -401,7 +401,7 @@
             </div>
             <div class="flex items-start gap-2.5">
               <span class="text-[#f59e0b] font-bold">3.3</span>
-              <span><strong>أتمتة الشغل المتكرر:</strong> توليد جداول الأبواب والشبابيك، تفاصيل غرف التفتيش (Manholes)، وحسابات الخرسانات بضغطة زر.</span>
+              <span><strong>أتمتة الشغل المتكرر وحصر اللاندسكيب:</strong> تطبيق واقعي على مخطط زراعات بحيرة العلمين (<code>LAGOON_180_ZONING_PLANTING_REV02.dwg</code>): حصر مئات الأشجار والنخيل والمسطحات الخضراء ومطابقتها بمقايسة الـ BOQ وربطها بالاستهلاك الهيدروليكي اليومي لمياه الري بدقة 100%.</span>
             </div>
 
             <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
@@ -409,7 +409,7 @@
                 📄 كود بايثون / سكربتات جاهزة للربط مع أوتوكاد
               </span>
               <span class="bg-[#041714] text-[#fef08a] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
-                🎯 تمرين: أتمتة حصر 500 شجرة ومسطح لاندسكيب
+                🎯 تمرين: حصر مخطط LAGOON 180 واستخراج شيت الإكسيل
               </span>
             </div>
           </div>
@@ -443,9 +443,9 @@
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#a855f7]">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
           <div>
-            <span class="bg-[#a855f7]/20 text-[#d8b4fe] text-[11px] font-bold px-3 py-1 rounded-md border border-[#a855f7]/30">الوحدة الرابعة · 4 دروس</span>
-            <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Clash Coordination بالذكاء الاصطناعي</h3>
-            <p class="text-xs text-[#cbd5e1] mt-1">اكتشاف التعارضات بين شبكات الموقع واللاندسكيب قبل وضع حجر واحد</p>
+            <span class="bg-[#a855f7]/20 text-[#d8b4fe] text-[11px] font-bold px-3 py-1 rounded-md border border-[#a855f7]/30">الوحدة الرابعة · دراسة حالة معتمدة IFC · 4 دروس</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Clash Coordination بالذكاء الاصطناعي (155 تعارض حقيقي)</h3>
+            <p class="text-xs text-[#cbd5e1] mt-1">اكتشاف وحل التعارضات بين شبكات الري والصرف والمطر والتغذية قبل التنفيذ بالموقع</p>
           </div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ ساعتان و 45 دقيقة</span>
@@ -456,38 +456,97 @@
           <div class="lg:col-span-7 space-y-3 text-xs sm:text-sm text-[#e2ece6]">
             <div class="flex items-start gap-2.5">
               <span class="text-[#f59e0b] font-bold">4.1</span>
-              <span><strong>اكتشاف التعارضات بين المخططات:</strong> المعمارية، الإنشائية، الميكانيكية، وشبكات اللاندسكيب والبنية التحتية.</span>
+              <span><strong>كشف التعارضات بين شبكات البنية التحتية واللاندسكيب:</strong> الفحص الأفقي والرأسي لمسارات خطوط الري، الصرف الصحي، صرف المطر، وشبكات التغذية.</span>
             </div>
+            
+            <!-- Real Project Spotlight: New Alamein West Waterfront IFC -->
+            <div class="bg-[#041714] border border-[#2dd4bf]/30 p-4 rounded-xl space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="bg-[#f59e0b] text-[#041210] text-[10px] font-black px-2 py-0.5 rounded uppercase">مشروع حي معتمد IFC</span>
+                <span class="text-[10px] text-[#a7f3d0] font-mono">لوحة رقم: 2224 DES-HYD CO PL 00 03 12 (R03)</span>
+              </div>
+              <h4 class="text-xs sm:text-sm font-bold text-white">مشروع البنية التحتية - الفنادق الداخلية - الواجهة الغربية للعلمين الجديدة</h4>
+              <p class="text-[11px] text-[#cbd5e1] leading-relaxed">
+                <strong>المالك:</strong> وزارة الدفاع - الهيئة الهندسية للقوات المسلحة - إدارة الأشغال العسكرية · <strong>الاستشاري:</strong> مكتب هيدرو لدراسات الهيدرولوجيا والبيئة · <strong>المقاول:</strong> شركة طيبة لاند سكيب · <strong>إعداد وتدقيق:</strong> م / عمرو عبد الشافي.
+              </p>
+              <div class="text-[10px] text-[#fef08a] bg-[#020b0a] p-2 rounded-lg border border-[#2dd4bf]/20">
+                📏 <strong>المحددات الكودية للمراجعة المعتمدة:</strong> خلوص رأسي 0.30 م · خلوص أفقي 0.50 م · خط الري على بعد 1.50 م من المناهيل.
+              </div>
+            </div>
+
             <div class="flex items-start gap-2.5">
               <span class="text-[#f59e0b] font-bold">4.2</span>
-              <span><strong>دراسة حالة حقيقية من مشروع بأبوظبي:</strong> كشف تعارض خطير بين مسار أنبوب مياه ري رئيسي، وكابل كهرباء جهد متوسط، وشبكة صرف صحي، وازاي الـ AI طلعه وحله في دقيقة واحدة.</span>
+              <span><strong>أتمتة جدول كشف التعارضات:</strong> حصر وتصنيف <strong>155 تعارضاً حقيقياً</strong> واقتراح حلول المناسيب والترحيل في ثوانٍ.</span>
             </div>
+
             <div class="flex items-start gap-2.5">
               <span class="text-[#f59e0b] font-bold">4.3</span>
-              <span><strong>توليد تقرير تعارضات هندسي (Clash Report):</strong> جاهز للتسليم للاستشاري والمقاول الرئيسي مع التوصيات والبدائل.</span>
+              <span><strong>توليد تقرير Clash معتمد:</strong> جاهز للمطابقة مع مهندسي الموقع والاستشاري لتفادي أوامر التغيير والتكسير.</span>
             </div>
 
             <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
-              <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
-                📄 نموذج تقرير التعارضات الرسمي المعتمد في مشاريع الخليج
+              <button onclick="openDrawingLightbox()" class="bg-[#0d5b55] hover:bg-[#14b8a6] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+                🔍 استعراض المخطط التنفيذي الكامل (IFC Drawing)
+              </button>
+              <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold">
+                📄 شيت Excel لجدول الـ 155 تعارضاً مرفق
               </span>
             </div>
           </div>
 
+          <!-- Real Clash Table & Interactive Image Preview -->
           <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/25 flex flex-col justify-between">
             <div>
-              <span class="text-xs font-bold text-[#fef08a] block mb-2">🔍 محاكاة تعارض حقيقي (Clash Simulation):</span>
-              <div class="bg-[#020b0a] p-3 rounded-lg border border-red-500/40 text-[11px] space-y-1 text-[#f3ece0]">
-                <div class="flex items-center gap-2 text-red-400 font-bold">
-                  <span>⚠️ تم رصد تعارض حرج (Critical Clash #04)</span>
+              <!-- Thumbnail with zoom overlay -->
+              <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-black border border-[#2dd4bf]/30 group cursor-pointer mb-3" onclick="openDrawingLightbox()">
+                <img src="/images/alamein_clash_drawing_r03.jpg" alt="لوحة كشف التعارضات - العلمين الجديدة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2.5">
+                  <span class="text-[11px] font-bold text-white flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
+                    لوحة التعارضات R03 المعتمدة (اضغط للتكبير)
+                  </span>
                 </div>
-                <p>إحداثيات: X: 45210.4, Y: 89312.1 | عمق: -1.20m</p>
-                <p class="text-amber-300">التعارض: خط ري 110mm يتقاطع مع كابل إنارة 4x16mm</p>
-                <p class="text-[#34d399] font-bold">حل AI المقترح: خفض خط الري لمنسوب -1.65m مع وضع جلبة حماية PVC.</p>
+              </div>
+
+              <!-- Official Clash Breakdown Table (From Real Drawing) -->
+              <div class="bg-[#020b0a] p-3 rounded-lg border border-purple-500/30 text-xs">
+                <div class="flex items-center justify-between pb-1.5 border-b border-[#2dd4bf]/20 text-[#fef08a] font-bold text-[11px]">
+                  <span>جدول حصر التعارضات الحقيقي (CLASH SUMMARY)</span>
+                  <span class="text-white">العدد</span>
+                </div>
+                <div class="space-y-1 pt-1.5 text-[11px] text-[#cbd5e1]">
+                  <div class="flex justify-between">
+                    <span>مطر x صرف صحي (Storm x Sewage):</span>
+                    <strong class="text-white font-mono">52</strong>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>مطر x شبكة ري (Storm x Irrigation):</span>
+                    <strong class="text-white font-mono">10</strong>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>ري x صرف صحي (Irrigation x Sewage):</span>
+                    <strong class="text-white font-mono">39</strong>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>ري x منهول صرف (Irrigation x Sewage MH):</span>
+                    <strong class="text-white font-mono">27</strong>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>ري x منهول مطر (Irrigation x Storm MH):</span>
+                    <strong class="text-white font-mono">27</strong>
+                  </div>
+                  <div class="flex justify-between border-t border-[#2dd4bf]/20 pt-1 text-[#34d399] font-bold">
+                    <span>إجمالي التعارضات المرصودة (TOTAL):</span>
+                    <strong class="text-[#fef08a] font-mono text-sm">155 تعارضاً</strong>
+                  </div>
+                </div>
               </div>
             </div>
-            <span class="text-[10px] text-[#a7f3d0] mt-3 block text-center">يوفر على المقاول آلاف الدراهم في أوامر التغيير والتكسير</span>
+
+            <span class="text-[10px] text-[#a7f3d0] mt-3 block text-center">تم فك كافة هذه التعارضات وتحديث مسارات الري والصرف خلال دقائق</span>
           </div>
+        </div>
+      </div>
         </div>
       </div>
 
@@ -812,6 +871,28 @@
     </div>
   </div>
 
+  <!-- IFC Drawing Lightbox Modal -->
+  <div id="drawingModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-[#051a17] border border-[#2dd4bf]/40 rounded-2xl p-4 max-w-5xl w-full max-h-[90vh] flex flex-col relative shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-[#2dd4bf]/20">
+        <div>
+          <h4 class="text-sm font-bold text-white">لوحة التنسيق والتعارض بين الشبكات (IFC R03) - مشروع الواجهة الغربية للعلمين الجديدة</h4>
+          <span class="text-[10px] text-[#a7f3d0]">إدارة الأشغال العسكرية · مكتب هيدرو · طيبة لاند سكيب · إعداد وتدقيق: م / عمرو عبد الشافي</span>
+        </div>
+        <button onclick="closeDrawingLightbox()" class="text-gray-400 hover:text-white text-2xl px-2">✕</button>
+      </div>
+      <div class="flex-1 overflow-auto p-2 flex items-center justify-center">
+        <img src="/images/alamein_clash_drawing_r03.jpg" alt="لوحة كشف التعارضات المعتمدة IFC" class="max-w-full max-h-[72vh] object-contain rounded-lg shadow-2xl border border-[#2dd4bf]/30" />
+      </div>
+      <div class="flex flex-wrap items-center justify-between pt-2 border-t border-[#2dd4bf]/20 text-xs text-[#fef08a] gap-2">
+        <span>📌 155 تعارضاً حقيقياً مرصوداً ومحلولاً كودياً (ري، صرف صحي، مطر، تغذية)</span>
+        <a href="/images/alamein_clash_drawing_r03.jpg" target="_blank" class="bg-[#0d5b55] hover:bg-[#14b8a6] text-white px-3 py-1 rounded text-xs font-bold transition">
+          فتح الصورة الأصلية بالحجم الكامل ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="py-10 px-6 border-t border-[#2dd4bf]/20 bg-[#020908] text-center text-xs text-[#a0b0a8]">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -871,6 +952,18 @@
 
     function closeTrailer() {
       const modal = document.getElementById("trailerModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    function openDrawingLightbox() {
+      const modal = document.getElementById("drawingModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
+    function closeDrawingLightbox() {
+      const modal = document.getElementById("drawingModal");
       modal.classList.add("hidden");
       modal.classList.remove("flex");
     }
