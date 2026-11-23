@@ -13,7 +13,7 @@
       font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
       margin: 0;
       padding: 0;
-      background: #07152e;
+      background: #041824;
       color: #f3efe6;
       overflow-x: hidden;
     }
@@ -67,7 +67,7 @@
     }
 
     .card-glass {
-      background: rgba(15, 39, 77, 0.88);
+      background: rgba(6, 38, 62, 0.9);
       backdrop-filter: blur(12px);
       border: 1.2px solid rgba(45, 212, 191, 0.32);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
@@ -76,7 +76,7 @@
 
     .card-glass:hover {
       transform: translateY(-3px) scale(1.03);
-      background: rgba(21, 56, 110, 0.95);
+      background: rgba(8, 51, 84, 0.95);
       border-color: #38bdf8;
       box-shadow: 0 12px 28px rgba(20, 184, 166, 0.45), inset 0 0 14px rgba(56, 189, 248, 0.22);
     }
@@ -96,9 +96,9 @@
     }
 
     .glow-cyan-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-      border: 1.5px solid rgba(94, 234, 212, 0.5);
-      box-shadow: 0 6px 24px rgba(20, 184, 166, 0.5);
+      background: linear-gradient(135deg, #06b6d4 0%, #0d9488 50%, #0284c7 100%);
+      border: 1.5px solid rgba(103, 232, 249, 0.6);
+      box-shadow: 0 6px 24px rgba(6, 182, 212, 0.45);
       transition: all 0.2s;
     }
 
@@ -137,7 +137,7 @@
     }
   </style>
 </head>
-<body class="antialiased selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="antialiased selection:bg-[#06b6d4] selection:text-[#041824]">
 
   <!-- شريط التنقل العلوي المتناسق والسينمائي -->
   <header class="sticky top-0 z-40 bg-[#0a1e3f]/95 backdrop-blur-md border-b border-[#38bdf8]/25">
@@ -245,186 +245,503 @@
 
       <!-- العمود الأيسر: شبكة المواد الدراسية 4×4 (16 بطاقة مجسمة ومضاءة) -->
       <div class="lg:col-span-5 flex flex-col justify-center">
-        <div class="bg-[#0f274d]/85 backdrop-blur-md border border-[#38bdf8]/35 rounded-3xl p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+        <div class="bg-[#07253a]/90 backdrop-blur-md border border-[#06b6d4]/40 rounded-3xl p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
           <div class="grid grid-cols-4 gap-2.5 sm:gap-3">
             
-            <!-- 1. اللغة العربية -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Arabic'" title="تصفح معلمي اللغة العربية" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M8 32C14 30 20 31 24 34C28 31 34 30 40 32V18C34 16 28 17 24 20C20 17 14 16 8 18V32Z" fill="#d4af37" />
-                <path d="M10 30C15 28.5 20 29.5 24 32C28 29.5 33 28.5 38 30V17C33 15.5 28 16.5 24 19C20 16.5 15 15.5 10 17V30Z" fill="#fffcf0" />
-                <path d="M41 5C38 8 32 15 30 22C29.5 24 31 25.5 33 25C35 24 40 18 42 12C43 9 43 6 41 5Z" fill="#ffd700" />
-                <circle cx="20" cy="12" r="1.5" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">اللغة العربية</span>
+            <!-- 1. القرآن والتربية الإسلامية -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Islamic'" 
+                 title="تصفح معلمي ومناهج القرآن والتربية الإسلامية" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-emerald-600 via-teal-700 to-cyan-900 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-amber-300 drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">المصحف الشريف</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">القرآن والتربية الإسلامية</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">تلاوة وتفسير وفقه</span>
+              </div>
             </div>
 
-            <!-- 2. اللغة الإنجليزية -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=English'" title="تصفح معلمي اللغة الإنجليزية" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <rect x="8" y="9" width="23" height="17" rx="6" fill="#38bdf8" />
-                <path d="M12 26L8 31V26H12Z" fill="#38bdf8" />
-                <circle cx="15" cy="17" r="1.8" fill="#fff" /><circle cx="19.5" cy="17" r="1.8" fill="#fff" /><circle cx="24" cy="17" r="1.8" fill="#fff" />
-                <rect x="18" y="19" width="22" height="16" rx="6" fill="#a78bfa" />
-                <path d="M36 35L40 40V35H36Z" fill="#a78bfa" />
-                <circle cx="25" cy="27" r="1.8" fill="#fff" /><circle cx="29.5" cy="27" r="1.8" fill="#fff" /><circle cx="34" cy="27" r="1.8" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">اللغة الإنجليزية</span>
+            <!-- 2. اللغة العربية -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Arabic'" 
+                 title="تصفح معلمي ومناهج اللغة العربية" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-400 to-teal-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-cyan-700 via-teal-800 to-slate-900 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <span class="text-2xl font-black font-serif text-amber-300 drop-shadow">ض</span>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">لغة الضاد</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">اللغة العربية</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">نحو وبلاغة وأدب</span>
+              </div>
             </div>
 
             <!-- 3. الرياضيات -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Mathematics'" title="تصفح معلمي الرياضيات" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <rect x="11" y="8" width="26" height="32" rx="5" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.2" />
-                <rect x="15" y="12" width="18" height="7" rx="2" fill="#22d3ee" />
-                <rect x="15" y="22" width="4" height="3.5" rx="1" fill="#f59e0b" />
-                <rect x="22" y="22" width="4" height="3.5" rx="1" fill="#fff" />
-                <rect x="29" y="22" width="4" height="3.5" rx="1" fill="#ef4444" />
-                <rect x="15" y="28" width="4" height="3.5" rx="1" fill="#fff" />
-                <rect x="22" y="28" width="4" height="3.5" rx="1" fill="#fff" />
-                <rect x="29" y="28" width="4" height="3.5" rx="1" fill="#10b981" />
-                <rect x="15" y="34" width="4" height="3" rx="1" fill="#fff" />
-                <rect x="22" y="34" width="11" height="3" rx="1" fill="#38bdf8" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الرياضيات</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Mathematics'" 
+                 title="تصفح معلمي ومناهج الرياضيات" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-400 to-blue-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-blue-700 via-indigo-800 to-cyan-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-300 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-10 4 6 6-8"/><circle cx="10" cy="7" r="1.5" fill="#38bdf8"/><circle cx="14" cy="13" r="1.5" fill="#38bdf8"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">MATH & CALCULUS</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الرياضيات</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">جبر وتفاضل وهندسة</span>
+              </div>
             </div>
 
-            <!-- 4. الفيزياء -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Physics'" title="تصفح معلمي الفيزياء" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(30 24 24)" stroke="#38bdf8" stroke-width="1.8" />
-                <ellipse cx="24" cy="24" rx="18" ry="7" transform="rotate(-30 24 24)" stroke="#22d3ee" stroke-width="1.8" />
-                <circle cx="24" cy="24" r="5" fill="#0284c7" />
-                <circle cx="24" cy="24" r="2.5" fill="#ffffff" />
-                <circle cx="38" cy="16" r="2" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الفيزياء</span>
+            <!-- 4. الفيزياء الحديثة -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Physics'" 
+                 title="تصفح معلمي ومناهج الفيزياء الحديثة" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-300 to-sky-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-sky-600 via-cyan-700 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-200 drop-shadow animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" stroke="#38bdf8"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)" stroke="#22d3ee"/><circle cx="12" cy="12" r="2.5" fill="#f59e0b"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">PHYSICS LAB</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الفيزياء الحديثة</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">ميكانيكا وكهرباء ومحاكاة</span>
+              </div>
             </div>
 
             <!-- 5. الكيمياء -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Chemistry'" title="تصفح معلمي الكيمياء" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M20 7H28M22 7V17L12 36C10.5 39 12.5 41 16 41H32C35.5 41 37.5 39 36 36L26 17V7" stroke="#34d399" stroke-width="1.8" />
-                <path d="M14 34L17 28C21 29 27 27 31 28L34 34C32 37 16 37 14 34Z" fill="#10b981" />
-                <circle cx="22" cy="33" r="2" fill="#a7f3d0" /><circle cx="27" cy="30" r="1.5" fill="#ffffff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الكيمياء</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Chemistry'" 
+                 title="تصفح معلمي ومناهج الكيمياء" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-300 to-emerald-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-teal-600 via-cyan-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-teal-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 2v5.5l-6 10.5a2 2 0 001.7 3h12.6a2 2 0 001.7-3L14 7.5V2h-4z"/><circle cx="10" cy="16" r="1" fill="#38bdf8"/><circle cx="14" cy="14" r="1.5" fill="#f59e0b"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">CHEMISTRY LAB</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الكيمياء</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">عضوية ومعادلات تفاعلية</span>
+              </div>
             </div>
 
-            <!-- 6. الأحياء -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Biology'" title="تصفح معلمي الأحياء" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <rect x="13" y="39" width="22" height="4" rx="2" fill="#0284c7" />
-                <path d="M29 39C29 39 33 34 33 26C33 20 28 17 24 17" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" />
-                <rect x="17" y="10" width="7" height="16" rx="2" transform="rotate(-25 17 10)" fill="#22d3ee" stroke="#ffffff" stroke-width="1.2" />
-                <circle cx="23" cy="24" r="2.5" fill="#f59e0b" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الأحياء</span>
+            <!-- 6. الأحياء والجيولوجيا -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Biology'" 
+                 title="تصفح معلمي ومناهج الأحياء والجيولوجيا" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-300 to-teal-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-emerald-700 via-teal-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-emerald-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3c0 3 8 5 8 9s-8 6-8 9M16 3c0 3-8 5-8 9s8 6 8 9M7 6h10M6 12h12M7 18h10" stroke-linecap="round"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">BIOLOGY & DNA</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الأحياء والجيولوجيا</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">وراثة وتشريح وعلوم أرض</span>
+              </div>
             </div>
 
-            <!-- 7. الجيولوجيا -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Geology'" title="تصفح معلمي الجيولوجيا" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M8 38L22 14L34 38H8Z" fill="#b45309" stroke="#fbbf24" stroke-width="1.2" />
-                <path d="M22 14L28 26L34 38" stroke="#fef08a" stroke-width="1.2" />
-                <path d="M24 38L34 22L42 38H24Z" fill="#d97706" />
-                <circle cx="22" cy="14" r="2" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الجيولوجيا</span>
+            <!-- 7. اللغة الإنجليزية -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=English'" 
+                 title="تصفح معلمي ومناهج اللغة الإنجليزية" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-300 to-indigo-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-indigo-700 via-sky-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <span class="text-xl font-black font-sans text-sky-200 drop-shadow tracking-tighter">ABC</span>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">OXFORD & SAT</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">اللغة الإنجليزية</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">IELTS, SAT & Grammar</span>
+              </div>
             </div>
 
-            <!-- 8. العلوم -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=General+Science'" title="تصفح معلمي العلوم" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M21 8H27M23 8V18L15 36C13.5 39 15.5 41 19 41H29C32.5 41 34.5 39 33 36L25 18V8" stroke="#22d3ee" stroke-width="1.8" />
-                <path d="M17 34L20 28C23 29 26 27 28 28L31 34C29 37 19 37 17 34Z" fill="#06b6d4" />
-                <circle cx="24" cy="32" r="2" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">العلوم</span>
+            <!-- 8. التاريخ والحضارات -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=History'" 
+                 title="تصفح معلمي ومناهج التاريخ والحضارات" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-300 to-yellow-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-amber-700 via-stone-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-amber-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 10h16M4 14h16M4 18h16M7 2v20M17 2v20"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">CHRONICLES</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">التاريخ والحضارات</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">تاريخ إسلامي ومعاصر</span>
+              </div>
             </div>
 
-            <!-- 9. التاريخ -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=History'" title="تصفح معلمي التاريخ" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M16 11H32M16 37H32M18 11C18 19 23 23 23 24C23 25 18 29 18 37M30 11C30 19 25 23 25 24C25 25 30 29 30 37" stroke="#d97706" stroke-width="2" />
-                <path d="M19 33C21 31 27 31 29 33L29 36H19V33Z" fill="#fbbf24" />
-                <circle cx="24" cy="24" r="1.5" fill="#fef08a" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">التاريخ</span>
+            <!-- 9. الجغرافيا ونظم GIS -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Geography'" 
+                 title="تصفح معلمي ومناهج الجغرافيا ونظم GIS" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-300 to-teal-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-teal-700 via-cyan-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3.5 9h17M3.5 15h17"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">MAPS & GIS</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الجغرافيا ونظم GIS</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">تضاريس وخرائط ومناخ</span>
+              </div>
             </div>
 
-            <!-- 10. الجغرافيا -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Geography'" title="تصفح معلمي الجغرافيا" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="22" r="13" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5" />
-                <path d="M16 20C17 18 20 18 21 20C22 22 25 21 26 19C28 17 31 18 31 20C31 24 28 26 26 27C24 28 22 26 20 28C18 30 15 28 15 25C15 23 15 21 16 20Z" fill="#10b981" />
-                <path d="M24 35V42M18 42H30" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الجغرافيا</span>
+            <!-- 10. العلوم العامة (Science) -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Science'" 
+                 title="تصفح معلمي ومناهج العلوم العامة (Science)" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-300 to-sky-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-sky-700 via-teal-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-amber-300 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6-5-2.6-5 2.6 1-5.6-4-4 5.6-.8z"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">STEM LAB</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">العلوم العامة (Science)</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">استكشاف وتجارب للمراحل</span>
+              </div>
             </div>
 
             <!-- 11. الدراسات الاجتماعية -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Social+Studies'" title="تصفح معلمي الدراسات" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M10 14L19 10L29 15L38 11V34L29 38L19 33L10 37V14Z" fill="#059669" stroke="#34d399" stroke-width="1.5" />
-                <path d="M19 10V33M29 15V38" stroke="#ffffff" stroke-width="1" stroke-dasharray="2 2" />
-                <circle cx="24" cy="24" r="3" fill="#f59e0b" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الدراسات</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Social%20Studies'" 
+                 title="تصفح معلمي ومناهج الدراسات الاجتماعية" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-green-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-emerald-800 via-teal-900 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-emerald-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M6 18V9l6-5 6 5v9M9 18v-4h6v4"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">HERITAGE</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الدراسات الاجتماعية</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">المواطنة وتراث الإمارات والخليج</span>
+              </div>
             </div>
 
             <!-- 12. الفلسفة والمنطق -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Philosophy'" title="تصفح معلمي الفلسفة والمنطق" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <ellipse cx="24" cy="18" rx="8" ry="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
-                <path d="M18 28C18 28 19 34 24 34C29 34 30 28 30 28" fill="#e2e8f0" />
-                <rect x="16" y="35" width="16" height="5" rx="1.5" fill="#94a3b8" />
-                <circle cx="21" cy="16" r="1.5" fill="#475569" /><circle cx="27" cy="16" r="1.5" fill="#475569" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الفلسفة والمنطق</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Philosophy'" 
+                 title="تصفح معلمي ومناهج الفلسفة والمنطق" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-300 to-slate-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-slate-700 via-cyan-900 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 4a5 5 0 015 5c0 2-1.5 3.5-2.5 4.5-.5.5-.5 1-.5 1.5H10c0-.5 0-1-.5-1.5C8.5 12.5 7 11 7 9a5 5 0 015-5zM9 19h6M10 22h4"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">PHILOSOPHY</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الفلسفة والمنطق</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">التفكير النقدي وبناء الحجج</span>
+              </div>
             </div>
 
             <!-- 13. علم النفس والاجتماع -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Psychology'" title="تصفح معلمي علم النفس" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <path d="M24 13C20 13 16 16 16 21C16 25 18 27 20 29V33H28V29C30 27 32 25 32 21C32 16 28 13 24 13Z" fill="#a855f7" stroke="#e9d5ff" stroke-width="1.2" />
-                <path d="M21 36H27M22 39H26" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M24 17V24M21 20H27" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">علم النفس</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Psychology'" 
+                 title="تصفح معلمي ومناهج علم النفس والاجتماع" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-teal-300 to-indigo-400"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-indigo-800 via-teal-900 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-teal-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0112 4.5v15a2.5 2.5 0 01-4.96.44 2.5 2.5 0 01-2.96-3.08A3 3 0 014 12a3 3 0 01.08-4.9A2.5 2.5 0 017.04 4.06 2.5 2.5 0 019.5 2z"/><path d="M14.5 2A2.5 2.5 0 0012 4.5v15a2.5 2.5 0 004.96.44 2.5 2.5 0 002.96-3.08A3 3 0 0020 12a3 3 0 00-.08-4.9 2.5 2.5 0 00-2.96-3.04A2.5 2.5 0 0014.5 2z"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">PSYCHOLOGY</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">علم النفس والاجتماع</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">السلوك والإدراك الإنساني</span>
+              </div>
             </div>
 
             <!-- 14. الحاسب والذكاء الاصطناعي -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Computer+Science'" title="تصفح معلمي الحاسب والذكاء" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <rect x="14" y="14" width="20" height="20" rx="4" fill="#0f172a" stroke="#06b6d4" stroke-width="1.8" />
-                <path d="M19 19L24 24L29 19M24 24V29" stroke="#22d3ee" stroke-width="1.5" stroke-linecap="round" />
-                <circle cx="24" cy="24" r="2.5" fill="#38bdf8" />
-                <path d="M20 10V14M28 10V14M20 34V38M28 34V38M10 20H14M10 28H14M34 20H38M34 28H38" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">الحاسب والذكاء</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Computer%20Science'" 
+                 title="تصفح معلمي ومناهج الحاسب والذكاء الاصطناعي" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-cyan-300 to-teal-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-cyan-600 via-blue-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-cyan-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M8 20h8M12 16v4M9 9l-2 2 2 2M15 9l2 2-2 2"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">AI & CODING</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">الحاسب والذكاء الاصطناعي</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">برمجة وخوارزميات وAI</span>
+              </div>
             </div>
 
-            <!-- 15. المهارات -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Skills'" title="تصفح معلمي المهارات" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <circle cx="20" cy="20" r="7" fill="#d97706" stroke="#fbbf24" stroke-width="1.5" />
-                <circle cx="20" cy="20" r="3" fill="#fff" />
-                <circle cx="31" cy="29" r="6" fill="#b45309" stroke="#fcd34d" stroke-width="1.5" />
-                <circle cx="31" cy="29" r="2.5" fill="#fff" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">المهارات</span>
+            <!-- 15. المهارات والتأسيس -->
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Skills'" 
+                 title="تصفح معلمي ومناهج المهارات والتأسيس" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-300 to-teal-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-amber-600 via-teal-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-amber-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">CORE SKILLS</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">المهارات والتأسيس</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">تأسيس قراءة وحساب ولغات</span>
+              </div>
             </div>
 
             <!-- 16. اللغات الأجنبية -->
-            <div onclick="window.location.href='teachers_directory_preview.html?subject=Foreign+Languages'" title="تصفح معلمي اللغات الأجنبية" class="card-glass rounded-2xl p-2.5 flex flex-col items-center justify-center text-center aspect-square cursor-pointer group">
-              <svg width="34" height="34" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="14" fill="#1e293b" stroke="#94a3b8" stroke-width="1.5" />
-                <ellipse cx="24" cy="24" rx="6" ry="13" stroke="#60a5fa" stroke-width="1.2" />
-                <path d="M10 24H38M14 17H34M14 31H34" stroke="#94a3b8" stroke-width="1" />
-                <circle cx="30" cy="18" r="2" fill="#38bdf8" />
-              </svg>
-              <span class="text-[11px] font-bold text-[#fbf8f0] mt-1.5 leading-tight group-hover:text-[#38bdf8] transition-colors">اللغات الأجنبية</span>
+            <div onclick="window.location.href='teachers_directory_preview.html?subject=Foreign%20Languages'" 
+                 title="تصفح معلمي ومناهج اللغات الأجنبية" 
+                 class="group relative bg-[#072438]/90 hover:bg-[#0c3857] border border-[#38bdf8]/35 hover:border-[#22d3ee] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_25px_rgba(6,182,212,0.35)] overflow-hidden">
+              <!-- Glow Header Accent -->
+              <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-sky-300 to-teal-300"></div>
+              
+              <!-- 3D Book / Lab Cover Visual -->
+              <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-md flex items-center justify-center p-2 mb-1.5 bg-gradient-to-br from-teal-600 via-sky-800 to-slate-950 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- Book Spine Effect on the right (RTL) -->
+                <div class="absolute right-0 top-0 bottom-0 w-1.5 bg-white/30 backdrop-blur-sm"></div>
+                <!-- Bookmark ribbon -->
+                <div class="absolute top-0 right-3 w-2 h-4 bg-amber-400 rounded-b-sm shadow-sm"></div>
+                
+                <!-- Center Subject Illustration -->
+                <div class="text-white drop-shadow-md z-10 flex flex-col items-center justify-center">
+                  <svg class="w-8 h-8 text-sky-200 drop-shadow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><circle cx="12" cy="12" r="10"/></svg>
+                </div>
+                
+                <!-- Bottom Micro Badge -->
+                <div class="absolute bottom-1 inset-x-1 flex justify-center">
+                  <span class="text-[8px] font-black tracking-wider uppercase px-1.5 py-0.5 rounded bg-black/40 text-cyan-200 backdrop-blur-sm border border-cyan-400/20">LANGUAGES</span>
+                </div>
+              </div>
+
+              <div class="w-full">
+                <span class="text-[11px] sm:text-xs font-black text-white leading-tight block group-hover:text-[#38bdf8] transition-colors truncate">اللغات الأجنبية</span>
+                <span class="text-[9px] text-cyan-300/80 block mt-0.5 font-medium truncate">فرنسي، ألماني، صيني</span>
+              </div>
             </div>
 
           </div>
@@ -528,7 +845,7 @@
         </div>
       </div>
 
-      <div class="lg:col-span-4 bg-[#031411]/90 border border-[#38bdf8]/35 p-5 rounded-2xl shadow-xl space-y-3">
+      <div class="lg:col-span-4 bg-[#031411]/90 border border-[#06b6d4]/40 p-5 rounded-2xl shadow-xl space-y-3">
         <div class="flex items-center justify-between pb-3 border-b border-[#38bdf8]/25">
           <span class="text-xs font-bold text-[#fef08a]">عرض إطلاق الدفعة الأولى</span>
           <span class="bg-red-500/20 text-red-300 text-[10px] font-bold px-2 py-0.5 rounded border border-red-500/30">خصم 60%</span>
@@ -622,14 +939,14 @@
 
       <!-- الرسائل -->
       <div class="flex-1 overflow-y-auto py-3 space-y-3 text-xs">
-        <div class="bg-[#0b332d]/80 border border-[#38bdf8]/35 p-3 rounded-2xl text-[#f3ece0] leading-relaxed">
+        <div class="bg-[#0b332d]/80 border border-[#06b6d4]/40 p-3 rounded-2xl text-[#f3ece0] leading-relaxed">
           أهلاً بك في مِحور! أنا مساعدك الدراسي التفاعلي المدعوم بالذكاء الاصطناعي. يمكنك سؤالي عن أي مسألة في الرياضيات، أو تلخيص درس في التاريخ، أو شرح مفهوم فيزيائي. فيمَ تحب أن نبدأ اليوم؟
         </div>
       </div>
 
       <!-- حقل الإدخال -->
       <div class="border-t border-[#38bdf8]/25 pt-2 flex items-center gap-2">
-        <input type="text" placeholder="اكتب سؤالك أو اطلب شرح مسألة..." class="flex-1 bg-[#041412] border border-[#38bdf8]/35 rounded-full px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#2dd4bf]" />
+        <input type="text" placeholder="اكتب سؤالك أو اطلب شرح مسألة..." class="flex-1 bg-[#041412] border border-[#06b6d4]/40 rounded-full px-3.5 py-2 text-xs text-white focus:outline-none focus:border-[#2dd4bf]" />
         <button class="w-8 h-8 rounded-full bg-[#14b8a6] text-white flex items-center justify-center font-bold hover:bg-[#0d9488]">
           ➤
         </button>
@@ -643,7 +960,7 @@
       
       <!-- رأس القسم -->
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] bg-[#062420] px-4 py-1.5 rounded-full border border-[#38bdf8]/35 mb-3 shadow">
+        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] bg-[#062420] px-4 py-1.5 rounded-full border border-[#06b6d4]/40 mb-3 shadow">
           <svg class="w-4 h-4 text-[#fef08a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
           <span>مساعد مِحور الذكي · الجيل الأكاديمي الموجه</span>
         </div>
@@ -660,7 +977,7 @@
         
         <!-- الشريط الجانبي لتخصيص المنهج والأوضاع (4 أعمدة) -->
         <div class="lg:col-span-4 space-y-4">
-          <div class="bg-[#051a17]/90 backdrop-blur-md border border-[#38bdf8]/35 rounded-2xl p-5 shadow-xl">
+          <div class="bg-[#051a17]/90 backdrop-blur-md border border-[#06b6d4]/40 rounded-2xl p-5 shadow-xl">
             <h3 class="text-sm font-bold text-[#fef08a] pb-2 border-b border-[#38bdf8]/25 flex items-center gap-2 mb-4">
               <span>🎯 تخصيص المنهج والمادة</span>
             </h3>
@@ -668,7 +985,7 @@
             <div class="space-y-3 text-xs">
               <div>
                 <label class="font-semibold text-[#7dd3fc] block mb-1">المنهج التعليمي</label>
-                <select id="hubCurriculum" class="w-full bg-[#031411] border border-[#38bdf8]/35 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
+                <select id="hubCurriculum" class="w-full bg-[#031411] border border-[#06b6d4]/40 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
                   <option>منهج دولة الإمارات (وزاري)</option>
                   <option>المنهج المصري العام</option>
                   <option>المنهج السعودي</option>
@@ -679,7 +996,7 @@
 
               <div>
                 <label class="font-semibold text-[#7dd3fc] block mb-1">الصف الدراسي</label>
-                <select id="hubGrade" class="w-full bg-[#031411] border border-[#38bdf8]/35 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
+                <select id="hubGrade" class="w-full bg-[#031411] border border-[#06b6d4]/40 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
                   <option>الصف 12 / الثالث الثانوي</option>
                   <option>الصف 11 / الثاني الثانوي</option>
                   <option>الصف 10 / الأول الثانوي</option>
@@ -689,7 +1006,7 @@
 
               <div>
                 <label class="font-semibold text-[#7dd3fc] block mb-1">المادة الدراسية (16 مادة)</label>
-                <select id="hubSubject" class="w-full bg-[#031411] border border-[#38bdf8]/35 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
+                <select id="hubSubject" class="w-full bg-[#031411] border border-[#06b6d4]/40 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#38bdf8]">
                   <option>الرياضيات</option>
                   <option>الفيزياء</option>
                   <option>الكيمياء</option>
@@ -735,7 +1052,7 @@
         </div>
 
         <!-- واجهة المحادثة الرئيسية (8 أعمدة) -->
-        <div class="lg:col-span-8 bg-[#061d19]/90 backdrop-blur-xl border border-[#38bdf8]/35 rounded-3xl shadow-2xl flex flex-col h-[650px] overflow-hidden">
+        <div class="lg:col-span-8 bg-[#061d19]/90 backdrop-blur-xl border border-[#06b6d4]/40 rounded-3xl shadow-2xl flex flex-col h-[650px] overflow-hidden">
           
           <!-- شريط حالة الشات -->
           <div class="px-5 py-3.5 bg-[#041512] border-b border-[#38bdf8]/25 flex items-center justify-between">
@@ -768,7 +1085,7 @@
               <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0284c7] to-[#0ea5e9] text-white flex items-center justify-center shrink-0 mt-1 shadow border border-[#38bdf8]/45">
                 ✨
               </div>
-              <div class="bg-[#072420]/90 text-[#f5efe6] border border-[#38bdf8]/35 rounded-2xl rounded-ts-xs p-4 leading-relaxed max-w-[85%] shadow-md">
+              <div class="bg-[#072420]/90 text-[#f5efe6] border border-[#06b6d4]/40 rounded-2xl rounded-ts-xs p-4 leading-relaxed max-w-[85%] shadow-md">
                 مرحباً بك في **مساعد مِحور الأكاديمي الذكي** 🌟<br><br>
                 أنا رفيقك الدراسي المصمم خصيصاً لمساعدتك على **فهم المفاهيم خطوة بخطوة** بدلاً من الاكتفاء بالحفظ السطحي. اكتب أي سؤال أو مسألة في الرياضيات أو الفيزياء أو الكيمياء، أو اضغط على أحد الرموز السريعة أدناه لتجربتها!
               </div>
@@ -796,7 +1113,7 @@
 
           <!-- شريط الإدخال -->
           <div class="p-4 bg-[#041512]/95 border-t border-[#38bdf8]/25">
-            <div class="flex items-end gap-2 bg-[#020e0c] border border-[#38bdf8]/35 rounded-2xl p-2 focus-within:border-[#38bdf8] focus-within:ring-2 focus-within:ring-[#38bdf8]/20">
+            <div class="flex items-end gap-2 bg-[#020e0c] border border-[#06b6d4]/40 rounded-2xl p-2 focus-within:border-[#38bdf8] focus-within:ring-2 focus-within:ring-[#38bdf8]/20">
               <textarea id="hubInput" placeholder="اكتب مسألتك أو سؤالك (مثال: اشرح لي حل معادلة تفاضلية خطوة بخطوة)..." rows="2" class="flex-1 bg-transparent border-0 outline-none text-xs sm:text-sm text-white placeholder-[#788e84] px-2 py-1 resize-none"></textarea>
               <button id="hubSend" class="w-10 h-10 rounded-xl bg-gradient-to-r from-[#14b8a6] to-[#0d9488] text-white flex items-center justify-center font-bold hover:brightness-110 shadow shrink-0">
                 ➤
@@ -869,7 +1186,7 @@
           <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0284c7] to-[#0ea5e9] text-white flex items-center justify-center shrink-0 mt-1 shadow border border-[#38bdf8]/45">
             ✨
           </div>
-          <div class="bg-[#072420]/90 text-[#f5efe6] border border-[#38bdf8]/35 rounded-2xl rounded-ts-xs p-4 leading-relaxed max-w-[85%] shadow-md space-y-2">
+          <div class="bg-[#072420]/90 text-[#f5efe6] border border-[#06b6d4]/40 rounded-2xl rounded-ts-xs p-4 leading-relaxed max-w-[85%] shadow-md space-y-2">
             <div class="font-bold text-[#6ee7b7] text-xs">شرح توجيهي متدرج:</div>
             <p>سؤالك ممتاز! لنقم بتفكيك المسألة إلى خطوات منطقية:</p>
             <ol class="list-decimal list-inside space-y-1 text-xs text-[#e2dad0]">
