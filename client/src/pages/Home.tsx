@@ -210,6 +210,63 @@ export default function HomePage({ lang, setLang, user, onLogin }: SharedPagePro
           <div><Sparkles size={19} /><span>{t(lang, "Integrated AI Study Guide", "مساعد دراسي مدعوم بالذكاء الاصطناعي")}</span></div>
         </section>
 
+        {/* Flagship Course Banner: AI for Engineers */}
+        <section className="section py-8 pt-0">
+          <div className="bg-gradient-to-r from-[#072420] via-[#041412] to-[#0a3832] rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden shadow-2xl border-2 border-[#f59e0b]/40">
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-8 space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="bg-[#f59e0b] text-[#041210] text-[11px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider">
+                    {t(lang, "🔥 TRENDING ON LINKEDIN", "🔥 الكورس الأكثر طلباً على LinkedIn")}
+                  </span>
+                  <span className="bg-[#10b981]/20 text-[#6ee7b7] text-xs font-bold px-3 py-0.5 rounded-full border border-[#10b981]/30">
+                    {t(lang, "100% Practical · 12 Yrs GCC Experience", "عملي 100% · خبرة 12 سنة بمشاريع دبي وأبوظبي")}
+                  </span>
+                </div>
+                <h2 className="text-xl sm:text-3xl font-black text-white">
+                  {t(
+                    lang,
+                    "Connecting AI with Engineering Drawings & Plans - From Scratch to Pro",
+                    "ربط أدوات الذكاء الاصطناعي بالمخططات والخطط الهندسية - من الصفر للاحتراف"
+                  )}
+                </h2>
+                <p className="text-xs sm:text-sm text-[#cbd5e1] leading-relaxed max-w-2xl">
+                  {t(
+                    lang,
+                    "Automate drawings, BOQs, schedules, and clash coordination with AI prompts and scripts. By Eng. Amr Abdelshafi.",
+                    "كورس عملي للمهندسين: أتمتة المخططات، الجداول، حصر الكميات، والـ Clash Coordination بضغطة زر. للمدرب م. عمرو سليم."
+                  )}
+                </p>
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <a
+                    href="/previews/ai_engineering_masterclass.html"
+                    className="button button-light font-bold text-xs sm:text-sm"
+                  >
+                    <span>{t(lang, "Explore Course & Register", "استكشف تفاصيل الكورس وسجّل الآن")}</span>
+                    <Arrow size={16} />
+                  </a>
+                  <a
+                    href="/previews/breakthroughs_and_courses.html"
+                    className="text-xs text-[#a7f3d0] hover:text-[#fef08a] transition underline underline-offset-4"
+                  >
+                    {t(lang, "View all STEM masterclasses", "استعراض كافة الانفرادات والكورسات")}
+                  </a>
+                </div>
+              </div>
+              <div className="lg:col-span-4 bg-black/40 backdrop-blur-md rounded-xl p-4 border border-[#2dd4bf]/25 text-center space-y-2">
+                <span className="text-xs font-bold text-[#fef08a] block">
+                  {t(lang, "First Batch Early Bird", "عرض إطلاق الدفعة الأولى")}
+                </span>
+                <div className="text-2xl sm:text-3xl font-black text-[#fef08a] font-mono">490 AED</div>
+                <span className="text-[10px] text-gray-400 line-through block">1,200 AED</span>
+                <span className="text-[11px] text-[#34d399] block font-semibold">
+                  {t(lang, "18 Accredited Practical Hours", "18 ساعة عملية + شهادة معتمدة")}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Study Companion Showcase Banner */}
         <section className="section py-12">
           <div className="bg-gradient-to-br from-[#173c37] to-[#0d5b55] rounded-2xl p-6 sm:p-10 text-white relative overflow-hidden shadow-xl">
