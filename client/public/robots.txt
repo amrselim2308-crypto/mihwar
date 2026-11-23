@@ -1,0 +1,8 @@
+﻿User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /teacher
+Disallow: /parent
+
+Sitemap: https://mihwar-edu.com/sitemap.xml
