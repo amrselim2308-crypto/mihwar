@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بنك ملخصات المواد الدراسية الشاملة | منصة مِحور</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #020908;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.5));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.82);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      backdrop-filter: blur(14px);
+      border-radius: 18px;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-4px);
+      border-color: #2dd4bf;
+      background: rgba(10, 42, 38, 0.92);
+      box-shadow: 0 14px 34px rgba(20, 184, 166, 0.35);
+    }
+    .input-dark {
+      background: #041412;
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: #ffffff;
+      border-radius: 12px;
+    }
+    .input-dark:focus {
+      border-color: #38bdf8;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+    .reader-backdrop {
+      background: rgba(2, 10, 9, 0.92);
+      backdrop-filter: blur(18px);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="https://mihwar-edu.com/" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">SUMMARIES & NOTES</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="https://mihwar-edu.com/" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="https://mihwar-edu.com/previews/teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
+        <a href="https://mihwar-edu.com/previews/library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
+        <a href="#" class="text-[#2dd4bf] font-bold">ملخصات المواد</a>
+        <a href="https://mihwar-edu.com/previews/teacher_apply_preview.html" class="hover:text-[#2dd4bf] transition-colors">انضم كمعلم</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://mihwar-edu.com/previews/master_hub.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#2dd4bf] border border-[#2dd4bf]/40 px-4 py-2 rounded-full text-xs font-bold transition">
+          مركز القيادة
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 px-6 border-b border-[#2dd4bf]/20 bg-gradient-to-b from-[#051c18] to-[#020908] text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d5b55]/40 border border-[#2dd4bf]/30 text-[#fef08a] text-xs font-bold mb-4">
+        📚 بنك المعرفة الأكاديمية الشامل
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black golden-title mb-4 leading-tight">
+        ملخصات وخرائط مفاهيم جميع المواد الدراسية
+      </h1>
+      <p class="text-sm sm:text-base text-[#d1dcce] max-w-2xl mx-auto leading-relaxed">
+        إعداد نخبة من أفضل المعلمين المعتمدين في المناهج الإماراتية، المصرية، والسعودية والدولية. تغطية مركزة للمفاهيم الجوهرية، القوانين، وأسئلة الامتحانات المتوقعة.
+      </p>
+
+      <!-- Search and Instant Filters -->
+      <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <input type="text" id="summarySearch" oninput="filterSummaries()" placeholder="ابحث باسم المادة أو الدرس..." class="input-dark px-4 py-3 text-xs sm:text-sm text-white w-full" />
+        
+        <select id="curriculumFilter" onchange="filterSummaries()" class="input-dark px-4 py-3 text-xs sm:text-sm text-white w-full cursor-pointer">
+          <option value="">جميع المناهج (إماراتي / مصري / سعودي)</option>
+          <option value="الإماراتي">المنهج الإماراتي</option>
+          <option value="المصري">المنهج المصري</option>
+          <option value="السعودي">المنهج السعودي</option>
+        </select>
+
+        <select id="subjectFilter" onchange="filterSummaries()" class="input-dark px-4 py-3 text-xs sm:text-sm text-white w-full cursor-pointer">
+          <option value="">جميع المواد (16 مادة)</option>
+          <option value="الرياضيات">الرياضيات</option>
+          <option value="الفيزياء">الفيزياء</option>
+          <option value="الكيمياء">الكيمياء</option>
+          <option value="الأحياء">الأحياء</option>
+          <option value="الجيولوجيا">الجيولوجيا</option>
+          <option value="العلوم">العلوم العامة</option>
+          <option value="اللغة العربية">اللغة العربية</option>
+          <option value="اللغة الإنجليزية">اللغة الإنجليزية</option>
+          <option value="التاريخ">التاريخ</option>
+          <option value="الجغرافيا">الجغرافيا</option>
+          <option value="الدراسات الاجتماعية">الدراسات الاجتماعية</option>
+          <option value="الفلسفة والمنطق">الفلسفة والمنطق</option>
+          <option value="علم النفس والاجتماع">علم النفس والاجتماع</option>
+          <option value="الحاسب والذكاء الاصطناعي">الحاسب والذكاء الاصطناعي</option>
+          <option value="المهارات">المهارات</option>
+          <option value="التربية الإسلامية">التربية الإسلامية</option>
+        </select>
+      </div>
+
+      <div class="mt-4 flex items-center justify-center gap-6 text-xs text-[#a7f3d0]">
+        <span>📖 <strong id="totalCount">16</strong> ملخصاً متاحاً</span>
+        <span>•</span>
+        <span>⚡ قراءة تفاعلية فورية مدمجة</span>
+        <span>•</span>
+        <span>📥 تحميل مجاني مباشر</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summaries Cards Grid -->
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <div id="summariesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Injected via JavaScript -->
+    </div>
+  </main>
+
+  <!-- Interactive PDF Reader Modal -->
+  <div id="pdfModal" class="fixed inset-0 z-50 reader-backdrop hidden flex flex-col justify-between p-3 sm:p-6">
+    <!-- Top Bar -->
+    <div class="bg-[#06201c] border border-[#2dd4bf]/40 rounded-2xl px-6 py-3 flex items-center justify-between text-white shadow-2xl">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+          PDF
+        </div>
+        <div>
+          <h3 id="pdfTitle" class="text-xs sm:text-sm font-bold text-white">عنوان الملخص</h3>
+          <span id="pdfMeta" class="text-[10px] text-[#a7f3d0]">المنهج الدراسي · الصف</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="downloadPdfFile()" class="glow-teal-btn px-4 py-1.5 text-xs font-bold rounded-full text-white cursor-pointer flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <span>تحميل PDF</span>
+        </button>
+        <button onclick="closePdfModal()" class="w-8 h-8 rounded-full bg-red-950/70 border border-red-500/30 text-red-200 font-bold flex items-center justify-center hover:bg-red-900 cursor-pointer">
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <!-- Paper View Area with Real Educational Content -->
+    <div class="flex-1 my-3 bg-[#08221e]/90 border border-[#2dd4bf]/30 rounded-2xl p-6 sm:p-10 overflow-y-auto flex items-center justify-center shadow-inner">
+      <div class="bg-[#fbfbf9] text-[#1c2a27] max-w-2xl w-full rounded-2xl shadow-2xl p-8 sm:p-12 min-h-[500px] flex flex-col justify-between border border-[#e2e8df]" dir="rtl">
+        <div>
+          <div class="flex items-center justify-between border-b-2 border-[#0d5b55]/20 pb-4 mb-6">
+            <div>
+              <span class="text-[10px] tracking-widest font-extrabold text-[#0d5b55] uppercase block">منصة مِحور التعليمية · بنك الملخصات المعتمدة</span>
+              <h2 id="paperHeading" class="text-xl sm:text-2xl font-black text-[#0d5b55]">ملخص المادة</h2>
+            </div>
+            <span class="text-xs font-bold bg-[#0d5b55]/10 text-[#0d5b55] px-3 py-1 rounded-full">إصدار 2026 المعتمد</span>
+          </div>
+
+          <div id="paperContent" class="space-y-4 text-xs sm:text-sm leading-relaxed text-[#2f403b]">
+            <!-- Dynamic Content -->
+          </div>
+        </div>
+
+        <div class="border-t border-[#0d5b55]/15 pt-4 mt-8 flex items-center justify-between text-[11px] text-[#556963]">
+          <span>إعداد وإشراف نخبة معلمي المادة بمنصة مِحور</span>
+          <span>منصة مِحور · mihwar-edu.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#06201c] border border-[#2dd4bf]/20 rounded-xl px-4 py-2 text-center text-xs text-[#a7f3d0]">
+      💡 تم مراجعة هذا الملخص وتدقيقه وفق الأوزان النسبية والمخرجات التعليمية المعتمدة رسمياً.
+    </div>
+  </div>
+
+  <script>
+    // 16 Full Summaries covering all 16 disciplines
+    const allSummaries = [
+      {
+        id: 1,
+        subject: "الرياضيات",
+        title: "الملخص الشامل في التفاضل والتكامل وقوانين النهايات",
+        curriculum: "الإماراتي",
+        grade: "الصف 12 متقدم",
+        pages: 28,
+        downloads: 1420,
+        concepts: "قواعد الاشتقاق الأساسية، قاعدة السلسلة، تطبيقات القيم العظمى والصغرى، وتكامل الدوال الأسية والمثلثية.",
+        formulas: "d/dx [sin(x)] = cos(x) · ∫ x^n dx = (x^(n+1))/(n+1) + C · f'(x) = lim(h->0) [f(x+h)-f(x)]/h",
+        tips: "ركز على إيجاد النقاط الحرجة باختبار المشتقة الأولى واختبار المشتقة الثانية لتحديد التقعر ونقاط الانقلاب."
+      },
+      {
+        id: 2,
+        subject: "الفيزياء",
+        title: "مذكرة قوانين كيرشوف، الديناميكا الحرارية والفيزياء الحديثة",
+        curriculum: "المصري",
+        grade: "الصف 12 ثانوية عامة",
+        pages: 36,
+        downloads: 2180,
+        concepts: "قانونا كيرشوف للتيار والجهد، ظاهرة كومتون، التأثير الكهروضوئي، ومعادلة دي برولي لطول الموجة.",
+        formulas: "Σ I_in = Σ I_out · Σ V = 0 · E = h · ν = m · c^2 · λ = h / (m · v)",
+        tips: "حدد اتجاه المسار الافتراضي بدقة في دوائر كيرشوف لتفادي أخطاء الإشارات في فروق الجهود."
+      },
+      {
+        id: 3,
+        subject: "الكيمياء",
+        title: "دليل الكيمياء العضوية وتسمية وتفاعلات مشتقات الهيدروكربونات",
+        curriculum: "السعودي",
+        grade: "مسار علوم الحاسب والهندسة",
+        pages: 34,
+        downloads: 1650,
+        concepts: "تسمية IUPAC للألكانات والألكينات والكحولات والألدهيدات، تفاعلات الإضافة والاستبدال والأسترة.",
+        formulas: "R-COOH + R'-OH ⇌ R-COO-R' + H2O (تفاعل تكوين الإستر في وسط حمضي)",
+        tips: "احفظ المجموعات الوظيفية المميزة لكل عائلة ورتب أولوية الترقيم وفق قواعد الأيوباك الدولية."
+      },
+      {
+        id: 4,
+        subject: "الأحياء",
+        title: "خرائط المفاهيم في الوراثة الجزيئية والمناعة وتصنيع البروتين",
+        curriculum: "المصري",
+        grade: "الصف 12 علمي علوم",
+        pages: 32,
+        downloads: 1890,
+        concepts: "تضاعف DNA، النسخ وترجمة الشفرة الوراثية على الريبوسوم، واستجابة الخلايا الليمفاوية التائية والبائية.",
+        formulas: "DNA (نسخ) -> mRNA (ترجمة) -> بروتين (سلسلة عديد الببتيد) عبر كودونات البدء والوقف.",
+        tips: "فرّق بدقة بين الأجسام المضادة (المناعة الخلطية) وتأثير الخلايا التائية القاتلة (المناعة الخلوية)."
+      },
+      {
+        id: 5,
+        subject: "الجيولوجيا",
+        title: "ملخص الحركات التكتونية، دورة الصخور وتراكيب القشرة الأرضية",
+        curriculum: "المصري",
+        grade: "الصف 12 علمي علوم",
+        pages: 26,
+        downloads: 980,
+        concepts: "أنواع الفوالق (عادي، معكوس، دسر)، الطيات المحدبة والمقعرة، ونظرية الانجراف القاري للألواح.",
+        formulas: "مقياس موهس للصلادة: تلك (1) -> جبس (2) -> كالسيت (3) -> فلوريت (4) -> أباتيت (5) -> أرثوكليز (6) -> كوارتز (7).",
+        tips: "في الفالق المعكوس تتحرك صخور الحائط العلوي إلى أعلى بالنسبة لصخور الحائط السفلي نتيجة قوى الضغط."
+      },
+      {
+        id: 6,
+        subject: "العلوم",
+        title: "الموجز الذهبي في المادة والروابط الكيميائية وقوانين الحركة",
+        curriculum: "الإماراتي",
+        grade: "الصف 8 و 9 عام",
+        pages: 24,
+        downloads: 1350,
+        concepts: "الروابط الأيونية والتساهمية، حفظ الكتلة في التفاعلات، قوانين نيوتن الثلاثة والسرعة المتجهة.",
+        formulas: "F = m · a (القوة = الكتلة × التسارع) · v = d / t (السرعة = المسافة / الزمن)",
+        tips: "تذكر دائماً أن لكل فعل رد فعل مساوٍ له في المقدار ومعاكس له في الاتجاه يؤثران في جسمين مختلفين."
+      },
+      {
+        id: 7,
+        subject: "اللغة العربية",
+        title: "الجامع في قواعد النحو، فنون البلاغة والأساليب الأدبية",
+        curriculum: "الإماراتي",
+        grade: "الصف 11 و 12",
+        pages: 42,
+        downloads: 3100,
+        concepts: "النواسخ (إن وأخواتها وكان وأخواتها)، أسلوب الشرط، المفاعيل الخمسة، التشبيه والاستعارة والكناية.",
+        formulas: "إن وأخواتها: تنصب المبتدأ اسماً لها وترفع الخبر · كان وأخواتها: ترفع المبتدأ اسماً لها وتنصب الخبر.",
+        tips: "ابحث أولاً عن أصل الجملة (مبتدأ وخبر أو فعل وفاعل) قبل إعراب المتممات والمفاعيل."
+      },
+      {
+        id: 8,
+        subject: "اللغة الإنجليزية",
+        title: "Mastering English Grammar, Conditional Rules & Academic Writing",
+        curriculum: "الإماراتي",
+        grade: "Grade 11 & 12 (EmSAT & High School)",
+        pages: 38,
+        downloads: 2450,
+        concepts: "Tenses harmony, Conditionals (Zero, 1, 2, 3 & Mixed), Passive Voice, and cohesive essay transitions.",
+        formulas: "If + Past Perfect (had done) -> Would have + Past Participle (Third Conditional).",
+        tips: "Always proofread for subject-verb agreement and ensure clear topic sentences in argumentative essays."
+      },
+      {
+        id: 9,
+        subject: "التاريخ",
+        title: "الجداول الزمنية لأهم أحداث التاريخ الحديث والمعاصر والقضايا العربية",
+        curriculum: "المصري",
+        grade: "الصف 12 أدبي",
+        pages: 48,
+        downloads: 1720,
+        concepts: "الحملة الفرنسية على مصر، بناء الدولة الحديثة في عهد محمد علي، وثورات التحرر الوطني والحروب العربية.",
+        formulas: "خريطة زمنية مفصلة تربط الأسباب بالنتائج وتوضح المعاهدات الدولية المؤثرة.",
+        tips: "اربط دائماً بين الظروف الدولية في أوروبا والقرارات السياسية والعسكرية التي اتخذت في المنطقة."
+      },
+      {
+        id: 10,
+        subject: "الجغرافيا",
+        title: "أطلس الجغرافيا السياسية، الحدود الدولية والأحلاف والتكتلات",
+        curriculum: "المصري",
+        grade: "الصف 12 أدبي",
+        pages: 40,
+        downloads: 1610,
+        concepts: "عناصر قوة الدولة (المورفولوجية، الديموغرافية، الاقتصادية)، المياه الإقليمية والدولية، وتكتل الاتحاد الأوروبي.",
+        formulas: "الموقع الجغرافي والشكل المندمج يعزز من قدرة الدفاع الداخلي وسهولة السيطرة والإدارة.",
+        tips: "احرص على مطابقة المعلومات النظرية مع الخرائط المرفقة للحدود والممرات المائية الاستراتيجية."
+      },
+      {
+        id: 11,
+        subject: "الدراسات الاجتماعية",
+        title: "مذكرة الهوية والمواطنة وتاريخ وتراث دولة الإمارات وشبه الجزيرة",
+        curriculum: "الإماراتي",
+        grade: "المرحلة الثانوية",
+        pages: 28,
+        downloads: 1290,
+        concepts: "قيام اتحاد دولة الإمارات، الفكر القيادي للشيخ زايد رحمه الله، والتنمية الاقتصادية المستدامة ورؤية مئوية 2071.",
+        formulas: "ركائز التنمية: التعليم المتقدم، الاقتصاد المعرفي، التماسك المجتمعي، والريادة الدبلوماسية العالمية.",
+        tips: "ركز على المكتسبات الحضارية والمبادرات الاستراتيجية الحديثة لدولة الإمارات في مجالات الفضاء والطاقة المتجددة."
+      },
+      {
+        id: 12,
+        subject: "الفلسفة والمنطق",
+        title: "الوجيز في الأخلاق البيولوجية (البيوتيقا) والمغالطات المنطقية الصورية",
+        curriculum: "المصري",
+        grade: "الصف 12 أدبي",
+        pages: 35,
+        downloads: 1440,
+        concepts: "قضايا الاستنساخ البشري، الجينوم، الموت الرحيم، والحجج الاستنباطية والمغالطات (مغالطة رجل القش، الاحتكام للجماهير).",
+        formulas: "الحجة الاستنباطية تكون صحيحة إذا لزمت النتيجة لزوماً منطقياً عن المقدمات، بصرف النظر عن مطابقة الواقع.",
+        tips: "فرّق بدقة بين صدق القضايا الفردية وصحة البناء المنطقي للحجة الاستنباطية ككل."
+      },
+      {
+        id: 13,
+        subject: "علم النفس والاجتماع",
+        title: "خلاصة نظريات التعلم، الشخصية والذكاءات المتعددة والظواهر الاجتماعية",
+        curriculum: "المصري",
+        grade: "الصف 12 أدبي",
+        pages: 36,
+        downloads: 1530,
+        concepts: "نظريات التعلم الشرطي (بافلوف)، المحاولة والخطأ (ثورندايك)، الجشطلت، وتصنيفات جاردنر للذكاءات المتعددة.",
+        formulas: "المثير الشرطي + المثير الطبيعي = استجابة شرطية متكررة تدريجياً.",
+        tips: "طبق مبادئ التعلم في فهم استراتيجيات الاستذكار الفعّال وحل أسئلة المواقف التطبيقية."
+      },
+      {
+        id: 14,
+        subject: "الحاسب والذكاء الاصطناعي",
+        title: "دليل البرمجة بلغة بايثون، هياكل البيانات ومفاهيم التعلم العميق",
+        curriculum: "الإماراتي",
+        grade: "الصف 11 و 12 متقدم ومسار النخبة",
+        pages: 50,
+        downloads: 1980,
+        concepts: "القوائم والقواميس في بايثون، الخوارزميات والتعقيد الزمني O(n)، والشبكات العصبية والذكاء الاصطناعي التوليدي.",
+        formulas: "def train_model(inputs, weights, bias): return sigmoid(dot(inputs, weights) + bias)",
+        tips: "اهتم بالتطبيق العملي للكود وفهم كيفية تدريب النماذج والتعامل مع المكتبات الشهيرة مثل NumPy و Pandas."
+      },
+      {
+        id: 15,
+        subject: "المهارات",
+        title: "دليل التفكير الناقد وحل المشكلات وإدارة الوقت في الامتحانات الكبرى",
+        curriculum: "الإماراتي",
+        grade: "جميع المراحل والمسارات",
+        pages: 22,
+        downloads: 1120,
+        concepts: "مهارات فرز المعلومات، التحقق من المصادر، تقنيات بومودورو لإدارة الوقت، وخرائط التفكير الذهنية السريعة.",
+        formulas: "التحليل -> التركيب -> التقييم -> اتخاذ القرار الأكاديمي السليم.",
+        tips: "قسّم فترات المذاكرة إلى جلسات 25 دقيقة تعقبها استراحة 5 دقائق لتثبيت الذاكرة طويلة المدى."
+      },
+      {
+        id: 16,
+        subject: "التربية الإسلامية",
+        title: "جامع أحكام التجويد، العقيدة الإسلامية، والفقه والمعاملات المعاصرة",
+        curriculum: "الإماراتي",
+        grade: "الصف 11 و 12",
+        pages: 32,
+        downloads: 2100,
+        concepts: "أحكام النون الساكنة والتنوين (الإظهار، الإدغام، الإقلاب، الإخفاء)، مقاصد الشريعة، والمسؤولية الأخلاقية والاجتماعية.",
+        formulas: "مقاصد الشريعة الخمسة الضرورية: حفظ الدين، والنفس، والعقل، والنسل، والمال.",
+        tips: "احفظ أدلة الآيات الكريمة والأحاديث النبوية الشريفة المقررة للاستشهاد بها في إجابات الأسئلة المقالية."
+      }
+    ];
+
+    function renderSummaries(list) {
+      const grid = document.getElementById("summariesGrid");
+      grid.innerHTML = "";
+      document.getElementById("totalCount").innerText = list.length;
+
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-[#a7f3d0]">
+            <p class="text-lg font-bold">لا توجد ملخصات مطابقة لبحثك حالياً.</p>
+            <p class="text-xs text-[#cbd5e1] mt-1">جرب تغيير المادة أو تفريغ خانة البحث.</p>
+          </div>
+        `;
+        return;
+      }
+
+      list.forEach(item => {
+        const card = document.createElement("article");
+        card.className = "glass-card p-6 flex flex-col justify-between";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="bg-[#0d5b55] text-[#a7f3d0] border border-[#2dd4bf]/30 text-xs font-bold px-3 py-1 rounded-lg">
+                ${item.subject}
+              </span>
+              <span class="text-xs text-[#fef08a] bg-[#f59e0b]/15 px-2.5 py-0.5 rounded-full border border-[#f59e0b]/30 font-semibold">
+                المنهج ${item.curriculum}
+              </span>
+            </div>
+
+            <h3 class="text-base font-extrabold text-white mb-2 leading-snug">${item.title}</h3>
+            
+            <p class="text-xs text-[#cbd5e1] line-clamp-2 mb-4 leading-relaxed">
+              ${item.concepts}
+            </p>
+
+            <div class="flex items-center gap-3 text-xs text-[#a7f3d0] mb-5">
+              <span>${item.grade}</span>
+              <span>•</span>
+              <span>${item.pages} صفحة</span>
+              <span>•</span>
+              <span>${item.downloads} تحميلاً</span>
+            </div>
+          </div>
+
+          <div class="border-t border-[#2dd4bf]/20 pt-4 flex items-center justify-between">
+            <span class="text-xs font-bold text-[#fef08a]">صيغة PDF مدمجة</span>
+            <button onclick="openSummary(${item.id})" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-2 cursor-pointer">
+              <span>اقرأ الملخص</span>
+              <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterSummaries() {
+      const q = document.getElementById("summarySearch").value.trim().toLowerCase();
+      const curr = document.getElementById("curriculumFilter").value;
+      const subj = document.getElementById("subjectFilter").value;
+
+      const filtered = allSummaries.filter(item => {
+        const matchQ = !q || item.title.toLowerCase().includes(q) || item.subject.toLowerCase().includes(q) || item.concepts.toLowerCase().includes(q);
+        const matchCurr = !curr || item.curriculum === curr;
+        const matchSubj = !subj || item.subject === subj;
+        return matchQ && matchCurr && matchSubj;
+      });
+
+      renderSummaries(filtered);
+    }
+
+    let activeSummary = null;
+
+    function openSummary(id) {
+      const item = allSummaries.find(s => s.id === id);
+      if (!item) return;
+      activeSummary = item;
+
+      document.getElementById("pdfTitle").innerText = item.title;
+      document.getElementById("pdfMeta").innerText = `منهج ${item.curriculum} · ${item.grade} · ${item.pages} صفحة`;
+      document.getElementById("paperHeading").innerText = item.title;
+
+      document.getElementById("paperContent").innerHTML = `
+        <div class="p-4 rounded-xl bg-[#0d5b55]/10 border border-[#0d5b55]/20">
+          <h4 class="font-bold text-[#0d5b55] text-sm mb-1.5 flex items-center gap-2">
+            <span>📌 المفاهيم الجوهرية (Core Concepts)</span>
+          </h4>
+          <p class="text-[#2f403b] leading-relaxed">${item.concepts}</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#f59e0b]/10 border border-[#f59e0b]/25">
+          <h4 class="font-bold text-[#b45309] text-sm mb-1.5 flex items-center gap-2">
+            <span>⚡ أهم القوانين والقواعد الذهبية</span>
+          </h4>
+          <p class="font-mono text-xs sm:text-sm text-[#78350f] bg-white/70 p-3 rounded-lg border border-[#fcd34d]">${item.formulas}</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#10b981]/10 border border-[#10b981]/25">
+          <h4 class="font-bold text-[#065f46] text-sm mb-1.5 flex items-center gap-2">
+            <span>🎯 نصيحة الامتحان ونقاط التركيز العليا</span>
+          </h4>
+          <p class="text-[#044e3a] leading-relaxed">${item.tips}</p>
+        </div>
+      `;
+
+      document.getElementById("pdfModal").classList.remove("hidden");
+    }
+
+    function closePdfModal() {
+      document.getElementById("pdfModal").classList.add("hidden");
+    }
+
+    function downloadPdfFile() {
+      if (activeSummary) {
+        alert(`جاري تحميل ملف ملخص: "${activeSummary.title}" بصيغة PDF عالية الدقة...`);
+      }
+    }
+
+    // Initial render
+    renderSummaries(allSummaries);
+  </script>
+</body>
+</html>
