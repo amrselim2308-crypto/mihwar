@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انفرادات مِحور التطبيقية وكورسات الذكاء الاصطناعي | MIHWAR Elite Masterclasses</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #020908;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.5));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.85);
+      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: #2dd4bf;
+      background: rgba(9, 38, 34, 0.92);
+      box-shadow: 0 16px 40px rgba(20, 184, 166, 0.35);
+    }
+    .simulator-box {
+      background: rgba(3, 16, 14, 0.95);
+      border: 1.5px solid rgba(45, 212, 191, 0.4);
+      border-radius: 18px;
+      box-shadow: inset 0 2px 12px rgba(0,0,0,0.8);
+    }
+    .slider-teal {
+      accent-color: #2dd4bf;
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.1);
+    }
+    .glow-gold-btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      border: 1.5px solid rgba(254, 240, 138, 0.5);
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45);
+      color: #041210;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .glow-gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(245, 158, 11, 0.65);
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="https://mihwar-edu.com/" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">ELITE BREAKTHROUGHS</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="https://mihwar-edu.com/" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="#simulators" class="text-[#2dd4bf] font-bold">الانفرادات التطبيقية</a>
+        <a href="#courses" class="hover:text-[#fef08a] transition-colors">معسكرات الذكاء الاصطناعي</a>
+        <a href="https://mihwar-edu.com/previews/summaries_catalog_preview.html" class="hover:text-[#2dd4bf] transition-colors">بنك الملخصات</a>
+        <a href="https://mihwar-edu.com/previews/teacher_apply_preview.html" class="hover:text-[#2dd4bf] transition-colors">انضم كمعلم</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://mihwar-edu.com/previews/master_hub.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#2dd4bf] border border-[#2dd4bf]/40 px-4 py-2 rounded-full text-xs font-bold transition">
+          مركز القيادة
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-14 px-6 border-b border-[#2dd4bf]/20 bg-gradient-to-b from-[#051c18] to-[#020908] text-center relative overflow-hidden">
+    <div class="max-w-4xl mx-auto relative z-10">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f59e0b]/20 border border-[#f59e0b]/40 text-[#fef08a] text-xs font-bold mb-4">
+        ⚡ محتوى حصري "من الآخر" · انفرادات علمية غير مسبوقة
+      </div>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black golden-title mb-4 leading-tight">
+        لا نحفظك القوانين.. بل نجعلك تراها وتتحكم فيها!
+      </h1>
+      <p class="text-sm sm:text-lg text-[#dce7e2] max-w-2xl mx-auto leading-relaxed">
+        تطبيقات تفاعلية تحوّل أعقد قوانين الفيزياء والكيمياء والهندسة (مثل قانون هازن-ويليامز للهيدروليكا، ونفق الكم) إلى تجارب حية، إلى جانب معسكرات رائدة في الذكاء الاصطناعي وهندسة الأوامر والبرمجة.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a href="#simulators" class="glow-teal-btn text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full inline-flex items-center gap-2 cursor-pointer">
+          <span>جرّب محاكي القوانين التطبيقية</span>
+          <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+        <a href="#courses" class="glow-gold-btn text-xs sm:text-sm font-extrabold px-7 py-3 rounded-full inline-flex items-center gap-2 cursor-pointer">
+          <span>استكشف كورسات البرمجة و AI</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 1. EXCLUSIVE INTERACTIVE SIMULATORS SECTION -->
+  <!-- ========================================== -->
+  <section id="simulators" class="max-w-7xl mx-auto px-6 py-16 border-b border-[#2dd4bf]/20">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold text-[#2dd4bf] uppercase tracking-widest block mb-2">PRACTICAL STEM BREAKTHROUGHS</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">انفرادات مِحور في شرح القوانين التطبيقية</h2>
+      <p class="text-xs sm:text-sm text-[#cbd5e1] mt-2 max-w-xl mx-auto">غيّر المعطيات بنفسك، وشاهد النتائج الهندسية والفيزيائية فوراً أمام عينيك.</p>
+    </div>
+
+    <!-- SPOTLIGHT 1: Hazen-Williams Interactive Hydraulic Engine -->
+    <div class="glass-card p-6 sm:p-10 mb-10 border-2 border-[#2dd4bf]/40">
+      <div class="flex flex-col lg:flex-row items-start justify-between gap-6 pb-6 border-b border-[#2dd4bf]/20">
+        <div>
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="bg-[#f59e0b] text-[#031411] text-[11px] font-black px-3 py-1 rounded-md uppercase">انفراد هندسي حصري</span>
+            <span class="text-xs text-[#a7f3d0]">هيدروليكا الموائع وشبكات المياه</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-white">معادلة «هازن - ويليامز» (Hazen-Williams Equation)</h3>
+          <p class="text-xs sm:text-sm text-[#cbd5e1] mt-1.5 max-w-2xl leading-relaxed">
+            المعادلة العالمية التي يبني عليها مهندسو المدن وشبكات إطفاء الحرائق والأبراج السكنية حسابات فاقد الاحتكاك في الأنابيب المضغوطة لتوصيل المياه بدقة.
+          </p>
+        </div>
+
+        <div class="bg-[#031411] border border-[#2dd4bf]/30 p-3.5 rounded-xl text-left font-mono text-xs text-[#fef08a] select-all">
+          <div class="text-[10px] text-[#a7f3d0] font-sans mb-1 text-right">الصيغة الهيدروليكية الدولية:</div>
+          <span class="text-white">hf = </span> 10.67 · L · Q<sup>1.852</sup> / (C<sup>1.852</sup> · D<sup>4.87</sup>)
+        </div>
+      </div>
+
+      <!-- Live Simulator Dashboard -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+        
+        <!-- Controls Column (Inputs) -->
+        <div class="lg:col-span-5 space-y-5 bg-[#031411]/80 p-5 rounded-2xl border border-[#2dd4bf]/25">
+          <h4 class="text-sm font-bold text-[#fef08a] flex items-center gap-2">
+            <span>🎛️ لوحة التحكم في الأنبوب والتدفق</span>
+          </h4>
+
+          <!-- Input 1: Flow Rate Q -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-[#cbd5e1]">معدل تدفق المياه (Q):</span>
+              <span id="flowVal" class="text-[#2dd4bf] font-mono">0.05 م³/ثانية (50 لتر/ث)</span>
+            </div>
+            <input type="range" id="flowInput" min="0.01" max="0.2" step="0.01" value="0.05" oninput="calculateHazenWilliams()" class="w-full slider-teal cursor-pointer">
+          </div>
+
+          <!-- Input 2: Pipe Diameter D -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-[#cbd5e1]">قطر الأنبوب الداخلي (D):</span>
+              <span id="diamVal" class="text-[#2dd4bf] font-mono">200 ملم (0.20 متر)</span>
+            </div>
+            <input type="range" id="diamInput" min="50" max="500" step="10" value="200" oninput="calculateHazenWilliams()" class="w-full slider-teal cursor-pointer">
+          </div>
+
+          <!-- Input 3: Roughness Coefficient C -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-[#cbd5e1]">معامل الخشونة للمادة (C):</span>
+              <span id="cVal" class="text-[#2dd4bf] font-mono">140 (بلاستيك PVC أملس)</span>
+            </div>
+            <select id="cSelect" onchange="calculateHazenWilliams()" class="w-full bg-[#041412] border border-[#2dd4bf]/30 rounded-xl px-3 py-2 text-xs text-white cursor-pointer">
+              <option value="150">بلاستيك PVC جديد فائق النعومة (C = 150)</option>
+              <option value="140" selected>أنابيب PVC وبولي إيثيلين قياسية (C = 140)</option>
+              <option value="130">حديد زهر جديد مطلي (C = 130)</option>
+              <option value="100">حديد قديم متأكسد (C = 100)</option>
+            </select>
+          </div>
+
+          <!-- Input 4: Length L -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-[#cbd5e1]">طول شبكة الأنبوب (L):</span>
+              <span id="lenVal" class="text-[#2dd4bf] font-mono">1,000 متر (1 كم)</span>
+            </div>
+            <input type="range" id="lenInput" min="100" max="5000" step="100" value="1000" oninput="calculateHazenWilliams()" class="w-full slider-teal cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Real-Time Visual Output Column -->
+        <div class="lg:col-span-7 flex flex-col justify-between simulator-box p-6 sm:p-7 relative overflow-hidden">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold text-[#a7f3d0] flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-[#10b981] animate-ping"></span>
+                محاكاة الضغط الهيدروليكي الحي
+              </span>
+              <span class="text-xs bg-[#0d5b55] text-white px-2.5 py-0.5 rounded-full font-bold">حساب فوري</span>
+            </div>
+
+            <!-- Dynamic Animated Pipe Representation -->
+            <div class="w-full h-16 rounded-xl bg-gradient-to-r from-blue-950 via-[#0d5b55] to-blue-900 border border-blue-400/40 relative overflow-hidden flex items-center justify-center mb-6">
+              <div id="flowWaterAnim" class="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px] opacity-70 animate-pulse"></div>
+              <span id="velocityBadge" class="relative z-10 text-xs font-bold font-mono text-white bg-black/60 px-3 py-1 rounded-full border border-[#38bdf8]/50">
+                سرعة السريان (V): 1.59 م/ث
+              </span>
+            </div>
+
+            <!-- Calculated Metrics Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class="bg-[#041210] p-3.5 rounded-xl border border-[#2dd4bf]/20 text-center">
+                <span class="text-[11px] text-[#cbd5e1] block mb-1">فاقد الاحتكاك (hf)</span>
+                <strong id="headlossOutput" class="text-lg sm:text-xl font-extrabold text-[#fef08a] font-mono">10.42 م</strong>
+                <span class="text-[9px] text-[#a7f3d0] block">فقد ضغط هيدروليكي</span>
+              </div>
+
+              <div class="bg-[#041210] p-3.5 rounded-xl border border-[#2dd4bf]/20 text-center">
+                <span class="text-[11px] text-[#cbd5e1] block mb-1">انحدار الضغط (S)</span>
+                <strong id="slopeOutput" class="text-lg sm:text-xl font-extrabold text-[#38bdf8] font-mono">10.42 م/كم</strong>
+                <span class="text-[9px] text-[#a7f3d0] block">لكل كيلومتر طولي</span>
+              </div>
+
+              <div class="col-span-2 sm:col-span-1 bg-[#041210] p-3.5 rounded-xl border border-[#2dd4bf]/20 text-center">
+                <span class="text-[11px] text-[#cbd5e1] block mb-1">حالة السريان</span>
+                <strong id="statusOutput" class="text-xs sm:text-sm font-extrabold text-[#34d399] block mt-1">مثالي ومعتدل ✅</strong>
+                <span class="text-[9px] text-[#cbd5e1] block mt-0.5">وفق الكود الهندسي</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Engineering Real-Life Takeaway -->
+          <div class="mt-5 p-3.5 rounded-xl bg-[#0d5b55]/25 border border-[#2dd4bf]/30 text-xs text-[#e2dad0] leading-relaxed">
+            <strong class="text-[#fef08a] block mb-1">💡 السر الهندسي المستفاد:</strong>
+            إذا ضاعفت قطر الأنبوب (D) مرتين، ينخفض فاقد الاحتكاك بمقدار <strong>~29 ضعفاً!</strong> لأن القطر مرفوع للقوة 4.87؛ ولهذا يفضل المهندسون تكبير القطر قليلاً لتوفير طاقة مضخات هائلة في ناطحات السحاب.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3 OTHER INTERACTIVE BREAKTHROUGHS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Breakthrough 2: Arrhenius Equation (Chemistry) -->
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <span class="bg-[#10b981]/20 text-[#6ee7b7] px-2.5 py-0.5 rounded-md text-[10px] font-bold border border-[#10b981]/30">كيمياء حركية</span>
+          <h4 class="text-lg font-bold text-white mt-2 mb-1">معادلة «أرينيوس» وسرعة التفاعلات</h4>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            كيف تُحدث زيادة 10 درجات مئوية فقط مضاعفة لسرعة التفاعل الكيميائي؟ محاكاة حية لطاقة التنشيط وتصادم الجزيئات.
+          </p>
+          <div class="bg-[#031411] p-3 rounded-xl border border-[#2dd4bf]/20 font-mono text-[11px] text-[#fef08a] mb-4">
+            k = A · e<sup>(-Ea / RT)</sup>
+          </div>
+        </div>
+        <button onclick="alert('ملخص معادلة أرينيوس التفاعلي جاهز ضمن مكتبة مِحور!')" class="glow-teal-btn text-white text-xs font-bold py-2 rounded-xl w-full cursor-pointer">
+          استكشف التجربة الكيميائية
+        </button>
+      </div>
+
+      <!-- Breakthrough 3: Quantum Tunneling (Physics) -->
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <span class="bg-[#38bdf8]/20 text-[#7dd3fc] px-2.5 py-0.5 rounded-md text-[10px] font-bold border border-[#38bdf8]/30">فيزياء الكم</span>
+          <h4 class="text-lg font-bold text-white mt-2 mb-1">ظاهرة «النفق الكمومي» ومعادلة شرودنجر</h4>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            كيف يخترق الإلكترون الجدار الصلب دون أن يملك طاقة كافية؟ التفسير الرياضي لميكروسكوب المسح النفقي (STM).
+          </p>
+          <div class="bg-[#031411] p-3 rounded-xl border border-[#2dd4bf]/20 font-mono text-[11px] text-[#fef08a] mb-4">
+            T ≈ e<sup>(-2 · α · L)</sup>
+          </div>
+        </div>
+        <button onclick="alert('شرح ظاهرة النفق الكمومي متاح بالرسوم المتحركة في المنصة!')" class="glow-teal-btn text-white text-xs font-bold py-2 rounded-xl w-full cursor-pointer">
+          استكشف فيزياء الكم
+        </button>
+      </div>
+
+      <!-- Breakthrough 4: Neural Networks Backprop (AI & Math) -->
+      <div class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <span class="bg-[#a855f7]/20 text-[#d8b4fe] px-2.5 py-0.5 rounded-md text-[10px] font-bold border border-[#a855f7]/30">رياضيات الذكاء الاصطناعي</span>
+          <h4 class="text-lg font-bold text-white mt-2 mb-1">الانتشار العكسي (Backpropagation)</h4>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            كيف تتعلم الشبكات العصبية باستخدام قاعدة السلسلة في التفاضل؟ تفكيك الرياضيات المعقدة خلف نماذج GPT.
+          </p>
+          <div class="bg-[#031411] p-3 rounded-xl border border-[#2dd4bf]/20 font-mono text-[11px] text-[#fef08a] mb-4">
+            ∂Loss/∂w = ∂Loss/∂y · ∂y/∂z · ∂z/∂w
+          </div>
+        </div>
+        <button onclick="alert('شرح الانتشار العكسي مدعوم بالأكواد التفاعلية في بايثون!')" class="glow-teal-btn text-white text-xs font-bold py-2 rounded-xl w-full cursor-pointer">
+          استكشف رياضيات AI
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- 2. AI & CODING MASTERCLASSES & COURSES     -->
+  <!-- ========================================== -->
+  <section id="courses" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f59e0b]/20 border border-[#f59e0b]/40 text-[#fef08a] text-xs font-bold mb-3">
+        🚀 برامج تدريبية ومعسكرات معتمدة لعام 2026
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black golden-title">كورسات الذكاء الاصطناعي والبرمجة</h2>
+      <p class="text-xs sm:text-sm text-[#cbd5e1] mt-3 max-w-xl mx-auto leading-relaxed">
+        معسكرات مكثفة تنقلك من الصفر إلى بناء وتطوير مشاريع حقيقية تواكب متطلبات المستقبل وسوق العمل العالمي.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Course 1 -->
+      <article class="glass-card p-6 flex flex-col justify-between border-t-4 border-t-[#38bdf8]">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="bg-[#38bdf8]/20 text-[#7dd3fc] text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#38bdf8]/30">
+              للمبتدئين وطلاب المدارس
+            </span>
+            <span class="text-xs font-bold text-[#fef08a]">8 أسابيع مكثفة</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-white mb-2 leading-snug">دبلومة البرمجة بلغة بايثون والذكاء الاصطناعي</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            تعلم التفكير المنطقي، الخوارزميات، تراكيب البيانات، وبناء روبوتات ومشاريع ذكية بنفسك باستخدام مكتبات Python الحديثة.
+          </p>
+
+          <ul class="text-xs text-[#a7f3d0] space-y-2 mb-6">
+            <li class="flex items-center gap-2">✓ بناء 6 مشاريع عملية متكاملة</li>
+            <li class="flex items-center gap-2">✓ تطبيقات الذكاء الاصطناعي وتحليل البيانات</li>
+            <li class="flex items-center gap-2">✓ شهادة إتمام معتمدة من منصة مِحور</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-[#2dd4bf]/20 pt-4 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-[#cbd5e1] block">رسوم البرنامج</span>
+            <strong class="text-sm font-black text-[#fef08a]">شامل التدريب والمشاريع</strong>
+          </div>
+          <button onclick="openBookingModal('دبلومة بايثون والذكاء الاصطناعي')" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full cursor-pointer">
+            احجز مقعدك الآن
+          </button>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="glass-card p-6 flex flex-col justify-between border-t-4 border-t-[#f59e0b]">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="bg-[#f59e0b]/20 text-[#fef08a] text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#f59e0b]/30">
+              الأكثر طلباً عالمياً
+            </span>
+            <span class="text-xs font-bold text-[#fef08a]">4 أسابيع عملية</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-white mb-2 leading-snug">معسكر هندسة الأوامر (Prompt Engineering) و AI Agents</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            احترف قيادة نماذج الذكاء الاصطناعي التوليدي (ChatGPT, Claude, Gemini)، وبناء وكلاء أذكياء لأتمتة المهام المعقدة.
+          </p>
+
+          <ul class="text-xs text-[#a7f3d0] space-y-2 mb-6">
+            <li class="flex items-center gap-2">✓ استراتيجيات الصياغة المتقدمة (Few-Shot & CoT)</li>
+            <li class="flex items-center gap-2">✓ بناء وتخصيص Custom GPTs وسيرفرات MCP</li>
+            <li class="flex items-center gap-2">✓ تطبيق على مشاريع واقعية في الدراسة والعمل</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-[#2dd4bf]/20 pt-4 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-[#cbd5e1] block">رسوم البرنامج</span>
+            <strong class="text-sm font-black text-[#fef08a]">ورش عمل تطبيقية مباشرة</strong>
+          </div>
+          <button onclick="openBookingModal('معسكر هندسة الأوامر و AI Agents')" class="glow-gold-btn text-xs font-black px-5 py-2.5 rounded-full cursor-pointer">
+            احجز مقعدك الآن
+          </button>
+        </div>
+      </article>
+
+      <!-- Course 3 -->
+      <article class="glass-card p-6 flex flex-col justify-between border-t-4 border-t-[#10b981]">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-bold px-2.5 py-1 rounded-md border border-[#10b981]/30">
+              مسار احترافي شامل
+            </span>
+            <span class="text-xs font-bold text-[#fef08a]">10 أسابيع</span>
+          </div>
+
+          <h3 class="text-lg font-bold text-white mb-2 leading-snug">معسكر تطوير تطبيقات الويب الحديثة (React & Node.js)</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">
+            تعلم كيف تبني منصات وتطبيقات مثل منصة مِحور تماماً: من واجهات React 19 وقواعد البيانات السحابية إلى النشر الحي.
+          </p>
+
+          <ul class="text-xs text-[#a7f3d0] space-y-2 mb-6">
+            <li class="flex items-center gap-2">✓ تصميم واجهات متجاوبة فائقة السرعة بـ Tailwind</li>
+            <li class="flex items-center gap-2">✓ ربط قواعد البيانات وواجهات البرمجة (APIs)</li>
+            <li class="flex items-center gap-2">✓ رفع مشاريع حقيقية على الدومين الخاص بك</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-[#2dd4bf]/20 pt-4 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-[#cbd5e1] block">رسوم البرنامج</span>
+            <strong class="text-sm font-black text-[#fef08a]">بناء منصة كاملة</strong>
+          </div>
+          <button onclick="openBookingModal('معسكر تطوير تطبيقات الويب Full-Stack')" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full cursor-pointer">
+            احجز مقعدك الآن
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Quick Booking / Inquiry Modal -->
+  <div id="courseModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#051c18] border border-[#2dd4bf]/40 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative">
+      <button onclick="closeCourseModal()" class="absolute top-4 left-4 text-[#a7f3d0] hover:text-white text-xl font-bold cursor-pointer">&times;</button>
+      
+      <span class="bg-[#0d5b55] text-[#a7f3d0] text-[10px] font-bold px-3 py-1 rounded-full uppercase block w-fit mb-2">طلب التحاق فوري</span>
+      <h3 id="modalCourseTitle" class="text-xl font-black text-white mb-1">اسم الكورس</h3>
+      <p class="text-xs text-[#cbd5e1] mb-5">سجل بياناتك للتواصل الفوري وإرسال تفاصيل المنهج التدريبي والمواعيد عبر واتساب.</p>
+
+      <form onsubmit="handleCourseSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-[#a7f3d0] mb-1">الاسم الكامل</label>
+          <input type="text" required placeholder="اكتب اسمك هنا" class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-4 py-2.5 text-xs text-white">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-[#a7f3d0] mb-1">رقم الهاتف / واتساب الدولي</label>
+          <input type="tel" required placeholder="+971 أو +20 أو +966..." class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-4 py-2.5 text-xs text-white text-left font-mono">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-[#a7f3d0] mb-1">المرحلة أو المستوى الحالي</label>
+          <select class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-4 py-2.5 text-xs text-white cursor-pointer">
+            <option>طالب مدرسي (إعدادي / ثانوي)</option>
+            <option>طالب جامعي</option>
+            <option>خريج / مهتم بتطوير المهارات</option>
+          </select>
+        </div>
+
+        <button type="submit" class="glow-gold-btn w-full py-3 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer mt-2">
+          تأكيد طلب الانضمام الآن 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 border-t border-[#2dd4bf]/20 text-xs text-[#788880] bg-[#020807]">
+    منصة مِحور التعليمية · ريادة في التفكير والتطبيقات العملية · 2026
+  </footer>
+
+  <script>
+    // Live Hazen-Williams Interactive Engine
+    function calculateHazenWilliams() {
+      const Q = parseFloat(document.getElementById("flowInput").value); // m3/s
+      const D_mm = parseFloat(document.getElementById("diamInput").value); // mm
+      const C = parseFloat(document.getElementById("cSelect").value);
+      const L = parseFloat(document.getElementById("lenInput").value); // m
+
+      const D = D_mm / 1000.0; // convert to meters
+      const area = Math.PI * Math.pow(D / 2.0, 2);
+      const velocity = Q / area; // m/s
+
+      // Hazen-Williams SI Formula for head loss:
+      // hf = 10.67 * L * Q^1.852 / (C^1.852 * D^4.87)
+      const hf = 10.67 * L * Math.pow(Q, 1.852) / (Math.pow(C, 1.852) * Math.pow(D, 4.87));
+      const slope = (hf / L) * 1000.0; // headloss per 1000m
+
+      // Update UI labels
+      document.getElementById("flowVal").innerText = `${Q.toFixed(2)} م³/ثانية (${Math.round(Q * 1000)} لتر/ث)`;
+      document.getElementById("diamVal").innerText = `${D_mm} ملم (${D.toFixed(2)} متر)`;
+      document.getElementById("lenVal").innerText = `${L.toLocaleString()} متر (${(L/1000).toFixed(1)} كم)`;
+      
+      const cMaterial = C === 150 ? "PVC فائق النعومة (C = 150)" : C === 140 ? "PVC وبولي إيثيلين (C = 140)" : C === 130 ? "حديد زهر مطلي (C = 130)" : "حديد قديم متأكسد (C = 100)";
+      document.getElementById("cVal").innerText = cMaterial;
+
+      // Update Outputs
+      document.getElementById("velocityBadge").innerText = `سرعة السريان (V): ${velocity.toFixed(2)} م/ث`;
+      document.getElementById("headlossOutput").innerText = `${hf.toFixed(2)} م`;
+      document.getElementById("slopeOutput").innerText = `${slope.toFixed(2)} م/كم`;
+
+      const statusEl = document.getElementById("statusOutput");
+      if (velocity > 3.0) {
+        statusEl.innerText = "سرعة مرتفعة جداً (تسبب ضوضاء وتآكل) ⚠️";
+        statusEl.className = "text-xs sm:text-sm font-extrabold text-[#ef4444] block mt-1";
+      } else if (velocity < 0.6) {
+        statusEl.innerText = "سرعة بطيئة (قد تسبب ترسبات) ⚠️";
+        statusEl.className = "text-xs sm:text-sm font-extrabold text-[#f59e0b] block mt-1";
+      } else {
+        statusEl.innerText = "مثالي ومعتدل هندسياً ✅";
+        statusEl.className = "text-xs sm:text-sm font-extrabold text-[#34d399] block mt-1";
+      }
+    }
+
+    // Modal Control
+    function openBookingModal(courseName) {
+      document.getElementById("modalCourseTitle").innerText = courseName;
+      document.getElementById("courseModal").classList.remove("hidden");
+    }
+
+    function closeCourseModal() {
+      document.getElementById("courseModal").classList.add("hidden");
+    }
+
+    function handleCourseSubmit(e) {
+      e.preventDefault();
+      alert("تم استلام طلب التحاقك بنجاح! سيتواصل معك مستشارك الأكاديمي عبر واتساب فوراً.");
+      closeCourseModal();
+    }
+
+    // Run initial calculation
+    calculateHazenWilliams();
+  </script>
+</body>
+</html>
