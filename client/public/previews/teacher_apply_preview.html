@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>انضم كمعلم | منصة مِحور التعليمية</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #041210;
+      color: #f3efe6;
+      min-height: 100vh;
+    }
+
+    .glass-panel {
+      background: rgba(6, 28, 24, 0.82);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(45, 212, 191, 0.28);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 6px 24px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+
+    .input-field {
+      background: #020e0c;
+      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #ffffff;
+      font-size: 13px;
+      width: 100%;
+      transition: all 0.2s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+    }
+
+    .input-field option {
+      background: #06201c;
+      color: #ffffff;
+    }
+
+    .check-tag {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.18s;
+    }
+
+    .check-tag input:checked + span {
+      background: rgba(20, 184, 166, 0.25);
+      border-color: #2dd4bf;
+      color: #5eead4;
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.3);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- شريط التنقل العلوي -->
+  <header class="sticky top-0 z-40 bg-[#051815]/95 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hero_preview.html" class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+            مـ
+          </div>
+          <div>
+            <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+            <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR / EDU</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <a href="hero_preview.html" class="text-[#a7f3d0] hover:text-white transition">العودة للرئيسية ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- الصفحة الرئيسية لطلب الانضمام -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 relative z-10">
+
+    <!-- رسالة الترحيب والتعريف -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] bg-[#062420] px-4 py-1.5 rounded-full border border-[#2dd4bf]/30 mb-3 shadow">
+        <svg class="w-4 h-4 text-[#fef08a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        <span>التدريس مع مِحور · نخبة المعلمين المعتمدين</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        ابدأ بطلب انضمام بسيط ومباشر
+      </h1>
+      <p class="text-sm sm:text-base text-[#c7bfb0] mt-2 max-w-2xl mx-auto leading-relaxed">
+        قدّم بياناتك التعليمية ومؤهلاتك مباشرة عبر مِحور. تتم مراجعة كافة الطلبات من قبل الإدارة لضمان الجودة، وتفعيل ملفك لتقديم الدروس الخصوصية المعتمدة.
+      </p>
+    </div>
+
+    <!-- بطاقة النموذج التفاعلي الكبرى -->
+    <div class="glass-panel rounded-3xl p-6 sm:p-10">
+      
+      <form id="teacherForm" class="space-y-8 text-right">
+        
+        <!-- القسم الأول: البيانات الشخصية والاتصال -->
+        <div>
+          <h2 class="text-base font-bold text-[#fef08a] pb-2 border-b border-[#2dd4bf]/25 flex items-center gap-2 mb-4">
+            <span>👤 البيانات الشخصية والاتصال</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">الاسم الثلاثي أو الرباعي *</label>
+              <input type="text" required placeholder="أ. محمد أحمد الشناوي" class="input-field" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">رقم الهاتف (مع واتساب) *</label>
+              <input type="tel" required placeholder="+971 50 123 4567 / +20 100 123 4567" class="input-field" dir="ltr" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">البريد الإلكتروني *</label>
+              <input type="email" required placeholder="teacher@example.com" class="input-field" dir="ltr" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">دولة الإقامة الحالية *</label>
+              <select required class="input-field">
+                <option value="AE">الإمارات العربية المتحدة</option>
+                <option value="EG" selected>جمهورية مصر العربية</option>
+                <option value="SA">المملكة العربية السعودية</option>
+                <option value="other">دولة أخرى</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">المدينة أو الإمارة *</label>
+              <input type="text" required placeholder="دبي / القاهرة / الرياض..." class="input-field" />
+            </div>
+          </div>
+        </div>
+
+        <!-- القسم الثاني: المواد والتخصصات التدريسية -->
+        <div>
+          <h2 class="text-base font-bold text-[#fef08a] pb-2 border-b border-[#2dd4bf]/25 flex items-center gap-2 mb-4">
+            <span>📚 المواد والتخصصات التي تدرّسها (اختر ما يناسبك) *</span>
+          </h2>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="اللغة العربية" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">اللغة العربية</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="اللغة الإنجليزية" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">اللغة الإنجليزية</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الرياضيات" checked />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الرياضيات</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الفيزياء" checked />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الفيزياء</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الكيمياء" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الكيمياء</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الأحياء" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الأحياء</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الجيولوجيا" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الجيولوجيا</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="العلوم" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">العلوم العامة</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="التاريخ" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">التاريخ</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الجغرافيا" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الجغرافيا</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الدراسات الاجتماعية" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الدراسات الاجتماعية</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الفلسفة والمنطق" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الفلسفة والمنطق</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="علم النفس والاجتماع" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">علم النفس والاجتماع</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="الحاسب والذكاء الاصطناعي" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">الحاسب والذكاء</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="المهارات" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">المهارات والقدرات</span>
+            </label>
+            <label class="check-tag">
+              <input type="checkbox" class="hidden" name="subject" value="اللغات الأجنبية" />
+              <span class="block text-center text-xs font-semibold p-2.5 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/70 text-[#d8d2c4]">اللغات الأجنبية</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- القسم الثالث: المناهج التعليمية والصفوف -->
+        <div>
+          <h2 class="text-base font-bold text-[#fef08a] pb-2 border-b border-[#2dd4bf]/25 flex items-center gap-2 mb-4">
+            <span>🎓 المناهج التعليمية والصفوف المستهدفة</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">المناهج المعتمدة التي تتقنها *</label>
+              <select required class="input-field">
+                <option value="all">كافة المناهج (الإماراتي، المصري، السعودي)</option>
+                <option value="uae">منهج دولة الإمارات (الوزاري)</option>
+                <option value="eg">المنهج المصري العام (ثانوية عامة وإعدادي)</option>
+                <option value="sa">المنهج السعودي</option>
+                <option value="igcse">المنهج البريطاني (IGCSE / A-Levels)</option>
+                <option value="american">المنهج الأمريكي (AP / SAT)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">المراحل والصفوف التدريسية *</label>
+              <input type="text" required placeholder="مثال: المرحلة الثانوية (صفوف 10، 11، 12)" class="input-field" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">سنوات الخبرة التعليمية *</label>
+              <input type="number" min="1" max="50" required placeholder="مثال: 8 سنوات" class="input-field" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">لغة التدريس المفضلة *</label>
+              <select required class="input-field">
+                <option value="ar">اللغة العربية فقط</option>
+                <option value="en">اللغة الإنجليزية فقط</option>
+                <option value="both" selected>العربية والإنجليزية (ثنائي اللغة)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- القسم الرابع: المؤهلات والنبذة التعريفية -->
+        <div>
+          <h2 class="text-base font-bold text-[#fef08a] pb-2 border-b border-[#2dd4bf]/25 flex items-center gap-2 mb-4">
+            <span>📝 المؤهل العلمي والنبذة المهنية</span>
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">المؤهل الأكاديمي والجامعة *</label>
+              <input type="text" required placeholder="بكالوريوس علوم ورياضيات - جامعة القاهرة / دبلوم تربوي..." class="input-field" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-[#a7f3d0] mb-1.5">نبذة مهنية موجزة للطلاب وأولياء الأمور *</label>
+              <textarea required rows="3" placeholder="اشرح طريقتك في التدريس، كيف تساعد الطلاب على الفهم واستيعاب الدروس، وأهم إنجازاتك في تفوق طلابك..." class="input-field resize-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- القسم الخامس: المرفقات والمستندات -->
+        <div>
+          <h2 class="text-base font-bold text-[#fef08a] pb-2 border-b border-[#2dd4bf]/25 flex items-center gap-2 mb-4">
+            <span>📎 المرفقات والمستندات (السيرة الذاتية والشهادات)</span>
+          </h2>
+          <div class="border-2 border-dashed border-[#2dd4bf]/30 hover:border-[#2dd4bf] rounded-2xl p-6 text-center bg-[#020e0c]/50 transition cursor-pointer" onclick="document.getElementById('docInput').click()">
+            <input type="file" id="docInput" multiple accept=".pdf,.jpg,.png" class="hidden" onchange="handleFiles(this.files)" />
+            <svg class="w-10 h-10 text-[#38bdf8] mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+            <div class="text-xs font-bold text-white">اضغط لاختيار الملفات أو اسحبها هنا</div>
+            <div class="text-[11px] text-[#a0b0a8] mt-1">ملفات PDF، أو صور JPG / PNG (الحد الأقصى 5 ملفات بحجم 5MB لكل ملف)</div>
+          </div>
+          <div id="fileList" class="mt-3 space-y-1.5 text-xs text-[#6ee7b7]"></div>
+        </div>
+
+        <!-- إقرار الموافقة -->
+        <div class="bg-[#051815]/90 border border-[#2dd4bf]/20 rounded-2xl p-4">
+          <label class="flex items-start gap-3 cursor-pointer">
+            <input type="checkbox" required class="mt-1 accent-[#14b8a6] w-4 h-4 rounded" />
+            <span class="text-xs text-[#c7bfb0] leading-relaxed">
+              أقر بصحة كافة البيانات والمؤهلات المذكورة أعلاه، وأوافق على تواصل إدارة منصة مِحور معي للتحقق ومراجعة الملف وإجراء المقابلة التعريفية قبل نشر الملف واعتماده.
+            </span>
+          </label>
+        </div>
+
+        <!-- زر الإرسال -->
+        <div class="text-center pt-2">
+          <button type="submit" class="glow-teal-btn text-white text-base font-bold px-10 py-3.5 rounded-full inline-flex items-center gap-2 cursor-pointer">
+            <span>إرسال طلب الانضمام والتدقيق</span>
+            <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- شاشة النجاح عند الإرسال -->
+      <div id="successPanel" class="hidden text-center py-12 space-y-4">
+        <div class="w-16 h-16 rounded-full bg-[#10b981]/20 border border-[#10b981] text-[#34d399] flex items-center justify-center mx-auto text-3xl font-black shadow-lg">
+          ✓
+        </div>
+        <h2 class="text-2xl font-extrabold text-white">تم استلام طلبك بنجاح في منصة مِحور!</h2>
+        <p class="text-sm text-[#c7bfb0] max-w-md mx-auto leading-relaxed">
+          شكراً لرغبتك في الانضمام إلى فريق مِحور التعليمي. يقوم فريق التدقيق بمراجعة مؤهلاتك والشهادات المرفقة، وسيتم التواصل معك عبر رقم الهاتف والبريد الإلكتروني خلال 24 إلى 48 ساعة لاستكمال التفعيل.
+        </p>
+        <div class="pt-4">
+          <a href="hero_preview.html" class="inline-block px-6 py-2.5 rounded-full bg-[#0d5b55] text-white text-xs font-bold hover:bg-[#14b8a6] transition">
+            العودة للواجهة الرئيسية
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script>
+    function handleFiles(files) {
+      const list = document.getElementById('fileList');
+      list.innerHTML = '';
+      for (const file of files) {
+        const item = document.createElement('div');
+        item.className = 'p-2 rounded-lg bg-[#020e0c] border border-[#2dd4bf]/20 flex items-center justify-between';
+        item.innerHTML = `<span>📄 ${file.name}</span> <span class="text-[#a0b0a8]">${(file.size / 1024).toFixed(0)} KB</span>`;
+        list.appendChild(item);
+      }
+    }
+
+    document.getElementById('teacherForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('teacherForm').classList.add('hidden');
+      document.getElementById('successPanel').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

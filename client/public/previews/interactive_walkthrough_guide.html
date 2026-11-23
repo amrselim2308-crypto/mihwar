@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>العرض التقديمي الشامل لمنصة مِحور | MIHWAR Walkthrough</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #020908;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .slide-card {
+      background: rgba(6, 26, 23, 0.88);
+      backdrop-filter: blur(18px);
+      border: 1.5px solid rgba(45, 212, 191, 0.35);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+    .step-pill {
+      background: rgba(8, 38, 34, 0.8);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      color: #a7f3d0;
+      transition: all 0.2s;
+    }
+    .step-pill.active {
+      background: linear-gradient(135deg, #0d5b55, #14b8a6);
+      border-color: #5eead4;
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(20, 184, 166, 0.5);
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210] p-6 sm:p-10">
+
+  <!-- Header -->
+  <header class="max-w-5xl mx-auto w-full flex items-center justify-between gap-4 mb-8">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+        <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <span class="text-2xl font-black text-white block leading-none">مِحور</span>
+        <span class="text-[9px] font-bold tracking-[0.24em] text-[#a7f3d0] uppercase">PLATFORM PRESENTATION</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a href="master_hub.html" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-2 cursor-pointer shadow">
+        <span>فتح مركز القيادة الشامل</span>
+        <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Interactive Presentation Carousel -->
+  <main class="max-w-5xl mx-auto w-full my-auto">
+    
+    <!-- Steps Navigation Indicator -->
+    <div class="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-6 text-xs">
+      <button onclick="goToSlide(0)" id="pill-0" class="step-pill active px-3.5 py-1.5 rounded-full cursor-pointer">1. الرؤية والهوية</button>
+      <button onclick="goToSlide(1)" id="pill-1" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">2. المواد الـ 16</button>
+      <button onclick="goToSlide(2)" id="pill-2" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">3. شات الذكاء الاصطناعي</button>
+      <button onclick="goToSlide(3)" id="pill-3" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">4. دليل المعلمين والحجز</button>
+      <button onclick="goToSlide(4)" id="pill-4" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">5. الغرفة الصفية (Live)</button>
+      <button onclick="goToSlide(5)" id="pill-5" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">6. ولي الأمر والمتابعة</button>
+      <button onclick="goToSlide(6)" id="pill-6" class="step-pill px-3.5 py-1.5 rounded-full cursor-pointer">7. غرفة تحكم الإدارة</button>
+    </div>
+
+    <!-- Active Slide Card -->
+    <section id="slideContent" class="slide-card p-8 sm:p-12 min-h-[440px] flex flex-col justify-between relative overflow-hidden">
+      <!-- Content Injected via JavaScript -->
+    </section>
+
+    <!-- Prev / Next Controls -->
+    <div class="flex items-center justify-between mt-6 px-2">
+      <button onclick="prevSlide()" class="bg-[#082622] hover:bg-[#0d3b35] text-[#2dd4bf] border border-[#2dd4bf]/40 px-5 py-2.5 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        <span>السابق</span>
+      </button>
+
+      <span id="slideCounter" class="text-xs font-bold text-[#fef08a]">
+        المحطة 1 من 7
+      </span>
+
+      <button onclick="nextSlide()" class="glow-teal-btn text-white text-xs font-bold px-6 py-2.5 rounded-full transition flex items-center gap-2 cursor-pointer">
+        <span>التالي</span>
+        <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </button>
+    </div>
+
+  </main>
+
+  <footer class="max-w-5xl mx-auto w-full text-center text-xs text-[#94a3b8] mt-8 pt-4 border-t border-[#2dd4bf]/15">
+    منصة مِحور (MIHWAR) © 2026 · كل المعارف.. بروح الفهم والوعي.
+  </footer>
+
+  <script>
+    const slides = [
+      {
+        badge: "الهوية البصرية والمعمارية",
+        title: "تصميم سينمائي يحاكي المكتبات العريقة (Vintage Study Library)",
+        desc: "تم تحويل المنصة بالكامل من المظهر التقليدي الباهت إلى طابع تاريخي مهيب يجمع بين الخشب الدافئ، النوافذ المقوسة الكلاسيكية، وتوهج الشمس الذهبي مع الأخضر الزمردي العميق (#0d5b55)، ليعيش الطالب تجربة بصرية تلهم الشغف بالمعرفة والتركيز.",
+        highlights: [
+          "خلفية معمارية نقية بدون أي نصوص مشوهة أو بطاقات مطبوعة مسبقاً",
+          "طبقات تدرج زجاجية شبه شفافة (Glassmorphism) لقراءة مريحة للنصوص",
+          "عناوين رئيسية بتدرج ذهبي وأبيض براق مع خطوط عربية حديثة"
+        ],
+        previewUrl: "hero_preview.html",
+        actionText: "معاينة الواجهة الرئيسية"
+      },
+      {
+        badge: "هندسة المحتوى الأكاديمي",
+        title: "شبكة المواد الـ 16 والأيقونات المجسمة ثلاثية الأبعاد (4×4 Grid)",
+        desc: "تنظيم متوازن لمواد المناهج الإماراتية والمصرية والسعودية في شبكة موحدة متساوية من 4 صفوف × 4 أعمدة بحجم مضغوط وأنيق، تعلوها أيقونات مجسمة مخصصة تعكس روح كل مادة.",
+        highlights: [
+          "تغطية كاملة للمواد: اللغة العربية، الإنجليزية، الرياضيات، الفيزياء، الكيمياء، الأحياء، الجيولوجيا، العلوم، التاريخ، الجغرافيا، الدراسات، الفلسفة، علم النفس، الحاسب والذكاء الاصطناعي، المهارات، واللغات الأجنبية",
+          "إطارات متوهجة ثلاثية الأبعاد مع تأثير رفع بصري عند التمرير (Hover Lift)",
+          "محاذاة هندسية دقيقة مع العمود الأيمن والأزرار والإحصائيات"
+        ],
+        previewUrl: "hero_preview.html",
+        actionText: "استعراض شبكة المواد"
+      },
+      {
+        badge: "الذكاء الاصطناعي البيداغوجي",
+        title: "مساعد الدراسة الذكي مع شريط رموز العلوم والرياضيات (STEM Hub)",
+        desc: "شات ذكاء اصطناعي متطور مبني خصيصاً لدعم الطلاب تربوياً وفق 4 أوضاع تعليمية مدروسة، مع شريط أدوات لكتابة المعادلات الكيميائية والرياضية بنقرة واحدة وقارئ صوتي ناطق باللغة العربية.",
+        highlights: [
+          "4 أوضاع متخصصة: شرح المفاهيم، حل المسائل خطوة بخطوة، بنك أسئلة وتدريب، وتلخيص الدروس",
+          "شريط أدوات رموز العلوم السريعة: π, √x, x², θ, Δ, ±, ×, ÷, ≤, ≥, ∞, →, ∫, ∑",
+          "قارئ صوتي ناطق باللغة العربية (TTS) وميزة نسخ وتصدير الشروحات فورياً",
+          "مساعد ذكي عائم (Floating AI Chat) متاح في زاوية الشاشة بكافة الصفحات"
+        ],
+        previewUrl: "hero_preview.html#study",
+        actionText: "تجربة شات الذكاء الاصطناعي"
+      },
+      {
+        badge: "سوق المعلمين المعتمدين",
+        title: "دليل وبحث المعلمين ونظام الحجز الذكي الفوري",
+        desc: "محرك بحث وتصفية متقدم يتيح للطالب وولي الأمر الوصول إلى المعلم المثالي وفق المنهج، المادة، وسعر الحصة، مع ملفات موثقة المؤهلات وحاسبة أسعار ديناميكية حسب مدة الدرس.",
+        highlights: [
+          "فلترة حية حسب الـ 16 مادة والمناهج (الإماراتي، المصري، السعودي، الدولي) ونطاق الأسعار",
+          "بطاقات تعريفية تبرز سنوات الخبرة، شارات التوثيق الأكاديمي، ومراجعات أولياء الأمور",
+          "حاسبة تفاعلية لسعر الحصة بناءً على المدة (30، 45، 60، 90 دقيقة) وحجز فوري"
+        ],
+        previewUrl: "teachers_directory_preview.html",
+        actionText: "تصفح دليل المعلمين"
+      },
+      {
+        badge: "التفاعل الصفي الحي",
+        title: "الغرفة الصفية الذكية المباشرة واللوح التفاعلي القابل للرسم",
+        desc: "بيئة تعليمية حية متكاملة تجمع بين لوح رقمي تفاعلي مدعوم بأدوات الرسم الرياضي، نوافذ الفيديو المباشرة للمعلم والطالب، محادثة نصية مشفرة، ومؤقت دقيق للجلسة.",
+        highlights: [
+          "لوح رقمي تفاعلي حقيقي (HTML5 Canvas) يدعم الرسم بالقلم والممحاة واختيار الألوان",
+          "مربعات فيديو للمعلم والطالب مع أزرار التحكم بالميكروفون، الكاميرا، ومشاركة الشاشة",
+          "عداد زمني للحصة وزر رسمي لإنهاء الدرس وتوليد تقرير المتابعة تلقائياً"
+        ],
+        previewUrl: "classroom_preview.html",
+        actionText: "دخول الغرفة الصفية التفاعلية"
+      },
+      {
+        badge: "متابعة العائلة والمدفوعات",
+        title: "لوحة تحكم ولي الأمر وتقارير الأداء وبوابة Paymob الآمنة",
+        desc: "مساحة مخصصة لأولياء الأمور لإدارة ملفات أبنائهم، متابعة جدول الحصص القادمة، مراجعة تقارير المعلمين والواجبات المحددة، وتسديد المستحقات بأمان إلكتروني تام.",
+        highlights: [
+          "إضافة وإدارة ملفات الأبناء وتحديد الصف والمنهج الدراسي لكل طالب",
+          "متابعة تقارير المعلمين بعد كل حصة تشمل حضور الطالب وتوصيات التفوق والواجب القادم",
+          "تكامل آمن مع بوابة Paymob للدفع الإلكتروني بعد تأكيد المعلم للموعد"
+        ],
+        previewUrl: "parent_dashboard_preview.html",
+        actionText: "معاينة لوحة ولي الأمر"
+      },
+      {
+        badge: "الرقابة والجودة العالية",
+        title: "غرفة تحكم الإدارة وتدقيق شهادات المعلمين وسجلات العمليات",
+        desc: "مركز العمليات المركزي لمشغلي المنصة لمراجعة ملفات المعلمين الجدد، تدقيق المستندات والشهادات الأكاديمية (PDF)، ومراقبة مؤشرات الدفع وسجلات Paymob المالية.",
+        highlights: [
+          "طابور تدقيق وفحص شهادات المعلمين مع أزرار الاعتماد الفوري أو طلب التعديل",
+          "سجل المعاملات المالية المكتملة والمراجعة ومطابقة التسويات المالية",
+          "إحصائيات المنصة الحية لعدد الحسابات والمعلمين المعتمدين والحصص المنجزة"
+        ],
+        previewUrl: "admin_dashboard_preview.html",
+        actionText: "معاينة غرفة تحكم الإدارة"
+      }
+    ];
+
+    let current = 0;
+
+    function renderSlide(index) {
+      const s = slides[index];
+      const container = document.getElementById("slideContent");
+
+      container.innerHTML = `
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] tracking-wider mb-2">
+            <span class="w-6 h-[2px] bg-[#34d399] inline-block"></span>
+            <span>${s.badge}</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-extrabold golden-title mb-4 leading-tight">
+            ${s.title}
+          </h2>
+
+          <p class="text-sm sm:text-base leading-relaxed text-[#cbd5e1] max-w-3xl mb-6">
+            ${s.desc}
+          </p>
+
+          <div class="bg-[#082622]/80 border border-[#2dd4bf]/25 rounded-2xl p-5 mb-6 space-y-2.5">
+            <h3 class="text-xs font-bold text-[#fef08a] mb-2">أبرز الركائز والمزايا:</h3>
+            ${s.highlights.map(h => `
+              <div class="flex items-center gap-2.5 text-xs text-white">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#2dd4bf] flex-none"></span>
+                <span>${h}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-[#2dd4bf]/20">
+          <a href="${s.previewUrl}" target="_blank" class="glow-teal-btn text-white text-xs font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 cursor-pointer shadow">
+            <span>${s.actionText}</span>
+            <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <span class="text-xs text-[#a7f3d0]">اضغط لفتح المعاينة التفاعلية في لسان مستقل</span>
+        </div>
+      `;
+
+      // Update pills
+      document.querySelectorAll(".step-pill").forEach((pill, i) => {
+        if (i === index) pill.classList.add("active");
+        else pill.classList.remove("active");
+      });
+
+      document.getElementById("slideCounter").innerText = `المحطة ${index + 1} من ${slides.length}`;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      renderSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      renderSlide(current);
+    }
+
+    function goToSlide(index) {
+      current = index;
+      renderSlide(current);
+    }
+
+    // Initial render
+    renderSlide(0);
+  </script>
+</body>
+</html>

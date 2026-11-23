@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ملف المعلم: د. أحمد الشناوي | منصة مِحور</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #041210;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
+    .booking-card {
+      background: rgba(7, 30, 26, 0.94);
+      backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(45, 212, 191, 0.4);
+      border-radius: 22px;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+    }
+    .input-dark {
+      background: rgba(8, 38, 34, 0.85);
+      border: 1.2px solid rgba(45, 212, 191, 0.32);
+      color: #ffffff;
+      border-radius: 10px;
+    }
+    .input-dark:focus {
+      border-color: #38bdf8;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="hero_preview.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="teachers_directory_preview.html" class="text-[#2dd4bf] font-bold">المعلمون</a>
+        <a href="hero_preview.html#study" class="hover:text-[#2dd4bf] transition-colors">مساعد الدراسة</a>
+        <a href="teacher_apply_preview.html" class="hover:text-[#2dd4bf] transition-colors">انضم كمعلم</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="teachers_directory_preview.html" class="text-xs font-bold text-[#a7f3d0] hover:text-white transition px-4 py-2">
+          &larr; العودة للدليل
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-xs font-semibold text-[#a7f3d0] mb-8">
+      <a href="hero_preview.html" class="hover:text-white">الرئيسية</a>
+      <span>/</span>
+      <a href="teachers_directory_preview.html" class="hover:text-white">المعلمون</a>
+      <span>/</span>
+      <span class="text-white">د. أحمد الشناوي</span>
+    </div>
+
+    <!-- Layout: Main Profile Info (Right) & Booking Card (Left) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- Profile Details Column (8 Cols in RTL) -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- Intro Card -->
+        <div class="glass-card p-7 sm:p-8">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-extrabold text-3xl sm:text-4xl shadow-xl border-2 border-[#2dd4bf]/40 flex-none">
+              أ ش
+            </div>
+            
+            <div class="space-y-2 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="inline-flex items-center gap-1.5 text-xs bg-[#10b981]/25 text-[#6ee7b7] px-3 py-1 rounded-full border border-[#10b981]/40 font-bold">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                  <span>معلّم معتمد وموثّق المؤهلات</span>
+                </span>
+                <span class="text-xs text-[#a7f3d0] bg-[#0d5b55]/50 px-2.5 py-1 rounded-full border border-[#2dd4bf]/25">
+                  رقم الاعتماد: MHW-2026-88
+                </span>
+              </div>
+
+              <h1 class="text-2xl sm:text-4xl font-extrabold text-white golden-title">
+                د. أحمد الشناوي
+              </h1>
+
+              <p class="text-sm text-[#cbd5e1] font-medium">
+                كبير معلمي الرياضيات للمرحلة الثانوية والمسارات المتقدمة (الإماراتي والمصري)
+              </p>
+
+              <div class="flex flex-wrap items-center gap-4 text-xs text-[#a7f3d0] pt-1">
+                <span class="flex items-center gap-1">
+                  <svg class="w-4 h-4 text-[#2dd4bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                  <span>دبي · الإمارات العربية المتحدة</span>
+                </span>
+                <span class="flex items-center gap-1 text-[#fef08a] font-bold">
+                  <svg class="w-4 h-4 fill-current text-[#f59e0b]" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <span>4.9 / 5.0 (38 تقييماً موثقاً من أولياء الأمور)</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Fact Grid -->
+          <div class="grid grid-cols-3 gap-3 bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-2xl p-4 mt-6 text-center">
+            <div>
+              <div class="text-xs text-[#a7f3d0] font-semibold">سنوات الخبرة</div>
+              <div class="text-lg font-bold text-white mt-0.5">12 سنة</div>
+            </div>
+            <div class="border-r border-[#2dd4bf]/20">
+              <div class="text-xs text-[#a7f3d0] font-semibold">المؤهل الأكاديمي</div>
+              <div class="text-lg font-bold text-white mt-0.5">دكتوراه رياضيات</div>
+            </div>
+            <div class="border-r border-[#2dd4bf]/20">
+              <div class="text-xs text-[#a7f3d0] font-semibold">لغات التدريس</div>
+              <div class="text-lg font-bold text-white mt-0.5">العربية والإنجليزية</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio & Teaching Methodology -->
+        <div class="glass-card p-7 sm:p-8 space-y-6">
+          <div>
+            <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#2dd4bf]"></span>
+              <span>نبذة عن المعلم وطريقة التدريس</span>
+            </h2>
+            <p class="text-sm leading-relaxed text-[#e2dad0] font-normal">
+              أعمل منذ أكثر من 12 عاماً على تبسيط أعمق مفاهيم الرياضيات للطلاب في المرحلة الثانوية ومسارات التميز الأكاديمي. أؤمن بأن الرياضيات ليست مجرد حفظ معادلات جامدة، بل هي أداة لبناء التفكير النقدي والتحليلي الذي يحتاجه الطالب في دراسته الجامعية وحياته العملية.
+            </p>
+            <p class="text-sm leading-relaxed text-[#e2dad0] font-normal mt-3">
+              منهجيتي ترتكز على ربط كل قانون بنموذج بصري تطبيقي، وحل نماذج الامتحانات الوزارية وأسئلة القدرات تدريجياً لتعزيز ثقة الطالب وإزالة أي رهبة من المسائل المركبة.
+            </p>
+          </div>
+
+          <!-- Specializations & Curricula -->
+          <div class="border-t border-[#2dd4bf]/20 pt-6">
+            <h3 class="text-base font-bold text-white mb-3">التخصصات والمناهج التي يدرّسها</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-[#0d5b55] text-white border border-[#2dd4bf]/40 px-3 py-1.5 rounded-xl text-xs font-bold">التفاضل والتكامل المتقدم</span>
+              <span class="bg-[#0d5b55] text-white border border-[#2dd4bf]/40 px-3 py-1.5 rounded-xl text-xs font-bold">الجبر والهندسة الفضائية</span>
+              <span class="bg-[#0d5b55] text-white border border-[#2dd4bf]/40 px-3 py-1.5 rounded-xl text-xs font-bold">الإحصاء والاحتمالات</span>
+              <span class="bg-[#f59e0b]/20 text-[#fef08a] border border-[#f59e0b]/40 px-3 py-1.5 rounded-xl text-xs font-bold">المنهج الإماراتي (متقدم وعام)</span>
+              <span class="bg-[#f59e0b]/20 text-[#fef08a] border border-[#f59e0b]/40 px-3 py-1.5 rounded-xl text-xs font-bold">الثانوية العامة المصرية</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Reviews Section -->
+        <div class="glass-card p-7 sm:p-8 space-y-5">
+          <h2 class="text-xl font-bold text-white flex items-center justify-between">
+            <span>آراء أولياء الأمور المرتبطة بحصص مكتملة</span>
+            <span class="text-xs font-bold text-[#fef08a] bg-[#f59e0b]/15 px-3 py-1 rounded-full border border-[#f59e0b]/30">38 تقييماً موثقاً</span>
+          </h2>
+
+          <div class="space-y-4">
+            <div class="bg-[#082622]/60 border border-[#2dd4bf]/20 rounded-xl p-4">
+              <div class="flex items-center justify-between mb-2">
+                <strong class="text-sm font-bold text-white">أم راشد · الصف 12 متقدم (دبي)</strong>
+                <span class="text-xs text-[#fef08a] font-bold">★ 5.0</span>
+              </div>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed">
+                "الدكتور أحمد متمكن جداً ولديه أسلوب راقٍ وهادئ. ابني كان يعاني من صعوبة في مسائل التفاضل المركبة، وبعد 4 حصص فقط تحسنت درجاته وثقته بنفسه بشكل ملحوظ."
+              </p>
+            </div>
+
+            <div class="bg-[#082622]/60 border border-[#2dd4bf]/20 rounded-xl p-4">
+              <div class="flex items-center justify-between mb-2">
+                <strong class="text-sm font-bold text-white">م. عمر كمال · ثانوية عامة (القاهرة)</strong>
+                <span class="text-xs text-[#fef08a] font-bold">★ 5.0</span>
+              </div>
+              <p class="text-xs text-[#cbd5e1] leading-relaxed">
+                "شرح ممتاز يركز على الفهم العميق والربط المنطقي بدون تعقيد. المتابعة بعد كل درس وتقرير الحصة كان يوضح لنا بالضبط ما تم إنجازه."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Booking Card Column (4 Cols in RTL) -->
+      <aside class="lg:col-span-4 booking-card p-6 sm:p-7 space-y-6 sticky top-28">
+        <div>
+          <span class="text-xs font-bold text-[#6ee7b7] tracking-wider block mb-1">طلب حجز درس خاص</span>
+          <div class="flex items-baseline gap-2">
+            <strong id="priceDisplay" class="text-4xl font-extrabold text-[#fef08a]">130</strong>
+            <span class="text-sm text-[#cbd5e1]">درهم إماراتي</span>
+          </div>
+          <p class="text-[11px] text-[#a7f3d0] mt-1">تحدد التكلفة بدقة حسب مدة الدرس المختارة أدناه.</p>
+        </div>
+
+        <form onsubmit="handleRequestSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-[#a7f3d0] mb-1.5">المادة والموضوع</label>
+            <select class="input-dark w-full px-3.5 py-2.5 text-xs text-white cursor-pointer">
+              <option>الرياضيات - التفاضل والتكامل</option>
+              <option>الرياضيات - الجبر والهندسة الفضائية</option>
+              <option>الرياضيات - مراجعة عامة وحل امتحانات</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[#a7f3d0] mb-1.5">مدة الحصة</label>
+            <div class="grid grid-cols-4 gap-1.5">
+              <button type="button" onclick="setDuration(30, 75)" id="dur-30" class="dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf]/30 bg-[#082622] text-[#cbd5e1] hover:text-white">30 د</button>
+              <button type="button" onclick="setDuration(45, 100)" id="dur-45" class="dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf]/30 bg-[#082622] text-[#cbd5e1] hover:text-white">45 د</button>
+              <button type="button" onclick="setDuration(60, 130)" id="dur-60" class="dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf] bg-[#0d5b55] text-white shadow">60 د</button>
+              <button type="button" onclick="setDuration(90, 190)" id="dur-90" class="dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf]/30 bg-[#082622] text-[#cbd5e1] hover:text-white">90 د</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[#a7f3d0] mb-1.5">تاريخ الحصة المقترح</label>
+            <input type="date" required class="input-dark w-full px-3.5 py-2.5 text-xs text-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[#a7f3d0] mb-1.5">الوقت المفضل</label>
+            <input type="time" required class="input-dark w-full px-3.5 py-2.5 text-xs text-white">
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[#a7f3d0] mb-1.5">ملاحظات واحتياجات الطالب</label>
+            <textarea rows="3" placeholder="مثال: نحتاج للتركيز على درس النهايات ونماذج الأسئلة الوزارية السابقة..." class="input-dark w-full px-3.5 py-2 text-xs text-white"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="glow-teal-btn w-full py-3.5 rounded-full text-white font-bold text-sm shadow-[0_0_24px_rgba(20,184,166,0.5)] cursor-pointer">
+              إرسال طلب الحصة الآن
+            </button>
+          </div>
+        </form>
+
+        <!-- Trust Badges -->
+        <div class="border-t border-[#2dd4bf]/20 pt-4 space-y-2 text-[11px] text-[#cbd5e1]">
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>لا يتم خصم أي مبالغ الآن؛ الدفع بعد تأكيد المعلم.</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>دفع إلكتروني آمن ومحمي بالكامل عبر Paymob.</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-[#34d399]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            <span>تقرير متابعة رسمي لولي الأمر بعد انتهاء الجلسة.</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <script>
+    let currentDuration = 60;
+    let currentPrice = 130;
+
+    function setDuration(dur, price) {
+      currentDuration = dur;
+      currentPrice = price;
+
+      document.getElementById("priceDisplay").innerText = price;
+
+      document.querySelectorAll(".dur-btn").forEach(btn => {
+        btn.className = "dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf]/30 bg-[#082622] text-[#cbd5e1] hover:text-white";
+      });
+
+      const activeBtn = document.getElementById(`dur-${dur}`);
+      if (activeBtn) {
+        activeBtn.className = "dur-btn py-2 text-xs font-bold rounded-lg border border-[#2dd4bf] bg-[#0d5b55] text-white shadow";
+      }
+    }
+
+    function handleRequestSubmit(e) {
+      e.preventDefault();
+      alert(`تم إرسال طلب الحصة بنجاح لدكتور أحمد الشناوي!\nالمدة: ${currentDuration} دقيقة\nالتكلفة المقدرة: ${currentPrice} درهم\nسيصلك إشعار فور تأكيد المعلم للموعد.`);
+    }
+  </script>
+</body>
+</html>

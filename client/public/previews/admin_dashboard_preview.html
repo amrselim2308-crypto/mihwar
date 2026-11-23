@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>غرفة تحكم الإدارة والعمليات | منصة مِحور</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #041210;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
+    .metric-card {
+      background: rgba(8, 38, 34, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: all 0.2s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(94, 234, 212, 0.6);
+      box-shadow: 0 10px 28px rgba(13, 148, 136, 0.35);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="hero_preview.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
+        <a href="library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
+        <a href="parent_dashboard_preview.html" class="hover:text-[#2dd4bf] transition-colors">بوابة ولي الأمر</a>
+        <a href="teacher_portal_preview.html" class="hover:text-[#2dd4bf] transition-colors">بوابة المعلم</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 bg-red-950/60 border border-red-500/30 px-3.5 py-1.5 rounded-full text-xs text-red-200">
+          <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+          <span>صلاحية الإدارة العليا (Admin)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    
+    <!-- Welcome Banner -->
+    <div class="glass-card p-7 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <span class="text-xs font-bold text-[#fef08a] tracking-wider block mb-1">غرفة العمليات المركزية ومراقبة الجودة</span>
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-white golden-title">
+          لوحة تحكم الإدارة والعمليات
+        </h1>
+        <p class="text-xs sm:text-sm text-[#cbd5e1] mt-1 max-w-2xl leading-relaxed">
+          راجع طلبات انضمام المعلمين الجديدة والمؤهلات المرفقة، راقب عمليات الدفع المالي وسجلات Paymob، وادر نشر مذكرات المكتبة الرقمية.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span class="bg-[#082622] text-[#a7f3d0] border border-[#2dd4bf]/40 px-4 py-2 rounded-full text-xs font-bold">
+          حالة السيرفر: متصل ونشط 🟢
+        </span>
+      </div>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">المستخدمون المسجلون</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]">1,480</strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">طلاب وأولياء أمور نشطون</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">المعلمون المعتمدون</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]" id="approvedCount">52</strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">ملفات تم توثيق شهاداتها</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">طلبات معلقة للمراجعة</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#38bdf8]" id="pendingCount">2</strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">بانتظار قرار الإدارة</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">حجم العمليات المالية</span>
+        <strong class="text-xl sm:text-2xl font-extrabold text-[#34d399]">44,200 <small class="text-xs text-[#cbd5e1]">AED</small></strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">إجمالي الحصص المسددة عبر Paymob</small>
+      </div>
+    </div>
+
+    <!-- Teacher Applications Review Queue -->
+    <section class="glass-card p-7 sm:p-8 space-y-6">
+      <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+        <div>
+          <span class="text-xs font-bold text-[#fef08a] block">التدقيق والتوثيق</span>
+          <h2 class="text-lg font-bold text-white">طابور مراجعة طلبات المعلمين الجدد</h2>
+        </div>
+        <span class="text-xs text-[#a7f3d0]">يتم التحقق من الشهادات والخبرات</span>
+      </div>
+
+      <div id="applicationsQueue" class="space-y-4">
+        
+        <!-- Application 1 -->
+        <article id="app-1" class="bg-[#082622]/85 border border-[#2dd4bf]/30 rounded-2xl p-5 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg border border-[#2dd4bf]/40">
+                س ع
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white">أ. سامح عبد الهادي</h3>
+                <p class="text-xs text-[#a7f3d0]">ماجستير فيزياء نووية · 11 سنة خبرة</p>
+                <span class="text-[10px] text-[#cbd5e1]">المناهج: الإماراتي والمصري · السعر المطلوب: 140 AED / ساعة</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="approveApp('app-1', 'سامح عبد الهادي')" class="glow-teal-btn text-white text-xs font-bold px-4 py-2 rounded-full cursor-pointer shadow">
+                اعتماد وتوثيق المؤهلات ✓
+              </button>
+              <button onclick="rejectApp('app-1', 'سامح عبد الهادي')" class="bg-[#041210] hover:bg-red-950/40 text-red-300 border border-red-500/30 text-xs font-semibold px-3 py-2 rounded-full cursor-pointer transition">
+                طلب تعديل
+              </button>
+            </div>
+          </div>
+
+          <!-- Submitted Documents Preview -->
+          <div class="bg-[#041210]/60 border border-[#2dd4bf]/20 rounded-xl p-3 flex flex-wrap items-center gap-3 text-xs">
+            <span class="text-[#fef08a] font-bold">المستندات المرفقة:</span>
+            <span class="inline-flex items-center gap-1.5 bg-[#0d5b55]/60 text-white px-2.5 py-1 rounded-md border border-[#2dd4bf]/30">
+              📄 شهادة الماجستير (جامعة القاهرة).pdf
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-[#0d5b55]/60 text-white px-2.5 py-1 rounded-md border border-[#2dd4bf]/30">
+              📄 ترخيص مزاولة التدريس (هيئة المعرفة).pdf
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-[#0d5b55]/60 text-white px-2.5 py-1 rounded-md border border-[#2dd4bf]/30">
+              📄 السيرة الذاتية المفصلة.pdf
+            </span>
+          </div>
+        </article>
+
+        <!-- Application 2 -->
+        <article id="app-2" class="bg-[#082622]/85 border border-[#2dd4bf]/30 rounded-2xl p-5 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg border border-[#2dd4bf]/40">
+                م خ
+              </div>
+              <div>
+                <h3 class="text-sm font-bold text-white">د. منى الخطيب</h3>
+                <p class="text-xs text-[#a7f3d0]">دكتوراه لغة عربية وبلاغة · 15 سنة خبرة</p>
+                <span class="text-[10px] text-[#cbd5e1]">المناهج: الإماراتي والسعودي · السعر المطلوب: 125 AED / ساعة</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button onclick="approveApp('app-2', 'منى الخطيب')" class="glow-teal-btn text-white text-xs font-bold px-4 py-2 rounded-full cursor-pointer shadow">
+                اعتماد وتوثيق المؤهلات ✓
+              </button>
+              <button onclick="rejectApp('app-2', 'منى الخطيب')" class="bg-[#041210] hover:bg-red-950/40 text-red-300 border border-red-500/30 text-xs font-semibold px-3 py-2 rounded-full cursor-pointer transition">
+                طلب تعديل
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-[#041210]/60 border border-[#2dd4bf]/20 rounded-xl p-3 flex flex-wrap items-center gap-3 text-xs">
+            <span class="text-[#fef08a] font-bold">المستندات المرفقة:</span>
+            <span class="inline-flex items-center gap-1.5 bg-[#0d5b55]/60 text-white px-2.5 py-1 rounded-md border border-[#2dd4bf]/30">
+              📄 شهادة الدكتوراه المعتمدة.pdf
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-[#0d5b55]/60 text-white px-2.5 py-1 rounded-md border border-[#2dd4bf]/30">
+              📄 شهادة خبرة 15 عاماً.pdf
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Financial Operations & Paymob Ledger -->
+    <section class="glass-card p-7 sm:p-8 space-y-5">
+      <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+        <div>
+          <span class="text-xs font-bold text-[#34d399] block">العمليات المالية</span>
+          <h2 class="text-lg font-bold text-white">سجل مدفوعات الحصص (Paymob Gateway)</h2>
+        </div>
+        <span class="text-xs font-bold bg-[#10b981]/20 text-[#6ee7b7] px-3 py-1 rounded-full border border-[#10b981]/30">
+          Sandbox & Live متصل
+        </span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-right text-xs">
+          <thead>
+            <tr class="border-b border-[#2dd4bf]/20 text-[#a7f3d0]">
+              <th class="py-3 px-3">رقم العملية</th>
+              <th class="py-3 px-3">الطالب وولي الأمر</th>
+              <th class="py-3 px-3">المعلم</th>
+              <th class="py-3 px-3">المادة الدراسية</th>
+              <th class="py-3 px-3">المبلغ</th>
+              <th class="py-3 px-3">الحالة</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#2dd4bf]/15 text-[#cbd5e1]">
+            <tr>
+              <td class="py-3.5 px-3 font-mono text-[#fef08a]">PAY-2026-904</td>
+              <td class="py-3.5 px-3 text-white font-bold">راشد محمد (ولي الأمر: أ. محمد)</td>
+              <td class="py-3.5 px-3">د. أحمد الشناوي</td>
+              <td class="py-3.5 px-3">الرياضيات</td>
+              <td class="py-3.5 px-3 font-bold text-white">130 AED</td>
+              <td class="py-3.5 px-3"><span class="bg-[#10b981]/25 text-[#6ee7b7] px-2.5 py-0.5 rounded-full border border-[#10b981]/30 font-bold">مسدد بنجاح</span></td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-3 font-mono text-[#fef08a]">PAY-2026-903</td>
+              <td class="py-3.5 px-3 text-white font-bold">سارة المهيري (ولي الأمر: أ. سلطان)</td>
+              <td class="py-3.5 px-3">د. أحمد الشناوي</td>
+              <td class="py-3.5 px-3">الرياضيات</td>
+              <td class="py-3.5 px-3 font-bold text-white">130 AED</td>
+              <td class="py-3.5 px-3"><span class="bg-[#10b981]/25 text-[#6ee7b7] px-2.5 py-0.5 rounded-full border border-[#10b981]/30 font-bold">مسدد بنجاح</span></td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-3 font-mono text-[#fef08a]">PAY-2026-902</td>
+              <td class="py-3.5 px-3 text-white font-bold">مريم محمد (ولي الأمر: أ. محمد)</td>
+              <td class="py-3.5 px-3">أ. ندى الكعبي</td>
+              <td class="py-3.5 px-3">العلوم العامة</td>
+              <td class="py-3.5 px-3 font-bold text-white">115 AED</td>
+              <td class="py-3.5 px-3"><span class="bg-[#f59e0b]/20 text-[#fef08a] px-2.5 py-0.5 rounded-full border border-[#f59e0b]/30 font-bold">قيد المراجعة</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let approved = 52;
+    let pending = 2;
+
+    function approveApp(id, teacherName) {
+      document.getElementById(id).remove();
+      approved++;
+      pending--;
+      document.getElementById("approvedCount").innerText = approved;
+      document.getElementById("pendingCount").innerText = pending;
+      alert(`تم اعتماد وتوثيق مؤهلات المعلم (${teacherName}) بنجاح! تم نشر الملف في دليل المعلمين المعتمدين.`);
+    }
+
+    function rejectApp(id, teacherName) {
+      document.getElementById(id).remove();
+      pending--;
+      document.getElementById("pendingCount").innerText = pending;
+      alert(`تم إرسال إشعار إلى (${teacherName}) بطلب استكمال بعض المستندات.`);
+    }
+  </script>
+</body>
+</html>
