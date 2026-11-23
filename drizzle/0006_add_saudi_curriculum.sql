@@ -1,0 +1,3 @@
+ALTER TABLE `library_resources` MODIFY COLUMN `countryCode` enum('EG','AE','SA') NOT NULL;--> statement-breakpoint
+ALTER TABLE `library_resources` MODIFY COLUMN `stageCode` enum('primary','preparatory','intermediate','secondary','cycle_1','cycle_2','cycle_3') NOT NULL;--> statement-breakpoint
+ALTER TABLE `teacher_public_applications` MODIFY COLUMN `countryCode` enum('EG','AE','SA','both','other') NOT NULL;

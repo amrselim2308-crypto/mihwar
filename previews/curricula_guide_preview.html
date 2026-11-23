@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل المناهج والمسارات التعليمية | منصة مِحور</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #041210;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+      box-shadow: 0 16px 45px rgba(20, 184, 166, 0.4);
+    }
+    .curriculum-tab {
+      background: rgba(8, 38, 34, 0.7);
+      border: 1.2px solid rgba(45, 212, 191, 0.25);
+      color: #cbd5e1;
+      transition: all 0.2s ease;
+    }
+    .curriculum-tab:hover {
+      border-color: #2dd4bf;
+      color: #ffffff;
+    }
+    .curriculum-tab.active {
+      background: linear-gradient(135deg, #0d5b55, #14b8a6);
+      border-color: #5eead4;
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
+      font-weight: 700;
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="hero_preview.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
+        <a href="#" class="text-[#2dd4bf] font-bold">المناهج والمسارات</a>
+        <a href="library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
+        <a href="hero_preview.html#study" class="hover:text-[#2dd4bf] transition-colors">مساعد الدراسة</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="teachers_directory_preview.html" class="glow-teal-btn text-white text-[13px] font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5">
+          <span>احجز معلماً متألقاً</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-b from-[#061e1b] via-[#051815] to-[#041210] border-b border-[#2dd4bf]/20 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] tracking-wider mb-2">
+          <span class="w-6 h-[2px] bg-[#34d399] inline-block"></span>
+          <span>دليل التخصص والمسارات الأكاديمية</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold golden-title leading-tight">
+          المناهج الدراسية والمسارات المعتمدة
+        </h1>
+        <p class="text-sm sm:text-base text-[#e2dad0] mt-2 max-w-2xl leading-relaxed">
+          استكشف تفاصيل المسارات التعليمية في الإمارات ومصر والسعودية والمناهج الدولية، وتعرف على خطط المواد والاختبارات القياسية المؤهلة للجامعات.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 bg-[#082622]/80 border border-[#2dd4bf]/30 rounded-2xl p-4 text-center">
+        <div>
+          <div class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]">4</div>
+          <div class="text-xs text-[#a7f3d0] font-semibold">أنظمة تعليمية متكاملة</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curricula Tabs Selector -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs sm:text-sm font-bold">
+      <button onclick="selectCurriculum('uae', this)" class="curriculum-tab active p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
+        <span class="text-xl">🇦🇪</span>
+        <span>المنهج الإماراتي (وزاري)</span>
+      </button>
+
+      <button onclick="selectCurriculum('egypt', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
+        <span class="text-xl">🇪🇬</span>
+        <span>المنهج المصري (ثانوية عامة)</span>
+      </button>
+
+      <button onclick="selectCurriculum('saudi', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
+        <span class="text-xl">🇸🇦</span>
+        <span>المنهج السعودي (نظام المسارات)</span>
+      </button>
+
+      <button onclick="selectCurriculum('international', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
+        <span class="text-xl">🌐</span>
+        <span>المناهج الدولية (IGCSE & IB)</span>
+      </button>
+    </div>
+
+    <!-- Active Curriculum Details Display -->
+    <div id="curriculumContent" class="space-y-6">
+      <!-- Injected via JavaScript -->
+    </div>
+
+  </main>
+
+  <script>
+    const data = {
+      uae: {
+        country: "دولة الإمارات العربية المتحدة",
+        badge: "وزارة التربية والتعليم الإماراتية (MoE)",
+        desc: "يعتمد التعليم الإماراتي نظام المسارات في المرحلة الثانوية لإعداد الطلبة للتعليم العالي وفق أحدث المعايير العالمية واختبارات الإمارات القياسية (EmSAT).",
+        tracks: [
+          {
+            name: "المسار المتقدم (Advanced Track)",
+            summary: "يركز على الرياضيات التخصصية المتقدمة والفيزياء والكيمياء والأحياء لإعداد الطلاب لكليات الهندسة، الطب، وتكنولوجيا المعلومات.",
+            subjects: ["الرياضيات المتقدمة (تفاضل وتكامل)", "الفيزياء المتقدمة", "الكيمياء", "الأحياء", "اللغة الإنجليزية الأكاديمية"],
+            target: "كليات الهندسة، الطب، الذكاء الاصطناعي، والعلوم التطبيقية"
+          },
+          {
+            name: "المسار العام (General Track)",
+            summary: "يوفر تعليماً متوازناً بين العلوم والرياضيات التطبيقية والعلوم الإنسانية واللغات، لفتح مسارات دراسية متنوعة.",
+            subjects: ["الرياضيات العامة", "العلوم المتكاملة", "اللغة العربية", "اللغة الإنجليزية", "الدراسات الاجتماعية والتربية الوطنية"],
+            target: "إدارة الأعمال، القانون، الإعلام، والعلوم الإنسانية"
+          },
+          {
+            name: "مسار النخبة (Elite Track)",
+            summary: "برنامج مكثف للطلبة المتميزين في مواد الـ STEM يعتمد حل المشكلات والأبحاث العلمية المتقدمة.",
+            subjects: ["Advanced Calculus", "Physics with Calculus", "Advanced Computing & AI", "Research Methodologies"],
+            target: "أرقى الجامعات العالمية وبرامج النخبة الوطنية"
+          },
+          {
+            name: "اختبارات الإمارات القياسية (EmSAT)",
+            summary: "اختبارات إلكترونية وطنية تقيس كفاءة الطالب في الرياضيات، اللغة الإنجليزية، الفيزياء، الكيمياء، والأحياء كشرط للقبول الجامعي.",
+            subjects: ["EmSAT Math", "EmSAT English", "EmSAT Physics", "EmSAT Chemistry"],
+            target: "شرط القبول في الجامعات الحكومية والخاصة والابتعاث"
+          }
+        ]
+      },
+      egypt: {
+        country: "جمهورية مصر العربية",
+        badge: "وزارة التربية والتعليم والتعليم الفني",
+        desc: "تشتهر الثانوية العامة المصرية بعمق المناهج العلمية والأدبية وقوة المسائل الرياضية التي تؤهل الطالب لكبرى الجامعات المصرية والعربية والدولية.",
+        tracks: [
+          {
+            name: "شعبة علمي علوم (Medical & Biological Sciences)",
+            summary: "التركيز على الأحياء، الكيمياء، الفيزياء، والجيولوجيا والعلوم البيئية للتأهيل للقطاع الصحي والطبي.",
+            subjects: ["الأحياء (الوراثة والمناعة)", "الكيمياء (العضوية وغير العضوية)", "الفيزياء الحديثة", "الجيولوجيا والعلوم البيئية"],
+            target: "كليات الطب البشري، طب الأسنان، الصيدلة، والعلاج الطبيعي"
+          },
+          {
+            name: "شعبة علمي رياضة (Engineering & Mathematics)",
+            summary: "التركيز المتعمق على فروع الرياضيات الأربعة مع الفيزياء لتأهيل مهندسي المستقبل وخبراء الحوسبة.",
+            subjects: ["التفاضل والتكامل", "الجبر والهندسة الفراغية", "الاستاتيكا والديناميكا", "الفيزياء الكهربية والذرية"],
+            target: "كليات الهندسة، الحاسبات والذكاء الاصطناعي، والفنون التطبيقية"
+          },
+          {
+            name: "الشعبة الأدبية (Humanities & Social Sciences)",
+            summary: "دراسة عميقة للتاريخ والحضارات، الفلسفة والمنطق، علم النفس والاجتماع، والجغرافيا السياسية.",
+            subjects: ["التاريخ الحديث والمعاصر", "الجغرافيا السياسية", "الفلسفة والمنطق الصوري", "علم النفس والاجتماع"],
+            target: "كليات الاقتصاد والعلوم السياسية، الألسن، الإعلام، والحقوق"
+          }
+        ]
+      },
+      saudi: {
+        country: "المملكة العربية السعودية",
+        badge: "وزارة التعليم السعودية - نظام المسارات ورؤية 2030",
+        desc: "نظام المسارات الثانوي يقدم تعليماً تخصصياً حديثاً يتواءم مع متطلبات سوق العمل المستقبلي واختبارات المركز الوطني للقياس (قدرات وتحصيلي).",
+        tracks: [
+          {
+            name: "مسار علوم الحاسب والهندسة",
+            summary: "يركز على البرمجة، إنترنت الأشياء، الذكاء الاصطناعي، والرياضيات التطبيقية المتقدمة.",
+            subjects: ["علم البيانات", "الذكاء الاصطناعي", "الرياضيات الهندسية", "الفيزياء والتحكم الرقمي"],
+            target: "كليات الهندسة وعلوم الحاسب والتقنيات الرقمية"
+          },
+          {
+            name: "مسار الصحة والحياة",
+            summary: "يركز على الأحياء الدقيقة، الكيمياء الحيوية، العلوم الطبية الإكلينيكية، والصحة العامة.",
+            subjects: ["علم البيئة والأحياء المتقدمة", "الكيمياء الحيوية", "مبادئ العلوم الصحية", "الإحصاء الحيوي"],
+            target: "كليات الطب، العلوم الطبية التطبيقية، والتمريض"
+          },
+          {
+            name: "مسار إدارة الأعمال",
+            summary: "إعداد رواد أعمال ومحللين ماليين عبر دراسة المحاسبة، الإدارة المالية، والتسويق الرقمي.",
+            subjects: ["مبادئ الإدارة والتسويق", "المحاسبة المالية", "الاقتصاد والاستثمار", "القانون التجاري"],
+            target: "كليات إدارة الأعمال، المالية، والاقتصاد"
+          },
+          {
+            name: "اختبارات قياس (القدرات والتحصيلي)",
+            summary: "برامج تدريب مكثفة لاجتياز اختبارات القدرات العامة (الكمي واللفظي) والاختبار التحصيلي للتفوق في القبول الجامعي.",
+            subjects: ["القدرات (القسم الكمي)", "القدرات (القسم اللفظي)", "التحصيلي العلمي", "التحصيلي الأدبي"],
+            target: "معيار القبول الأساسي في الجامعات السعودية والبعثات"
+          }
+        ]
+      },
+      international: {
+        country: "المناهج الدولية المعتمدة",
+        badge: "Cambridge, Edexcel, IB, & American Boards",
+        desc: "تغطي منصة مِحور أرقى المناهج الدولية المعتمدة في المدارس الخاصة والدولية بالخليج والشرق الأوسط مع معلمين معتمدين دولياً.",
+        tracks: [
+          {
+            name: "البريطاني: IGCSE & A-Levels",
+            summary: "برامج كامبردج وإدكسل المعترف بها عالمياً مع تدريب مركز على أسئلة الـ Past Papers والتطبيقات العملية.",
+            subjects: ["Mathematics (Extended & Further)", "Physics (CIE/Edexcel)", "Chemistry", "Biology", "English as a Second Language"],
+            target: "القبول المباشر في الجامعات البريطانية والعالمية"
+          },
+          {
+            name: "البكالوريا الدولية: International Baccalaureate (IB)",
+            summary: "برنامج دبلوم البكالوريا الدولية (IB DP) بمستوييه العالي (HL) والقياسي (SL) مع الإشراف على مقالات الـ IA والـ EE.",
+            subjects: ["Math AA / AI (HL & SL)", "Physics HL/SL", "Chemistry HL/SL", "Economics", "TOK Support"],
+            target: "أعرق جامعات النخبة عالمياً والجامعات الأمريكية والكندية"
+          },
+          {
+            name: "الأمريكي: American Diploma & AP & SAT",
+            summary: "مقررات الدبلومة الأمريكية وبرامج التسكين المتقدم (Advanced Placement - AP) واختبارات الـ SAT و ACT.",
+            subjects: ["AP Calculus AB/BC", "AP Physics 1/2/C", "AP Chemistry", "Digital SAT Math & Reading"],
+            target: "الجامعات الأمريكية وبرامج المنح الدراسية المرموقة"
+          }
+        ]
+      }
+    };
+
+    function renderCurriculum(key) {
+      const c = data[key];
+      const container = document.getElementById("curriculumContent");
+
+      container.innerHTML = `
+        <div class="glass-card p-7 sm:p-8 space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2dd4bf]/20 pb-4">
+            <div>
+              <span class="text-xs font-bold text-[#6ee7b7] block">${c.badge}</span>
+              <h2 class="text-2xl font-extrabold text-white golden-title">${c.country}</h2>
+            </div>
+            <a href="teachers_directory_preview.html" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5 self-start sm:self-auto cursor-pointer shadow">
+              <span>تصفح معلمي هذا المنهج</span>
+              <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+          </div>
+          <p class="text-sm text-[#cbd5e1] leading-relaxed max-w-4xl">${c.desc}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          ${c.tracks.map(t => `
+            <div class="glass-card p-6 flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#fef08a]"></span>
+                  <span>${t.name}</span>
+                </h3>
+                <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">${t.summary}</p>
+                
+                <div class="space-y-2 mb-4">
+                  <span class="text-[11px] font-bold text-[#a7f3d0] block">المواد الأساسية المدعومة:</span>
+                  <div class="flex flex-wrap gap-1.5">
+                    ${t.subjects.map(s => `<span class="bg-[#082622] text-[#f3efe6] border border-[#2dd4bf]/25 px-2.5 py-1 rounded-md text-[10.5px] font-semibold">${s}</span>`).join("")}
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-[#2dd4bf]/20 pt-3 flex items-center justify-between text-xs">
+                <span class="text-[#fef08a] font-medium">الوجهة: ${t.target}</span>
+                <a href="teachers_directory_preview.html" class="text-[#2dd4bf] hover:text-white font-bold flex items-center gap-1 cursor-pointer">
+                  <span>احجز حصة</span>
+                  <span>&larr;</span>
+                </a>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function selectCurriculum(key, btn) {
+      document.querySelectorAll(".curriculum-tab").forEach(tab => tab.classList.remove("active"));
+      btn.classList.add("active");
+      renderCurriculum(key);
+    }
+
+    // Initial render
+    renderCurriculum("uae");
+  </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة المعلم | منصة مِحور</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #041210;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.88);
+      backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+    }
+    .metric-card {
+      background: rgba(8, 38, 34, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      transition: all 0.2s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(94, 234, 212, 0.6);
+      box-shadow: 0 10px 28px rgba(13, 148, 136, 0.35);
+    }
+    .input-dark {
+      background: rgba(8, 38, 34, 0.85);
+      border: 1.2px solid rgba(45, 212, 191, 0.32);
+      color: #ffffff;
+      border-radius: 10px;
+    }
+    .input-dark:focus {
+      border-color: #38bdf8;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="hero_preview.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
+        <a href="library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
+        <a href="parent_dashboard_preview.html" class="hover:text-[#2dd4bf] transition-colors">بوابة ولي الأمر</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2 bg-[#0d5b55]/60 border border-[#2dd4bf]/30 px-3.5 py-1.5 rounded-full text-xs text-[#a7f3d0]">
+          <span class="w-2 h-2 rounded-full bg-[#34d399] animate-pulse"></span>
+          <span>المعلم: د. أحمد الشناوي (معتمد)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
+    
+    <!-- Welcome Banner -->
+    <div class="glass-card p-7 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-xs font-bold text-[#6ee7b7] tracking-wider">مساحة عمل المعلم المعتمد</span>
+          <span class="text-[10px] bg-[#10b981]/20 text-[#6ee7b7] px-2.5 py-0.5 rounded-full border border-[#10b981]/30 font-bold">ملف موثّق</span>
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-white golden-title">
+          أهلاً بك، د. أحمد الشناوي
+        </h1>
+        <p class="text-xs sm:text-sm text-[#cbd5e1] mt-1 max-w-xl">
+          أدر جدول حصصك، راجع طلبات الحجز الجديدة، وسجل تقارير المتابعة بعد انتهاء كل درس لمشاركتها مع أولياء الأمور.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="teacher_profile_preview.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#a7f3d0] border border-[#2dd4bf]/40 px-5 py-2.5 rounded-full text-xs font-bold transition">
+          معاينة ملفك للجمهور
+        </a>
+      </div>
+    </div>
+
+    <!-- Metric Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">الحصص القادمة</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]" id="upcomingCount">4</strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">مجدولة خلال هذا الأسبوع</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">ساعات التدريس</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]">68</strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">ساعة موثقة على مِحور</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">التقييم العام</span>
+        <strong class="text-2xl sm:text-3xl font-extrabold text-[#fef08a] flex items-center gap-1">
+          <span>4.9</span>
+          <span class="text-xs text-[#f59e0b]">★</span>
+        </strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">من 38 مراجعة موثقة</small>
+      </div>
+
+      <div class="metric-card p-5">
+        <span class="text-xs text-[#a7f3d0] font-semibold block mb-1">إجمالي الأرباح</span>
+        <strong class="text-xl sm:text-2xl font-extrabold text-[#34d399]">8,840 <small class="text-xs text-[#cbd5e1]">AED</small></strong>
+        <small class="text-[10px] text-[#cbd5e1] block mt-1">صافي الأرباح المحولة لحسابك</small>
+      </div>
+    </div>
+
+    <!-- Main Workspace Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Right Column: Requests & Schedule (8 cols) -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- Incoming Lesson Requests -->
+        <div class="glass-card p-6 sm:p-7 space-y-5">
+          <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+            <div>
+              <span class="text-xs font-bold text-[#fef08a] block">طلبات جديدة واردة</span>
+              <h2 class="text-lg font-bold text-white">طلبات الحصص بانتظار موافقتك</h2>
+            </div>
+            <span id="requestsBadge" class="text-xs font-bold bg-[#f59e0b]/20 text-[#fef08a] px-3 py-1 rounded-full border border-[#f59e0b]/30">طلب جديد (1)</span>
+          </div>
+
+          <div id="requestsList" class="space-y-3">
+            <div id="req-1" class="bg-[#082622]/85 border border-[#2dd4bf]/30 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <strong class="text-sm font-bold text-white">الطالب: راشد محمد</strong>
+                  <span class="text-[10px] bg-[#0d5b55] text-[#a7f3d0] px-2 py-0.5 rounded border border-[#2dd4bf]/25">الصف 12 متقدم</span>
+                </div>
+                <p class="text-xs text-[#cbd5e1]">المادة: الرياضيات (التفاضل وتطبيقات القيم القصوى)</p>
+                <p class="text-[11px] text-[#a7f3d0] mt-1">الموعد المقترح: الأربعاء القادم · 6:00 مساءً (60 دقيقة)</p>
+                <p class="text-[11px] text-[#fef08a] mt-0.5">ملاحظة ولي الأمر: "نحتاج للتركيز على حل أسئلة الوزارة للوحدة الأولى"</p>
+              </div>
+
+              <div class="flex items-center gap-2 flex-none">
+                <button onclick="acceptRequest('req-1', 'راشد محمد', 'الأربعاء القادم 6:00 م')" class="glow-teal-btn text-white text-xs font-bold px-4 py-2 rounded-full cursor-pointer shadow">
+                  قبول وتأكيد الحصة
+                </button>
+                <button onclick="declineRequest('req-1')" class="bg-[#041210] hover:bg-red-950/40 text-red-300 border border-red-500/30 text-xs font-semibold px-3 py-2 rounded-full cursor-pointer transition">
+                  اعتذار
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Sessions Calendar -->
+        <div class="glass-card p-6 sm:p-7 space-y-5">
+          <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+            <div>
+              <span class="text-xs font-bold text-[#6ee7b7] block">الحصص المؤكدة</span>
+              <h2 class="text-lg font-bold text-white">جدول تدريسك لهذا الأسبوع</h2>
+            </div>
+          </div>
+
+          <div id="confirmedSchedule" class="space-y-3">
+            <div class="bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+                  اليوم
+                </div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">سارة المهيري · الصف 11 متقدم (الجبر)</h3>
+                  <span class="text-[10px] text-[#a7f3d0]">اليوم · 5:00 م - 6:00 م (60 دقيقة)</span>
+                </div>
+              </div>
+
+              <button onclick="alert('جارٍ تجهيز الغرفة الصفية التفاعلية...')" class="glow-teal-btn text-white text-xs font-bold px-4 py-1.5 rounded-full inline-flex items-center gap-1.5 cursor-pointer">
+                <span>دخول الفصل الافتراضي</span>
+              </button>
+            </div>
+
+            <div class="bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+                  غداً
+                </div>
+                <div>
+                  <h3 class="text-xs font-bold text-white">علي سلطان · الصف 12 عام (التفاضل)</h3>
+                  <span class="text-[10px] text-[#a7f3d0]">غداً الثلاثاء · 7:00 م - 8:00 م (60 دقيقة)</span>
+                </div>
+              </div>
+
+              <span class="text-xs font-bold bg-[#10b981]/20 text-[#6ee7b7] px-3 py-1 rounded-full border border-[#10b981]/30">
+                مؤكد
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left Column: Submit Lesson Report (4 cols) -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- Submit Report Form -->
+        <div class="glass-card p-6 space-y-4">
+          <div>
+            <span class="text-xs font-bold text-[#6ee7b7] block mb-0.5">توثيق الحصة</span>
+            <h2 class="text-base font-bold text-white">كتابة تقرير الدرس المكتمل</h2>
+          </div>
+
+          <form onsubmit="handleReportSubmit(event)" class="space-y-3">
+            <div>
+              <label class="block text-xs font-bold text-[#a7f3d0] mb-1">اختر الطالب</label>
+              <select class="input-dark w-full px-3 py-2 text-xs text-white cursor-pointer">
+                <option>سارة المهيري · الصف 11</option>
+                <option>علي سلطان · الصف 12</option>
+                <option>راشد محمد · الصف 12</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#a7f3d0] mb-1">حالة الحضور</label>
+              <select class="input-dark w-full px-3 py-2 text-xs text-white cursor-pointer">
+                <option>حضر في الموعد المحدد</option>
+                <option>تأخر 10 دقائق</option>
+                <option>غائب بعذر</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#a7f3d0] mb-1">ملخص ما تم إنجازه في الدرس</label>
+              <textarea id="reportSummary" rows="3" required placeholder="اكتب ملخص المفاهيم التي تم شرحها ومستوى تفاعل الطالب..." class="input-dark w-full px-3 py-2 text-xs text-white"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-[#a7f3d0] mb-1">التدريب أو الواجب القادم</label>
+              <input type="text" id="reportHomework" placeholder="مثال: حل مسائل صفحة 35..." class="input-dark w-full px-3 py-2 text-xs text-white">
+            </div>
+
+            <button type="submit" class="glow-teal-btn w-full py-2.5 rounded-full text-white font-bold text-xs cursor-pointer shadow">
+              إرسال التقرير لولي الأمر
+            </button>
+          </form>
+        </div>
+
+        <!-- Hourly Rate & Subject Settings -->
+        <div class="glass-card p-6 space-y-3">
+          <h2 class="text-base font-bold text-white">سعر الساعة المعتمد</h2>
+          <div class="bg-[#082622]/80 border border-[#2dd4bf]/25 rounded-xl p-3 flex items-center justify-between">
+            <span class="text-xs text-[#cbd5e1]">السعر لكل 60 دقيقة:</span>
+            <strong class="text-base font-extrabold text-[#fef08a]">130 AED</strong>
+          </div>
+          <p class="text-[11px] text-[#a7f3d0] leading-relaxed">
+            يتم تحويل مستحقاتك عبر التحويل البنكي المباشر أسبوعياً بناءً على تقارير الحصص المكتملة.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <script>
+    let upcomingSessions = 4;
+
+    function acceptRequest(cardId, studentName, timeSlot) {
+      document.getElementById(cardId).remove();
+      document.getElementById("requestsBadge").innerText = "لا توجد طلبات معلقة (0)";
+
+      const list = document.getElementById("confirmedSchedule");
+      const div = document.createElement("div");
+      div.className = "bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in";
+      div.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+            جديد
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-white">${studentName} · الرياضيات (التفاضل)</h3>
+            <span class="text-[10px] text-[#a7f3d0]">${timeSlot}</span>
+          </div>
+        </div>
+        <span class="text-xs font-bold bg-[#10b981]/20 text-[#6ee7b7] px-3 py-1 rounded-full border border-[#10b981]/30">
+          تم التأكيد
+        </span>
+      `;
+      list.appendChild(div);
+
+      upcomingSessions++;
+      document.getElementById("upcomingCount").innerText = upcomingSessions;
+
+      alert(`تم قبول وتأكيد الحصة مع الطالب (${studentName})! سيصل إشعار فوري لولي الأمر للدفع عبر Paymob.`);
+    }
+
+    function declineRequest(cardId) {
+      document.getElementById(cardId).remove();
+      document.getElementById("requestsBadge").innerText = "لا توجد طلبات معلقة (0)";
+      alert("تم الاعتذار عن الطلب وإشعار ولي الأمر.");
+    }
+
+    function handleReportSubmit(e) {
+      e.preventDefault();
+      const summary = document.getElementById("reportSummary").value;
+      if (!summary) return;
+
+      alert("تم حفظ وإرسال تقرير الدرس بنجاح لولي الأمر! شكراً لحرصك ومتابعتك.");
+      document.getElementById("reportSummary").value = "";
+      document.getElementById("reportHomework").value = "";
+    }
+  </script>
+</body>
+</html>

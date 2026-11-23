@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "Mihwar | مِحور",
+  "short_name": "مِحور",
+  "description": "تعلم خصوصي مدروس لطلاب المناهج الإماراتية",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f7f5ef",
+  "theme_color": "#0d5b55",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": [{
+    "src": "/mihwar-icon.svg",
+    "sizes": "any",
+    "type": "image/svg+xml",
+    "purpose": "any maskable"
+  }]
+}
