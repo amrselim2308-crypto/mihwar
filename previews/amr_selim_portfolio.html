@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>م. عمرو سليم | بورتفوليو مهندس البنية التحتية واللاندسكيب | Eng. Amr Selim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #020908;
+      color: #f3efe6;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .code-font {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .golden-title {
+      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.5));
+    }
+    .glass-card {
+      background: rgba(6, 26, 23, 0.88);
+      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      backdrop-filter: blur(16px);
+      border-radius: 20px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: #2dd4bf;
+      background: rgba(9, 38, 34, 0.94);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(20, 184, 166, 0.35);
+    }
+    .filter-btn.active {
+      background: #0d5b55;
+      color: #fef08a;
+      border-color: #2dd4bf;
+      box-shadow: 0 4px 14px rgba(45, 212, 191, 0.3);
+    }
+    .glow-teal-btn {
+      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      border: 1.5px solid rgba(94, 234, 212, 0.5);
+      box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
+      transition: all 0.2s;
+    }
+    .glow-teal-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
+      filter: brightness(1.1);
+    }
+    .glow-gold-btn {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      border: 1.5px solid rgba(254, 240, 138, 0.6);
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.45);
+      color: #041210;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .glow-gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(245, 158, 11, 0.65);
+      filter: brightness(1.1);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+
+  <!-- Top Header -->
+  <header class="sticky top-0 z-50 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="https://mihwar-edu.com/" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">ENGINEERING PORTFOLIO</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
+        <a href="#about" class="hover:text-[#2dd4bf] transition-colors">نبذة مهنية</a>
+        <a href="#projects" class="hover:text-[#fef08a] transition-colors">المشاريع الـ 18</a>
+        <a href="#disciplines" class="hover:text-[#2dd4bf] transition-colors">التخصصات الـ 6</a>
+        <a href="ai_engineering_masterclass.html" class="text-[#fef08a] font-bold hover:underline">كورس الـ AI للمهندسين ➜</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          <span>تواصل مع المهندس</span>
+          <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Profile Banner -->
+  <section id="about" class="py-16 px-6 border-b border-[#2dd4bf]/20 bg-gradient-to-b from-[#061d19] via-[#041412] to-[#020908] relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Portrait Column -->
+      <div class="lg:col-span-4 text-center flex flex-col items-center">
+        <div class="w-52 h-52 sm:w-60 sm:h-60 rounded-3xl bg-gradient-to-tr from-[#0d5b55] via-[#14b8a6] to-[#f59e0b] p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative group overflow-hidden">
+          <img src="/images/eng_amr_selim.jpg" alt="م. عمرو سليم" class="w-full h-full object-cover rounded-[22px] group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute bottom-2 inset-x-2 bg-[#031411]/90 backdrop-blur-md py-1 px-2 rounded-xl border border-[#2dd4bf]/30 text-center">
+            <span class="text-[11px] font-bold text-[#fef08a]">Eng. Amr Selim</span>
+          </div>
+        </div>
+        
+        <div class="mt-4 flex items-center justify-center gap-2 text-xs font-semibold text-[#a7f3d0]">
+          <span>📍 الإمارات (أبوظبي / دبي)</span>
+          <span>·</span>
+          <span>📍 مصر (العلمين / القاهرة)</span>
+        </div>
+      </div>
+
+      <!-- Bio Column -->
+      <div class="lg:col-span-8 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#f59e0b]/20 border border-[#f59e0b]/40 text-[#fef08a] text-xs font-bold">
+          <span>PROJECT PORTFOLIO · 11+ YEARS OF ENGINEERING EXCELLENCE</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-black golden-title leading-tight">
+          م. عمرو سليم | Eng. Amr Selim
+        </h1>
+        <h2 class="text-base sm:text-xl font-bold text-[#38bdf8]">
+          Senior Landscape & Infrastructure Engineer | Technical Office & Utility Coordination
+        </h2>
+
+        <p class="text-xs sm:text-base text-[#cbd5e1] leading-relaxed max-w-3xl">
+          مهندس استشاري وخبير تنفيذ ومكتب فني يمتلك أكثر من <strong>11 عاماً من الخبرة</strong> في كبرى مشروعات اللاندسكيب وشبكات البنية التحتية والمرافق الخماسية بدولة الإمارات العربية المتحدة وجمهورية مصر العربية. 
+          قاد التنسيق الهندسي المتكامل وفحص التعارضات (Clash Coordination) وإدارة الأصول الحية لـ <strong>18 مشروعاً وبرنامجاً هندسياً رائداً</strong>.
+        </p>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-center text-xs">
+          <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/25">
+            <strong class="text-2xl font-black text-[#fef08a] font-mono block">11+</strong>
+            <span class="text-[#a7f3d0]">سنوات خبرة مهنية</span>
+          </div>
+          <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/25">
+            <strong class="text-2xl font-black text-[#2dd4bf] font-mono block">18</strong>
+            <span class="text-[#a7f3d0]">مشروعاً وبرنامجاً رائداً</span>
+          </div>
+          <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/25">
+            <strong class="text-2xl font-black text-[#34d399] font-mono block">2</strong>
+            <span class="text-[#a7f3d0]">دولتان (الإمارات ومصر)</span>
+          </div>
+          <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/25">
+            <strong class="text-2xl font-black text-[#d8b4fe] font-mono block">155</strong>
+            <span class="text-[#a7f3d0]">تعارضاً حُل بالـ AI</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="ai_engineering_masterclass.html" class="glow-gold-btn text-xs sm:text-sm font-black px-7 py-3 rounded-full inline-flex items-center gap-2">
+            <span>استكشف كورس AI للمهندسين</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+          <a href="#projects" class="glow-teal-btn text-white text-xs sm:text-sm font-bold px-6 py-3 rounded-full inline-flex items-center gap-2">
+            <span>استعراض سجل المشاريع (18 مشروع)</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- CORE DISCIPLINES SECTION (THE 6 PILLARS)   -->
+  <!-- ========================================== -->
+  <section id="disciplines" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#2dd4bf]/20">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold text-[#2dd4bf] uppercase tracking-widest block mb-2">CORE EXPERTISE</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white">ستة تخصصات هندسية بمنهجية متكاملة</h2>
+      <p class="text-xs sm:text-sm text-[#cbd5e1] mt-2 max-w-2xl mx-auto">
+        Six disciplines, one coordinated approach — من الدراسات الأولية والمخططات التنفيذية وحتى التشغيل وإدارة الأصول.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#2dd4bf]">
+        <div class="text-xs font-bold text-[#2dd4bf] mb-2 font-mono">01 · LANDSCAPE</div>
+        <h3 class="text-lg font-bold text-white mb-2">تطوير اللاندسكيب (Landscape Development)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          تصميم وتنفيذ المسطحات الخضراء (Softscape) والأعمال المدنية (Hardscape)، وتنسيق حدائق المنتجعات والمشاريع الحضرية وإدارتها بعد التسليم.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#38bdf8]">
+        <div class="text-xs font-bold text-[#38bdf8] mb-2 font-mono">02 · UTILITIES</div>
+        <h3 class="text-lg font-bold text-white mb-2">البنية التحتية والمرافق (Infrastructure & Utilities)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          التنسيق الخماسي المتكامل لشبكات: الصرف الصحي، صرف الأمطار، المياه العذبة، شبكة الري، وواجهات مكافحة الحريق مع فحص الخلوصات الكودية.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#34d399]">
+        <div class="text-xs font-bold text-[#34d399] mb-2 font-mono">03 · HYDRAULICS</div>
+        <h3 class="text-lg font-bold text-white mb-2">أنظمة وشبكات الري (Irrigation Systems)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          الحسابات الهيدروليكية وفواقد الاحتكاك (معادلة هازن-ويليامز)، تصميم محطات الضخ والخطوط الرئيسية، جداول المناوبات، وتأهيل الشبكات القديمة.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#f59e0b]">
+        <div class="text-xs font-bold text-[#fef08a] mb-2 font-mono">04 · ASSET MANAGEMENT</div>
+        <h3 class="text-lg font-bold text-white mb-2">إدارة الأصول والتشغيل (Asset Management)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          تقييم حالة الأصول الحية، برامج الصيانة الوقائية والطارئة، ضبط الجودة والتفتيش الموقعي، وتوثيق السجلات الفنية لأكبر المطورين.
+        </p>
+      </div>
+
+      <!-- 5 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#a855f7]">
+        <div class="text-xs font-bold text-[#d8b4fe] mb-2 font-mono">05 · AGRITECH</div>
+        <h3 class="text-lg font-bold text-white mb-2">البيوت المحمية والزراعة المغلقة (Greenhouses)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          الزراعة المحمية والمائية (Hydroponics)، منظومات التبريد والتحكم المناخي، التسميد الآلي (Fertigation)، وتطوير مجمعات الإنتاج الزراعي.
+        </p>
+      </div>
+
+      <!-- 6 -->
+      <div class="glass-card p-6 border-t-4 border-t-[#fb923c]">
+        <div class="text-xs font-bold text-[#fdba74] mb-2 font-mono">06 · TECHNICAL OFFICE</div>
+        <h3 class="text-lg font-bold text-white mb-2">المكتب الفني وتنسيق المشاريع (Technical Office)</h3>
+        <p class="text-xs text-[#cbd5e1] leading-relaxed">
+          إعداد المخططات التنفيذية (Shop Drawings)، حصر الكميات والمقايسات (BOQ)، اعتمادات المواد والموقع (WIR & MIR)، ومطابقات الـ As-Built.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 18 FEATURED PROJECTS SHOWCASE              -->
+  <!-- ========================================== -->
+  <section id="projects" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#2dd4bf]/20">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold text-[#fef08a] uppercase tracking-widest block mb-2">EIGHTEEN FEATURED PROJECTS IN FIVE SECTORS</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white">سجل المشاريع والأعمال المعتمدة (18 مشروعاً)</h2>
+      <p class="text-xs sm:text-sm text-[#cbd5e1] mt-2 max-w-2xl mx-auto">
+        تصفح المشاريع حسب القطاع للاطلاع على النطاق الهندسي والتفاصيل التنفيذية.
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10 text-xs font-bold">
+      <button onclick="filterProjects('all', this)" class="filter-btn active px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        جميع المشاريع (18)
+      </button>
+      <button onclick="filterProjects('military', this)" class="filter-btn px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        🏛️ المشاريع العسكرية والسيادية (6)
+      </button>
+      <button onclick="filterProjects('dubai', this)" class="filter-btn px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        ✈️ دبي الجنوب (2)
+      </button>
+      <button onclick="filterProjects('urban', this)" class="filter-btn px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        🏙️ التطوير الحضري والعلمين (4)
+      </button>
+      <button onclick="filterProjects('greenhouse', this)" class="filter-btn px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        🌿 البيوت المحمية والزراعة (5)
+      </button>
+      <button onclick="filterProjects('resort', this)" class="filter-btn px-4 py-2 rounded-full border border-[#2dd4bf]/30 bg-[#031411] cursor-pointer transition">
+        🏖️ المنتجعات واللاجون (1)
+      </button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsContainer">
+
+      <!-- Project 1: Alamein West Plot 1 (Urban) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="urban">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#f59e0b]/20 text-[#fef08a] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#f59e0b]/30">العلمين الجديدة · IFC R03</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">2026</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">تنسيق الشبكات الخماسية - الواجهة الغربية للعلمين (قطعة 1)</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            تنسيق شبكات الصرف الصحي، المطر، التغذية، والري، وفحص وحل <strong>155 تعارضاً حقيقياً</strong> وفق محددات الخلوص الرأسي 0.30م والأفقي 0.50م تحت إشراف الأشغال العسكرية ومكتب هيدرو.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#34d399]">
+          <span>5 شبكات متقاطعة</span>
+          <span class="font-bold">155 تعارضاً كودياً</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Mazarine 2 & Latin District (Urban) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="urban">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#38bdf8]/20 text-[#7dd3fc] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#38bdf8]/30">العلمين الجديدة</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">City Edge</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مزارين 2 والحي اللاتيني (Mazarine & Latin District)</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            دعم المكتب الفني لأعمال اللاندسكيب والبنية التحتية، إعداد المخططات التنفيذية واعتمادات المواد وتنسيق التصميم مع الواقع التنفيذي.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#a7f3d0]">
+          <span>Shop Drawings & Submittals</span>
+          <span>مشاريع حضرية</span>
+        </div>
+      </div>
+
+      <!-- Project 3: Military Camps O&M (Military) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="military">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#a855f7]/20 text-[#d8b4fe] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#a855f7]/30">الإمارات · سيادي</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">32 موقعاً</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">تشغيل وصيانة لاندسكيب معسكرات القوات المسلحة</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            إدارة عمليات اللاندسكيب والمساحات الخارجية عبر 32 موقعاً ومنشأة حكومية، وتنظيم قوة عاملة تزيد عن 380 فرداً وكادراً فنياً.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#fef08a]">
+          <span>32 موقعاً عسكرياً</span>
+          <span>~380 كادر تشغيلي</span>
+        </div>
+      </div>
+
+      <!-- Project 4: Military Sports Fields (Military) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="military">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#a855f7]/20 text-[#d8b4fe] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#a855f7]/30">الإمارات · منشآت رياضية</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">12 ملعباً</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">تطوير ملاعب القوات المسلحة الرياضية</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            تطوير لاندسكيب المنشآت والملاعب الرياضية، تنسيق الأعمال الخارجية والبنية التحتية، وتصميم شبكات الري لملاعب النجيل الطبيعي (جامعة زايد العسكرية).
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#34d399]">
+          <span>12 ملعباً رياضياً</span>
+          <span>Turf Irrigation</span>
+        </div>
+      </div>
+
+      <!-- Project 5: Zayed International Airport Sovereign Routes (Military) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="military">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#f59e0b]/20 text-[#fef08a] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#f59e0b]/30">أبوظبي · مطار زايد الدولي</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">Terminal A</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مسارات المراسم السيادية بمطار زايد الدولي</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            أعمال اللاندسكيب الفاخر وتنسيق البنية الخارجية على امتداد مسارات الاستقبال والمراسم الرسمية وفق أعلى المعايير العالمية.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#a7f3d0]">
+          <span>مبنى الركاب الجديد (Terminal A)</span>
+          <span>معايير رئاسية</span>
+        </div>
+      </div>
+
+      <!-- Project 6: Dubai South Asset Management (Dubai) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="dubai">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#38bdf8]/20 text-[#7dd3fc] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#38bdf8]/30">دبي · Dubai South</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">VIP Terminal</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">إدارة أصول لاندسكيب دبي الجنوب ومبنى كبار الشخصيات</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            إدارة أصول اللاندسكيب لمقر دبي الجنوب، شارع الأعمال، ومبنى الطيران الخاص، وتقييم جودة الزراعات الداخلية والخارجية.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#34d399]">
+          <span>6 بيئات تطويرية</span>
+          <span>Master Plan</span>
+        </div>
+      </div>
+
+      <!-- Project 7: Dubai South Irrigation Rehabilitation (Dubai) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="dubai">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#38bdf8]/20 text-[#7dd3fc] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#38bdf8]/30">دبي · شبكات ذكية</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">Automation</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">تأهيل وأتمتة شبكات الري بدبي الجنوب</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            التقييم الهيدروليكي، معالجة التسريبات ومحابس التحكم، وضبط توازن الضغوط واستعادة التشغيل الآلي لمنظومات Rain Bird و Hunter.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#fef08a]">
+          <span>Rain Bird & Hunter</span>
+          <span>إصلاح وتأهيل فوري</span>
+        </div>
+      </div>
+
+      <!-- Project 8: Saadiyat & Yas Island Schools (Military) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="military">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#10b981]/30">أبوظبي · تعليمي</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">جزيرتا السعديات وياس</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مشاريع المدارس الكبرى بجزيرتي السعديات وياس</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            تطوير لاندسكيب المدارس الدولية الكبرى (SABIS و ACS)، البنية التحتية الخارجية، وشبكات الري والمساحات المفتوحة المنسقة.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#a7f3d0]">
+          <span>جزيرتان رئيسيتان</span>
+          <span>Education Facilities</span>
+        </div>
+      </div>
+
+      <!-- Project 9: Desert Infrastructure Tunnel Protection (Military) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="military">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#f59e0b]/20 text-[#fef08a] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#f59e0b]/30">الإمارات · دراسة بيئية</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">أنفاق الخدمات</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">حماية أنفاق المرافق وممرات الخدمات الصحراوية</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            منظومة حماية مسارات الخدمات التحت أرضية من زحف الكثبان الرملية (Dune-migration) وتثبيت التربة حول الأنفاق الاستراتيجية.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#cbd5e1]">
+          <span>Utility Corridor Protection</span>
+          <span>بيئة صحراوية</span>
+        </div>
+      </div>
+
+      <!-- Project 10: Lagoon 180 Aswan (Resort) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="resort">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#10b981]/30">أسوان · منتجع سياحي</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">LAGOON 180</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مشروع لاجون 180 السياحي بأسوان (LAGOON 180)</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            تطوير لاندسكيب البحيرات، الجسور الخشبية، المظلات، ومخطط الزونينج لـ 67 صنفاً من الأشجار والشجيرات ومسارات المشاة المائية.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#fef08a]">
+          <span>1,070 م² Design Envelope</span>
+          <span>Zoning & Planting DWG</span>
+        </div>
+      </div>
+
+      <!-- Project 11: Sheikh Sultan bin Zayed Farms (Greenhouse) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="greenhouse">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#10b981]/30">الإمارات · زراعة محمية</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">40 صوبة</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مزارع الشيخ سلطان بن زايد: مجمع البيوت المحمية</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            تطوير وتجهيز 40 بيتاً محمياً على مساحة تقارب 10,000 م²، مع منظومات التحكم المناخي ومحطات التسميد والتغذية المائية.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#34d399]">
+          <span>40 Greenhouses</span>
+          <span>~10,000 م²</span>
+        </div>
+      </div>
+
+      <!-- Project 12: Mazyad Two-Hectare Greenhouse Block (Greenhouse) -->
+      <div class="glass-card p-6 flex flex-col justify-between project-card" data-category="greenhouse">
+        <div>
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[10px] font-bold px-2.5 py-0.5 rounded border border-[#10b981]/30">العين · أبوظبي</span>
+            <span class="text-[10px] font-mono text-[#a7f3d0]">2 Hectares</span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2 leading-snug">مجمع مزيد للبيوت المحمية والزراعة المائية (FRM 194)</h3>
+          <p class="text-xs text-[#cbd5e1] leading-relaxed mb-3">
+            حزمة متكاملة (Design & Build) لمجمع 2 هكتار (13 باكية بعرض 9.6م) مع مراوح سحب 1.40م ومنظومات التبريد التبخيري والـ Hydroponics.
+          </p>
+        </div>
+        <div class="pt-3 border-t border-[#2dd4bf]/20 flex items-center justify-between text-[11px] text-[#fef08a]">
+          <span>2 هكتار زراعة مائية</span>
+          <span>125م × 40م البلوك</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- CONTACT & CONSULTATION SECTION             -->
+  <!-- ========================================== -->
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <div class="glass-card p-8 sm:p-12 border-2 border-[#fef08a] bg-gradient-to-b from-[#072420] via-[#041613] to-[#020b0a]">
+      <span class="text-xs font-bold text-[#fef08a] uppercase tracking-widest block mb-2">LET'S DISCUSS YOUR NEXT PROJECT</span>
+      <h2 class="text-3xl sm:text-4xl font-black golden-title mb-4">
+        مستعد للاستشارات وتنسيق المكاتب الفنية والمشاريع الكبرى
+      </h2>
+      <p class="text-xs sm:text-base text-[#cbd5e1] max-w-2xl mx-auto leading-relaxed mb-8">
+        متاح لخدمات الاستشارات الهندسية، إدارة وتنسيق شبكات المرافق، وتطوير مشاريع اللاندسكيب والري في الإمارات ومصر.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs mb-8 text-right">
+        <div class="bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/20">
+          <span class="text-[10px] text-[#a7f3d0] block">البريد الإلكتروني:</span>
+          <strong class="text-white font-mono text-sm block mt-1">amrselim2308@gmail.com</strong>
+        </div>
+        <div class="bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/20">
+          <span class="text-[10px] text-[#a7f3d0] block">رقم الهاتف / واتساب:</span>
+          <strong class="text-white font-mono text-sm block mt-1" dir="ltr">+20 100 665 2265</strong>
+        </div>
+        <div class="bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/20">
+          <span class="text-[10px] text-[#a7f3d0] block">الملف المهني (LinkedIn):</span>
+          <a href="https://linkedin.com/in/amrabdelshafi2308" target="_blank" class="text-[#38bdf8] font-mono text-xs block mt-1 hover:underline">
+            linkedin.com/in/amrabdelshafi2308 ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="ai_engineering_masterclass.html" class="glow-gold-btn text-xs sm:text-sm font-black px-8 py-3.5 rounded-full inline-flex items-center gap-2">
+          <span>سجّل في كورس الذكاء الاصطناعي للمهندسين</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-6 border-t border-[#2dd4bf]/20 bg-[#020908] text-center text-xs text-[#a0b0a8]">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded bg-[#0d5b55] text-white flex items-center justify-center font-bold text-xs">م</div>
+        <span class="text-white font-bold">م. عمرو سليم | Eng. Amr Selim · منصة مِحور</span>
+      </div>
+      <div>
+        <span>Landscape & Infrastructure Senior Engineer · UAE & Egypt</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://mihwar-edu.com/" class="hover:text-white transition">الرئيسية</a>
+        <a href="https://mihwar-edu.com/previews/master_hub.html" class="hover:text-white transition">مركز التحكم</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
