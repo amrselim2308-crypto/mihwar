@@ -276,6 +276,48 @@ export default function HomePage({ lang, setLang, user, onLogin }: SharedPagePro
           </div>
         </section>
 
+        {/* Founder's Mission & Philosophy */}
+        <section className="section py-6 pt-0">
+          <div className="bg-[#031411]/90 rounded-2xl p-6 sm:p-8 text-white border border-[#2dd4bf]/30 shadow-xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+              <div className="lg:col-span-3 text-center flex flex-col items-center">
+                <div className="w-24 h-24 rounded-2xl overflow-hidden border-2 border-[#f59e0b] shadow-lg mb-2">
+                  <img src="/images/eng_amr_selim.jpg" alt="م. عمرو سليم" className="w-full h-full object-cover" />
+                </div>
+                <strong className="text-white text-sm block font-bold">{t(lang, "Eng. Amr Selim", "م. عمرو سليم")}</strong>
+                <span className="text-[10px] text-[#fef08a] block">{t(lang, "Platform Founder & Visionary", "مؤسس المنصة وصاحب الرؤية")}</span>
+              </div>
+              <div className="lg:col-span-9 space-y-2 text-right">
+                <span className="text-xs font-bold text-[#a7f3d0] uppercase tracking-wider block">
+                  {t(lang, "✨ ETHICAL & NON-PROFIT MISSION", "✨ رسالة مِحور السامية: الفهم ➜ الإدراك ➜ الوعي والإبداع")}
+                </span>
+                <h3 className="text-base sm:text-xl font-bold text-white leading-snug">
+                  {t(
+                    lang,
+                    "\"Our goal is not profit, but building a child who understands and innovates.\"",
+                    "\"هدفنا ليس ربحياً.. بل بناء طفل وشاب يفهم العلم واقعاً فيتفجر إبداعه\""
+                  )}
+                </h3>
+                <p className="text-xs text-[#cbd5e1] leading-relaxed">
+                  {t(
+                    lang,
+                    "Education is not memorisation. We take only 30% platform operational fee to run AI models and servers, while 70% goes entirely to teachers.",
+                    "أنشأنا مِحور بهدف سامٍ لترسيخ الفهم الحقيقي، بنموذج اقتصادي عادل يقتطع 30% فقط لتكاليف التشغيل والذكاء الاصطناعي، و 70% كاملة للمعلم تقديراً لجهده."
+                  )}
+                </p>
+                <div className="pt-2">
+                  <a
+                    href="/previews/founder_vision.html"
+                    className="text-xs text-[#fef08a] hover:underline font-bold inline-flex items-center gap-1.5"
+                  >
+                    <span>{t(lang, "Read the Founder's Full Declaration", "اقرأ ميثاق ورؤية المؤسس م. عمرو سليم كاملة ↗")}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* AI Study Companion Showcase Banner */}
         <section className="section py-12">
           <div className="bg-gradient-to-br from-[#173c37] to-[#0d5b55] rounded-2xl p-6 sm:p-10 text-white relative overflow-hidden shadow-xl">
