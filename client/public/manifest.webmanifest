@@ -1,20 +1,23 @@
 {
-  "id": "/",
-  "name": "Mihwar | مِحور",
+  "id": "mihwar-platform-app",
+  "name": "مِحور | منصة التعليم والدروس الخصوصية الذكية",
   "short_name": "مِحور",
-  "description": "تعلم خصوصي مدروس لطلاب المناهج الإماراتية",
+  "description": "منظومة الدروس الخصوصية التفاعلية ومساعد الذكاء الاصطناعي للمناهج الإماراتية، المصرية، السعودية والدولية",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#f7f5ef",
+  "background_color": "#020908",
   "theme_color": "#0d5b55",
   "lang": "ar",
   "dir": "rtl",
-  "icons": [{
-    "src": "/mihwar-icon.svg",
-    "sizes": "any",
-    "type": "image/svg+xml",
-    "purpose": "any maskable"
-  }]
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/mihwar-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }
