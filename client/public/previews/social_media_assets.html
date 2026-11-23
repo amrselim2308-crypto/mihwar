@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استوديو هوية وإعلانات السوشيال ميديا | مِحور MIHWAR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+      background: #020817;
+      color: #f1f5f9;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .ocean-title {
+      background: linear-gradient(135deg, #ffffff 10%, #38bdf8 55%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
+    }
+    .coral-badge {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.25) 0%, rgba(239, 68, 68, 0.2) 100%);
+      border: 1.2px solid rgba(251, 146, 60, 0.55);
+      color: #fdba74;
+    }
+    .ocean-card {
+      background: rgba(7, 24, 54, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1.2px solid rgba(56, 189, 248, 0.25);
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ocean-card:hover {
+      transform: translateY(-4px);
+      border-color: #38bdf8;
+      box-shadow: 0 16px 45px rgba(14, 165, 233, 0.35);
+    }
+    .glow-coral-btn {
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      border: 1.5px solid rgba(253, 186, 116, 0.6);
+      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.45);
+      color: #ffffff;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .glow-coral-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(249, 115, 22, 0.65);
+      filter: brightness(1.1);
+    }
+    .glow-cyan-btn {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      border: 1.5px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.45);
+      color: #ffffff;
+      font-weight: 800;
+      transition: all 0.2s;
+    }
+    .glow-cyan-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(14, 165, 233, 0.65);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#f97316] selection:text-white">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#030d22]/90 backdrop-blur-md border-b border-[#38bdf8]/20">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+      <a href="hero_preview.html" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(56,189,248,0.4)] border border-[#38bdf8]/40 flex-none">
+          <img src="/mihwar-icon.svg" alt="مِحور اللوجو الجديد" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
+          <span class="text-[9px] font-bold tracking-[0.28em] text-[#38bdf8] uppercase">BRANDING & SOCIAL SUITE</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="master_hub.html" class="bg-[#0b1f44] hover:bg-[#122e66] text-[#38bdf8] border border-[#38bdf8]/40 px-5 py-2 rounded-full text-xs font-bold transition">
+          مركز القيادة Master Hub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="py-12 px-6 border-b border-[#38bdf8]/20 bg-gradient-to-b from-[#07193d] via-[#041029] to-[#020817] relative overflow-hidden">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 coral-badge px-4 py-1.5 rounded-full text-xs font-extrabold">
+          <span>🌊 الهوية الجديدة: الأزرق المحيطي العميق والكورال المشرق</span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black ocean-title leading-tight">
+          استوديو الهوية البصرية وحملات السوشيال ميديا
+        </h1>
+        <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+          تم تغيير اللوجو واللون الأخضر إلى باليت حيوية وعصرية (Deep Ocean & Sunset Coral). هذه التصاميم جاهزة بمقاسات السوشيال ميديا الدقيقة (Instagram, LinkedIn, TikTok, Facebook, X) للنشر المباشر.
+        </p>
+      </div>
+
+      <!-- Quick Logo Showcase -->
+      <div class="flex flex-col items-center p-6 bg-[#061536]/80 rounded-3xl border border-[#38bdf8]/30 shadow-2xl">
+        <div class="w-24 h-24 rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(56,189,248,0.5)] border-2 border-[#38bdf8] mb-3">
+          <img src="/mihwar-icon.svg" alt="لوجو مِحور" class="w-full h-full" />
+        </div>
+        <span class="text-xs font-black text-white">اللوجو المداري الجديد</span>
+        <span class="text-[10px] text-cyan-400 font-mono">The Dynamic Orbital Prism</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Filters -->
+  <div class="max-w-7xl mx-auto px-6 pt-10 flex flex-wrap items-center justify-between gap-4">
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-bold text-slate-400">تصفح المقاس:</span>
+      <button onclick="filterAd('all')" class="ad-tab px-4 py-2 rounded-xl text-xs font-bold bg-[#0284c7] text-white cursor-pointer transition">الكل (6 تصاميم)</button>
+      <button onclick="filterAd('square')" class="ad-tab px-4 py-2 rounded-xl text-xs font-bold bg-[#081a3d] text-slate-300 hover:text-white cursor-pointer transition">بوست مربع 1:1 (انستجرام وفيسبوك)</button>
+      <button onclick="filterAd('story')" class="ad-tab px-4 py-2 rounded-xl text-xs font-bold bg-[#081a3d] text-slate-300 hover:text-white cursor-pointer transition">ستوري وريلز وتيك توك 9:16</button>
+      <button onclick="filterAd('cover')" class="ad-tab px-4 py-2 rounded-xl text-xs font-bold bg-[#081a3d] text-slate-300 hover:text-white cursor-pointer transition">أغلفة لينكد إن وتويتر</button>
+    </div>
+
+    <button onclick="window.print()" class="glow-coral-btn px-5 py-2 rounded-full text-xs font-bold flex items-center gap-2 cursor-pointer">
+      <span>طباعة / حفظ كـ PDF</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+    </button>
+  </div>
+
+  <!-- Showcase Grid -->
+  <main class="max-w-7xl mx-auto px-6 py-10 space-y-12">
+
+    <!-- ========================================== -->
+    <!-- 1. SQUARE POSTS (1080 x 1080)             -->
+    <!-- ========================================== -->
+    <div class="ad-section" data-type="square">
+      <div class="flex items-center justify-between border-b border-[#38bdf8]/20 pb-3 mb-6">
+        <div>
+          <h2 class="text-xl font-black text-white flex items-center gap-2">
+            <span>📷 بوستات السوشيال ميديا المربعة (Instagram & Facebook Post · 1080×1080)</span>
+          </h2>
+          <span class="text-xs text-slate-400">تصاميم موحدة بنمط الألوان الجديد مع اللوجو وCTA صريح</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Ad 1: Flagship AI Engineering Masterclass -->
+        <div class="ocean-card p-6 flex flex-col justify-between aspect-square relative overflow-hidden group border-2 border-orange-500/40">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-orange-500/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="relative z-10 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <img src="/mihwar-icon.svg" class="w-9 h-9" />
+              <div>
+                <span class="font-black text-sm text-white block leading-none">مِحور</span>
+                <span class="text-[8px] font-bold text-cyan-400 tracking-wider">ENGINEERING AI</span>
+              </div>
+            </div>
+            <span class="coral-badge text-[10px] font-black px-2.5 py-1 rounded-full">الأكثر طلباً 🔥</span>
+          </div>
+
+          <div class="relative z-10 my-auto text-center space-y-3 py-4">
+            <span class="text-xs font-bold text-cyan-300 block">كورس عملي للمهندسين 100%</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight font-amiri">
+              ربط أدوات الذكاء الاصطناعي بالمخططات والخطط الهندسية
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed px-2">
+              وفّر ساعات الحصر والمخططات وطلّع تقارير الـ Clash بضغطة زر. خبرة 12 سنة بمشاريع دبي وأبوظبي.
+            </p>
+            <div class="inline-flex items-center gap-2 bg-[#030d22] border border-[#38bdf8]/30 px-3.5 py-1.5 rounded-full text-xs">
+              <span class="text-slate-300">المدرب:</span>
+              <span class="text-orange-400 font-bold">م. عمرو سليم</span>
+            </div>
+          </div>
+
+          <div class="relative z-10 border-t border-[#38bdf8]/20 pt-3 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-slate-400 block">سعر الدفعة الأولى</span>
+              <span class="text-lg font-black text-orange-400 font-mono">490 AED</span>
+            </div>
+            <a href="ai_engineering_masterclass.html" class="glow-coral-btn text-xs font-black px-4 py-2 rounded-full">
+              سجّل مكانك الآن ←
+            </a>
+          </div>
+        </div>
+
+        <!-- Ad 2: Teacher Onboarding (70% Ethical Model) -->
+        <div class="ocean-card p-6 flex flex-col justify-between aspect-square relative overflow-hidden group border-2 border-cyan-500/40">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="relative z-10 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <img src="/mihwar-icon.svg" class="w-9 h-9" />
+              <div>
+                <span class="font-black text-sm text-white block leading-none">مِحور</span>
+                <span class="text-[8px] font-bold text-cyan-400 tracking-wider">TEACHER RECRUITMENT</span>
+              </div>
+            </div>
+            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-[10px] font-black px-2.5 py-1 rounded-full">انضم للمعلمين</span>
+          </div>
+
+          <div class="relative z-10 my-auto text-center space-y-3 py-4">
+            <span class="text-xs font-bold text-orange-400 block">النموذج الأخلاقي الأعدل في الشرق الأوسط</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight font-amiri">
+              تحصل على 70% من أجر حصتك كاملاً.. والمنصة 30% فقط!
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed px-2">
+              بدون عمولات خفية. حدد سعرك ووقتك، ودرّس طلاب المناهج الإماراتية والمصرية والسعودية بقاعات ذكية ومساعد AI.
+            </p>
+            <div class="flex items-center justify-center gap-4 text-xs font-mono font-bold">
+              <span class="text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-xl">70% للمعلم</span>
+              <span class="text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-xl">30% خوادم وAI</span>
+            </div>
+          </div>
+
+          <div class="relative z-10 border-t border-[#38bdf8]/20 pt-3 flex items-center justify-between">
+            <span class="text-[11px] text-slate-400">التسجيل مجاني</span>
+            <a href="teacher_apply_preview.html" class="glow-cyan-btn text-xs font-black px-4 py-2 rounded-full">
+              قدّم طلبك كمعلم ←
+            </a>
+          </div>
+        </div>
+
+        <!-- Ad 3: Heritage Library & Literary Classics -->
+        <div class="ocean-card p-6 flex flex-col justify-between aspect-square relative overflow-hidden group border-2 border-amber-500/40">
+          <div class="absolute -top-16 -right-16 w-40 h-40 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="relative z-10 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <img src="/mihwar-icon.svg" class="w-9 h-9" />
+              <div>
+                <span class="font-black text-sm text-white block leading-none">مِحور</span>
+                <span class="text-[8px] font-bold text-amber-300 tracking-wider">HERITAGE LIBRARY</span>
+              </div>
+            </div>
+            <span class="bg-amber-500/20 text-amber-300 border border-amber-400/40 text-[10px] font-black px-2.5 py-1 rounded-full">قراءة واقتباس مجاني</span>
+          </div>
+
+          <div class="relative z-10 my-auto text-center space-y-3 py-4">
+            <span class="text-xs font-bold text-cyan-300 block">لأن الفهم يبدأ من عقول الأعلام</span>
+            <h3 class="text-xl sm:text-2xl font-black text-white leading-tight font-amiri">
+              خزانة الفكر والأدب: مصطفى محمود، الغزالي، الشافعي، طه حسين، والعقاد
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed px-2">
+              أكثر من 24 مرجعاً نفيساً ورواية كلاسيكية متاحة بقارئ رقمي مدمج ينمي عقلية الإدراك والوعي عند الطالب.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-1.5 text-[10px] text-slate-300">
+              <span class="bg-[#030d22] px-2 py-0.5 rounded-md border border-[#38bdf8]/20">فلسفة</span>
+              <span class="bg-[#030d22] px-2 py-0.5 rounded-md border border-[#38bdf8]/20">فقه وتزكية</span>
+              <span class="bg-[#030d22] px-2 py-0.5 rounded-md border border-[#38bdf8]/20">روايات وسير</span>
+            </div>
+          </div>
+
+          <div class="relative z-10 border-t border-[#38bdf8]/20 pt-3 flex items-center justify-between">
+            <span class="text-[11px] text-orange-400 font-bold">متاحة الآن مجاناً</span>
+            <a href="library_preview.html" class="glow-coral-btn text-xs font-black px-4 py-2 rounded-full">
+              تصفح المكتبة ←
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. STORY / REELS / TIKTOK (9:16)          -->
+    <!-- ========================================== -->
+    <div class="ad-section" data-type="story">
+      <div class="flex items-center justify-between border-b border-[#38bdf8]/20 pb-3 mb-6">
+        <div>
+          <h2 class="text-xl font-black text-white flex items-center gap-2">
+            <span>📱 إعلانات الستوري والريلز والتيك توك (Vertical Story · 1080×1920)</span>
+          </h2>
+          <span class="text-xs text-slate-400">تصاميم رأسية متناغمة مع شاشات الهواتف الذكية مع منطقة Swipe Up / Link</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+
+        <!-- Story 1: Founder Vision & Sublime Mission -->
+        <div class="ocean-card w-full max-w-sm rounded-[32px] p-6 flex flex-col justify-between border-2 border-orange-500/50 shadow-2xl relative overflow-hidden" style="min-height: 580px;">
+          <div class="absolute -top-20 -left-20 w-48 h-48 bg-orange-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Top Brand -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <img src="/mihwar-icon.svg" class="w-8 h-8" />
+              <span class="font-black text-white text-sm">مِحور MIHWAR</span>
+            </div>
+            <span class="coral-badge text-[9px] font-black px-2.5 py-0.5 rounded-full">رؤية ورسالة</span>
+          </div>
+
+          <!-- Middle Content -->
+          <div class="text-center space-y-4 my-auto">
+            <div class="w-24 h-24 mx-auto rounded-3xl overflow-hidden border-2 border-orange-400 p-1 shadow-2xl bg-gradient-to-tr from-cyan-500 to-orange-500">
+              <img src="/images/eng_amr_selim.jpg" class="w-full h-full object-cover rounded-[20px]" />
+            </div>
+
+            <div>
+              <h4 class="text-sm font-black text-white">م. عمرو سليم | Eng. Amr Selim</h4>
+              <span class="text-[10px] text-orange-400 font-bold">مؤسس المنصة وصاحب الرؤية</span>
+            </div>
+
+            <div class="bg-[#030d22]/90 border border-[#38bdf8]/30 p-4 rounded-2xl text-right space-y-2">
+              <p class="text-xs font-black text-white leading-relaxed">
+                "هدفنا ليس ربحياً.. بل بناء طفل وشاب يفهم العلم واقعاً فيتفجر إبداعه الفطري."
+              </p>
+              <div class="flex items-center justify-between text-[10px] text-cyan-300 font-mono pt-1">
+                <span>الفهم ➜ الإدراك ➜ الوعي</span>
+                <span class="text-orange-400 font-bold">عمولة 30% فقط</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Swipe Up -->
+          <div class="text-center space-y-2 pt-4 border-t border-[#38bdf8]/20">
+            <div class="animate-bounce">
+              <svg class="w-5 h-5 mx-auto text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            </div>
+            <a href="founder_vision.html" class="glow-coral-btn block text-center py-2.5 rounded-2xl text-xs font-black">
+              اسحب للأعلى لقراءة الميثاق الكامل
+            </a>
+          </div>
+        </div>
+
+        <!-- Story 2: AI Engineering Clash Coordination Reel -->
+        <div class="ocean-card w-full max-w-sm rounded-[32px] p-6 flex flex-col justify-between border-2 border-cyan-500/50 shadow-2xl relative overflow-hidden" style="min-height: 580px;">
+          <div class="absolute -top-20 -right-20 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Top Brand -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <img src="/mihwar-icon.svg" class="w-8 h-8" />
+              <span class="font-black text-white text-sm">مِحور المهندس</span>
+            </div>
+            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-[9px] font-black px-2.5 py-0.5 rounded-full">CAD & BIM AI</span>
+          </div>
+
+          <!-- Middle Content -->
+          <div class="text-center space-y-4 my-auto">
+            <div class="rounded-2xl overflow-hidden border border-[#38bdf8]/40 shadow-xl bg-black">
+              <img src="/images/alamein_clash_drawing_r03.jpg" class="w-full h-36 object-cover" />
+            </div>
+
+            <span class="coral-badge text-[10px] font-bold px-3 py-1 rounded-full inline-block">حالة دراسية حقيقية من موقع العمل</span>
+
+            <h3 class="text-lg font-black text-white leading-tight">
+              اكتشاف 155 تعارض (Clash) بين شبكات الري والصرف والمطر في دقيقة واحدة بالـ AI!
+            </h3>
+
+            <p class="text-xs text-slate-300 leading-relaxed">
+              تعلّم كيف تربط AutoCAD و Civil 3D بأوامر الذكاء الاصطناعي وتسلّم تقارير الـ Coordination باحتراف.
+            </p>
+          </div>
+
+          <!-- Bottom Swipe Up -->
+          <div class="text-center space-y-2 pt-4 border-t border-[#38bdf8]/20">
+            <div class="animate-bounce">
+              <svg class="w-5 h-5 mx-auto text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            </div>
+            <a href="ai_engineering_masterclass.html" class="glow-cyan-btn block text-center py-2.5 rounded-2xl text-xs font-black">
+              سجّل الآن في الدفعة الأولى (خصم 60%)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. LINKEDIN / X / FACEBOOK BANNERS        -->
+    <!-- ========================================== -->
+    <div class="ad-section" data-type="cover">
+      <div class="flex items-center justify-between border-b border-[#38bdf8]/20 pb-3 mb-6">
+        <div>
+          <h2 class="text-xl font-black text-white flex items-center gap-2">
+            <span>🌐 أغلفة وبانرات الحسابات الرسمية (LinkedIn, Facebook & X Covers · 1584×396)</span>
+          </h2>
+          <span class="text-xs text-slate-400">بانر رسمي موحد للصفحات الرسمية وحساب المؤسس على لينكد إن</span>
+        </div>
+      </div>
+
+      <!-- Banner Preview Container -->
+      <div class="ocean-card p-6 sm:p-8 rounded-3xl border-2 border-[#38bdf8]/40 relative overflow-hidden bg-gradient-to-r from-[#030d22] via-[#071d44] to-[#041029]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-8 space-y-3">
+            <div class="flex items-center gap-3">
+              <img src="/mihwar-icon.svg" class="w-12 h-12" />
+              <div>
+                <h3 class="text-2xl font-black text-white leading-none">مَنصّة مِحور | MIHWAR</h3>
+                <span class="text-[10px] text-cyan-400 tracking-widest font-bold">كل المعارف.. بروح الفهم والوعي</span>
+              </div>
+            </div>
+
+            <p class="text-sm text-slate-200 leading-relaxed font-amiri text-base">
+              المنظومة التعليمية الرائدة للدروس الخصوصية الذكية للمناهج الإماراتية، المصرية، والسعودية · كورس الذكاء الاصطناعي للمهندسين · خزانة الفكر والأدب
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 text-xs">
+              <span class="bg-[#020817] text-orange-400 border border-orange-500/40 px-3 py-1 rounded-full font-bold">
+                🔗 mihwar-edu.com
+              </span>
+              <span class="text-slate-300">🇦🇪 الإمارات · 🇪🇬 مصر · 🇸🇦 السعودية</span>
+              <span class="text-cyan-300 font-bold">إشراف: م. عمرو سليم</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 text-center md:text-left flex flex-col items-center md:items-end justify-center">
+            <div class="bg-[#020817]/90 p-4 rounded-2xl border border-[#38bdf8]/30 text-center space-y-1">
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest block">الأبعاد القياسية</span>
+              <span class="text-sm font-mono font-bold text-cyan-300 block">1584 × 396 PX</span>
+              <span class="coral-badge text-[10px] px-2.5 py-0.5 rounded-full inline-block font-bold">جاهز لـ LinkedIn & X</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function filterAd(type) {
+      document.querySelectorAll('.ad-tab').forEach(b => {
+        b.classList.remove('bg-[#0284c7]', 'text-white');
+        b.classList.add('bg-[#081a3d]', 'text-slate-300');
+      });
+      event.target.classList.add('bg-[#0284c7]', 'text-white');
+      event.target.classList.remove('bg-[#081a3d]', 'text-slate-300');
+
+      document.querySelectorAll('.ad-section').forEach(sec => {
+        if (type === 'all' || sec.getAttribute('data-type') === type) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
