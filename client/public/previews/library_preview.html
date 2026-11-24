@@ -3,764 +3,621 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خزانة الفكر والأدب والمناهج | منصة مِحور</title>
+  <title>مكتبة مِحور المعرفية | روائع الأدب والفكر والمناهج المعتمدة</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --sky-top: #0284c7;
+      --sky-cyan: #06b6d4;
+      --sky-light: #f0f9ff;
+      --ink-dark: #0c2340;
+    }
     body {
-      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #081a38;
-      color: #f3efe6;
+      font-family: 'Cairo', 'IBM Plex Sans Arabic', system-ui, sans-serif;
       margin: 0;
       padding: 0;
+      background: #f0f9ff;
+      color: #0c2340;
       overflow-x: hidden;
     }
-    .golden-title {
-      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
-    }
-    .glass-card {
-      background: rgba(7, 30, 27, 0.82);
-      backdrop-filter: blur(14px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .glass-card:hover {
-      transform: translateY(-4px);
-      background: rgba(10, 48, 43, 0.92);
-      border-color: #38bdf8;
-      box-shadow: 0 16px 40px rgba(20, 184, 166, 0.4), inset 0 0 14px rgba(56, 189, 248, 0.15);
-    }
-    .filter-box {
-      background: rgba(6, 26, 23, 0.88);
-      backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
-      border-radius: 18px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-    }
-    .input-dark {
-      background: rgba(8, 38, 34, 0.85);
-      border: 1.2px solid rgba(45, 212, 191, 0.3);
+
+    .sky-header {
+      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
       color: #ffffff;
-      border-radius: 10px;
     }
-    .input-dark:focus {
+
+    .book-card {
+      background: #ffffff;
+      border: 1.5px solid #e0f2fe;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(12, 74, 110, 0.06);
+      transition: all 0.25s ease;
+    }
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(12, 74, 110, 0.12);
       border-color: #38bdf8;
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
     }
-    .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-      border: 1.5px solid rgba(94, 234, 212, 0.5);
-      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
-      transition: all 0.2s;
+
+    .pill-active {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
     }
-    .glow-teal-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
-      filter: brightness(1.08);
+    .pill-inactive {
+      background: #ffffff;
+      color: #0c2340;
+      border: 1.2px solid #bae6fd;
     }
-    .reader-backdrop {
-      background: rgba(3, 14, 12, 0.88);
-      backdrop-filter: blur(16px);
+    .pill-inactive:hover {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    /* Modal styling */
+    #readerModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(12, 35, 64, 0.85);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    #readerModal.active {
+      display: flex !important;
     }
   </style>
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="selection:bg-cyan-200 selection:text-sky-950">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 bg-[#0b2149]/90 backdrop-blur-md border-b border-[#06b6d4]/20">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-      <a href="hero_preview.html" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#06b6d4]/40">
-          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+  <header class="sky-header sticky top-0 z-40 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <a href="sky_planets_preview.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center p-2 border border-white/30 shadow-inner">
+          <img src="/mihwar-icon.svg" alt="مِحور" class="w-8 h-8" onerror="this.src='/images/mihwar-logo-new.svg'" />
         </div>
         <div>
-          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
-          <span class="text-[9px] font-bold tracking-[0.28em] text-[#7dd3fc] uppercase">MIHWAR</span>
+          <span class="text-2xl font-black tracking-wide block leading-none text-white">مِـحـوَر</span>
+          <span class="text-xs font-bold text-sky-100 tracking-wider">مكتبة التراث والروائع الأدبية والمناهج</span>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
-        <a href="hero_preview.html" class="hover:text-[#38bdf8] transition-colors">الرئيسية</a>
-        <a href="teachers_directory_preview.html" class="hover:text-[#38bdf8] transition-colors">المعلمون</a>
-        <a href="#" class="text-[#38bdf8] font-bold">المكتبة الرقمية</a>
-        <a href="hero_preview.html#study" class="hover:text-[#38bdf8] transition-colors flex items-center gap-1.5">
-          <span>مساعد الدراسة</span>
-          <span class="bg-[#10b981]/25 text-[#6ee7b7] text-[10px] px-2 py-0.5 rounded-full border border-[#10b981]/40 font-bold">ذكاء اصطناعي</span>
-        </a>
-        <a href="teacher_apply_preview.html" class="hover:text-[#38bdf8] transition-colors">انضم كمعلم</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-bold text-white/90">
+        <a href="sky_planets_preview.html" class="hover:text-white transition-colors">الرئيسية</a>
+        <a href="competitions_arena.html" class="hover:text-white transition-colors">ساحات التحدي والجوائز</a>
+        <a href="teachers_directory_preview.html" class="hover:text-white transition-colors">دليل المعلمين</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="teachers_directory_preview.html" class="glow-teal-btn text-white text-[13px] font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5">
-          <span>احجز معلماً</span>
+        <a href="sky_planets_preview.html" class="bg-white/20 hover:bg-white/30 text-white border border-white/40 text-xs font-bold px-4 py-2 rounded-full transition">
+          ← العودة للرئيسية
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Library Hero Section with Vintage Texture -->
-  <section class="relative bg-gradient-to-b from-[#061e1b] via-[#051815] to-[#041210] border-b border-[#06b6d4]/20 py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] tracking-wider mb-2">
-          <span class="w-6 h-[2px] bg-[#34d399] inline-block"></span>
-          <span>المستودع المعرفي والمناهج الرسمية</span>
-        </div>
-        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#fef08a] tracking-wider mb-2 px-3 py-1 rounded-full bg-[#f59e0b]/15 border border-[#f59e0b]/35">
-          <span>✨ خزانة الفكر والأدب والمناهج المعتمدة</span>
-          <span>·</span>
-          <span>منارة الفهم والإدراك</span>
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-black golden-title leading-tight">
-          مكتبة مِحور الكبرى · مراجع الفكر وروايات الأدب ومناهج التفوق
-        </h1>
-        <p class="text-sm sm:text-base text-[#e2dad0] mt-3 max-w-3xl leading-relaxed">
-          "العلم ليس أرقاماً ومعادلات تُحفظ وتُنسى، بل فكرٌ يوقظ الوعي، وأدبٌ يرتقي بالوجدان، وتأملٌ يكشف أسرار الكون." تضم خزانة مِحور أمهات كتب الفلسفة والأدب لأعظم مفكرينا — من د. مصطفى محمود، حجة الإسلام الإمام الغزالي، الإمام الشافعي، عميد الأدب العربي طه حسين، والعبقري عباس محمود العقاد — بجانب المذكرات الدراسية المعتمدة لطلاب المدارس والجامعات.
-        </p>
-        <!-- Quick Author Filter Pills -->
-        <div class="flex flex-wrap items-center gap-2 pt-4">
-          <span class="text-xs font-bold text-[#7dd3fc] ml-1">أعلام الفكر:</span>
-          <button onclick="quickFilterAuthor('مصطفى محمود')" class="px-3 py-1 rounded-full text-xs font-bold bg-[#133575] text-[#fef08a] border border-[#f59e0b]/40 hover:bg-[#f59e0b] hover:text-[#041210] transition cursor-pointer">
-            د. مصطفى محمود
-          </button>
-          <button onclick="quickFilterAuthor('الغزالي')" class="px-3 py-1 rounded-full text-xs font-bold bg-[#133575] text-[#fef08a] border border-[#f59e0b]/40 hover:bg-[#f59e0b] hover:text-[#041210] transition cursor-pointer">
-            الإمام الغزالي
-          </button>
-          <button onclick="quickFilterAuthor('الشافعي')" class="px-3 py-1 rounded-full text-xs font-bold bg-[#133575] text-[#fef08a] border border-[#f59e0b]/40 hover:bg-[#f59e0b] hover:text-[#041210] transition cursor-pointer">
-            الإمام الشافعي
-          </button>
-          <button onclick="quickFilterAuthor('طه حسين')" class="px-3 py-1 rounded-full text-xs font-bold bg-[#133575] text-[#fef08a] border border-[#f59e0b]/40 hover:bg-[#f59e0b] hover:text-[#041210] transition cursor-pointer">
-            طه حسين
-          </button>
-          <button onclick="quickFilterAuthor('العقاد')" class="px-3 py-1 rounded-full text-xs font-bold bg-[#133575] text-[#fef08a] border border-[#f59e0b]/40 hover:bg-[#f59e0b] hover:text-[#041210] transition cursor-pointer">
-            عباس محمود العقاد
-          </button>
-          <button onclick="resetLibFilters()" class="px-3 py-1 rounded-full text-xs font-bold bg-[#14b8a6]/20 text-[#38bdf8] border border-[#06b6d4]/40 hover:bg-[#14b8a6] hover:text-white transition cursor-pointer">
-            عرض الكل
-          </button>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <section class="py-12 px-6 bg-gradient-to-b from-sky-100 via-sky-50 to-[#f0f9ff] border-b border-sky-200">
+    <div class="max-w-5xl mx-auto text-center space-y-4">
+      <span class="inline-block bg-sky-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">
+        📚 مكتبة الفكر الإنساني والعلوم التطبيقية
+      </span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2340] leading-tight">
+        كنوز مصطفى محمود، الغزالي، الشافعي، طه حسين، والعقاد
+      </h1>
+      <p class="text-sm sm:text-base text-[#254b73] max-w-3xl mx-auto leading-relaxed">
+        تصفح وقراءة فورية لأعظم المراجع الأدبية والفلسفية والشرعية، بالإضافة إلى مذكرات ومناهج STEM المعتمدة، مع قارئ رقمي تفاعلي يفتح الكتاب بضغطة واحدة.
+      </p>
 
-      <div class="flex items-center gap-3 bg-[#133575]/80 border border-[#06b6d4]/30 rounded-2xl p-4 text-center">
-        <div class="text-center space-y-2">
-          <div class="grid grid-cols-2 gap-2">
-            <div class="bg-[#0d2757] p-2.5 rounded-xl border border-[#06b6d4]/20">
-              <div class="text-2xl font-black text-[#fef08a]">24+</div>
-              <div class="text-[10px] text-[#cbd5e1] font-bold">مرجعاً وأثراً أدبياً</div>
-            </div>
-            <div class="bg-[#0d2757] p-2.5 rounded-xl border border-[#06b6d4]/20">
-              <div class="text-2xl font-black text-[#34d399]">3,400+</div>
-              <div class="text-[10px] text-[#cbd5e1] font-bold">مذكرة وملخص وزاري</div>
-            </div>
-          </div>
-          <div class="text-[11px] text-[#7dd3fc]">قارئ تفاعلي مدمج للاقتباس المباشر</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Official Ministry Portals Section -->
-  <section class="max-w-7xl mx-auto px-6 pt-10 pb-4">
-    <h2 class="text-sm font-bold text-[#7dd3fc] mb-3 flex items-center gap-2">
-      <svg class="w-4 h-4 text-[#fef08a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-      <span>بوابات المناهج والكتب الرسمية للوزارات</span>
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-[#133575]/70 border border-[#06b6d4]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#06b6d4]/30">
-          🇦🇪
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-xs font-bold text-white mb-0.5">الإمارات · قارئ ديوان الإلكتروني</h3>
-          <p class="text-[11px] text-[#cbd5e1] leading-relaxed mb-2">بوابة وزارة التربية والتعليم الإماراتية لكتب المدارس الحكومية والخاصة.</p>
-          <a href="https://u.ae/en/information-and-services/education/online-training/diwan-ebook-reader" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-[#38bdf8] hover:underline">
-            <span>فتح المصدر الرسمي</span>
-            <svg class="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-[#133575]/70 border border-[#06b6d4]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#06b6d4]/30">
-          🇪🇬
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-xs font-bold text-white mb-0.5">مصر · بوابة الكتب والمناهج الوزارية</h3>
-          <p class="text-[11px] text-[#cbd5e1] leading-relaxed mb-2">المستودع الإلكتروني الرسمي لكتب وزارة التربية والتعليم المصرية ومناهج الثانوية.</p>
-          <a href="https://ellibrary.moe.gov.eg/Books/" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-[#38bdf8] hover:underline">
-            <span>فتح المصدر الرسمي</span>
-            <svg class="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="bg-[#133575]/70 border border-[#06b6d4]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#06b6d4]/30">
-          🇸🇦
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-xs font-bold text-white mb-0.5">السعودية · بوابة عين والخطط الدراسية</h3>
-          <p class="text-[11px] text-[#cbd5e1] leading-relaxed mb-2">منصة وزارة التعليم السعودية لدروس المسارات وكتب المراحل الدراسية الثلاث.</p>
-          <a href="https://www.moe.gov.sa/ar/education/general-education/studyplans" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-[#38bdf8] hover:underline">
-            <span>فتح المصدر الرسمي</span>
-            <svg class="w-3 h-3 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Library Catalog & Resources -->
-  <main class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    
-    <!-- Filter Sidebar (Right Side) -->
-    <aside class="lg:col-span-4 filter-box p-6 space-y-5 sticky top-28">
-      <div class="flex items-center justify-between border-b border-[#06b6d4]/20 pb-4">
-        <h2 class="text-base font-bold text-white flex items-center gap-2">
-          <svg class="w-4 h-4 text-[#38bdf8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-          <span>تصفية المصادر والملخصات</span>
-        </h2>
-        <button id="resetLibFilters" class="text-xs font-bold text-[#7dd3fc] hover:text-white transition cursor-pointer">
-          إعادة ضبط
+      <!-- Quick Author Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
+        <button onclick="setAuthorFilter('')" id="pill-all" class="pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          🌟 جميع المؤلفين والمناهج (24)
+        </button>
+        <button onclick="setAuthorFilter('مصطفى محمود')" id="pill-mahmoud" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          د. مصطفى محمود (4)
+        </button>
+        <button onclick="setAuthorFilter('الغزالي')" id="pill-ghazali" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          الإمام الغزالي (4)
+        </button>
+        <button onclick="setAuthorFilter('الشافعي')" id="pill-shafii" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          الإمام الشافعي (3)
+        </button>
+        <button onclick="setAuthorFilter('طه حسين')" id="pill-hussein" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          د. طه حسين (4)
+        </button>
+        <button onclick="setAuthorFilter('عباس العقاد')" id="pill-aqqad" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          عباس محمود العقاد (5)
+        </button>
+        <button onclick="setCategoryFilter('مناهج دراسية')" id="pill-stem" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
+          مناهج STEM والوزاري (4)
         </button>
       </div>
+    </div>
+  </section>
 
-      <!-- Search Input -->
-      <div>
-        <label class="block text-xs font-bold text-[#7dd3fc] mb-1.5">بحث في العناوين والموضوعات</label>
-        <input type="text" id="libSearchInput" placeholder="اكتب اسم الدرس أو المادة..." class="input-dark w-full px-4 py-2.5 text-xs text-white">
+  <!-- Filter & Search Bar -->
+  <main class="max-w-7xl mx-auto px-6 py-8">
+    <div class="bg-white border border-sky-200 rounded-2xl p-4 shadow-sm mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+        <!-- Search Input -->
+        <div class="md:col-span-6 relative">
+          <input type="text" id="libSearchInput" placeholder="ابحث باسم الكتاب، المؤلف، الموضوع، أو الاقتباس..." 
+                 class="w-full bg-[#f8fafc] border border-sky-200 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:border-sky-500" />
+        </div>
+
+        <!-- Category Filter -->
+        <div class="md:col-span-3">
+          <select id="libCategorySelect" class="w-full bg-[#f8fafc] border border-sky-200 rounded-xl px-3 py-2.5 text-xs font-bold text-[#0c2340] focus:outline-none">
+            <option value="">جميع التصنيفات</option>
+            <option value="أدب وفكر">أدب وفكر وفلسفة</option>
+            <option value="فقه وأصول">فقه وأصول وتزكية</option>
+            <option value="سير وتراجم">سير وتراجم وتاريخ</option>
+            <option value="مناهج دراسية">مناهج وملخصات دراسية</option>
+          </select>
+        </div>
+
+        <!-- Reset Button -->
+        <div class="md:col-span-3 flex gap-2">
+          <button onclick="resetFilters()" class="w-full bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-300 font-bold text-xs py-2.5 rounded-xl transition cursor-pointer">
+            إعادة ضبط الفلاتر
+          </button>
+        </div>
       </div>
+    </div>
 
-      <!-- Curriculum Filter -->
-      <div>
-        <label class="block text-xs font-bold text-[#7dd3fc] mb-1.5">المنهج الدراسي</label>
-        <select id="libCurriculumFilter" class="input-dark w-full px-4 py-2.5 text-xs text-white cursor-pointer">
-          <option value="">جميع المناهج</option>
-          <option value="الإماراتي">المنهج الإماراتي</option>
-          <option value="المصري">المنهج المصري</option>
-          <option value="السعودي">المنهج السعودي</option>
-        </select>
-      </div>
+    <!-- Active Count Header -->
+    <div class="flex items-center justify-between mb-6 px-1">
+      <h2 class="text-xl font-black text-[#0c2340]">المؤلفات والكتب المتاحة</h2>
+      <span id="booksCountBadge" class="text-xs font-bold bg-sky-100 text-sky-800 px-3 py-1 rounded-full border border-sky-200">
+        عرض 24 كتاباً ومرجعاً
+      </span>
+    </div>
 
-      <!-- Subject Filter -->
-      <div>
-        <label class="block text-xs font-bold text-[#7dd3fc] mb-1.5">المادة الدراسية</label>
-        <select id="libSubjectFilter" class="input-dark w-full px-4 py-2.5 text-xs text-white cursor-pointer">
-          <option value="">جميع المواد</option>
-          <option value="الرياضيات">الرياضيات</option>
-          <option value="الفيزياء">الفيزياء</option>
-          <option value="الكيمياء">الكيمياء</option>
-          <option value="الأحياء">الأحياء</option>
-          <option value="اللغة العربية">اللغة العربية</option>
-          <option value="اللغة الإنجليزية">اللغة الإنجليزية</option>
-          <option value="الحاسب والذكاء الاصطناعي">الحاسب والذكاء الاصطناعي</option>
-        </select>
-      </div>
-
-      <!-- Category Filter -->
-      <div>
-        <label class="block text-xs font-bold text-[#7dd3fc] mb-1.5">نوع المصدر</label>
-        <select id="libCategoryFilter" class="input-dark w-full px-4 py-2.5 text-xs text-white cursor-pointer">
-          <option value="">جميع التصنيفات</option>
-          <option value="أدب وفكر">أدب وفكر وفلسفة (الأعلام)</option>
-          <option value="فقه وأصول">فقه وأصول وتزكية</option>
-          <option value="سير وتراجم">سير وتراجم وعبقريات</option>
-          <option value="ملخصات">مذكرات وملخصات وزارية</option>
-          <option value="مقررات علمية">مقررات علمية وحاسوب</option>
-        </select>
-      </div>
-
-      <!-- Author Filter -->
-      <div>
-        <label class="block text-xs font-bold text-[#7dd3fc] mb-1.5">المؤلف والكاتب</label>
-        <select id="libAuthorFilter" class="input-dark w-full px-4 py-2.5 text-xs text-white cursor-pointer">
-          <option value="">جميع الأعلام والمؤلفين</option>
-          <option value="د. مصطفى محمود">د. مصطفى محمود</option>
-          <option value="الإمام أبو حامد الغزالي">الإمام أبو حامد الغزالي</option>
-          <option value="الإمام محمد بن إدريس الشافعي">الإمام محمد بن إدريس الشافعي</option>
-          <option value="د. طه حسين">د. طه حسين (عميد الأدب)</option>
-          <option value="عباس محمود العقاد">عباس محمود العقاد</option>
-          <option value="نخبة مِحور الأكاديمية">نخبة مِحور الأكاديمية</option>
-        </select>
-      </div>
-
-      <div class="p-3 bg-[#0d2757] rounded-xl border border-[#06b6d4]/20 text-[11px] text-[#cbd5e1] leading-relaxed">
-        💡 <strong>توجيه المؤسس:</strong> قراءة هذه المراجع الأدبية والفلسفية تنمي ملكة <em>الفهم والإدراك</em> المستقل لدى الطالب، وتصنع عقليته المبدعة.
-      </div>
-    </aside>
-
-    <!-- Resource Cards Grid (Left Side) -->
-    <section class="lg:col-span-8 space-y-4">
-      <div id="resourcesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Live Cards injected via JavaScript -->
-      </div>
-    </section>
-
+    <!-- Books Grid -->
+    <div id="booksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Generated via JS -->
+    </div>
   </main>
 
-  <!-- Interactive PDF Reader Modal -->
-  <div id="pdfModal" class="fixed inset-0 z-50 reader-backdrop hidden flex flex-col justify-between p-3 sm:p-6">
-    <!-- Reader Top Bar -->
-    <div class="bg-[#102d63] border border-[#06b6d4]/40 rounded-2xl px-6 py-3 flex items-center justify-between text-white shadow-2xl">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#06b6d4]/30">
-          PDF
-        </div>
-        <div>
-          <h3 id="pdfTitle" class="text-xs sm:text-sm font-bold text-white">عنوان المذكرة الدراسية</h3>
-          <span id="pdfMeta" class="text-[10px] text-[#7dd3fc]">المنهج الإماراتي · الصف 12</span>
-        </div>
-      </div>
-
-      <!-- Reader Controls -->
-      <div class="flex items-center gap-2">
-        <div class="flex items-center gap-1.5 bg-[#0d2757] border border-[#06b6d4]/25 px-3 py-1 rounded-full text-xs">
-          <button onclick="changePage(-1)" class="text-[#7dd3fc] hover:text-white font-bold cursor-pointer">&lt;</button>
-          <span id="pageCount" class="text-white px-2">صفحة 1 / 28</span>
-          <button onclick="changePage(1)" class="text-[#7dd3fc] hover:text-white font-bold cursor-pointer">&gt;</button>
+  <!-- ============================================================== -->
+  <!-- MODAL: THE INTERACTIVE DIGITAL BOOK READER                     -->
+  <!-- ============================================================== -->
+  <div id="readerModal" onclick="handleBackdropClick(event)">
+    <div class="bg-white max-w-3xl w-full rounded-3xl shadow-2xl overflow-hidden border border-sky-200 flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="sky-header px-6 py-4 flex items-center justify-between text-white">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-black text-sm border border-white/30">
+            📖
+          </div>
+          <div>
+            <h3 id="modalBookTitle" class="text-base sm:text-lg font-black leading-tight">عنوان الكتاب</h3>
+            <span id="modalBookAuthor" class="text-xs text-sky-100 block mt-0.5">اسم المؤلف والتصنيف</span>
+          </div>
         </div>
 
-        <button onclick="alert('تم حفظ وتنزيل نسخة PDF بنجاح!')" class="glow-teal-btn px-3 py-1 text-xs font-bold rounded-full text-white cursor-pointer">
-          تحميل PDF
-        </button>
-
-        <button onclick="closePdfModal()" class="w-8 h-8 rounded-full bg-red-950/70 border border-red-500/30 text-red-200 font-bold flex items-center justify-center hover:bg-red-900 cursor-pointer">
+        <button onclick="closeReaderModal()" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white font-bold text-lg transition cursor-pointer" title="إغلاق">
           &times;
         </button>
       </div>
-    </div>
 
-    <!-- Reader Paper View Area -->
-    <div class="flex-1 my-3 bg-[#08221e]/90 border border-[#06b6d4]/30 rounded-2xl p-6 sm:p-10 overflow-y-auto flex items-center justify-center shadow-inner">
-      <div class="bg-[#fbfbf9] text-[#1c2a27] max-w-2xl w-full rounded-xl shadow-2xl p-8 sm:p-12 min-h-[520px] flex flex-col justify-between border border-[#e2e8df]" dir="rtl">
-        <div>
-          <div class="flex items-center justify-between border-b-2 border-[#0d5b55]/20 pb-4 mb-6">
-            <div>
-              <span class="text-[10px] tracking-widest font-extrabold text-[#0d5b55] uppercase block">منصة مِحور التعليمية · مكتبة المعرفة</span>
-              <h2 id="paperHeading" class="text-xl sm:text-2xl font-black text-[#0d5b55]">ملخص الوحدة الأولى: التفاضل والتطبيقات الحسابية</h2>
-            </div>
-            <span class="text-xs font-bold bg-[#0d5b55]/10 text-[#0d5b55] px-3 py-1 rounded-full">معتمد للعام 2026</span>
-          </div>
-
-          <div id="paperContent" class="space-y-4 text-xs sm:text-sm leading-relaxed text-[#2f403b]">
-            <p class="font-semibold text-[#0d5b55]">
-              📌 المفهوم الجوهري (Core Concept):
-            </p>
-            <p>
-              التفاضل هو دراسة معدل التغير اللحظي للدوال. عندما نقترب بقيمة $\Delta x$ نحو الصفر، نتحول من متوسط التغير إلى المشتقة الأولى للدالة $f'(x)$.
-            </p>
-
-            <div class="bg-[#edf5f1] border-r-4 border-[#14b8a6] p-4 rounded-lg my-4 font-mono text-xs text-[#0a4843]">
-              القاعدة الأساسية: d/dx [x^n] = n · x^(n-1)<br>
-              مشتقة حاصل ضرب دالتين: (f · g)' = f' · g + f · g'
-            </div>
-
-            <p class="font-semibold text-[#0d5b55]">
-              💡 تلميح الاختبار الوزاري:
-            </p>
-            <p>
-              انتبه دائماً لتحويل الزوايا إلى التقدير الدائري (Radian) عند اشتقاق الدوال المثلثية مثل $\sin(x)$ و $\cos(x)$.
-            </p>
-          </div>
+      <!-- Modal Body (Paper Layout) -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-5 bg-[#fafafa]">
+        <!-- Quote Box -->
+        <div class="p-4 rounded-2xl bg-amber-50 border-r-4 border-amber-500 shadow-sm">
+          <span class="text-xs font-black text-amber-800 block mb-1">💡 فكرة الأثر ورسالة المؤلف:</span>
+          <p id="modalBookQuote" class="text-sm font-semibold text-amber-950 italic leading-relaxed">
+            "نص الاقتباس هنا..."
+          </p>
         </div>
 
-        <div class="border-t border-[#0d5b55]/15 pt-4 mt-8 flex items-center justify-between text-[11px] text-[#556963]">
-          <span>إعداد وإشراف نخبة معلمي الرياضيات بمنصة مِحور</span>
-          <span id="pageIndicatorFooter">الصفحة 1 من 28</span>
+        <!-- Detailed Excerpt & Significance -->
+        <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm space-y-3">
+          <h4 class="text-sm font-black text-sky-900 flex items-center gap-2">
+            <span>📜</span>
+            <span>ملخص المرجع والباب الأول:</span>
+          </h4>
+          <p id="modalBookExcerpt" class="text-sm text-[#254b73] leading-relaxed">
+            ملخص الكتاب وتفاصيله...
+          </p>
+        </div>
+
+        <!-- Mihwar Value Box -->
+        <div class="bg-gradient-to-r from-sky-50 to-cyan-50 p-4 rounded-2xl border border-sky-200 text-xs sm:text-sm text-sky-950 space-y-1.5">
+          <strong class="block font-black text-sky-800">✨ الأثر التربوي في منصة مِحور (الفهم والإدراك):</strong>
+          <p class="leading-relaxed text-[#254b73]">
+            دراسة هذا المؤلف تحرر تفكير الطالب من الحفظ السطحي، وتربط القوانين النظرية بالحس النقدي والوعي المعرفي الشامل.
+          </p>
         </div>
       </div>
-    </div>
 
-    <!-- Reader Footer Tip -->
-    <div class="bg-[#102d63] border border-[#06b6d4]/20 rounded-xl px-4 py-2 text-center text-xs text-[#7dd3fc]">
-      💡 يمكنك استعراض كافة الصفحات والملخصات مجاناً ضمن اشتراكك التعليمي في مِحور.
+      <!-- Modal Footer -->
+      <div class="bg-white border-t border-sky-100 px-6 py-3.5 flex items-center justify-between">
+        <span id="modalBookPages" class="text-xs font-bold text-sky-700">عدد الصفحات: 150 صفحة</span>
+        <div class="flex items-center gap-2">
+          <button onclick="downloadBookAlert()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-5 py-2.5 rounded-full transition cursor-pointer">
+            تحميل نسخة PDF
+          </button>
+          <button onclick="closeReaderModal()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs px-4 py-2.5 rounded-full transition cursor-pointer">
+            إغلاق
+          </button>
+        </div>
+      </div>
+
     </div>
   </div>
 
+  <!-- JavaScript Implementation -->
   <script>
     const resources = [
-      // ==========================================
-      // د. مصطفى محمود (Mustafa Mahmoud)
-      // ==========================================
+      // 1. مصطفى محمود
       {
         id: 1,
         title: "حوار مع صديقي الملحد",
         author: "د. مصطفى محمود",
         subject: "فكر وفلسفة وإيمان",
-        curriculum: "عام وثقافي",
+        curriculum: "ثقافي وعام",
         category: "أدب وفكر",
         pages: 148,
         downloads: 14820,
         quote: "إنما العلم وسيلة لمعرفة الصانع.. والإيمان عقلٌ فطن لا خمول فيه.",
-        excerpt: "يناقش الكتاب بأسلوب علمي ومنطقي أعمق المسائل الوجودية: نشأة الكون، حرية الإرادة الإنسانية، التوازن الدقيق لقوانين الفيزياء، وضرورة وجود الخالق من خلال بديع صنعه وتناسق القوانين الرياضية في الطبيعة."
+        excerpt: "يناقش الكتاب بأسلوب علمي ومنطقي أعمق المسائل الوجودية: نشأة الكون، حرية الإرادة الإنسانية، والتوازن الدقيق لقوانين الفيزياء كبرهان على الحكمة المطلقة."
       },
       {
         id: 2,
         title: "رحلتي من الشك إلى الإيمان",
         author: "د. مصطفى محمود",
         subject: "فلسفة الوجود والروح",
-        curriculum: "عام وثقافي",
+        curriculum: "ثقافي وعام",
         category: "أدب وفكر",
         pages: 124,
         downloads: 19400,
         quote: "استغرقت الرحلة ثلاثين سنة، قرأت خلالها الأديان ومذاهب الفلسفة.. حتى استقر قلبي على النور.",
-        excerpt: "سيرة فكرية صادقة ترصد الصراع الوجودي والتحول المعرفي للإنسان الباحث عن الحقيقة المجردة. يبرهن كيف أن الشك المنهجي هو أول درجات اليقين إذا قاده العقل المنصف."
+        excerpt: "سيرة فكرية صادقة ترصد التحول المعرفي للإنسان الباحث عن الحقيقة المجردة، مبرهناً أن الشك المنهجي هو أول درجات اليقين إذا قاده العقل المنصف."
       },
       {
         id: 3,
         title: "القرآن: محاولة لفهم عصري",
         author: "د. مصطفى محمود",
         subject: "إعجاز علمي وتأمل",
-        curriculum: "عام وثقافي",
+        curriculum: "ثقافي وعام",
         category: "أدب وفكر",
         pages: 180,
         downloads: 11250,
         quote: "القرآن نزل لكل زمان ومكان، وكلما تقدم العلم كشف عن وجه جديد من إعجازه.",
-        excerpt: "قراءة معاصرة في آيات الخلق، وتكوين الأجنة، والنظام الكوني، وربط الاكتشافات الفلكية والبيولوجية الحديثة بالنصوص القرآنية التي سبقت علوم العصر بقرون."
+        excerpt: "قراءة معاصرة في آيات الخلق وتكوين الأجنة والنظام الكوني، وربط الاكتشافات الفلكية والبيولوجية بالآيات الكريمة."
       },
       {
         id: 4,
         title: "أينشتاين والنسبية",
         author: "د. مصطفى محمود",
         subject: "فيزياء وفلسفة العلم",
-        curriculum: "عام وثقافي",
+        curriculum: "ثقافي وعام",
         category: "أدب وفكر",
         pages: 116,
         downloads: 8760,
         quote: "الزمان ليس نهراً ينساب رتيباً، بل هو بعدٌ يمتد وينكمش مع سرعة المادة وجاذبيتها.",
-        excerpt: "شرح أدبي تطبيقي عبقري للنظرية النسبية الخاصة والعامة، يفكك مفاهيم الزمان والمكان وسرعة الضوء وانحناء الفضاء لغير المتخصصين بأبسط أسلوب علمي ممكن."
+        excerpt: "شرح أدبي تطبيقي عبقري للنظرية النسبية الخاصة والعامة، يفكك مفاهيم الزمان والمكان وسرعة الضوء وانحناء الفضاء لغير المتخصصين بأبسط أسلوب علمي."
       },
 
-      // ==========================================
-      // الإمام أبو حامد الغزالي (Al-Ghazali)
-      // ==========================================
+      // 2. أبو حامد الغزالي
       {
         id: 5,
         title: "إحياء علوم الدين",
         author: "الإمام أبو حامد الغزالي",
         subject: "تزكية وفقه وأخلاق",
-        curriculum: "عام وثقافي",
+        curriculum: "تراث إسلامي",
         category: "فقه وأصول",
         pages: 1920,
         downloads: 28400,
         quote: "العلم بلا عمل جنون، والعمل بغير علم لا يكون.",
-        excerpt: "موسوعة الأخلاق والتربية الإسلامية العظمى. يعالج أمراض القلوب، ويفصّل مراتب العبادات من الظاهر إلى الباطن، ويضع ميثاقاً صارماً لأخلاق المعلم والمتعلم ومسؤوليتهما أمام المجتمع."
+        excerpt: "موسوعة الأخلاق والتربية الإسلامية العظمى. يعالج أمراض القلوب، ويفصّل مراتب العبادات من الظاهر إلى الباطن، ويضع ميثاقاً صارماً لأخلاق المعلم والمتعلم."
       },
       {
         id: 6,
         title: "المنقذ من الضلال والمفصح بالأحوال",
         author: "الإمام أبو حامد الغزالي",
         subject: "منهجية البحث والعقل",
-        curriculum: "عام وثقافي",
+        curriculum: "تراث إسلامي",
         category: "أدب وفكر",
         pages: 132,
         downloads: 13650,
-        quote: "من لم يشك لم ينظر، ومن لم ينظر لم يبصر، ومن لم يبصر بقي في العمى والضلالة.",
-        excerpt: "الوثيقة التأسيسية للمنهج النقدي في الحضارة الإسلامية. يستعرض فيه الغزالي فحص المذاهب الكلامية والفلسفية والتعليمية وصولاً إلى يقين التجربة الروحية والمعرفة المباشرة."
+        quote: "من لم يشك لم ينظر، ومن لم ينظر لم يبصر، ومن لم يبصر بقي في العمى والضلال.",
+        excerpt: "البيان التأسيسي للمنهج النقدي في التراث العربي والإسلامي. يسرد فيه الغزالي رحلته بين مذاهب المتكلمين والباطنية والفلاسفة والمتصوفة حتى وصل إلى اليقين."
       },
       {
         id: 7,
         title: "تهافت الفلاسفة",
         author: "الإمام أبو حامد الغزالي",
-        subject: "نقد المنطق وما وراء الطبيعة",
-        curriculum: "عام وثقافي",
+        subject: "نقد المنطق والفلسفة",
+        curriculum: "تراث إسلامي",
         category: "أدب وفكر",
-        pages: 310,
-        downloads: 7890,
-        quote: "ليس من شرط العقل أن ينكر ما لا يحيط به علماً في عالم الغيب.",
-        excerpt: "أشهر مناظرة نقدية عقلية في تاريخ الفكر. يحلل فيها الغزالي افتراضات الفلسفة الإغريقية وأتباعها في السببية ونشأة العالم، مقدماً نموذجاً في الشجاعة والتحليل المنطقي الصارم."
+        pages: 260,
+        downloads: 9800,
+        quote: "لا بد من محاججة الخصم بأدواته المنطقية ذاتها لبيان عواره واضطراب حججه.",
+        excerpt: "كتاب المحاججة الفلسفية الأكبر؛ ناقش فيه الغزالي فلاسفة المشائية كالفارابي وابن سينا في 20 مسألة كبرى حول أزلية العالم ونظام السببية ومعرفة الكليات."
       },
       {
         id: 8,
-        title: "أيها الولد",
+        title: "أيها الولد (رسالة المتعلم)",
         author: "الإمام أبو حامد الغزالي",
-        subject: "وصايا ومنهج التربية",
-        curriculum: "عام وثقافي",
+        subject: "تربية وسلوك الطالب",
+        curriculum: "تراث إسلامي",
         category: "فقه وأصول",
-        pages: 64,
-        downloads: 16500,
-        quote: "يا بني، كم من ليلة أحييتها بتكرار العلم.. فماذا أعددت لله إن أتاك الأجل؟",
-        excerpt: "رسالة تربوية موجزة وجامعة بعث بها الغزالي إلى أحد تلامذته النجباء، يرسم فيها خارطة طريق لطالب العلم: كيف يجعل علمه مثمراً نافعاً في الحياة لا مجرد زينة للجدل."
+        pages: 84,
+        downloads: 16200,
+        quote: "لو قرأت العلم مائة سنة وجمعت ألف كتاب، لم تكن مستعداً لرحمة الله إلا بالعمل.",
+        excerpt: "وصية تربوية جامعة وجهها الإمام لتلميذه النجيب، توضح كيف يستثمر الطالب وقته، وكيف ينقي نيته في طلب المعرفة ويحول العلوم النظرية إلى سلوك حي."
       },
 
-      // ==========================================
-      // الإمام محمد بن إدريس الشافعي (Al-Shafi'i)
-      // ==========================================
+      // 3. الإمام الشافعي
       {
         id: 9,
-        title: "ديوان الإمام الشافعي (حكم وآداب)",
+        title: "الرسالة في أصول الفقه",
         author: "الإمام محمد بن إدريس الشافعي",
-        subject: "حكم وشعر وأخلاق",
-        curriculum: "عام وثقافي",
-        category: "أدب وفكر",
-        pages: 140,
-        downloads: 32100,
-        quote: "تعلّم فليس المرء يولد عالماً.. وليس أخو علمٍ كمن هو جاهلُ.",
-        excerpt: "درر الحكمة العربية والإنسانية. قصائد الشافعي في الصبر، وعزة النفس، وفضل التغرب في طلب المعالي، وصون اللسان، وقيمة الوقت في حياة طالب العلم وصانع المستقبل."
+        subject: "أصول الاستدلال والتشريع",
+        curriculum: "تراث إسلامي",
+        category: "فقه وأصول",
+        pages: 620,
+        downloads: 14300,
+        quote: "ما جادلت أحداً إلا تمنيت أن يظهر الله الحق على لسانه دوني.",
+        excerpt: "أول كتاب كُتب في تاريخ الإسلام لتقعيد علم أصول الفقه، وصياغة قواعد القياس والناسخ والمنسوخ، والبيان والعموم والخصوص، وضبط لغة الاستنباط التشريعي."
       },
       {
         id: 10,
-        title: "الرسالة (أول كتاب في أصول الفقه)",
+        title: "ديوان الإمام الشافعي",
         author: "الإمام محمد بن إدريس الشافعي",
-        subject: "منطق التشريع واستنباط الأحكام",
-        curriculum: "عام وثقافي",
-        category: "فقه وأصول",
-        pages: 620,
-        downloads: 9140,
-        quote: "لا يلزم أحداً قولُ أحدٍ إلا بحجة يجب التسليم لها.",
-        excerpt: "الكتاب الذي أسس للمنهج الاستنباطي والقواعد التشريعية في تاريخ القانون والفكر الإسلامي. يضع فيه الشافعي شروط القياس، والناسخ والمنسوخ، ودلالات الألفاظ، بميزان دقيق."
+        subject: "حكمة وشعر وأخلاق طالب العلم",
+        curriculum: "تراث إسلامي",
+        category: "أدب وفكر",
+        pages: 140,
+        downloads: 22100,
+        quote: "أخي لن تنال العلم إلا بستةٍ.. سأنبيك عن تفصيلها ببيان: ذكاءٌ وحرصٌ واجتهادٌ وبُلغةٌ.. وصحبةُ أستاذٍ وطولُ زمانِ.",
+        excerpt: "أعذب ما قيل في أدب النفس، وآداب التعلم، والتحفيز على السفر وطلب المعرفة، والصبر على المعلم، والتواضع عند بلوغ المراتب العليا."
       },
       {
         id: 11,
-        title: "الأم (خلاصة الفقه المقارن)",
+        title: "الأم في الفقه المقارن",
         author: "الإمام محمد بن إدريس الشافعي",
-        subject: "فقه المعاملات والعدل",
-        curriculum: "عام وثقافي",
+        subject: "الفقه المقارن والمذهب الجديد",
+        curriculum: "تراث إسلامي",
         category: "فقه وأصول",
         pages: 2800,
-        downloads: 6540,
+        downloads: 8900,
         quote: "رأيي صواب يحتمل الخطأ، ورأي غيري خطأ يحتمل الصواب.",
-        excerpt: "خلاصة المذهب الجديد للشافعي في مصر. موسوعة فقهية تبين مرونة التشريع، واحترام الرأي الآخر، ومراعاة تغير الفتوى بتغير الزمان والمكان وأعراف الشعوب."
+        excerpt: "الموسوعة الفقهية الكبرى التي تمثل المذهب الجديد للإمام الشافعي بمصر، تتجلى فيها عبقرية المقارنة والترجيح بين الأدلة النقلية والعقلية بأعلى درجات الإنصاف."
       },
 
-      // ==========================================
-      // د. طه حسين - عميد الأدب العربي (Taha Hussein)
-      // ==========================================
+      // 4. د. طه حسين
       {
         id: 12,
-        title: "الأيام (السيرة الذاتية الكبرى)",
+        title: "الأيام (السيرة الذاتية الكاملة)",
         author: "د. طه حسين",
-        subject: "سيرة ذاتية وأدب رفيع",
-        curriculum: "عام وثقافي",
+        subject: "أدب وسيرة كفاح وإرادة",
+        curriculum: "أدب عربي معاصر",
         category: "سير وتراجم",
-        pages: 380,
-        downloads: 41200,
-        quote: "التعليم كالماء والهواء.. حقٌ أصيل لكل طفل على وجه الأرض.",
-        excerpt: "تحفة الأدب العربي الحديث ورواية الإرادة الإنسانية الخالدة. يروي فيها طه حسين كيف قهر الظلام وفقدان البصر والفقر في قرى الصعيد، ليصل إلى العالمية وعمادة الأدب."
+        pages: 360,
+        downloads: 31200,
+        quote: "إن حب الاستطلاع يولد مع الإنسان، ولكنه يضعف كلما تقدم في السن إلا عند العظماء.",
+        excerpt: "أيقونة الأدب العربي الحديث؛ قصة صبي فقد بصره في قرية ريفية فقيرة، لكن بصيرته وعزيمته قادته إلى مشيخة الأزهر وجامعة السوربون حتى أصبح عميد الأدب العربي."
       },
       {
         id: 13,
         title: "في الشعر الجاهلي",
         author: "د. طه حسين",
         subject: "نقد أدبي ومنهج ديكارتي",
-        curriculum: "عام وثقافي",
+        curriculum: "أدب عربي معاصر",
         category: "أدب وفكر",
-        pages: 220,
-        downloads: 12800,
-        quote: "الشك سبيل اليقين، والبحث العلمي الحر هو تاج العقل البشري.",
-        excerpt: "الكتاب الذي أحدث ثورة في مناهج النقد الأدبي العربي في القرن العشرين. يطبق فيه طه حسين المنهج الديكارتي في تمحيص الروايات التاريخية والنصوص الشعرية القديمة."
+        pages: 210,
+        downloads: 12400,
+        quote: "الشك أساس اليقين، والبحث التاريخي يتطلب تجرد العالم من كل عاطفة مسبقة.",
+        excerpt: "الكتاب الذي أحدث ثورة كبرى في الدراسات الأدبية والنقدية العربية؛ طبق فيه المنهج الديكارتي الشكي في فحص الروايات الشفوية والنصوص التاريخية."
       },
       {
         id: 14,
-        title: "دعاء الكروان",
+        title: "حديث الأربعاء (الأجزاء الثلاثة)",
         author: "د. طه حسين",
-        subject: "رواية كلاسيكية وتراجيديا",
-        curriculum: "عام وثقافي",
+        subject: "تاريخ ونقد الشعر العربي",
+        curriculum: "أدب عربي معاصر",
         category: "أدب وفكر",
-        pages: 195,
-        downloads: 24700,
-        quote: "لا يا كروان.. لا تغنّ هذا المساء، فإن الحزن قد غمر الأفق.",
-        excerpt: "رواية إنسانية مؤثرة تستعرض مأساة 'آمنة' وثأرها لأختها في صعيد مصر، وتطور الصراع بين مشاعر الانتقام والندم والمحبة، بلغة أدبية موسيقية ساحرة."
+        pages: 720,
+        downloads: 9400,
+        quote: "الشعر مرآة الوجدان القومي، ولن تفهم تاريخ أمة إلا إذا فهمت شعراءها.",
+        excerpt: "دراسة نقدية أدبية باذخة لتاريخ الشعر العربي عبر العصور: الأموي والعباسي والأندلسي، تقدم قراءة تحليلية لنوابغ الشعراء كبشار والمتنبي وأبي تمام."
       },
       {
         id: 15,
         title: "مستقبل الثقافة في مصر",
         author: "د. طه حسين",
         subject: "فلسفة التعليم والنهضة",
-        curriculum: "عام وثقافي",
+        curriculum: "أدب عربي معاصر",
         category: "أدب وفكر",
         pages: 310,
-        downloads: 10450,
-        quote: "إنما تنهض الأمم يوم تجعل التعليم غاية مقدسة، تحرره من القيود وتفتحه للجميع.",
-        excerpt: "الخطة الاستراتيجية الشاملة لتحديث منظومة التعليم، وربط المدارس والجامعات بالبحث العلمي، والجمع بين عراقة التراث وإشراق الحضارة الإنسانية المعاصرة."
+        downloads: 10800,
+        quote: "التعليم كالماء والهواء، حق طبيعي لكل مواطن لا يجوز حجبُه ولا المساومة عليه.",
+        excerpt: "المانيفستو الاستراتيجي لبناء التعليم الحديث والمجاني؛ يطرح رؤية شاملة لتطوير المدارس والجامعات وإعداد المعلمين والربط بين الأصالة والمعاصرة."
       },
 
-      // ==========================================
-      // عباس محمود العقاد (Abbas Mahmoud Al-Aqqad)
-      // ==========================================
+      // 5. عباس محمود العقاد
       {
         id: 16,
         title: "عبقرية محمد ﷺ",
         author: "عباس محمود العقاد",
         subject: "سيرة تحليلية ونفسية",
-        curriculum: "عام وثقافي",
+        curriculum: "فكر وسير",
         category: "سير وتراجم",
-        pages: 240,
-        downloads: 38900,
-        quote: "إنما العظمة أن تجمع في شخصك مآثر شتى: حكمة القائد، ورحمة الأب، وعزم البطل.",
-        excerpt: "تحليل نفسي واستراتيجي فذ لشخصية النبي الكريم ﷺ. لا يسرد الغزوات كتواريخ، بل يفكك خصال القيادة الفذة، وإدارة الأزمات، والعدالة المطلقة، وبناء الإنسان من الصفر."
+        pages: 230,
+        downloads: 27500,
+        quote: "إن العظمة في النبي ليست في جانب واحد، بل في تمام التوازن بين كل الصفات الإنسانية النبيلة.",
+        excerpt: "تحليل نفسي وعسكري وإنساني فذ للقيادة النبوية الشريفة؛ يبرز العقاد كيف اجتمعت صفات القائد العبقري، والحاكم العادل، والمربي الرحيم، والزوج والأب الودود."
       },
       {
         id: 17,
         title: "عبقرية عمر بن الخطاب",
         author: "عباس محمود العقاد",
-        subject: "فقه الحكم والعدالة",
-        curriculum: "عام وثقافي",
+        subject: "سيرة وإدارة وعدالة",
+        curriculum: "فكر وسير",
         category: "سير وتراجم",
-        pages: 220,
-        downloads: 31500,
-        quote: "متى استعبدتم الناس وقد ولدتهم أمهاتهم أحراراً؟",
-        excerpt: "دراسة عميقة في شخصية الخليفة العادل وعقليته التنظيمية الفذة. يحلل العقاد كيف أسس عمر الدواوين ونظام القضاء المستقل، ووازن بين هيبة الحاكم ورحمة الراعي."
+        pages: 250,
+        downloads: 21300,
+        quote: "كان عمر رجلاً لا يخاف الحق، وأعظم ما فيه أنه كان يملك قوة النفس التي تقهر النفس.",
+        excerpt: "دراسة معمقة في الشخصية القيادية للفاروق عمر، وكيف أسس أركان الدولة المدنية، وفصل القضاء عن الولاية، ووضع قواعد الرقابة والمحاسبة الإدارية الصارمة."
       },
       {
         id: 18,
-        title: "عبقرية الإمام علي بن أبي طالب",
+        title: "التفكير فريضة إسلامية",
         author: "عباس محمود العقاد",
-        subject: "حكمة وفصاحة وشجاعة",
-        curriculum: "عام وثقافي",
-        category: "سير وتراجم",
-        pages: 205,
-        downloads: 26300,
-        quote: "قيمة كل امرئ ما يحسنه.. والناس أعداء ما جهلوا.",
-        excerpt: "استعراض لعقلية باب مدينة العلم، الإمام علي كرم الله وجهه: فصاحته البلاغية التي لا تبارى، زهده في السلطة، وثباته الأسطوري على مبادئ الحق والإنصاف."
+        subject: "فلسفة العقل في الإسلام",
+        curriculum: "فكر وسير",
+        category: "أدب وفكر",
+        pages: 190,
+        downloads: 17800,
+        quote: "الإسلام لا يطلب منك أن تلغي عقلك لتؤمن، بل يأمرك بإعمال عقلك لتبلغ الإيمان.",
+        excerpt: "يستعرض الآيات القرآنية التي تدعو للتدبر والنظر واستقراء قوانين الطبيعة، ويثبت أن تعطيل العقل وتعطيل المنطق يناقضان جوهر الرسالة الإسلامية."
       },
       {
         id: 19,
-        title: "التفكير فريضة إسلامية",
+        title: "أنا (السيرة الذاتية)",
         author: "عباس محمود العقاد",
-        subject: "فلسفة العقل ونبذ التقليد",
-        curriculum: "عام وثقافي",
-        category: "أدب وفكر",
-        pages: 175,
-        downloads: 17400,
-        quote: "القرآن لا يذكر العقل إلا في مقام التعظيم والحث على استعماله.",
-        excerpt: "مرافعة فكرية قاطعة تثبت أن إعمال العقل، والبحث في نواميس الطبيعة، ورفض التبعية العمياء، هو جوهر التكليف الإلهي للإنسان في الكون."
+        subject: "سيرة أدبية وتكوين عصامي",
+        curriculum: "فكر وسير",
+        category: "سير وتراجم",
+        pages: 280,
+        downloads: 14200,
+        quote: "الكتب ليست زينة المجالس، بل هي عيون إضافية نرى بها ما خفي من أسرار الحياة.",
+        excerpt: "سيرة ذاتية ملهمة لعملاق الفكر الذي لم ينل سوى الشهادة الابتدائية، ثم كوّن نفسه بالقراءة والمطالعة حتى أصبح أستاذ الأساتذة وموسوعة تمشي على قدمين."
       },
       {
         id: 20,
-        title: "أنا (السيرة الذاتية للعقاد)",
+        title: "الله (نشأة العقيدة الإلهية)",
         author: "عباس محمود العقاد",
-        subject: "سيرة ذاتية وعصامية",
-        curriculum: "عام وثقافي",
-        category: "سير وتراجم",
-        pages: 260,
-        downloads: 14200,
-        quote: "لم أتعلم في مدرسة غير الابتدائية، ولكنني جعلت من مكتبتي جامعة كبرى أستاذها الزمان.",
-        excerpt: "قصة العصامية الكبرى لمفكر أسوان الذي ثقف نفسه بنفسه من خلال القراءة المستمرة والاطلاع، حتى صار حجة عصره في اللغة والأدب والفلسفة العالمية."
+        subject: "تاريخ الأديان والأنثروبولوجيا",
+        curriculum: "فكر وسير",
+        category: "أدب وفكر",
+        pages: 340,
+        downloads: 13100,
+        quote: "تطور الوعي الإنساني كان دائماً يوازي ارتقاء تصوره للذات الإلهية نحو التوحيد الخالص.",
+        excerpt: "دراسة تاريخية مقارنة لتطور الإدراك البشري لفكرة الألوهية عبر الحضارات القديمة: من الطوطمية إلى التعددية وصولاً إلى التوحيد الكامل في رسالات السماء."
       },
 
-      // ==========================================
-      // المذكرات والمقررات المدرسية المعتمدة
-      // ==========================================
+      // 6. مناهج دراسية وملخصات معتمدة
       {
         id: 21,
-        title: "الملخص الشامل في التفاضل والتكامل",
-        author: "نخبة مِحور الأكاديمية",
-        subject: "الرياضيات",
-        curriculum: "الإماراتي",
-        category: "ملخصات",
-        pages: 28,
-        downloads: 5420,
-        quote: "التفاضل هو لغة فهم معدل التغير اللحظي في الكون الطبيعي والهندسي.",
-        excerpt: "خرائط ذهنية وقوانين الاشتقاق وتطبيقات القيم العظمى والصغرى، وتكامل الدوال الأسية والمثلثية، مصممة لاختبارات الثانوية العامة المتقدمة."
+        title: "ملخص الفيزياء المتقدمة وحسابات كيرشوف",
+        author: "قسم الفيزياء بمنصة مِحور",
+        subject: "فيزياء ومحاكاة كهربائية",
+        curriculum: "منهج الإمارات والوزاري",
+        category: "مناهج دراسية",
+        pages: 64,
+        downloads: 18900,
+        quote: "الفيزياء ليست حفظ قوانين، بل هي فهم لمسار الإلكترونات والطاقة في الكون.",
+        excerpt: "تفكيك شامل لقوانين كيرشوف للجهد والتيار، مع دوائر محاكاة بصرية، وحلول تفصيلية لنماذج اختبارات الثانوية العامة المتقدمة."
       },
       {
         id: 22,
-        title: "مذكرة الفيزياء النووية وقوانين كيرشوف",
-        author: "نخبة مِحور الأكاديمية",
-        subject: "الفيزياء",
-        curriculum: "المصري",
-        category: "ملخصات",
-        pages: 36,
-        downloads: 6180,
-        quote: "الدوائر الكهربية شبكات متوازنة يحكمها قانونا حفظ الشحنة وحفظ الطاقة.",
-        excerpt: "شرح تطبيقي مع مخططات بصرية تفاعلية لقوانين كيرشوف، الحث الكهرومغناطيسي، وأساسيات فيزياء الكم والفيزياء الحديثة للثانوية العامة المصرية."
+        title: "مذكرة التفاضل والتكامل وتطبيقات المساحات",
+        author: "قسم الرياضيات بمنصة مِحور",
+        subject: "رياضيات وتفاضل وتكامل",
+        curriculum: "المنهج العام والثانوية",
+        category: "مناهج دراسية",
+        pages: 72,
+        downloads: 24500,
+        quote: "التفاضل يصف معدل تغير اللحظة، والتكامل يجمع تلك اللحظات لبناء الواقع.",
+        excerpt: "مذكرة مكثفة تغطي قواعد الاشتقاق، سلوك الدوال، حساب المساحات والحجوم الدورانية، مع مسائل منتقاة لقياس مستويات الفهم والتفكير النقدي."
       },
       {
         id: 23,
-        title: "دليل الكيمياء العضوية وتفاعلات الألكانات",
-        author: "نخبة مِحور الأكاديمية",
-        subject: "الكيمياء",
-        curriculum: "السعودي",
-        category: "ملخصات",
-        pages: 44,
-        downloads: 3950,
-        quote: "الكيمياء العضوية هي سر بناء المادة الحية والجزيئات الحيوية.",
-        excerpt: "جداول تصنيف المركبات الهيدروكربونية، آليات التفاعل والتسمية النظامية IUPAC، وأسئلة تدريبية لاختبارات التحصيلي ومسارات الثانوية السعودية."
+        title: "دليل الكيمياء العضوية وتفاعلات الهيدروكربونات",
+        author: "قسم الكيمياء بمنصة مِحور",
+        subject: "كيمياء عضوية وتجارب",
+        curriculum: "منهج الإمارات ومصر",
+        category: "مناهج دراسية",
+        pages: 58,
+        downloads: 15300,
+        quote: "الكيمياء العضوية هي لغة الحياة؛ حيث تشيد ذرة الكربون كل مركب حي.",
+        excerpt: "شرح تفاعلي لتسمية مركبات الألكانات والألكينات والكحولات، وميكانيكية تفاعلات الاستبدال والإضافة، مع خرائط مفاهيم ملونة."
       },
       {
         id: 24,
-        title: "أساسيات بايثون وتراكيب البيانات والذكاء الاصطناعي",
-        author: "نخبة مِحور الأكاديمية",
-        subject: "الحاسب والذكاء الاصطناعي",
-        curriculum: "الإماراتي",
-        category: "مقررات علمية",
-        pages: 60,
-        downloads: 7740,
-        quote: "البرمجة ليست مجرد كتابة أكواد، بل منهجية هندسية لحل المشكلات المعقدة.",
-        excerpt: "دليل عملي 100% يشمل الخوارزميات، تراكيب البيانات Lists & Dictionaries، معالجة البيانات بمكتبات Pandas، وبناء نماذج الذكاء الاصطناعي التوليدي."
+        title: "أساسيات الهندسة الهيدروليكية وحسابات السريان",
+        author: "م. عمرو سليم (Eng. Amr Selim)",
+        subject: "هندسة بنية تحتية ولاندسكيب",
+        curriculum: "ماستركلاس وتطبيقي",
+        category: "مناهج دراسية",
+        pages: 86,
+        downloads: 12900,
+        quote: "الهندسة الناجحة هي التي تجمع بين دقة الحساب ونقاء التصميم على أرض الواقع.",
+        excerpt: "دليل تطبيقي عملي لمهندسي المكتب الفني لحساب أقطار المواسير وفق معادلة هازن-ويليامز وهبوط الضغط بمشاريع دبي وأبوظبي."
       }
     ];
 
-    let currentBook = resources[0];
-    let currentPage = 1;
-    let totalPages = 28;
+    let activeAuthor = "";
+    let activeCategory = "";
 
-    function renderResources(list) {
-      const grid = document.getElementById("resourcesGrid");
+    function renderBooks(list) {
+      const grid = document.getElementById("booksGrid");
       grid.innerHTML = "";
+
+      document.getElementById("booksCountBadge").innerText = `عرض ${list.length} كتاباً ومرجعاً`;
 
       if (list.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-1 md:col-span-2 text-center py-16 bg-[#061d19]/60 rounded-3xl border border-[#06b6d4]/20">
-            <span class="text-3xl block mb-2">🔍</span>
-            <h3 class="text-base font-bold text-white mb-1">لم نعثر على نتائج مطابقة</h3>
-            <p class="text-xs text-[#cbd5e1] mb-4">جرّب البحث باسم مؤلف آخر أو اضغط زر إعادة الضبط.</p>
-            <button onclick="resetLibFilters()" class="glow-teal-btn text-white text-xs font-bold px-5 py-2 rounded-full cursor-pointer">
-              إعادة ضبط الفلاتر
-            </button>
+          <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-sky-200">
+            <span class="text-4xl block mb-2">🔍</span>
+            <h3 class="text-base font-bold text-[#0c2340]">لم نجد نتائج مطابقة لبحثك</h3>
+            <p class="text-xs text-sky-700 mt-1">جرّب البحث باسم آخر أو اضغط زر إعادة الضبط في الأعلى.</p>
           </div>
         `;
         return;
       }
 
-      list.forEach(r => {
-        const isHeritage = r.category === "أدب وفكر" || r.category === "فقه وأصول" || r.category === "سير وتراجم";
-        const card = document.createElement("article");
-        card.className = "glass-card p-5 flex flex-col justify-between";
+      list.forEach(book => {
+        const isHeritage = book.category !== "مناهج دراسية";
+        const card = document.createElement("div");
+        card.className = "book-card p-5 flex flex-col justify-between";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="${isHeritage ? 'bg-[#f59e0b]/20 text-[#fef08a] border-[#f59e0b]/40' : 'bg-[#0d5b55] text-[#7dd3fc] border-[#06b6d4]/30'} border text-[10px] font-bold px-2.5 py-1 rounded-md">
-                ${r.category}
+              <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full ${isHeritage ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-sky-100 text-sky-800 border border-sky-300'}">
+                ${book.category}
               </span>
-              <span class="text-[10px] text-[#cbd5e1] bg-[#0d2757] px-2 py-0.5 rounded-full border border-[#06b6d4]/20">
-                ${r.curriculum}
+              <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">
+                ${book.curriculum}
               </span>
             </div>
 
-            <h3 class="text-lg font-black text-white mb-1 leading-snug">${r.title}</h3>
+            <h3 class="text-base font-black text-[#0c2340] mb-1.5 leading-snug">${book.title}</h3>
             
-            <div class="text-xs font-bold text-[#fef08a] mb-2 flex items-center gap-1.5">
+            <div class="text-xs font-bold text-sky-700 mb-2.5 flex items-center gap-1.5">
               <span>✍️</span>
-              <span>${r.author}</span>
+              <span>${book.author}</span>
             </div>
 
-            <p class="text-xs text-[#cbd5e1] line-clamp-2 leading-relaxed mb-4">
-              "${r.quote || r.excerpt}"
+            <p class="text-xs text-[#254b73] line-clamp-3 leading-relaxed mb-4 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
+              "${book.quote || book.excerpt}"
             </p>
 
-            <div class="flex items-center gap-2.5 text-[11px] text-[#7dd3fc] mb-4">
-              <span>📚 ${r.pages} صفحة</span>
+            <div class="flex items-center gap-3 text-[11px] text-slate-500 mb-4">
+              <span>📖 ${book.pages} صفحة</span>
               <span>·</span>
-              <span>👁️ ${r.downloads.toLocaleString()} قراءة واقتباس</span>
+              <span>👁️ ${book.downloads.toLocaleString()} قراءة</span>
             </div>
           </div>
 
-          <div class="border-t border-[#06b6d4]/20 pt-3 flex items-center justify-between">
-            <span class="text-[11px] font-semibold text-[#fef08a]">${r.subject}</span>
-            <button onclick="openBookModal(${r.id})" class="${isHeritage ? 'glow-teal-btn' : 'glow-teal-btn'} text-xs font-bold px-4 py-2 rounded-full inline-flex items-center gap-1.5 cursor-pointer text-white">
-              <span>اقرأ وتأمل</span>
-              <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          <div class="border-t border-sky-100 pt-3 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-sky-800">${book.subject}</span>
+            <button onclick="openReaderModal(${book.id})" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1.5 transition cursor-pointer shadow-sm hover:shadow">
+              <span>اقرأ الكتاب الآن</span>
+              <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
           </div>
         `;
@@ -768,121 +625,119 @@
       });
     }
 
-    function filterLib() {
+    function filterData() {
       const q = document.getElementById("libSearchInput").value.trim().toLowerCase();
-      const cat = document.getElementById("libCategoryFilter").value;
-      const aut = document.getElementById("libAuthorFilter") ? document.getElementById("libAuthorFilter").value : "";
-      const cur = document.getElementById("libCurriculumFilter").value;
-      const sub = document.getElementById("libSubjectFilter") ? document.getElementById("libSubjectFilter").value : "";
+      const cat = document.getElementById("libCategorySelect").value;
 
       const filtered = resources.filter(item => {
-        const matchQ = !q || item.title.toLowerCase().includes(q) || item.author.toLowerCase().includes(q) || item.subject.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q);
+        const matchQ = !q || item.title.toLowerCase().includes(q) || item.author.toLowerCase().includes(q) || item.subject.toLowerCase().includes(q) || item.quote.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q);
         const matchCat = !cat || item.category === cat;
-        const matchAut = !aut || item.author.includes(aut);
-        const matchCur = !cur || item.curriculum === cur;
-        const matchSub = !sub || item.subject.includes(sub);
-        return matchQ && matchCat && matchAut && matchCur && matchSub;
+        const matchAuthorPill = !activeAuthor || item.author.includes(activeAuthor);
+        return matchQ && matchCat && matchAuthorPill;
       });
 
-      renderResources(filtered);
+      renderBooks(filtered);
     }
 
-    function quickFilterAuthor(authorName) {
-      document.getElementById("libSearchInput").value = authorName;
-      if (document.getElementById("libCategoryFilter")) document.getElementById("libCategoryFilter").value = "";
-      if (document.getElementById("libAuthorFilter")) document.getElementById("libAuthorFilter").value = "";
-      if (document.getElementById("libCurriculumFilter")) document.getElementById("libCurriculumFilter").value = "";
-      filterLib();
+    function setAuthorFilter(authorName) {
+      activeAuthor = authorName;
+      document.getElementById("libCategorySelect").value = "";
+      
+      // Update pills UI
+      const pills = ['all', 'mahmoud', 'ghazali', 'shafii', 'hussein', 'aqqad', 'stem'];
+      pills.forEach(p => {
+        const el = document.getElementById(`pill-${p}`);
+        if (el) {
+          el.className = 'pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+        }
+      });
+
+      if (!authorName) {
+        document.getElementById('pill-all').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      } else if (authorName.includes('مصطفى')) {
+        document.getElementById('pill-mahmoud').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      } else if (authorName.includes('الغزالي')) {
+        document.getElementById('pill-ghazali').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      } else if (authorName.includes('الشافعي')) {
+        document.getElementById('pill-shafii').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      } else if (authorName.includes('طه حسين')) {
+        document.getElementById('pill-hussein').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      } else if (authorName.includes('العقاد')) {
+        document.getElementById('pill-aqqad').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      }
+
+      filterData();
     }
 
-    function resetLibFilters() {
+    function setCategoryFilter(catName) {
+      activeAuthor = "";
+      document.getElementById("libCategorySelect").value = catName;
+      
+      const pills = ['all', 'mahmoud', 'ghazali', 'shafii', 'hussein', 'aqqad', 'stem'];
+      pills.forEach(p => {
+        const el = document.getElementById(`pill-${p}`);
+        if (el) el.className = 'pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+      });
+      document.getElementById('pill-stem').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
+
+      filterData();
+    }
+
+    function resetFilters() {
       document.getElementById("libSearchInput").value = "";
-      if (document.getElementById("libCategoryFilter")) document.getElementById("libCategoryFilter").value = "";
-      if (document.getElementById("libAuthorFilter")) document.getElementById("libAuthorFilter").value = "";
-      if (document.getElementById("libCurriculumFilter")) document.getElementById("libCurriculumFilter").value = "";
-      if (document.getElementById("libSubjectFilter")) document.getElementById("libSubjectFilter").value = "";
-      renderResources(resources);
+      document.getElementById("libCategorySelect").value = "";
+      setAuthorFilter("");
     }
 
-    function openBookModal(bookId) {
-      const book = resources.find(r => r.id === bookId);
+    // Modal Control Functions
+    function openReaderModal(bookId) {
+      const book = resources.find(b => b.id === bookId);
       if (!book) return;
-      currentBook = book;
-      totalPages = book.pages;
-      currentPage = 1;
 
-      document.getElementById("pdfTitle").innerText = book.title;
-      document.getElementById("pdfMeta").innerText = `${book.author} · ${book.category} · ${book.subject}`;
-      document.getElementById("paperHeading").innerText = book.title;
+      document.getElementById("modalBookTitle").innerText = book.title;
+      document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category} · ${book.subject}`;
+      document.getElementById("modalBookQuote").innerText = `"${book.quote}"`;
+      document.getElementById("modalBookExcerpt").innerText = book.excerpt;
+      document.getElementById("modalBookPages").innerText = `المخطوطة كاملة: ${book.pages} صفحة · حجم التحميل 4.2 MB`;
 
-      renderBookPage();
-      document.getElementById("pdfModal").classList.remove("hidden");
+      const modal = document.getElementById("readerModal");
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
     }
 
-    function renderBookPage() {
-      const content = document.getElementById("paperContent");
-      if (!content) return;
-      content.innerHTML = `
-        <div class="p-4 rounded-xl bg-[#f0f4f1] border-r-4 border-[#f59e0b] my-2">
-          <p class="font-bold text-[#0d5b55] text-sm mb-1">💡 فكرة الأثر ورسالة الكاتب:</p>
-          <p class="text-sm italic text-[#162a26]">"${currentBook.quote}"</p>
-        </div>
-
-        <p class="font-bold text-[#0d5b55] pt-2">📖 استعراض موجز المخطوطة والباب الأول:</p>
-        <p class="text-sm sm:text-base leading-relaxed text-[#263833]">
-          ${currentBook.excerpt}
-        </p>
-
-        <div class="bg-[#edf5f1] border border-[#14b8a6]/30 p-4 rounded-xl my-4 text-xs sm:text-sm text-[#0a4843]">
-          <strong class="block font-bold mb-1">✨ القيمة المكتسبة لطالب مِحور (الفهم والإدراك):</strong>
-          قراءة هذا المصدر تعزز قدرتك على ربط العلوم الإنسانية والفلسفية بالواقع التطبيقي، وتحرر تفكيرك من السطحية والحفظ الآلي إلى عمق الاستنباط والتحليل المنطقي المستقل.
-        </div>
-      `;
-
-      updatePageIndicators();
+    function closeReaderModal() {
+      const modal = document.getElementById("readerModal");
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
     }
 
-    function closePdfModal() {
-      document.getElementById("pdfModal").classList.add("hidden");
-    }
-
-    function changePage(delta) {
-      const target = currentPage + delta;
-      if (target >= 1 && target <= totalPages) {
-        currentPage = target;
-        updatePageIndicators();
+    function handleBackdropClick(e) {
+      if (e.target.id === 'readerModal') {
+        closeReaderModal();
       }
     }
 
-    function updatePageIndicators() {
-      document.getElementById("pageCount").innerText = `صفحة ${currentPage} / ${totalPages}`;
-      document.getElementById("pageIndicatorFooter").innerText = `الصفحة ${currentPage} من ${totalPages}`;
+    function downloadBookAlert() {
+      alert("✅ جاري تجهيز وتحميل النسخة الرقمية المعتمدة لكتابك بصيغة PDF..");
     }
 
-    // Event listeners
-    document.getElementById("libSearchInput").addEventListener("input", filterLib);
-    document.getElementById("libCategoryFilter").addEventListener("change", filterLib);
-    if (document.getElementById("libAuthorFilter")) {
-      document.getElementById("libAuthorFilter").addEventListener("change", filterLib);
-    }
-    document.getElementById("libCurriculumFilter").addEventListener("change", filterLib);
-    if (document.getElementById("libSubjectFilter")) {
-      document.getElementById("libSubjectFilter").addEventListener("change", filterLib);
-    }
-    document.getElementById("resetLibFilters").addEventListener("click", resetLibFilters);
+    // Attach search and select listeners
+    document.getElementById("libSearchInput").addEventListener("input", filterData);
+    document.getElementById("libCategorySelect").addEventListener("change", filterData);
 
-    // Initial render
-    renderResources(resources);
+    // Initial load
+    renderBooks(resources);
   </script>
 
-  <!-- WhatsApp Direct Support Float -->
-  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%86%D8%B5%D8%A9%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%83%D9%88%D8%B1%D8%B3%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%AF%D8%B1%D9%88%D8%B3" 
-     target="_blank" 
+  <!-- WhatsApp Support Widget -->
+  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%AA%D8%A8%20%D9%88%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9"
+     target="_blank"
      rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white px-5 py-3 rounded-full shadow-[0_8px_30px_rgba(16,185,129,0.5)] border-2 border-emerald-300/40 font-black text-xs transition-all hover:scale-105 group"
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white px-5 py-3 rounded-full shadow-[0_8px_30px_rgba(16,185,129,0.4)] border-2 border-emerald-300/40 font-black text-xs transition-all hover:scale-105 group"
      title="تواصل معنا مباشرة عبر واتساب">
     <svg class="w-6 h-6 flex-none" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.004.57 2.019.882 3.197.882 3.181 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.765-5.769-5.765zm3.435 8.196c-.144.404-.83.774-1.173.824-.343.05-.785.076-2.285-.544-1.879-.776-3.085-2.698-3.178-2.823-.093-.125-.765-1.017-.765-1.939 0-.922.483-1.376.655-1.563.172-.187.376-.234.502-.234.126 0 .252.001.362.006.115.006.269-.044.421.322.157.376.533 1.303.579 1.397.046.094.077.204.015.33-.063.125-.094.204-.188.314-.094.11-.198.245-.282.33-.094.094-.192.196-.083.384.11.188.488.805 1.047 1.302.721.642 1.328.841 1.516.935.188.094.298.078.408-.047.11-.125.469-.548.594-.736.125-.188.25-.157.422-.094.172.063 1.096.517 1.284.611.188.094.313.141.36.219.047.078.047.453-.097.857zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
     <span>تواصل عبر واتساب</span>
   </a>
+
 </body>
 </html>
