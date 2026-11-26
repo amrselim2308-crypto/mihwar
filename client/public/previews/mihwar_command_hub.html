@@ -254,6 +254,96 @@
       selectMatrixTab('math', document.querySelector('#matrixSelectorTabs .matrix-pill'));
     });
 
+
+    // HYDRAULIC SIMULATOR CALCULATION ENGINE (Hazen-Williams + Christiansen F)
+    function openHydraulicSimulator() {
+      const modal = document.getElementById('hydraulicSimulatorModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        runSimulation();
+      }
+    }
+
+    function closeHydraulicSimulator() {
+      const modal = document.getElementById('hydraulicSimulatorModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function runSimulation() {
+      const d_mm = parseFloat(document.getElementById('simDiameter').value) || 53.6;
+      const q_m3h = parseFloat(document.getElementById('simFlow').value) || 10.0;
+      const l_m = parseFloat(document.getElementById('simLength').value) || 100.0;
+      const pipeType = document.getElementById('simType').value || 'main';
+
+      // Christiansen F Factor calculation
+      let f_factor = 1.0;
+      if (pipeType === 'lateral_20') f_factor = 0.395;
+      else if (pipeType === 'lateral_50') f_factor = 0.372;
+      else if (pipeType === 'lateral_100') f_factor = 0.360;
+
+      // Units conversion
+      const d_m = d_mm / 1000.0;
+      const q_m3s = q_m3h / 3600.0;
+      const q_ls = q_m3h / 3.6;
+      const c_val = 140.0; // UPVC & Smooth Polyethylene C factor
+
+      // Velocity: v = Q / A (m/s)
+      const area = (Math.PI * Math.pow(d_m, 2)) / 4.0;
+      const velocity = q_m3s / area;
+
+      // Hazen-Williams Head Loss:
+      // hf = 10.67 * L * Q^1.852 * C^-1.852 * D^-4.87 * F
+      const h_loss_total = 10.67 * l_m * Math.pow(q_m3s, 1.852) * Math.pow(c_val, -1.852) * Math.pow(d_m, -4.87);
+      const h_loss = h_loss_total * f_factor;
+      const delta_p_bar = h_loss / 10.197;
+
+      // Base inlet pressure assume 2.5 bar
+      const p_inlet = 2.50;
+      const p_outlet = Math.max(0, p_inlet - delta_p_bar);
+
+      // Update Labels
+      document.getElementById('valDiameter').innerText = d_mm + ' mm';
+      document.getElementById('valFlow').innerText = q_m3h.toFixed(1) + ' m³/h (' + q_ls.toFixed(2) + ' L/s)';
+      document.getElementById('valLength').innerText = l_m + ' m';
+      
+      let typeLabel = 'خط ناقل رئيسي (F=1.0)';
+      if (pipeType === 'lateral_20') typeLabel = 'خط تنقيط (20 مخرجاً - F=0.39)';
+      if (pipeType === 'lateral_50') typeLabel = 'خط تنقيط (50 مخرجاً - F=0.37)';
+      if (pipeType === 'lateral_100') typeLabel = 'خط تنقيط (100 مخرج - F=0.36)';
+      document.getElementById('valType').innerText = typeLabel;
+
+      // Visual Displays
+      document.getElementById('dispInletPress').innerText = p_inlet.toFixed(2) + ' bar';
+      document.getElementById('dispOutletPress').innerText = p_outlet.toFixed(2) + ' bar';
+      document.getElementById('dispPipeDiameterLabel').innerText = 'القطر الداخلي: ' + d_mm + ' مم';
+      document.getElementById('dispVelocityText').innerText = velocity.toFixed(2) + ' m/s';
+      document.getElementById('dispLengthText').innerText = l_m + ' م';
+
+      // Output values
+      document.getElementById('resVelocity').innerText = velocity.toFixed(2) + ' m/s';
+      document.getElementById('resHeadLoss').innerText = h_loss.toFixed(2) + ' m';
+      document.getElementById('resDeltaP').innerText = delta_p_bar.toFixed(2) + ' bar';
+      document.getElementById('resFFactor').innerText = f_factor.toFixed(2);
+
+      // Engineering Analysis
+      const statusEl = document.getElementById('dispVelocityStatus');
+      const insightEl = document.getElementById('resInsightAnalysis');
+
+      if (velocity < 0.6) {
+        statusEl.className = 'text-amber-400 font-bold';
+        statusEl.innerText = '⚠️ السرعة منخفضة (' + velocity.toFixed(2) + ' m/s) — قد تسبب ترسبات بالمواسير؛ يُفضل تصغير القطر لترشيد التكلفة.';
+        insightEl.innerText = 'التدفق يسري بهدوء زائد مع هبوط طفيف جداً في الضغط (' + delta_p_bar.toFixed(2) + ' بار)، لكن تكلفة الأنبوب قد تكون أعلى من اللازم مقارنة بالتدفق.';
+      } else if (velocity > 2.0) {
+        statusEl.className = 'text-red-400 font-bold';
+        statusEl.innerText = '⛔ السرعة مرتفعة جداً (' + velocity.toFixed(2) + ' m/s) — خطر تآكل الأنابيب والمطرقة المائية وفواقد احتكاك ضخمة!';
+        insightEl.innerText = 'تحذير هندسي: هبوط الضغط مرتفع (' + delta_p_bar.toFixed(2) + ' بار). يُنصح بزيادة قطر الأنبوب فوراً لحماية المحابس والمضخات وخفض الطاقة المستهلكة.';
+      } else {
+        statusEl.className = 'text-emerald-400 font-bold';
+        statusEl.innerText = '✓ سرعة مثالية ومستقرة ضمن الحدود الهندسية القياسية (0.6 - 2.0 m/s).';
+        insightEl.innerText = 'ميزان هيدروليكي ممتاز: السرعة (' + velocity.toFixed(2) + ' m/s) تمنع الترسيب، وهبوط الضغط (' + delta_p_bar.toFixed(2) + ' بار) متوازن ويضمن انتظام تصرف المنقطات بنسبة تفوق 92%.';
+      }
+    }
+
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -579,7 +669,7 @@
                   <span>استكشف وحدات القيادة المعرفية</span>
                   <svg class="w-4 h-4 transform rotate-90" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
-                <a href="competitions_arena.html#simulator" class="bg-[rgba(10,48,69,0.7)] hover:bg-[rgba(10,48,69,0.95)] text-cyan-300 border border-cyan-400/30 text-xs sm:text-sm font-bold px-5 py-3 rounded-full transition flex items-center gap-2">
+                <a href="javascript:void(0)" onclick="openHydraulicSimulator()" class="bg-[rgba(10,48,69,0.7)] hover:bg-[rgba(10,48,69,0.95)] text-cyan-300 border border-cyan-400/30 text-xs sm:text-sm font-bold px-5 py-3 rounded-full transition flex items-center gap-2">
                   <span>محاكي السريان الهيدروليكي ⚡</span>
                 </a>
               </div>
@@ -1199,6 +1289,182 @@
         <span>استخدم الأسهم ⬆ ⬇ للتنقل</span>
         <span>منصة مِحور المعرفية · إصدار 2026</span>
       </div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================== -->
+  <!-- INTERACTIVE HYDRAULIC & FLOW SIMULATOR MODAL (MIHWAR LAB)      -->
+  <!-- ============================================================== -->
+  <div id="hydraulicSimulatorModal" class="fixed inset-0 z-50 bg-[#020B16]/85 backdrop-blur-md hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-[#071A2D] border border-cyan-400/40 rounded-3xl w-full max-w-3xl shadow-[0_0_50px_rgba(57,216,240,0.2)] overflow-hidden flex flex-col my-8">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-[rgba(57,216,240,0.18)] flex items-center justify-between bg-[rgba(10,48,69,0.6)]">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-950/90 border border-cyan-400/40 text-cyan-300 flex items-center justify-center text-xl shadow-inner">
+            ⚡
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-lg font-black text-white">محاكي السريان وفواقد الاحتكاك الهيدروليكية</h3>
+              <span class="text-[9px] font-mono bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded border border-cyan-400/30">Hazen-Williams Lab</span>
+            </div>
+            <p class="text-[11px] text-slate-300 mt-0.5">أدخل معطيات الأنبوب وشاهد سرعة التدفق وهبوط الضغط ومعامل كريستيانسن F لحظياً</p>
+          </div>
+        </div>
+        <button onclick="closeHydraulicSimulator()" class="w-8 h-8 rounded-full bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 hover:text-white flex items-center justify-center border border-cyan-400/30 transition text-sm">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body (Inputs & Realtime Results) -->
+      <div class="p-6 space-y-6 overflow-y-auto max-h-[75vh]">
+        
+        <!-- Animated Flow Pipe Visualizer -->
+        <div class="p-4 rounded-2xl bg-[rgba(2,11,22,0.85)] border border-cyan-400/25 relative overflow-hidden">
+          <div class="flex items-center justify-between text-[11px] text-slate-400 mb-2 font-mono">
+            <span>مدخل الأنبوب (Inlet Pressure: <strong id="dispInletPress" class="text-cyan-300">2.50 bar</strong>)</span>
+            <span>مخرج الأنبوب (Outlet: <strong id="dispOutletPress" class="text-emerald-300">2.28 bar</strong>)</span>
+          </div>
+
+          <!-- The Pipe -->
+          <div class="h-12 rounded-xl bg-gradient-to-r from-[#0a3045] via-[#075b68] to-[#0a3045] border-2 border-cyan-400/50 relative overflow-hidden flex items-center px-4 shadow-inner">
+            <!-- Animated Flow Particles -->
+            <div class="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(57,216,240,0.35)_50%,transparent_100%)] w-1/3 animate-[flowRight_2s_linear_infinite]"></div>
+            <div class="flex items-center justify-between w-full relative z-10 text-xs font-black text-white drop-shadow">
+              <span>💧 اتجاه السريان</span>
+              <span id="dispPipeDiameterLabel" class="font-mono text-cyan-200">القطر: 50 مم (2 بوصة)</span>
+              <span>🌊 معدل السرعة: <strong id="dispVelocityText" class="text-amber-300 font-mono">1.41 m/s</strong></span>
+            </div>
+          </div>
+
+          <div class="mt-2 flex items-center justify-between text-[10px] text-slate-400 font-mono">
+            <span>طول الخط: <strong id="dispLengthText" class="text-slate-200">100 م</strong></span>
+            <span id="dispVelocityStatus" class="text-emerald-400 font-bold">✓ سرعة مثالية ومستقرة ضمن الحدود الهندسية (0.6 - 2.0 m/s)</span>
+          </div>
+        </div>
+
+        <!-- Controls Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Control 1: Pipe Diameter -->
+          <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-white">
+              <span>القطر الداخلي للأنبوب (D):</span>
+              <span id="valDiameter" class="text-cyan-300 font-mono">50 mm</span>
+            </div>
+            <select id="simDiameter" onchange="runSimulation()" class="w-full bg-[#020B16] border border-cyan-400/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none">
+              <option value="13.6">16 mm GR (داخلي 13.6 مم - خراطيم تنقيط)</option>
+              <option value="20.4">25 mm PE (داخلي 20.4 مم - 3/4 بوصة)</option>
+              <option value="26.0">32 mm PE (داخلي 26.0 مم - 1 بوصة)</option>
+              <option value="40.8">50 mm UPVC (داخلي 40.8 مم - 1.5 بوصة)</option>
+              <option value="53.6" selected>63 mm UPVC (داخلي 53.6 مم - 2 بوصة)</option>
+              <option value="65.4">75 mm UPVC (داخلي 65.4 مم - 2.5 بوصة)</option>
+              <option value="79.2">90 mm UPVC (داخلي 79.2 مم - 3 بوصة)</option>
+              <option value="96.8">110 mm UPVC (داخلي 96.8 مم - 4 بوصة)</option>
+              <option value="141.0">160 mm UPVC (داخلي 141.0 مم - 6 بوصة)</option>
+            </select>
+            <span class="text-[10px] text-slate-400 block">يؤثر القطر بمعدل الأس 4.87 على فاقد الاحتكاك</span>
+          </div>
+
+          <!-- Control 2: Flow Rate -->
+          <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-white">
+              <span>معدل التدفق (Q):</span>
+              <span id="valFlow" class="text-cyan-300 font-mono">10.0 m³/h (2.78 L/s)</span>
+            </div>
+            <input type="range" id="simFlow" min="0.5" max="60" step="0.5" value="10" oninput="runSimulation()" class="w-full accent-cyan-400 cursor-pointer" />
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>0.5 m³/h</span>
+              <span>30 m³/h</span>
+              <span>60 m³/h</span>
+            </div>
+          </div>
+
+          <!-- Control 3: Pipe Length -->
+          <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-white">
+              <span>طول الخط (L):</span>
+              <span id="valLength" class="text-cyan-300 font-mono">100 m</span>
+            </div>
+            <input type="range" id="simLength" min="10" max="1000" step="10" value="100" oninput="runSimulation()" class="w-full accent-cyan-400 cursor-pointer" />
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+              <span>10 م</span>
+              <span>500 م</span>
+              <span>1000 م</span>
+            </div>
+          </div>
+
+          <!-- Control 4: Pipe Material (C factor) & Outlets (F factor) -->
+          <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-white">
+              <span>نوع الخط وطبيعة المخارج:</span>
+              <span id="valType" class="text-cyan-300 font-mono">خط ناقل رئيسي (F=1.0)</span>
+            </div>
+            <select id="simType" onchange="runSimulation()" class="w-full bg-[#020B16] border border-cyan-400/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none">
+              <option value="main" selected>خط ناقل رئيسي (بدون مخارج جانبية - F = 1.0)</option>
+              <option value="lateral_20">خط ري بالتنقيط (20 مخرجاً - F ≈ 0.39)</option>
+              <option value="lateral_50">خط ري بالتنقيط (50 مخرجاً - F ≈ 0.37)</option>
+              <option value="lateral_100">خط ري بالتنقيط (100 مخرج فأكثر - F ≈ 0.36)</option>
+            </select>
+            <span class="text-[10px] text-slate-400 block">معامل كريستيانسن F يراعي تناقص التدفق تدريجياً مع طول الخط</span>
+          </div>
+
+        </div>
+
+        <!-- Simulation Outputs Display Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          
+          <div class="p-3.5 rounded-xl bg-[rgba(7,26,45,0.85)] border border-cyan-400/25 space-y-1 shadow-sm">
+            <span class="text-[10px] text-slate-400 block">سرعة المياه (v)</span>
+            <div id="resVelocity" class="text-xl font-black text-cyan-300 font-mono">1.37 m/s</div>
+            <span class="text-[9px] text-slate-400 font-mono">Q / Area</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[rgba(7,26,45,0.85)] border border-cyan-400/25 space-y-1 shadow-sm">
+            <span class="text-[10px] text-slate-400 block">فاقد الاحتكاك (h_f)</span>
+            <div id="resHeadLoss" class="text-xl font-black text-amber-300 font-mono">2.24 m</div>
+            <span class="text-[9px] text-slate-400 font-mono">متر ماء</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[rgba(7,26,45,0.85)] border border-cyan-400/25 space-y-1 shadow-sm">
+            <span class="text-[10px] text-slate-400 block">هبوط الضغط (ΔP)</span>
+            <div id="resDeltaP" class="text-xl font-black text-teal-300 font-mono">0.22 bar</div>
+            <span class="text-[9px] text-slate-400 font-mono">h_f / 10.197</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-[rgba(7,26,45,0.85)] border border-cyan-400/25 space-y-1 shadow-sm">
+            <span class="text-[10px] text-slate-400 block">معامل التخفيض (F)</span>
+            <div id="resFFactor" class="text-xl font-black text-purple-300 font-mono">1.00</div>
+            <span class="text-[9px] text-slate-400 font-mono">Christiansen F</span>
+          </div>
+
+        </div>
+
+        <!-- Academic & Field Insight Box -->
+        <div class="p-4 rounded-2xl bg-amber-500/10 border-r-4 border-amber-400 text-amber-200 text-xs sm:text-sm font-semibold italic space-y-1">
+          <div class="font-black text-amber-300 not-italic flex items-center gap-2">
+            <span>💡 النتيجة الهندسية وفق منهج مِحور (APP-201):</span>
+          </div>
+          <p id="resInsightAnalysis" class="leading-relaxed">
+            السرعة وهبوط الضغط ضمن الحدود التصميمية الآمنة لشبكات الري باللاندسكيب ومشاريع البنية التحتية.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[rgba(2,11,22,0.9)] border-t border-[rgba(57,216,240,0.15)] flex flex-col sm:flex-row items-center justify-between gap-3">
+        <a href="library_preview.html?code=APP-201" class="text-xs font-bold text-cyan-400 hover:text-white transition flex items-center gap-1.5">
+          <span>قراءة المرجع الكامل: الحسابات الهيدروليكية لشبكات الري (114 صفحة)</span>
+          <span>←</span>
+        </a>
+        <button onclick="closeHydraulicSimulator()" class="px-5 py-2 rounded-full bg-[rgba(10,48,69,0.8)] hover:bg-cyan-900 text-white font-bold text-xs transition border border-cyan-400/30">
+          إغلاق المحاكي
+        </button>
+      </div>
+
     </div>
   </div>
 
