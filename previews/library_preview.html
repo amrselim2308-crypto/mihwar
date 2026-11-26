@@ -225,78 +225,213 @@
   <!-- ============================================================== -->
   <!-- MODAL: THE INTERACTIVE DIGITAL CURRICULUM & BOOK READER        -->
   <!-- ============================================================== -->
-  <div id="readerModal" onclick="handleBackdropClick(event)">
-    <div class="bg-[#071a2d] max-w-3xl border border-cyan-400/40 text-white w-full rounded-3xl shadow-2xl overflow-hidden border border-[rgba(57,216,240,0.18)] flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
+  
+  <!-- ============================================================== -->
+  <!-- MIHWAR UNIFIED INTERACTIVE READER MODAL                        -->
+  <!-- ============================================================== -->
+  <div id="readerModal" class="fixed inset-0 z-50 bg-[#020B16]/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-5" onclick="handleBackdropClick(event)">
+    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-4xl max-h-[92vh] overflow-hidden flex flex-col shadow-[0_0_50px_rgba(18,191,193,0.25)]" onclick="event.stopPropagation()">
       
       <!-- Modal Header -->
-      <div class="sky-header px-6 py-4 flex items-center justify-between text-white">
+      <div class="p-4 sm:p-5 border-b border-cyan-400/20 bg-gradient-to-r from-[#020B16] via-[#0A3045] to-[#075B68] flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-black text-sm border border-white/30" id="modalBookIcon">
+          <div id="modalBookIcon" class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-2xl font-bold shadow-lg border border-cyan-300/30 flex-none">
             📖
           </div>
           <div>
-            <div class="flex items-center gap-2">
-              <span id="modalBookCode" class="text-[10px] font-mono bg-white/25 px-2 py-0.5 rounded font-bold uppercase tracking-wider hidden">SYS-401</span>
-              <h3 id="modalBookTitle" class="text-base sm:text-lg font-black leading-tight">عنوان المنهج</h3>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="modalBookCode" class="text-[11px] font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-400/30">LIT-05</span>
+              <span id="modalBookStatusBadge" class="text-[11px] font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-400/30">وقف معرفي حر</span>
             </div>
-            <span id="modalBookAuthor" class="text-xs text-sky-100 block mt-0.5">اسم المؤلف / التخصص والمستوى</span>
+            <h2 id="modalBookTitle" class="text-base sm:text-xl font-black text-white mt-1 leading-snug">إحياء علوم الدين</h2>
+            <span id="modalBookAuthor" class="text-xs text-cyan-200/90 font-medium block">الإمام أبو حامد الغزالي</span>
           </div>
         </div>
-
-        <button onclick="closeReaderModal()" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-white font-bold text-lg transition cursor-pointer" title="إغلاق">
-          &times;
+        <button onclick="closeReaderModal()" class="w-9 h-9 rounded-full bg-[#020B16]/80 text-slate-300 hover:text-white hover:bg-cyan-900/60 transition flex items-center justify-center border border-cyan-400/30 text-lg cursor-pointer" title="إغلاق">
+          ✕
         </button>
       </div>
 
-      <!-- Modal Body (Tabs & Content) -->
-      <div class="p-6 sm:p-8 overflow-y-auto space-y-5 bg-[#020b16]/95 text-slate-200">
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-4 sm:p-6 space-y-5 overflow-y-auto max-h-[calc(92vh-160px)] text-slate-200 custom-scrollbar text-xs sm:text-sm">
         
-        <!-- Quote / Cognitive Insight Box -->
-        <div class="p-4 rounded-2xl bg-amber-50 border-r-4 border-amber-500 shadow-sm">
-          <span id="modalQuoteLabel" class="text-xs font-black text-amber-800 block mb-1">💡 فكرة الأثر ورسالة المؤلف:</span>
-          <p id="modalBookQuote" class="text-sm font-semibold text-amber-950 italic leading-relaxed">
-            "نص الاقتباس هنا..."
+        <!-- Classical Quote -->
+        <div class="bg-[rgba(10,48,69,0.55)] p-4 rounded-2xl border-r-4 border-amber-400 border-t border-b border-l border-cyan-400/20 shadow-inner">
+          <span class="text-[11px] font-bold text-amber-300 block mb-1">💡 فكرة الأثر وجوهر الفهم:</span>
+          <p id="modalBookQuote" class="text-xs sm:text-sm font-semibold text-slate-100 italic leading-relaxed">
+            "العلم بلا عمل جنون، والعمل بغير علم لا يكون."
           </p>
         </div>
 
-        <!-- Detailed Syllabus / Overview -->
-        <div class="bg-[rgba(10,48,69,0.65)] p-5 rounded-2xl border border-cyan-400/25 shadow-sm space-y-3 text-slate-200">
-          <h4 class="text-sm font-black text-white flex items-center gap-2">
-            <span>📜</span>
-            <span id="modalExcerptLabel">المحاور العلمية وجوهر المنهج:</span>
-          </h4>
-          <p id="modalBookExcerpt" class="text-sm text-slate-300 leading-relaxed whitespace-pre-line">
-            ملخص المنهج وتفاصيله...
-          </p>
+        <!-- Dynamic Content Area -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between pb-1 border-b border-cyan-400/20">
+            <h3 id="modalExcerptLabel" class="text-xs sm:text-sm font-black text-cyan-300 flex items-center gap-2">
+              <span>📑</span> استعراض المخطوطة وفصول المرجع كاملاً:
+            </h3>
+            <span class="text-[10px] text-slate-400 font-mono">منصة مِحـوَر الأكاديمية</span>
+          </div>
+
+          <div id="modalBookExcerpt" class="leading-relaxed text-slate-200">
+            <!-- Populated dynamically by openReaderModal -->
+          </div>
         </div>
 
         <!-- Mihwar Value & Practical Application Box -->
-        <div class="bg-[rgba(7,26,45,0.85)] p-4 rounded-2xl border border-cyan-400/25 text-xs sm:text-sm text-slate-200 space-y-1.5">
-          <strong class="block font-black text-cyan-300">✨ الأثر التطبيقي والمهني في منصة مِحور (من الفهم إلى الإدراك):</strong>
-          <p id="modalMihwarValue" class="leading-relaxed text-slate-300">
-            دراسة هذا المنهج تحرر عقل المتعلم من الحفظ الصوري وتمنحه القدرة على ربط القوانين الرياضية بالمشروعات والقرارات الهندسية الواقعية.
+        <div class="bg-gradient-to-r from-[rgba(2,11,22,0.85)] to-[rgba(10,48,69,0.7)] p-4 rounded-2xl border border-cyan-400/25 text-xs text-slate-200 space-y-1.5 shadow-sm">
+          <strong class="block font-black text-cyan-300 flex items-center gap-1.5">
+            <span>✨</span> الأثر المعرفي والمهني في مِحور (من الفهم إلى الإدراك):
+          </strong>
+          <p id="modalMihwarValue" class="leading-relaxed text-slate-300 text-xs">
+            دراسة هذا الأثر تحرر عقل المتعلم من الحفظ الصوري وتمنحه القدرة على ربط القوانين النظرية بالسلوك الإنساني والقرارات الواقعية.
           </p>
         </div>
+
       </div>
 
       <!-- Modal Footer -->
-      <div class="bg-[#071A2D] border-t border-cyan-400/20 px-6 py-3.5 flex items-center justify-between">
-        <span id="modalBookPages" class="text-xs font-bold text-cyan-400">عدد الصفحات / الوحدات التدريبية</span>
+      <div class="bg-[#020B16] border-t border-cyan-400/20 px-5 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div class="flex items-center gap-2">
-          <button onclick="downloadBookAlert()" class="btn-glow-cyan text-white font-black text-xs px-5 py-2.5 rounded-full transition cursor-pointer shadow-sm">
-            تحميل المذكرة المعتمدة PDF
-          </button>
-          <button onclick="closeReaderModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-200 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
-            إغلاق
-          </button>
+          <span id="modalBookPages" class="text-xs font-mono font-bold text-cyan-400">1920 صفحة</span>
+          <span class="text-slate-600 hidden sm:inline">|</span>
+          <span id="modalPricingNote" class="text-[11px] text-emerald-400 font-semibold">متاح للتحميل والطباعة مجاناً</span>
+        </div>
+        
+        <div id="modalActionButtons" class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <!-- Filled dynamically: either free download or buy button -->
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- JavaScript Implementation -->
+  <!-- ============================================================== -->
+  <!-- MIHWAR SECURE CHECKOUT & PAYMENT GATEWAY MODAL                 -->
+  <!-- ============================================================== -->
+  <div id="paymentGatewayModal" class="fixed inset-0 z-[100000] bg-[#020B16]/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-5" onclick="closePaymentModal()">
+    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-xl shadow-[0_0_50px_rgba(57,216,240,0.25)] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-cyan-400/25 bg-gradient-to-r from-[#020B16] via-[#0A3045] to-[#075B68] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-lg font-bold shadow-md">
+            🔒
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white">بوابة الدفع والتسجيل المعتمد</h3>
+            <span class="text-[11px] text-cyan-300 block font-medium">منصة مِحـوَر التعليمية المعتمدة · MIHWAR Secure Pay</span>
+          </div>
+        </div>
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-[#020B16]/80 text-slate-300 hover:text-white flex items-center justify-center border border-cyan-400/30 text-sm cursor-pointer">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 sm:p-6 space-y-4 text-xs text-slate-200 max-h-[75vh] overflow-y-auto">
+        
+        <!-- Summary Box -->
+        <div class="p-4 rounded-2xl bg-[#020B16]/80 border border-cyan-400/30 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-cyan-300 font-mono block">المنهج المطلوب:</span>
+            <strong id="payItemTitle" class="text-sm text-white font-black block mt-0.5">الحسابات الهيدروليكية لشبكات الري</strong>
+            <span id="payItemCode" class="text-[10px] text-slate-400 font-mono">كود: APP-201 · معتمد للعام 2026</span>
+          </div>
+          <div class="text-left">
+            <span class="text-[10px] text-slate-400 block">السعر المعتمد:</span>
+            <div id="payItemPrice" class="text-xl sm:text-2xl font-black text-amber-300 font-mono">75 AED</div>
+            <!-- Currency Switcher -->
+            <div class="flex items-center gap-1 mt-1 justify-end">
+              <button onclick="switchCurrency('AED')" class="px-1.5 py-0.5 rounded text-[9px] bg-cyan-900/60 hover:bg-cyan-700 text-cyan-200 border border-cyan-400/30">AED</button>
+              <button onclick="switchCurrency('SAR')" class="px-1.5 py-0.5 rounded text-[9px] bg-cyan-900/60 hover:bg-cyan-700 text-cyan-200 border border-cyan-400/30">SAR</button>
+              <button onclick="switchCurrency('EGP')" class="px-1.5 py-0.5 rounded text-[9px] bg-cyan-900/60 hover:bg-cyan-700 text-cyan-200 border border-cyan-400/30">EGP</button>
+              <button onclick="switchCurrency('USD')" class="px-1.5 py-0.5 rounded text-[9px] bg-cyan-900/60 hover:bg-cyan-700 text-cyan-200 border border-cyan-400/30">USD</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Channels Selection -->
+        <div class="space-y-2.5">
+          <label class="block text-xs font-bold text-white">اختر وسيلة الدفع المفضلة لديك:</label>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Channel 1: Cards / Apple Pay -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="card" checked class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">بطاقة بنكية / Apple Pay</strong>
+                <span class="text-[10px] text-slate-400">Visa · Mastercard · Mada</span>
+              </div>
+            </label>
+
+            <!-- Channel 2: Local Instant Transfer -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="instant" class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">تحويل فوري / محفظة</strong>
+                <span class="text-[10px] text-slate-400">InstaPay / فودافون كاش / STC</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Student Data Inputs -->
+        <div class="space-y-3">
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">الاسم الكامل للطالب أو المهندس:</label>
+            <input type="text" id="payStudentName" placeholder="الاسم ثلاثي كما يظهر في الشهادة..." class="w-full bg-[#020B16] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 placeholder:text-slate-500" />
+          </div>
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">البريد الإلكتروني (لاستلام ملفات المرجع وشيتات الإكسيل):</label>
+            <input type="email" id="payStudentEmail" placeholder="name@example.com" class="w-full bg-[#020B16] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400 placeholder:text-slate-500" />
+          </div>
+        </div>
+
+        <!-- Gateway Recommendation Notice -->
+        <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/25 text-[11px] text-cyan-200 space-y-1">
+          <div class="flex items-center gap-1.5 font-bold text-cyan-300">
+            <span>🛡️</span> بوابات الدفع الإلكتروني المعتمدة:
+          </div>
+          <p class="text-slate-300 leading-relaxed text-[11px]">
+            الدفع الإلكتروني مشفّر بنسبة 100% عبر بوابات <strong>MyFatoorah / PayTabs / Stripe</strong> بالعملة المحلية مع إصدار فاتورة ضريبية فورية.
+          </p>
+        </div>
+
+        <!-- Guarantee Note -->
+        <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-[11px] text-emerald-200 flex items-center gap-2">
+          <span>✓</span>
+          <span>ضمان مِحور الأكاديمي: استلام فوري لروابط التحميل المباشرة وشيتات الحسابات الهندسية.</span>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[#020B16] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <button onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <span>💬 تأكيد الطلب وتفعيل النسخة المعتمدة فـوراً عبر واتساب</span>
+        </button>
+        <button onclick="closePaymentModal()" class="w-full sm:w-auto bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-xs font-bold transition border border-cyan-400/30 cursor-pointer">
+          إلغاء
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WhatsApp Support Widget -->
+  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%A7%D9%87%D8%AC%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AF%D8%A7%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D9%88%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white px-5 py-3 rounded-full shadow-[0_8px_30px_rgba(16,185,129,0.4)] border-2 border-emerald-300/40 font-black text-xs transition-all hover:scale-105 group"
+     title="تواصل معنا مباشرة عبر واتساب">
+    <svg class="w-6 h-6 flex-none" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.004.57 2.019.882 3.197.882 3.181 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.765-5.769-5.765zm3.435 8.196c-.144.404-.83.774-1.173.824-.343.05-.785.076-2.285-.544-1.879-.776-3.085-2.698-3.178-2.823-.093-.125-.765-1.017-.765-1.939 0-.922.483-1.376.655-1.563.172-.187.376-.234.502-.234.126 0 .252.001.362.006.115.006.269-.044.421.322.157.376.533 1.303.579 1.397.046.094.077.204.015.33-.063.125-.094.204-.188.314-.094.11-.198.245-.282.33-.094.094-.192.196-.083.384.11.188.488.805 1.047 1.302.721.642 1.328.841 1.516.935.188.094.298.078.408-.047.11-.125.469-.548.594-.736.125-.188.25-.157.422-.094.172.063 1.096.517 1.284.611.188.094.313.141.36.219.047.078.047.453-.097.857zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    <span>تواصل عبر واتساب</span>
+  </a>
+
   <script>
+    // -------------------------------------------------------------
+    // 1. DATA DEFINITIONS
+    // -------------------------------------------------------------
     const resources = [
       // ==============================================================
       // 1. جناح العلوم الهندسية والتطبيقية (ENGINEERING WING)
@@ -784,317 +919,479 @@
       }
     ];
 
-    let currentWing = "all";
-    let activeSubFilter = "";
+    let activeWing = "all";
+    let activeLevel = "all";
+    let searchQuery = "";
+    let currentOpenedBook = null;
+    let selectedPayBook = null;
+    let selectedCurrency = "AED";
 
-    function setWing(wing) {
-      currentWing = wing;
-      activeSubFilter = "";
+    const currencyRates = {
+      AED: { symbol: "AED", rate: 1, label: "درهم إماراتي" },
+      SAR: { symbol: "SAR", rate: 1, label: "ريال سعودي" },
+      EGP: { symbol: "EGP", rate: 12.67, label: "جنيه مصري" },
+      USD: { symbol: "USD", rate: 0.272, label: "دولار أمريكي" }
+    };
 
-      // Update buttons
-      const wings = ['all', 'engineering', 'nexus', 'heritage', 'foundational'];
-      wings.forEach(w => {
-        const btn = document.getElementById(`wing-${w}`);
-        if (btn) {
-          btn.className = (w === wing) 
-            ? "wing-btn-active text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border" 
-            : "wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border";
-        }
-      });
+    // -------------------------------------------------------------
+    // 2. MANUSCRIPT DATABASE (Classical Heritage + Applied)
+    // -------------------------------------------------------------
+    const manuscriptDatabase = {
+      // -----------------------------------------------------------
+      // BOOK 5: إحياء علوم الدين - الإمام أبو حامد الغزالي
+      // -----------------------------------------------------------
+      5: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  
+  <!-- Endowment Declaration Banner -->
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40 shadow-md">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي إسلامي وإنساني حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">متاح لجميع طلبة العلم والباحثين بدون أي قيود أو رسوم</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">
+        وقف لوجه الله تعالى
+      </span>
+    </div>
+  </div>
 
-      // Update Sub-filters container
-      renderSubFilters();
+  <!-- Book Header Profile -->
+  <div class="border-b border-cyan-400/20 pb-4">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المرجع: LIT-05 · تصنيف: تراث وفقه وسلوك</span>
+      <span class="text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-400/30 px-3 py-1 rounded-full">
+        4 أرباع كاملة · 40 كتاباً جامعاً
+      </span>
+    </div>
+    <h3 class="text-xl sm:text-2xl font-black text-white mt-3 leading-snug">إحياء علوم الدين</h3>
+    <p class="text-xs sm:text-sm text-cyan-200 mt-1 font-semibold">تأليف: حجة الإسلام الإمام أبو حامد محمد بن محمد الغزالي الطوسي (ت 505 هـ)</p>
+  </div>
 
-      // Update Header Text
-      const hTitle = document.getElementById("wingHeaderTitle");
-      const hDesc = document.getElementById("wingHeaderDesc");
-      if (wing === "engineering") {
-        hTitle.innerText = "جناح العلوم الهندسية والتطبيقية";
-        hDesc.innerText = "مناهج الري، محطات الضخ، اللاندسكيب الجاف، والمكتب الفني المعتمدة على الخبرة الميدانية";
-      } else if (wing === "nexus") {
-        hTitle.innerText = "جناح الاستدامة والنظم المتكاملة (WEF Nexus & LCA)";
-        hDesc.innerText = "دراسات ترابط المياه والطاقة والغذاء، تقييم دورة الحياة، والمحاسبة الكربونية";
-      } else if (wing === "heritage") {
-        hTitle.innerText = "جناح الفكر والتراث الإنساني";
-        hDesc.innerText = "كنوز مصطفى محمود، الغزالي، الشافعي، طه حسين، والعقاد";
-      } else if (wing === "foundational") {
-        hTitle.innerText = "جناح المناهج التأسيسية المدرسية والجامعية";
-        hDesc.innerText = "الفيزياء المتقدمة، التفاضل والتكامل، والكيمياء العضوية";
-      } else {
-        hTitle.innerText = "كل المناهج والمؤلفات المعتمدة";
-        hDesc.innerText = "تصفح وقراءة فورية مع استعراض فكرة الأثر وجوهر الفهم";
-      }
-
-      filterData();
-    }
-
-    function renderSubFilters() {
-      const container = document.getElementById("subFiltersContainer");
-      container.innerHTML = "";
-
-      if (currentWing === "heritage") {
-        const authors = [
-          { name: "جميع المؤلفين", val: "" },
-          { name: "د. مصطفى محمود (4)", val: "مصطفى محمود" },
-          { name: "الإمام الغزالي (4)", val: "الغزالي" },
-          { name: "الإمام الشافعي (3)", val: "الشافعي" },
-          { name: "د. طه حسين (4)", val: "طه حسين" },
-          { name: "عباس العقاد (5)", val: "العقاد" }
-        ];
-        authors.forEach((a, idx) => {
-          const btn = document.createElement("button");
-          btn.className = (idx === 0) ? "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer" : "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
-          btn.innerText = a.name;
-          btn.onclick = () => {
-            activeSubFilter = a.val;
-            Array.from(container.children).forEach(c => c.className = "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer");
-            btn.className = "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
-            filterData();
-          };
-          container.appendChild(btn);
-        });
-      } else if (currentWing === "engineering") {
-        const topics = [
-          { name: "جميع المناهج الهندسية (5)", val: "" },
-          { name: "هندسة الري والضخ", val: "الري" },
-          { name: "اللاندسكيب الجاف", val: "اللاندسكيب" },
-          { name: "المكتب الفني والـ BOQ", val: "المكتب الفني" },
-          { name: "الأراضي والملوحة", val: "التربة" }
-        ];
-        topics.forEach((t, idx) => {
-          const btn = document.createElement("button");
-          btn.className = (idx === 0) ? "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer" : "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
-          btn.innerText = t.name;
-          btn.onclick = () => {
-            activeSubFilter = t.val;
-            Array.from(container.children).forEach(c => c.className = "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer");
-            btn.className = "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
-            filterData();
-          };
-          container.appendChild(btn);
-        });
-      }
-    }
-
-    function renderBooks(list) {
-      const grid = document.getElementById("booksGrid");
-      grid.innerHTML = "";
-
-      document.getElementById("booksCountBadge").innerText = `عرض ${list.length} مرجعاً ومنهجاً`;
-
-      if (list.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-[rgba(57,216,240,0.18)]">
-            <span class="text-4xl block mb-2">🔍</span>
-            <h3 class="text-base font-bold text-white">لم نجد مناهج مطابقة لبحثك</h3>
-            <p class="text-xs text-sky-700 mt-1">جرّب البحث بكلمة أخرى أو اختر جناحاً آخر من الأعلى.</p>
-          </div>
-        `;
-        return;
-      }
-
-      list.forEach(book => {
-        const isEng = book.wing === "engineering";
-        const isNexus = book.wing === "nexus";
-        const isHeritage = book.wing === "heritage";
-
-        let badgeBg = "bg-sky-100 text-sky-800 border-sky-300";
-        if (isEng) badgeBg = "bg-blue-100 text-blue-800 border-blue-300";
-        if (isNexus) badgeBg = "bg-emerald-100 text-emerald-800 border-emerald-300";
-        if (isHeritage) badgeBg = "bg-amber-100 text-amber-800 border-amber-300";
-
-        const card = document.createElement("div");
-        card.className = "bg-[rgba(10,48,69,0.55)] hover:bg-[rgba(10,48,69,0.85)] border border-[rgba(57,216,240,0.18)] hover:border-cyan-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(2,11,22,0.6)] backdrop-blur-md group";
-        card.innerHTML = `
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3">
-              <div class="flex items-center gap-1.5">
-                ${book.code ? `<span class="text-[9px] font-mono font-bold bg-slate-800 text-cyan-300 px-2 py-0.5 rounded">${book.code}</span>` : ''}
-                <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full border ${badgeBg}">
-                  ${book.category}
-                </span>
-              </div>
-              <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                ${book.level || book.curriculum}
-              </span>
-            </div>
-
-            <h3 class="text-base font-black text-white mb-1.5 leading-snug">${book.title}</h3>
-            
-            <div class="text-xs font-bold text-sky-700 mb-2.5 flex items-center gap-1.5">
-              <span>✍️</span>
-              <span class="truncate">${book.author}</span>
-            </div>
-
-            <div class="bg-sky-50/60 p-3 rounded-xl border border-[rgba(57,216,240,0.12)] mb-4">
-              <span class="text-[10px] font-black text-amber-800 block mb-1">💡 فكرة الأثر وجوهر الفهم:</span>
-              <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed italic">
-                "${book.quote}"
-              </p>
-            </div>
-
-            <div class="flex items-center gap-3 text-[11px] text-slate-500 mb-4">
-              <span>📖 ${book.pages} صفحة / وحدة</span>
-              <span>·</span>
-              <span>👁️ ${book.downloads.toLocaleString()} قراءة واعتماد</span>
-            </div>
-          </div>
-
-          <div class="border-t border-[rgba(57,216,240,0.12)] pt-3 flex items-center justify-between">
-            <span class="text-[11px] font-bold text-cyan-300 truncate max-w-[170px]">${book.subject}</span>
-            <button onclick="openReaderModal(${book.id})" class="btn-glow-cyan text-white font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1.5 transition cursor-pointer">
-              <span>استعراض المنهج</span>
-              <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </button>
-          </div>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function filterData() {
-      const q = document.getElementById("libSearchInput").value.trim().toLowerCase();
-      const lvl = document.getElementById("libLevelSelect").value;
-
-      const filtered = resources.filter(item => {
-        // Wing filter
-        const matchWing = (currentWing === "all") || (item.wing === currentWing);
-        
-        // Search query
-        const matchQ = !q || 
-          item.title.toLowerCase().includes(q) || 
-          item.author.toLowerCase().includes(q) || 
-          item.subject.toLowerCase().includes(q) || 
-          item.quote.toLowerCase().includes(q) || 
-          item.excerpt.toLowerCase().includes(q) ||
-          (item.code && item.code.toLowerCase().includes(q));
-
-        // Level dropdown
-        const matchLvl = !lvl || (item.level && item.level.includes(lvl)) || item.category.includes(lvl);
-
-        // Sub filter (author or topic)
-        let matchSub = true;
-        if (activeSubFilter) {
-          matchSub = item.author.includes(activeSubFilter) || item.title.includes(activeSubFilter) || item.subject.includes(activeSubFilter);
-        }
-
-        return matchWing && matchQ && matchLvl && matchSub;
-      });
-
-      renderBooks(filtered);
-    }
-
-    function resetFilters() {
-      document.getElementById("libSearchInput").value = "";
-      document.getElementById("libLevelSelect").value = "";
-      setWing("all");
-    }
-
-    // Modal Control Functions
+  <!-- The 4 Quarters Structure -->
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block flex items-center gap-2">
+      <span class="text-cyan-400">🏛️</span> الهيكل الجامع لأرباع الإحياء الأربعة:
+    </strong>
     
-    function getPriceLabel(book) {
-      if (book.wing === "heritage") return "🎁 مجاني ومفتوح";
-      const cfg = countryConfig[currentCountry];
-      if (book.price) {
-        const p = book.price[currentCountry];
-        return `🔒 ${p} ${cfg.currency}`;
-      }
-      return "🎁 مجاني ومفتوح";
-    }
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <!-- Quarter 1 -->
+      <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
+        <div class="flex items-center justify-between">
+          <strong class="text-cyan-300 font-black text-xs">١. ربع العبادات (١٠ كتب)</strong>
+          <span class="text-[10px] text-slate-400 font-mono">طهارة الباطن والظاهر</span>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          كتاب العلم وفضله وفرض طلبه، قواعد العقائد، أسرار الطهارة، أسرار الصلاة وأهميتها، أسرار الزكاة، أسرار الصوم، أسرار الحج، آداب تلاوة القرآن، الأذكار والدعوات، وترتيب الأوراد وتفصيل إحياء الليل.
+        </p>
+      </div>
 
-    function getPriceColor(book) {
-      if (book.wing === "heritage") return "text-emerald-700 bg-emerald-100/60 px-2 py-0.5 rounded";
-      return "text-amber-800 bg-amber-100/80 px-2 py-0.5 rounded border border-amber-300 font-mono";
-    }
+      <!-- Quarter 2 -->
+      <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
+        <div class="flex items-center justify-between">
+          <strong class="text-cyan-300 font-black text-xs">٢. ربع العادات (١٠ كتب)</strong>
+          <span class="text-[10px] text-slate-400 font-mono">معاملات وأخلاق المجتمع</span>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          آداب الأكل والضيافة، آداب النكاح وكسر الشهوة، آداب الكسب والمعاش والحلال والحرام، آداب الصحبة وحقوق الأخوة، آداب العزلة، آداب السفر، السماع والوجد، الأمر بالمعروف والنهي عن المنكر، وآداب المعيشة وأخلاق النبوة.
+        </p>
+      </div>
 
-    function handleSmartBuy(code, title) {
-      const cfg = countryConfig[currentCountry];
-      alert(`جاري تحويلك لبوابة الدفع الإلكتروني المعتمدة لدولة ${cfg.name} لإتمام شراء المنهج: ${title} كود: ${code}`);
-    }
+      <!-- Quarter 3 -->
+      <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
+        <div class="flex items-center justify-between">
+          <strong class="text-amber-300 font-black text-xs">٣. ربع المهلكات (١٠ كتب)</strong>
+          <span class="text-[10px] text-slate-400 font-mono">تشخيص علل النفوس</span>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          شرح عجائب القلب ومداخله، رياضة النفس وتهذيب الأخلاق، كسر شهوتي البطن والفرج، آفات اللسان العشرون، ذم الغضب والحقد والحسد، ذم الدنيا وحقيقتها، ذم البخل وحب المال، ذم الجاه والرياء، ذم الكبر والعجب، وذم الغرور ومراتبه.
+        </p>
+      </div>
 
-    function handleWhatsAppOrder(code, title) {
-      const cfg = countryConfig[currentCountry];
-      const msg = encodeURIComponent(`مرحباً منصة مِحور، أود طلب النسخة المعتمدة الكاملة لمنهج: ${title} (${code}) - السعر بدولة ${cfg.name}.`);
-      window.open(`https://wa.me/971500000000?text=${msg}`, '_blank');
-    }
+      <!-- Quarter 4 -->
+      <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
+        <div class="flex items-center justify-between">
+          <strong class="text-emerald-300 font-black text-xs">٤. ربع المنجيات (١٠ كتب)</strong>
+          <span class="text-[10px] text-slate-400 font-mono">مدارج السالكين للحق</span>
+        </div>
+        <p class="text-[11px] text-slate-300 leading-relaxed">
+          كتاب التوبة وشروطها، الصبر والشكر، الخوف والرجاء، الفقر والزهد، التوحيد والتوكل، المحبة والشوق والأنس والرضا، النية والصدق والإخلاص، المراقبة والمحاسبة، التفكر، وذكر الموت وما بعده وأهوال القيامة.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    
-    function openReaderModal(bookId) {
-      const book = resources.find(b => b.id === bookId);
-      if (!book) return;
-      currentOpenedBook = book;
+  <!-- Direct Classical Excerpt from Kitab al-Ilm -->
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 space-y-3 font-serif">
+    <div class="flex items-center justify-between border-b border-cyan-400/20 pb-2">
+      <strong class="text-xs font-black text-amber-300 font-sans">📖 نص من كتاب العلم (الباب الأول: في فضل العلم والتعليم والتعلّم):</strong>
+      <span class="text-[10px] text-slate-400 font-mono">نص المخطوط الأصلي</span>
+    </div>
+    <div class="p-3 rounded-xl bg-cyan-950/20 border-r-4 border-cyan-400 text-xs sm:text-sm text-slate-100 leading-loose">
+      «... اعلم أن العلم أشرف ما يرغب فيه الراغب، وأفضل ما يكتسبه الكاسب؛ إذ هو الموصل إلى سعادة الأبد، والوسيلة إلى القرب من رب العالمين. وقد قال رسول الله ﷺ: "من سلك طريقاً يلتمس فيه علماً سلك الله به طريقاً إلى الجنة، وإن الملائكة لتضع أجنحتها رضاً لطالب العلم".<br><br>
+      ثم اعلم أن مثل العالم بعلمه كمثل السراج يضيء لغيره ولا يحترق في نفسه إذا راعى الإخلاص؛ وإنما هلك من هلك من العلماء لما طلبوا الدنيا بالدين، وجعلوا العلم سلماً إلى نيل المراتب والتفاخر على الأقران. فالطالب الحقيقي هو الذي يتعلم ليزكي نفسه، ويرفع الجهل عن عقله، ويعمل بما علم ليكون علمه حجة له لا عليه...»
+    </div>
+  </div>
 
-      document.getElementById("modalBookTitle").innerText = book.title;
-      document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category} · ${book.subject}`;
-      document.getElementById("modalBookQuote").innerText = `"${book.quote}"`;
-      
-      const customManuscript = manuscriptDatabase[book.id];
+  <!-- Mihwar Academic Synthesis -->
+  <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
+    <strong class="text-xs font-bold text-cyan-300 block">✨ ميثاق التعلم في منصة مِحور المستلهم من فكر الغزالي:</strong>
+    <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
+      <li><strong>أسبقية التزكية والفهم:</strong> لا قيمة لأي علم هندسي أو تقني أو ذكاء اصطناعي إن لم يكن محكوماً بضمير مهني وأخلاقي ناصع.</li>
+      <li><strong>التدرج المعرفي:</strong> الانتقال من حفظ المعادلات الصماء إلى استيعاب فلسفة الظاهرة وأثرها الميداني.</li>
+      <li><strong>مسؤولية المتعلم:</strong> العلم أمانة تُستثمر لعمارة الأرض وإصلاح حياة الناس والمجتمعات.</li>
+    </ul>
+  </div>
 
-      if (customManuscript) {
-        document.getElementById("modalExcerptLabel").innerText = "استعراض فصول ومحتوى المرجع كاملاً:";
-        document.getElementById("modalBookExcerpt").innerHTML = customManuscript.fullContent;
-      } else if (book.id === 101) {
-        document.getElementById("modalExcerptLabel").innerText = "استعراض فصول المنهج المعتمد كاملاً:";
-        // Keeps the existing detailed APP-201 text
-      } else {
-        // Universal Professional Chapter Layout for all other books
-        document.getElementById("modalExcerptLabel").innerText = "المحاور الأكاديمية وفصول المنهج:";
-        const isFreeWing = (book.wing === 'heritage' || book.wing === 'foundational');
-        
-        document.getElementById("modalBookExcerpt").innerHTML = `
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 1: حوار مع صديقي الملحد - د. مصطفى محمود
+      // -----------------------------------------------------------
+      1: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">متاح للتحميل والطباعة بدون أي رسوم</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-01</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">حوار مع صديقي الملحد</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: د. مصطفى محمود — 188 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 فصول الحوار العقلي والبرهاني:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">الفصل الأول:</strong> لماذا خلق الله الشر والألم؟ حكمة الابتلاء والحرية الإنسانية.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">الفصل الثاني:</strong> ماذا بعد الموت؟ والبعث والنشور بميزان العقل والفيزياء.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">الفصل الثالث:</strong> الجنة والنار، ونسبية النعيم والعذاب وتجاوز البعد الزمني.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">الفصل الرابع:</strong> التوازن الكوني الدقيق وضبط الثوابت الفيزيائية كدليل على الصانع.
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-relaxed text-slate-200">
+    «... إن الشك ليس عيباً إذا كان وسيلة للمعرفة والبحث عن الحق؛ وإنما العيب هو التعصب للجهل وإنكار الدليل العقلي الواضح. الكون كله ينبض بنظام رياضي محكم يستحيل أن يكون وليد صدفة عشوائية...»
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 4: أينشتاين والنسبية - د. مصطفى محمود
+      // -----------------------------------------------------------
+      4: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">فيزياء وفلسفة العلم للمفكرين</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-04</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">أينشتاين والنسبية</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: د. مصطفى محمود — 144 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 المحاور الفيزيائية والفلسفية:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. ثبات سرعة الضوء:</strong> تحطيم مفهوم الزمن المطلق وإثبات نسبية الحركة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. تكافؤ المادة والطاقة:</strong> معادلة E=mc² وانهيار مادية المادة الصلبة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. هندسة الزمكان:</strong> الجاذبية كانحناء في النسيج الكوني لا كقوة جذب ميكانيكية.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. الأثر الفلسفي والإيماني:</strong> نهاية الغرور المادي والاعتراف بمحدودية الحواس البشرية.
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 6: مقدمة ابن خلدون
+      // -----------------------------------------------------------
+      6: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">تأسيس علم الاجتماع وفلسفة العمران البشري</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-06</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">مقدمة ابن خلدون</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: العلامة عبد الرحمن بن محمد بن خلدون (ت 808 هـ) — 980 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 النظريات التأسيسية في فكر ابن خلدون:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. نظرية العصبية:</strong> الرابطة الاجتماعية كعنصر حاسم في نشأة الدول وتماسكها.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. أطوار الدولة الخمسة:</strong> الظفر، الاستبداد، الفراغ والدعة، القنوع، والإسراف والهرم.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. قوانين الجباية والضرائب:</strong> "في أول الدولة تكون الضرائب قليلة والإيرادات كثيرة، وفي آخرها تكون الضرائب فادحة والإيرادات ضئيلة".
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. طبائع العمران والصنائع:</strong> تقسيم العمل وتأثير الجغرافيا والبيئة على سلوك الشعوب.
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 101: دبلومة شبكات الري الذكية والذكاء الاصطناعي - م. عمرو سليم
+      // -----------------------------------------------------------
+      101: {
+        isFree: false,
+        fullContent: `
 <div class="space-y-5 text-slate-200 font-sans" dir="rtl">
   
   <div class="border-b border-cyan-400/20 pb-3 mb-4">
-    <div class="flex items-center justify-between">
-      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المرجع: ${book.code || 'MIHWAR-REF'} · معتمد للعام 2026</span>
-      <span class="text-xs font-bold ${isFreeWing ? 'text-emerald-300 bg-emerald-950/80 border border-emerald-400/30' : 'text-amber-300 bg-amber-950/80 border border-amber-400/30'} px-3 py-1 rounded-full">
-        ${isFreeWing ? 'وقف معرفي مفتوح (مجاناً)' : 'منهج تطبيقي معتمد'}
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المنهج: APP-201 · معتمد للعام 2026</span>
+      <span class="text-xs font-bold text-amber-300 bg-amber-950/80 border border-amber-400/30 px-3 py-1 rounded-full">
+        دبلومة مهنية متقدمة مع شيتات الإكسيل
       </span>
     </div>
-    <h3 class="text-xl font-black text-white mt-2.5">${book.title}</h3>
-    <p class="text-xs text-slate-300 mt-1 font-semibold">إعداد وإشراف: ${book.author} — منصة مِحور التعليمية</p>
+    <h3 class="text-xl font-black text-white mt-2.5">الحسابات الهيدروليكية المتقدمة لشبكات الري بالتنقيط والرش وتطبيقات الذكاء الاصطناعي</h3>
+    <p class="text-xs text-slate-300 mt-1 font-semibold">إعداد وإشراف: م. عمرو سليم — مؤسس منصة مِحور التعليمية</p>
   </div>
 
   <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20 space-y-2">
-    <strong class="text-cyan-300 text-xs font-bold block">📖 المحاور والموضوعات الرئيسية للكتاب:</strong>
+    <strong class="text-cyan-300 text-xs font-bold block">🎯 الأهداف الأكاديمية والمهنية للمنهج:</strong>
     <p class="text-xs leading-relaxed text-slate-200">
-      ${book.excerpt}
+      تأهيل المهندسين لتصميم شبكات الري والمكتب الفني من الصفر وحتى تسليم المشروع، مع استخدام معادلات Hazen-Williams و Darcy-Weisbach، والربط بنماذج الذكاء الاصطناعي التنبؤية (AI Flow Optimization) لترشيد استهلاك المياه بنسبة تصل إلى 42%.
     </p>
   </div>
 
   <div class="space-y-2.5">
-    <strong class="text-white text-xs font-bold block">📑 الأبواب المعتمدة في هذا الإصدار:</strong>
+    <strong class="text-white text-xs font-bold block">📑 الوحدات التدريبية المعتمدة في هذا المنهج:</strong>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
       <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
-        ✓ <strong>الباب الأول:</strong> الأسس والمفاهيم الجوهرية وفلسفة الفهم.
+        ✓ <strong>الوحدة الأولى:</strong> هيدروليكا خطوط الأنابيب وفواقد الاحتكاك والمحابس.
       </div>
       <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
-        ✓ <strong>الباب الثاني:</strong> التحليل النظري والقوانين الحاكمة للتخصص.
+        ✓ <strong>الوحدة الثانية:</strong> حسابات المناوبات وقطاعات الري المتزامنة.
       </div>
       <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
-        ✓ <strong>الباب الثالث:</strong> التطبيقات الواقعية ونماذج الحل الميداني.
+        ✓ <strong>الوحدة الثالثة:</strong> نمذجة شبكات الري والمحاكاة التفاعلية عبر EPANET.
       </div>
       <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
-        ✓ <strong>الباب الرابع:</strong> خلاصة الأثر المعرفي والتقييم الختامي.
+        ✓ <strong>الوحدة الرابعة:</strong> شيتات الإكسيل التفاعلية لحساب أقطار المواسير وتكلفة المشروع.
       </div>
     </div>
   </div>
 
   <div class="p-4 rounded-xl bg-gradient-to-r from-[rgba(10,48,69,0.7)] to-[rgba(7,26,45,0.9)] border border-cyan-400/25 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
     <div>
-      <span class="text-xs font-black text-white block">${isFreeWing ? 'متاح للتحميل والدراسة المجانية الكاملة' : 'نسخة رقمية معتمدة مع التحديثات'}</span>
-      <span class="text-[11px] text-slate-400">${book.pages} صفحة / وحدة تطبيقية كاملة</span>
+      <span class="text-xs font-black text-white block">النسخة المعتمدة تشمل: المذكرة + شيتات الإكسيل + شهادة الإتمام</span>
+      <span class="text-[11px] text-amber-300 font-mono font-bold">السعر المعتمد: 75 AED (أو ما يعادله بالعملات المحلية)</span>
     </div>
-    <button onclick="downloadBookAlert()" class="btn-glow-cyan text-white text-xs font-black py-2 px-5 rounded-full cursor-pointer shadow">
-      📥 تحميل المذكرة الآن (PDF / HTML)
+    <button onclick="openPaymentModalFromReader()" class="btn-glow-cyan text-white text-xs font-black py-2.5 px-6 rounded-full cursor-pointer shadow">
+      💳 الحصول على المنهج المعتمد والملفات الآن
     </button>
   </div>
 
 </div>
-`;
+`
+      }
+    };
+
+    // -------------------------------------------------------------
+    // 3. UI RENDERING & FILTERING LOGIC
+    // -------------------------------------------------------------
+    function setWing(wing) {
+      activeWing = wing;
+      document.querySelectorAll(".wing-tab").forEach(tab => {
+        if (tab.dataset.wing === wing) {
+          tab.classList.add("bg-gradient-to-r", "from-[#12BFC1]", "to-[#075B68]", "text-white", "shadow-lg");
+          tab.classList.remove("text-slate-300", "bg-[rgba(10,48,69,0.6)]");
+        } else {
+          tab.classList.remove("bg-gradient-to-r", "from-[#12BFC1]", "to-[#075B68]", "text-white", "shadow-lg");
+          tab.classList.add("text-slate-300", "bg-[rgba(10,48,69,0.6)]");
+        }
+      });
+      renderSubFilters();
+      filterData();
+    }
+
+    function renderSubFilters() {
+      const select = document.getElementById("libLevelSelect");
+      if (!select) return;
+
+      const levels = {
+        all: ["الكل"],
+        engineering: ["الكل", "مكتب فني", "تنفيذ وإشراف", "تصميم هيدروليكي", "تسميد وتربة"],
+        nexus: ["الكل", "استدامة", "حوكمة ونظم", "اقتصاد دائري", "طاقة ومياه"],
+        heritage: ["الكل", "فكر وفلسفة", "تراث وفكر", "تاريخ وعمران", "أصول وفقه"],
+        foundational: ["الكل", "تأسيس جامعي", "رياضيات وفيزياء", "بيئة ونظم"]
+      };
+
+      const opts = levels[activeWing] || levels.all;
+      select.innerHTML = opts.map(l => `<option value="${l === 'الكل' ? 'all' : l}">${l}</option>`).join("");
+      activeLevel = "all";
+    }
+
+    function renderBooks(data) {
+      const grid = document.getElementById("booksGrid");
+      const emptyState = document.getElementById("libEmptyState");
+      const countEl = document.getElementById("libTotalCount");
+
+      if (countEl) countEl.innerText = data.length;
+
+      if (!data || data.length === 0) {
+        grid.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
       }
 
-      document.getElementById("modalBookPages").innerText = `المحتوى العلمي المعتمد: ${book.pages} صفحة / وحدة تطبيقية`;
+      emptyState.classList.add("hidden");
+
+      grid.innerHTML = data.map(book => {
+        const isFree = (book.wing === 'heritage' || book.wing === 'foundational');
+        const priceBadge = isFree 
+          ? '<span class="text-[10px] font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-400/30">وقف معرفي حر</span>'
+          : '<span class="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded-full border border-amber-400/30 font-mono">75 AED</span>';
+
+        const wingIcon = book.wing === 'engineering' ? '⚙️' : (book.wing === 'nexus' ? '🌐' : (book.wing === 'heritage' ? '📜' : '📐'));
+
+        return `
+          <div class="rounded-2xl bg-gradient-to-b from-[#071A2D] to-[#020B16] border border-cyan-400/25 hover:border-cyan-400 transition-all duration-300 p-5 flex flex-col justify-between group shadow-lg hover:shadow-[0_0_30px_rgba(18,191,193,0.15)] relative overflow-hidden">
+            
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-1 rounded-lg border border-cyan-500/30 flex items-center gap-1.5">
+                  <span>${wingIcon}</span>
+                  <span>${book.code || 'REF'}</span>
+                </span>
+                ${priceBadge}
+              </div>
+
+              <div>
+                <h4 class="text-base font-black text-white group-hover:text-cyan-300 transition line-clamp-2 leading-snug">
+                  ${book.title}
+                </h4>
+                <p class="text-xs text-slate-300 mt-1 font-medium">
+                  ${book.author}
+                </p>
+              </div>
+
+              <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+                ${book.excerpt}
+              </p>
+            </div>
+
+            <div class="mt-5 pt-3 border-t border-cyan-400/15 flex items-center justify-between gap-2">
+              <span class="text-[11px] text-slate-400 font-mono">
+                ${book.pages} صفحة
+              </span>
+
+              <button onclick="openReaderModal(${book.id})" class="btn-glow-cyan text-white text-xs font-bold py-1.5 px-4 rounded-xl cursor-pointer shadow">
+                استعراض وقراءة 📖
+              </button>
+            </div>
+
+          </div>
+        `;
+      }).join("");
+    }
+
+    function filterData() {
+      const searchInput = document.getElementById("libSearchInput");
+      const levelSelect = document.getElementById("libLevelSelect");
+
+      searchQuery = (searchInput ? searchInput.value : "").trim().toLowerCase();
+      activeLevel = (levelSelect ? levelSelect.value : "all");
+
+      const filtered = resources.filter(book => {
+        const matchesWing = (activeWing === "all" || book.wing === activeWing);
+        const matchesLevel = (activeLevel === "all" || book.level === activeLevel);
+        const matchesSearch = !searchQuery || 
+          book.title.toLowerCase().includes(searchQuery) ||
+          book.author.toLowerCase().includes(searchQuery) ||
+          book.excerpt.toLowerCase().includes(searchQuery) ||
+          (book.code && book.code.toLowerCase().includes(searchQuery));
+
+        return matchesWing && matchesLevel && matchesSearch;
+      });
+
+      renderBooks(filtered);
+    }
+
+    function resetFilters() {
+      const searchInput = document.getElementById("libSearchInput");
+      if (searchInput) searchInput.value = "";
+      setWing("all");
+    }
+
+    // -------------------------------------------------------------
+    // 4. READER MODAL LOGIC (Clean separation of Free vs Paid)
+    // -------------------------------------------------------------
+    function openReaderModal(bookId) {
+      const book = resources.find(b => b.id === bookId);
+      if (!book) return;
+      currentOpenedBook = book;
+
+      document.getElementById("modalBookTitle").innerText = book.title;
+      document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category || ''} · ${book.subject || ''}`;
+      document.getElementById("modalBookQuote").innerText = `"${book.quote || 'العلم أمانة وفهم وتطبيق.'}"`;
+      document.getElementById("modalBookPages").innerText = `${book.pages} صفحة / وحدة معتمدة`;
 
       const codeBadge = document.getElementById("modalBookCode");
       if (book.code) {
@@ -1104,31 +1401,98 @@
         codeBadge.classList.add("hidden");
       }
 
-      const iconEl = document.getElementById("modalBookIcon");
-      if (book.wing === "engineering") iconEl.innerText = "⚙️";
-      else if (book.wing === "nexus") iconEl.innerText = "🌐";
-      else if (book.wing === "heritage") iconEl.innerText = "📜";
-      else iconEl.innerText = "📐";
+      const statusBadge = document.getElementById("modalBookStatusBadge");
+      const isFree = (book.wing === 'heritage' || book.wing === 'foundational');
+
+      if (isFree) {
+        statusBadge.innerText = "وقف معرفي حر ومجاني 100%";
+        statusBadge.className = "text-[11px] font-bold text-emerald-300 bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-400/30";
+        document.getElementById("modalPricingNote").innerText = "متاح للتحميل والطباعة مجاناً بالكامل";
+      } else {
+        statusBadge.innerText = "دبلومة تطبيقية معتمدة (75 AED)";
+        statusBadge.className = "text-[11px] font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded-full border border-amber-400/30 font-mono";
+        document.getElementById("modalPricingNote").innerText = "تشمل شهادة الإتمام وشيتات الإكسيل الهندسية";
+      }
+
+      // Check manuscript database
+      const customManuscript = manuscriptDatabase[book.id];
+      if (customManuscript) {
+        document.getElementById("modalExcerptLabel").innerHTML = '<span>📑</span> محتوى وفصول المخطوطة كاملاً:';
+        document.getElementById("modalBookExcerpt").innerHTML = customManuscript.fullContent;
+      } else {
+        // Universal Structured Fallback
+        document.getElementById("modalExcerptLabel").innerHTML = '<span>📑</span> المحاور الأكاديمية وفصول المرجع:';
+        document.getElementById("modalBookExcerpt").innerHTML = `
+          <div class="space-y-4 text-slate-200 text-xs sm:text-sm" dir="rtl">
+            <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+              <strong class="text-cyan-300 block mb-1">📖 نبذة عن المرجع وأهميته:</strong>
+              <p class="leading-relaxed text-slate-300">${book.excerpt}</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
+                ✓ <strong>الباب الأول:</strong> الأسس والمفاهيم الجوهرية وفلسفة الفهم.
+              </div>
+              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
+                ✓ <strong>الباب الثاني:</strong> التحليل النظري والقوانين الحاكمة للتخصص.
+              </div>
+              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
+                ✓ <strong>الباب الثالث:</strong> التطبيقات الواقعية ونماذج الحل الميداني.
+              </div>
+              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
+                ✓ <strong>الباب الرابع:</strong> خلاصة الأثر المعرفي والتقييم الختامي.
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Configure Modal Action Buttons
+      const actionsContainer = document.getElementById("modalActionButtons");
+      if (isFree) {
+        actionsContainer.innerHTML = `
+          <button onclick="downloadBookAlert()" class="btn-glow-cyan text-white text-xs font-black py-2.5 px-6 rounded-full cursor-pointer shadow flex items-center gap-2">
+            <span>📥</span> تحميل وطباعة الكتاب (PDF / Offline)
+          </button>
+          <button onclick="closeReaderModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
+            إغلاق
+          </button>
+        `;
+      } else {
+        actionsContainer.innerHTML = `
+          <button onclick="downloadBookAlert()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-200 text-xs font-bold py-2.5 px-4 rounded-full border border-cyan-400/30 cursor-pointer flex items-center gap-1.5">
+            <span>📑</span> تحميل التوصيف (PDF)
+          </button>
+          <button onclick="openPaymentModalFromReader()" class="btn-glow-cyan text-white text-xs font-black py-2.5 px-6 rounded-full cursor-pointer shadow flex items-center gap-2">
+            <span>💳</span> الحصول على الاعتماد وشيتات الإكسيل
+          </button>
+          <button onclick="closeReaderModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
+            إغلاق
+          </button>
+        `;
+      }
 
       const modal = document.getElementById("readerModal");
-      modal.classList.add("active");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
       document.body.style.overflow = "hidden";
     }
 
     function closeReaderModal() {
       const modal = document.getElementById("readerModal");
-      modal.classList.remove("active");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
       document.body.style.overflow = "auto";
     }
 
-    function handleBackdropClick(e) {
-      if (e.target.id === 'readerModal') {
+    function handleBackdropClick(event) {
+      if (event.target.id === "readerModal") {
         closeReaderModal();
       }
     }
 
-    let currentOpenedBook = null;
-
+    // -------------------------------------------------------------
+    // 5. CLEAN DOWNLOAD SYSTEM (PDF / Standalone Document)
+    // -------------------------------------------------------------
     function downloadBookAlert() {
       if (!currentOpenedBook) return;
       
@@ -1136,10 +1500,16 @@
       const title = book.title;
       const author = book.author;
       const code = book.code || "MIHWAR-REF";
-      const excerptHtml = document.getElementById("modalBookExcerpt").innerHTML;
-      const quote = book.quote;
+      const isFree = (book.wing === 'heritage' || book.wing === 'foundational');
+      const quote = book.quote || "العلم نور وعمل وفهم.";
 
-      // Construct a clean, fully-styled, standalone printable HTML/PDF document
+      // Extract only clean content from modal
+      let excerptHtml = document.getElementById("modalBookExcerpt").innerHTML;
+
+      // Clean out any interactive buttons, scripts, or checkout widgets that might be present
+      excerptHtml = excerptHtml.replace(/<button[\s\S]*?<\/button>/gi, '');
+      excerptHtml = excerptHtml.replace(/<script[\s\S]*?<\/script>/gi, '');
+
       const docContent = `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -1148,16 +1518,16 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
     body {
-      font-family: 'Cairo', system-ui, sans-serif;
-      margin: 40px;
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      margin: 35px;
       color: #0c2340;
       background: #ffffff;
       line-height: 1.8;
     }
     .header-box {
       border-bottom: 3px solid #0284c7;
-      padding-bottom: 20px;
-      margin-bottom: 30px;
+      padding-bottom: 18px;
+      margin-bottom: 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1193,9 +1563,9 @@
     .quote-box {
       background: #fef3c7;
       border-right: 5px solid #f59e0b;
-      padding: 16px 20px;
-      border-radius: 12px;
-      margin: 25px 0;
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin: 20px 0;
       font-style: italic;
       color: #78350f;
       font-weight: 600;
@@ -1205,7 +1575,7 @@
       color: #1e293b;
     }
     .footer {
-      margin-top: 50px;
+      margin-top: 40px;
       border-top: 1px solid #e2e8f0;
       padding-top: 15px;
       text-align: center;
@@ -1218,10 +1588,10 @@
     }
   </style>
 </head>
-<body class="mihwar-dark-theme mihwar-mesh-bg">
+<body>
   <div class="header-box">
     <div>
-      <span class="code-tag">${code} · معتمد للعام 2026</span>
+      <span class="code-tag">${code} · ${isFree ? 'وقف معرفي حر مجاني' : 'منهج تطبيقي معتمد'}</span>
       <h1>${title}</h1>
       <span class="author-meta">إعداد: ${author}</span>
     </div>
@@ -1238,114 +1608,18 @@
   </div>
 
   <div class="footer">
-    وثيقة رسمية صادرة من منصة مِحور التعليمية (mihwar-edu.com) — جميع الحقوق محفوظة © 2026
+    وثيقة صادرة عن منصة مِحور التعليمية (mihwar-edu.com) — مخصصة للدراسة والقراءة — جميع الحقوق محفوظة © 2026
   </div>
 
   <script>
-    // Trigger print/save as PDF immediately when opened
     window.onload = function() {
-      window.print();\n    };\n  <\/script>
-
-  <!-- ============================================================== -->
-  <!-- MIHWAR SECURE CHECKOUT & PAYMENT GATEWAY MODAL                 -->
-  <!-- ============================================================== -->
-  <div id="paymentGatewayModal" class="fixed inset-0 z-[100000] bg-[#020B16]/90 backdrop-blur-md hidden flex items-center justify-center p-4">
-    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-xl shadow-[0_0_50px_rgba(57,216,240,0.25)] overflow-hidden flex flex-col">
-      
-      <!-- Modal Header -->
-      <div class="p-5 border-b border-[rgba(57,216,240,0.2)] bg-[rgba(10,48,69,0.7)] flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-lg font-bold shadow-md">
-            🔒
-          </div>
-          <div>
-            <h3 class="text-base sm:text-lg font-black text-white">بوابة الدفع الآمن والحصول على النسخة المعتمدة</h3>
-            <span class="text-[11px] text-cyan-300 block">منصة مِحـوَر التعليمية المعتمدة · MIHWAR Secure Pay</span>
-          </div>
-        </div>
-        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white flex items-center justify-center border border-cyan-400/30 text-sm">
-          ✕
-        </button>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="p-6 space-y-5 text-xs text-slate-200 max-h-[75vh] overflow-y-auto">
-        
-        <!-- Summary Box -->
-        <div class="p-4 rounded-2xl bg-[rgba(2,11,22,0.7)] border border-cyan-400/25 flex items-center justify-between">
-          <div>
-            <span class="text-[10px] text-cyan-300 font-mono block">المنهج المطلوب:</span>
-            <strong id="payItemTitle" class="text-sm text-white font-black block mt-0.5">الحسابات الهيدروليكية لشبكات الري</strong>
-            <span id="payItemCode" class="text-[10px] text-slate-400 font-mono">كود: APP-201 · معتمد للعام 2026</span>
-          </div>
-          <div class="text-left">
-            <span class="text-[10px] text-slate-400 block">إجمالي المبلغ:</span>
-            <div id="payItemPrice" class="text-2xl font-black text-amber-300 font-mono">75 AED</div>
-          </div>
-        </div>
-
-        <!-- Payment Channels Selection -->
-        <div class="space-y-2.5">
-          <label class="block text-xs font-bold text-white">اختر وسيلة الدفع المفضلة لديك:</label>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-            <!-- Channel 1: Cards / Apple Pay -->
-            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
-              <input type="radio" name="payChannel" value="card" checked class="accent-cyan-400">
-              <div>
-                <strong class="text-white block text-xs">بطاقة بنكية / Apple Pay</strong>
-                <span class="text-[10px] text-slate-400">Visa · Mastercard · Mada</span>
-              </div>
-            </label>
-
-            <!-- Channel 2: Local Instant Transfer -->
-            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
-              <input type="radio" name="payChannel" value="instant" class="accent-cyan-400">
-              <div>
-                <strong class="text-white block text-xs">تحويل فوري / محفظة</strong>
-                <span class="text-[10px] text-slate-400">InstaPay / فودافون كاش / STC</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Student Data Inputs -->
-        <div class="space-y-3">
-          <div>
-            <label class="block text-[11px] text-slate-300 font-bold mb-1">الاسم الكامل للطالب أو المهندس:</label>
-            <input type="text" id="payStudentName" placeholder="الاسم ثلاثي..." class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
-          </div>
-          <div>
-            <label class="block text-[11px] text-slate-300 font-bold mb-1">البريد الإلكتروني (لاستلام ملفات المرجع وشيتات الإكسيل):</label>
-            <input type="email" id="payStudentEmail" placeholder="name@example.com" class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
-          </div>
-        </div>
-
-        <!-- Guarantee Note -->
-        <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-[11px] text-emerald-200 flex items-center gap-2">
-          <span>✓</span>
-          <span>ضمان مِحور الأكاديمي: استلام فوري للملفات، ودعم فني ممتد مع التحديثات.</span>
-        </div>
-
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="p-4 bg-[rgba(2,11,22,0.9)] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <button onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2">
-          <span>💬 تأكيد الطلب وتفعيل النسخة المعتمدة فـوراً</span>
-        </button>
-        <button onclick="closePaymentModal()" class="w-full sm:w-auto bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-xs font-bold transition">
-          إلغاء
-        </button>
-      </div>
-
-    </div>
-  </div>
-
+      window.print();
+    };
+  <\/script>
 </body>
 </html>`;
 
-      // 1. Trigger Direct File Download (.html / offline readable document)
+      // 1. Download file directly
       const blob = new Blob([docContent], { type: 'text/html;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -1356,7 +1630,7 @@
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
 
-      // 2. Also open print window directly so user can click "Save as PDF" instantly
+      // 2. Open clean print window
       const printWin = window.open('', '_blank');
       if (printWin) {
         printWin.document.write(docContent);
@@ -1364,23 +1638,82 @@
       }
     }
 
-    // Attach search and select listeners
-    document.getElementById("libSearchInput").addEventListener("input", filterData);
-    document.getElementById("libLevelSelect").addEventListener("change", filterData);
+    // -------------------------------------------------------------
+    // 6. PAYMENT MODAL LOGIC (For Applied Commercial Curricula)
+    // -------------------------------------------------------------
+    function openPaymentModalFromReader() {
+      if (!currentOpenedBook) return;
+      closeReaderModal();
+      openPaymentModal(currentOpenedBook);
+    }
 
-    // Initial load
-    setWing("all");
+    function openPaymentModal(book) {
+      selectedPayBook = book;
+      document.getElementById("payItemTitle").innerText = book.title;
+      document.getElementById("payItemCode").innerText = `كود: ${book.code || 'APP-201'} · معتمد للعام 2026`;
+      
+      switchCurrency(selectedCurrency);
+
+      const modal = document.getElementById("paymentGatewayModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePaymentModal() {
+      const modal = document.getElementById("paymentGatewayModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "auto";
+    }
+
+    function switchCurrency(curr) {
+      selectedCurrency = curr;
+      const rateInfo = currencyRates[curr] || currencyRates.AED;
+      const basePriceAED = 75;
+      const convertedPrice = Math.round(basePriceAED * rateInfo.rate);
+
+      document.getElementById("payItemPrice").innerText = `${convertedPrice} ${rateInfo.symbol}`;
+    }
+
+    function submitOrderViaWhatsApp() {
+      if (!selectedPayBook) return;
+      const name = document.getElementById("payStudentName").value.trim() || "طالب / مهندس مِحور";
+      const email = document.getElementById("payStudentEmail").value.trim() || "غير مسجل";
+      const channel = document.querySelector('input[name="payChannel"]:checked')?.value || "card";
+      const channelName = channel === "card" ? "بطاقة بنكية / فيزا / ماستركارد" : "تحويل فوري (InstaPay / فودافون كاش / STC)";
+
+      const message = `مرحباً منصة مِحور، أود التسجيل والحصول على المنهج المعتمد:
+- اسم الدبلومة: ${selectedPayBook.title}
+- كود المرجع: ${selectedPayBook.code || 'APP-201'}
+- وسيلة الدفع المفضلة: ${channelName}
+- العملة والسعر: ${document.getElementById("payItemPrice").innerText}
+- الاسم: ${name}
+- البريد: ${email}
+يرجى إرسال رابط الدفع المباشر وملفات المرجع وشيتات الإكسيل.`;
+
+      const whatsappUrl = `https://wa.me/971500000000?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      closePaymentModal();
+    }
+
+    // -------------------------------------------------------------
+    // 7. INITIALIZATION
+    // -------------------------------------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("libSearchInput");
+      const levelSelect = document.getElementById("libLevelSelect");
+
+      if (searchInput) searchInput.addEventListener("input", filterData);
+      if (levelSelect) levelSelect.addEventListener("change", filterData);
+
+      setWing("all");
+    });
+
+    // In case DOMContentLoaded already fired
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setWing("all");
+    }
   </script>
-
-  <!-- WhatsApp Support Widget -->
-  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%A7%D9%87%D8%AC%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AF%D8%A7%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D9%88%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white px-5 py-3 rounded-full shadow-[0_8px_30px_rgba(16,185,129,0.4)] border-2 border-emerald-300/40 font-black text-xs transition-all hover:scale-105 group"
-     title="تواصل معنا مباشرة عبر واتساب">
-    <svg class="w-6 h-6 flex-none" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.004.57 2.019.882 3.197.882 3.181 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.765-5.769-5.765zm3.435 8.196c-.144.404-.83.774-1.173.824-.343.05-.785.076-2.285-.544-1.879-.776-3.085-2.698-3.178-2.823-.093-.125-.765-1.017-.765-1.939 0-.922.483-1.376.655-1.563.172-.187.376-.234.502-.234.126 0 .252.001.362.006.115.006.269-.044.421.322.157.376.533 1.303.579 1.397.046.094.077.204.015.33-.063.125-.094.204-.188.314-.094.11-.198.245-.282.33-.094.094-.192.196-.083.384.11.188.488.805 1.047 1.302.721.642 1.328.841 1.516.935.188.094.298.078.408-.047.11-.125.469-.548.594-.736.125-.188.25-.157.422-.094.172.063 1.096.517 1.284.611.188.094.313.141.36.219.047.078.047.453-.097.857zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-    <span>تواصل عبر واتساب</span>
-  </a>
-
 </body>
 </html>
