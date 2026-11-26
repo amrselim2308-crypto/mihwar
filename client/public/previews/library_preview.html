@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مكتبة مِحور المعرفية | روائع الأدب والفكر والمناهج المعتمدة</title>
+  <title>مكتبة مِحور المعرفية | روائع الفكر والمناهج الهندسية التخصصية والاستدامة</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --sky-top: #0284c7;
@@ -29,6 +29,22 @@
       color: #ffffff;
     }
 
+    .wing-btn-active {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      border-color: #0284c7;
+    }
+    .wing-btn-inactive {
+      background: #ffffff;
+      color: #254b73;
+      border: 1.5px solid #bae6fd;
+    }
+    .wing-btn-inactive:hover {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
     .book-card {
       background: #ffffff;
       border: 1.5px solid #e0f2fe;
@@ -46,6 +62,7 @@
       background: #0284c7;
       color: #ffffff;
       box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+      border-color: #0284c7;
     }
     .pill-inactive {
       background: #ffffff;
@@ -85,7 +102,7 @@
         </div>
         <div>
           <span class="text-2xl font-black tracking-wide block leading-none text-white">مِـحـوَر</span>
-          <span class="text-xs font-bold text-sky-100 tracking-wider">مكتبة التراث والروائع الأدبية والمناهج</span>
+          <span class="text-xs font-bold text-sky-100 tracking-wider">مكتبة العلوم التطبيقية والتراث الإنساني والاستدامة</span>
         </div>
       </a>
 
@@ -106,39 +123,52 @@
   <!-- Hero Section -->
   <section class="py-12 px-6 bg-gradient-to-b from-sky-100 via-sky-50 to-[#f0f9ff] border-b border-sky-200">
     <div class="max-w-5xl mx-auto text-center space-y-4">
-      <span class="inline-block bg-sky-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">
-        📚 مكتبة الفكر الإنساني والعلوم التطبيقية
-      </span>
+      <div class="inline-flex items-center gap-2 bg-sky-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">
+        <span>📚 منظومة المعرفة المتكاملة: من الفهم إلى الإدراك والوعي</span>
+      </div>
+      
       <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0c2340] leading-tight">
-        كنوز مصطفى محمود، الغزالي، الشافعي، طه حسين، والعقاد
+        المكتبة العلمية المتخصصة وموسوعة التراث والفكر
       </h1>
+      
       <p class="text-sm sm:text-base text-[#254b73] max-w-3xl mx-auto leading-relaxed">
-        تصفح وقراءة فورية لأعظم المراجع الأدبية والفلسفية والشرعية، بالإضافة إلى مذكرات ومناهج STEM المعتمدة، مع قارئ رقمي تفاعلي يفتح الكتاب بضغطة واحدة.
+        منصة مِحور تجمع بين رصانة العلوم الهندسية والتطبيقية، ونظم الاستدامة الكبرى، وبين عمق التراث الإنساني والفلسفي، لتبني عقلاً قادراً على الفهم، والتحليل، وربط القوانين بتحديات الواقع الميداني.
       </p>
 
-      <!-- Quick Author Filter Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-2 pt-4">
-        <button onclick="setAuthorFilter('')" id="pill-all" class="pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          🌟 جميع المؤلفين والمناهج (24)
-        </button>
-        <button onclick="setAuthorFilter('مصطفى محمود')" id="pill-mahmoud" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          د. مصطفى محمود (4)
-        </button>
-        <button onclick="setAuthorFilter('الغزالي')" id="pill-ghazali" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          الإمام الغزالي (4)
-        </button>
-        <button onclick="setAuthorFilter('الشافعي')" id="pill-shafii" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          الإمام الشافعي (3)
-        </button>
-        <button onclick="setAuthorFilter('طه حسين')" id="pill-hussein" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          د. طه حسين (4)
-        </button>
-        <button onclick="setAuthorFilter('عباس العقاد')" id="pill-aqqad" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          عباس محمود العقاد (5)
-        </button>
-        <button onclick="setCategoryFilter('مناهج دراسية')" id="pill-stem" class="pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer">
-          مناهج STEM والوزاري (4)
-        </button>
+      <!-- الأجنحة الكبرى للمكتبة (Main Library Wings) -->
+      <div class="pt-6">
+        <span class="text-xs font-black text-sky-800 uppercase tracking-widest block mb-2.5">اختر جناح المكتبة:</span>
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+          <button onclick="setWing('all')" id="wing-all" class="wing-btn-active text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+            <span>🏛️ كل الأجنحة</span>
+            <span id="badge-all" class="text-[10px] bg-white/20 px-2 py-0.5 rounded-full">30</span>
+          </button>
+          
+          <button onclick="setWing('engineering')" id="wing-engineering" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+            <span>⚙️ جناح العلوم الهندسية والتطبيقية</span>
+            <span class="text-[10px] bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full font-bold">5</span>
+          </button>
+
+          <button onclick="setWing('nexus')" id="wing-nexus" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+            <span>🌐 الاستدامة والنظم المتكاملة (WEF)</span>
+            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">2</span>
+          </button>
+
+          <button onclick="setWing('heritage')" id="wing-heritage" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+            <span>📜 جناح الفكر والتراث الإنساني</span>
+            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">20</span>
+          </button>
+
+          <button onclick="setWing('foundational')" id="wing-foundational" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+            <span>📐 المناهج التأسيسية (STEM)</span>
+            <span class="text-[10px] bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full font-bold">3</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Sub-filters / Author Pills -->
+      <div id="subFiltersContainer" class="flex flex-wrap items-center justify-center gap-2 pt-3">
+        <!-- Rendered via JS depending on active wing -->
       </div>
     </div>
   </section>
@@ -149,18 +179,19 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
         <!-- Search Input -->
         <div class="md:col-span-6 relative">
-          <input type="text" id="libSearchInput" placeholder="ابحث باسم الكتاب، المؤلف، الموضوع، أو الاقتباس..." 
+          <input type="text" id="libSearchInput" placeholder="ابحث باسم المنهج، الموضوع، الكود، المؤلف، أو فكرة الأثر..." 
                  class="w-full bg-[#f8fafc] border border-sky-200 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:border-sky-500" />
         </div>
 
-        <!-- Category Filter -->
+        <!-- Level / Category Filter -->
         <div class="md:col-span-3">
-          <select id="libCategorySelect" class="w-full bg-[#f8fafc] border border-sky-200 rounded-xl px-3 py-2.5 text-xs font-bold text-[#0c2340] focus:outline-none">
-            <option value="">جميع التصنيفات</option>
-            <option value="أدب وفكر">أدب وفكر وفلسفة</option>
-            <option value="فقه وأصول">فقه وأصول وتزكية</option>
-            <option value="سير وتراجم">سير وتراجم وتاريخ</option>
-            <option value="مناهج دراسية">مناهج وملخصات دراسية</option>
+          <select id="libLevelSelect" class="w-full bg-[#f8fafc] border border-sky-200 rounded-xl px-3 py-2.5 text-xs font-bold text-[#0c2340] focus:outline-none">
+            <option value="">جميع المستويات والتخصصات</option>
+            <option value="تأسيسي">مستوى تأسيسي (Foundational)</option>
+            <option value="متوسط">مستوى متوسط (Intermediate)</option>
+            <option value="متقدم">مستوى متقدم (Advanced)</option>
+            <option value="تكاملي">مناهج تكاملية ونظمية (Integrated)</option>
+            <option value="تراث وفكر">تراث وفكر إنساني</option>
           </select>
         </div>
 
@@ -175,20 +206,23 @@
 
     <!-- Active Count Header -->
     <div class="flex items-center justify-between mb-6 px-1">
-      <h2 class="text-xl font-black text-[#0c2340]">المؤلفات والكتب المتاحة</h2>
-      <span id="booksCountBadge" class="text-xs font-bold bg-sky-100 text-sky-800 px-3 py-1 rounded-full border border-sky-200">
-        عرض 24 كتاباً ومرجعاً
+      <div>
+        <h2 id="wingHeaderTitle" class="text-xl font-black text-[#0c2340]">كل المناهج والمؤلفات المعتمدة</h2>
+        <p id="wingHeaderDesc" class="text-xs text-[#254b73] mt-0.5">تصفح وقراءة فورية مع استعراض فكرة الأثر وجوهر الفهم</p>
+      </div>
+      <span id="booksCountBadge" class="text-xs font-bold bg-sky-100 text-sky-800 px-3.5 py-1.5 rounded-full border border-sky-200 shadow-sm">
+        عرض 30 مرجعاً ومنهجاً
       </span>
     </div>
 
-    <!-- Books Grid -->
+    <!-- Books & Curricula Grid -->
     <div id="booksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Generated via JS -->
     </div>
   </main>
 
   <!-- ============================================================== -->
-  <!-- MODAL: THE INTERACTIVE DIGITAL BOOK READER                     -->
+  <!-- MODAL: THE INTERACTIVE DIGITAL CURRICULUM & BOOK READER        -->
   <!-- ============================================================== -->
   <div id="readerModal" onclick="handleBackdropClick(event)">
     <div class="bg-white max-w-3xl w-full rounded-3xl shadow-2xl overflow-hidden border border-sky-200 flex flex-col max-h-[90vh]" onclick="event.stopPropagation()">
@@ -196,12 +230,15 @@
       <!-- Modal Header -->
       <div class="sky-header px-6 py-4 flex items-center justify-between text-white">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-black text-sm border border-white/30">
+          <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center font-black text-sm border border-white/30" id="modalBookIcon">
             📖
           </div>
           <div>
-            <h3 id="modalBookTitle" class="text-base sm:text-lg font-black leading-tight">عنوان الكتاب</h3>
-            <span id="modalBookAuthor" class="text-xs text-sky-100 block mt-0.5">اسم المؤلف والتصنيف</span>
+            <div class="flex items-center gap-2">
+              <span id="modalBookCode" class="text-[10px] font-mono bg-white/25 px-2 py-0.5 rounded font-bold uppercase tracking-wider hidden">SYS-401</span>
+              <h3 id="modalBookTitle" class="text-base sm:text-lg font-black leading-tight">عنوان المنهج</h3>
+            </div>
+            <span id="modalBookAuthor" class="text-xs text-sky-100 block mt-0.5">اسم المؤلف / التخصص والمستوى</span>
           </div>
         </div>
 
@@ -210,42 +247,43 @@
         </button>
       </div>
 
-      <!-- Modal Body (Paper Layout) -->
+      <!-- Modal Body (Tabs & Content) -->
       <div class="p-6 sm:p-8 overflow-y-auto space-y-5 bg-[#fafafa]">
-        <!-- Quote Box -->
+        
+        <!-- Quote / Cognitive Insight Box -->
         <div class="p-4 rounded-2xl bg-amber-50 border-r-4 border-amber-500 shadow-sm">
-          <span class="text-xs font-black text-amber-800 block mb-1">💡 فكرة الأثر ورسالة المؤلف:</span>
+          <span id="modalQuoteLabel" class="text-xs font-black text-amber-800 block mb-1">💡 فكرة الأثر ورسالة المؤلف:</span>
           <p id="modalBookQuote" class="text-sm font-semibold text-amber-950 italic leading-relaxed">
             "نص الاقتباس هنا..."
           </p>
         </div>
 
-        <!-- Detailed Excerpt & Significance -->
+        <!-- Detailed Syllabus / Overview -->
         <div class="bg-white p-5 rounded-2xl border border-sky-100 shadow-sm space-y-3">
           <h4 class="text-sm font-black text-sky-900 flex items-center gap-2">
             <span>📜</span>
-            <span>ملخص المرجع والباب الأول:</span>
+            <span id="modalExcerptLabel">المحاور العلمية وجوهر المنهج:</span>
           </h4>
-          <p id="modalBookExcerpt" class="text-sm text-[#254b73] leading-relaxed">
-            ملخص الكتاب وتفاصيله...
+          <p id="modalBookExcerpt" class="text-sm text-[#254b73] leading-relaxed whitespace-pre-line">
+            ملخص المنهج وتفاصيله...
           </p>
         </div>
 
-        <!-- Mihwar Value Box -->
+        <!-- Mihwar Value & Practical Application Box -->
         <div class="bg-gradient-to-r from-sky-50 to-cyan-50 p-4 rounded-2xl border border-sky-200 text-xs sm:text-sm text-sky-950 space-y-1.5">
-          <strong class="block font-black text-sky-800">✨ الأثر التربوي في منصة مِحور (الفهم والإدراك):</strong>
-          <p class="leading-relaxed text-[#254b73]">
-            دراسة هذا المؤلف تحرر تفكير الطالب من الحفظ السطحي، وتربط القوانين النظرية بالحس النقدي والوعي المعرفي الشامل.
+          <strong class="block font-black text-sky-800">✨ الأثر التطبيقي والمهني في منصة مِحور (من الفهم إلى الإدراك):</strong>
+          <p id="modalMihwarValue" class="leading-relaxed text-[#254b73]">
+            دراسة هذا المنهج تحرر عقل المتعلم من الحفظ الصوري وتمنحه القدرة على ربط القوانين الرياضية بالمشروعات والقرارات الهندسية الواقعية.
           </p>
         </div>
       </div>
 
       <!-- Modal Footer -->
       <div class="bg-white border-t border-sky-100 px-6 py-3.5 flex items-center justify-between">
-        <span id="modalBookPages" class="text-xs font-bold text-sky-700">عدد الصفحات: 150 صفحة</span>
+        <span id="modalBookPages" class="text-xs font-bold text-sky-700">عدد الصفحات / الوحدات التدريبية</span>
         <div class="flex items-center gap-2">
-          <button onclick="downloadBookAlert()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-5 py-2.5 rounded-full transition cursor-pointer">
-            تحميل نسخة PDF
+          <button onclick="downloadBookAlert()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-5 py-2.5 rounded-full transition cursor-pointer shadow-sm">
+            تحميل المذكرة المعتمدة PDF
           </button>
           <button onclick="closeReaderModal()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs px-4 py-2.5 rounded-full transition cursor-pointer">
             إغلاق
@@ -259,9 +297,128 @@
   <!-- JavaScript Implementation -->
   <script>
     const resources = [
-      // 1. مصطفى محمود
+      // ==============================================================
+      // 1. جناح العلوم الهندسية والتطبيقية (ENGINEERING WING)
+      // ==============================================================
+      {
+        id: 101,
+        code: "APP-201",
+        wing: "engineering",
+        level: "متوسط",
+        title: "الحسابات الهيدروليكية المتقدمة لشبكات الري بالتنقيط والرش",
+        author: "م. عمرو سليم (Eng. Amr Selim) بالاشتراك مع قسم الهندسة",
+        subject: "هندسة الري والشبكات المضغوطة",
+        curriculum: "تطبيقي مهني",
+        category: "علوم هندسية وتطبيقية",
+        pages: 114,
+        downloads: 16420,
+        quote: "شبكة الري ليست مجرد مواسير مدفونة تضخ الماء، بل هي ميزان هيدروليكي دقيق؛ يتساوى فيه عطش النبات الأول مع النبات الأخير في الحقل حين يتساوى فرق الضغط بينهما بالمعادلة، لا بالتخمين.",
+        excerpt: "منهج تطبيقي متقدم يشرح بالتفصيل: معادلات السريان المضغوط (Hazen-Williams & Darcy-Weisbach)، هيدروليكا الخطوط متعددة المخارج (معامل كريستيانسن F)، توازن محابس المحطات المجمعة (Submain Manifolds)، حسابات معامل الانتظام الإروائي (Emission Uniformity EU)، وتطبيق حي لمشروع لاندسكيب بمشروع سكني بدبي ومزرعة 50 فدان بمصر."
+      },
+      {
+        id: 102,
+        code: "SPC-301",
+        wing: "engineering",
+        level: "متوسط",
+        title: "ممارسات المكتب الفني، حصر الكميات، وإعداد جداول الـ BOQ",
+        author: "قسم إدارة المشروعات والمكتب الفني",
+        subject: "المكتب الفني وإدارة المشاريع",
+        curriculum: "تطبيقي مهني",
+        category: "علوم هندسية وتطبيقية",
+        pages: 132,
+        downloads: 19800,
+        quote: "المكتب الفني هو غرفة العمليات الحقيقية للمشروع؛ فيه تتحول التصاميم النظرية إلى واقع قابل للبناء والتمويل، ومن لا يتقن قراءة ما وراء خطوط المخطط سيتحمل تكلفة أخطائه أمتاراً خرسانية وأنابيب مهدورة في الموقع.",
+        excerpt: "دليل عملي للمهندس المحترف يغطي: أصول قراءة ومطابقة المخططات التنفيذية (Shop Drawings)، تفكيك مواصفات الـ CSI MasterFormat، الطرق المعيارية لحصر الأعمال الترابية وشبكات الري والبنية التحتية واللاندسكيب (POMI / NRM2)، وإعداد جداول الكميات والتسعير، مع دورة اعتمادات المواد (Material Submittals) ونماذج المستخلصات الشهرية (IPC)."
+      },
+      {
+        id: 103,
+        code: "SPC-302",
+        wing: "engineering",
+        level: "متقدم",
+        title: "هندسة اللاندسكيب وحساب المقننات المائية في البيئات الجافة",
+        author: "م. عمرو سليم (Eng. Amr Selim)",
+        subject: "تنسيق المواقع والمقننات المائية",
+        curriculum: "تطبيقي مهني",
+        category: "علوم هندسية وتطبيقية",
+        pages: 128,
+        downloads: 14100,
+        quote: "إن تصميم اللاندسكيب في الصحراء ليس معركة لفرض غابات استوائية على بيئة قاحلة، بل هو فن التناغم الذكي؛ أن تبني واحة خضراء مبهجة بأقل قطرة ماء ممكنة، عبر فهم فسيولوجيا النبات وخصائص المناخ.",
+        excerpt: "مرجع شامل يجمع بين الفن المعماري والأساس البيولوجي والهيدروليكي: حساب البخر-نتح المرجعي (ETo) وفق معادلة FAO-56، تطبيق معاملات الأنواع (KL) لحساب الميزانية المائية المعتمدة (Estidama / Al Sa'fat)، تقسيم النطاقات الإروائية (Hydrozoning)، وموسوعة فنية للأشجار والنخيل والمغطيات والنجيل المناسب لمناخ الإمارات ومصر."
+      },
+      {
+        id: 104,
+        code: "APP-202",
+        wing: "engineering",
+        level: "متقدم",
+        title: "هندسة محطات الضخ واختيار المضخات الهيدروليكية",
+        author: "قسم الهندسة الميكانيكية والهيدروليكية",
+        subject: "محطات الضخ والميكانيكا المائية",
+        curriculum: "تطبيقي مهني",
+        category: "علوم هندسية وتطبيقية",
+        pages: 96,
+        downloads: 11850,
+        quote: "المضخة هي قلب الشبكة النابض؛ إذا اختيرت أكبر من اللازم أهدرت الطاقة وتلفت الصمامات، وإذا اختيرت أصغر من اللازم خنقت التدفق وجف المحصول، ونقطة الكفاءة القصوى (BEP) هي الموضع الوحيد الذي يلتقي فيه استقرار التشغيل مع الاقتصاد.",
+        excerpt: "شرح معمق لحسابات الضاغط الديناميكي الكلي (TDH)، قراءة منحنيات أداء المضخات الطاردة المركزية، حسابات ظاهرة التكهف ومنعها (NPSHa vs NPSHr)، التوصيل على التوالي والتوازي، الحماية من المطرقة المائية، وأنظمة مغيرات التردد الذكية (VFD) للتحكم الدقيق بالضغط وتوفير الطاقة."
+      },
+      {
+        id: 105,
+        code: "FND-102",
+        wing: "engineering",
+        level: "متوسط",
+        title: "كيمياء التربة ومحاليل المياه وإدارة الملوحة في الأراضي المستصلحة",
+        author: "قسم العلوم الزراعية والأراضي",
+        subject: "كيمياء الأراضي واستصلاح الملوحة",
+        curriculum: "علوم زراعية تطبيقية",
+        category: "علوم هندسية وتطبيقية",
+        pages: 108,
+        downloads: 13200,
+        quote: "إن النبات لا يرى التربة ككتلة من الرمال أو الطين، بل يراها كوسط كيميائي ومحلول مغذٍ مشحون بالأيونات؛ وحين ترتفع الملوحة، يموت النبات عطشاً والماء يحيط بجذوره بسبب انقلاب الضغط الأسموزي.",
+        excerpt: "قراءة وتحليل تقارير التربة والمياه المختبرية، التمييز بين الأراضي الملحية والصودية، حسابات متطلبات الغسيل (Leaching Requirement LR)، معادلات إضافة الجبس الزراعي لخفض الصوديوم المتبادل (ESP)، والتعامل الآمن مع مياه الصرف المعالجة (TSE) والآبار الجوفية في المشاريع الصحراوية."
+      },
+
+      // ==============================================================
+      // 2. جناح الاستدامة والنظم المتكاملة (WEF NEXUS & CIRCULARITY)
+      // ==============================================================
+      {
+        id: 201,
+        code: "SYS-401",
+        wing: "nexus",
+        level: "تكاملي",
+        title: "ترابط المياه والطاقة والغذاء (WEF Nexus): الحسابات والنظم والسياسات",
+        author: "فريق أبحاث الاستدامة وهندسة النظم",
+        subject: "النظم التكاملية والاستدامة الكبرى",
+        curriculum: "ماستركلاس دولي",
+        category: "استدامة ونظم متكاملة",
+        pages: 146,
+        downloads: 21500,
+        quote: "إن الماء والكهرباء ورغيف الخبز ليست سلعاً منفصلة تُدار في وزارات متباعدة، بل هي أوجه ثلاثة لعملة فيزيائية واحدة؛ كل لتر ماء يُضخ في الصحراء يحمل بداخله واطاً كهربائياً محترقاً، وكل سعرة حرارية نأكلها هي نتاج مكعبات مائية وكيلوواطات مستهلكة، ومن يحاول حل أزمة أحدهم بمعزل عن الآخرين يعجّل بانهيار المنظومة كلها.",
+        excerpt: "المنهج التكاملي العالمي الأبرز الذي يربط: استهلاك الطاقة في تحلية ونقل المياه، استهلاك المياه في تبريد محطات الطاقة، واستهلاك الغذاء لكليهما. يتضمن حسابات البصمة المائية للطاقة، والبصمة الطاقية للمياه، محاكاة مشاريع زراعية تعتمد على الطاقة الشمسية والآبار، ونمذجة تدفقات الموارد الحيوية لاتخاذ قرارات تنموية متزنة."
+      },
+      {
+        id: 202,
+        code: "MGT-501",
+        wing: "nexus",
+        level: "تكاملي",
+        title: "تقييم دورة الحياة (LCA) والمحاسبة الكربونية والاقتصاد الدائري",
+        author: "قسم الاقتصاد البيئي وحوكمة الموارد",
+        subject: "المحاسبة البيئية وإدارة الأثر",
+        curriculum: "ماستركلاس دولي",
+        category: "استدامة ونظم متكاملة",
+        pages: 120,
+        downloads: 15300,
+        quote: "إن الحكم على خضرة المشروع أو استدامته لا يُقاس بيوم افتتاحه، بل برحلته الكاملة من المهد إلى اللحد (From Cradle to Grave)؛ فما فائدة زراعة شجرة إذا كانت الطاقة المستهلكة في نقلها وتسميدها وضخ مياهها تطلق من الكربون أضعاف ما تمتصه أوراقها؟",
+        excerpt: "تطبيق معايير الأيزو الدولية (ISO 14040/44) في قياس الأثر البيولوجي والكربوني الحقيقي للمشاريع الإنشائية والزراعية، حساب الانبعاثات بنطاقاتها الثلاثة (Scopes 1, 2, 3)، واستراتيجيات الاقتصاد الدائري في إعادة استغلال المخلفات العضوية والصناعية ومياه الصرف."
+      },
+
+      // ==============================================================
+      // 3. جناح الفكر والتراث الإنساني (HERITAGE WING - 20 عملاً)
+      // ==============================================================
+      // د. مصطفى محمود
       {
         id: 1,
+        code: "LIT-01",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "حوار مع صديقي الملحد",
         author: "د. مصطفى محمود",
         subject: "فكر وفلسفة وإيمان",
@@ -274,6 +431,9 @@
       },
       {
         id: 2,
+        code: "LIT-02",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "رحلتي من الشك إلى الإيمان",
         author: "د. مصطفى محمود",
         subject: "فلسفة الوجود والروح",
@@ -286,6 +446,9 @@
       },
       {
         id: 3,
+        code: "LIT-03",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "القرآن: محاولة لفهم عصري",
         author: "د. مصطفى محمود",
         subject: "إعجاز علمي وتأمل",
@@ -298,6 +461,9 @@
       },
       {
         id: 4,
+        code: "LIT-04",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "أينشتاين والنسبية",
         author: "د. مصطفى محمود",
         subject: "فيزياء وفلسفة العلم",
@@ -309,9 +475,12 @@
         excerpt: "شرح أدبي تطبيقي عبقري للنظرية النسبية الخاصة والعامة، يفكك مفاهيم الزمان والمكان وسرعة الضوء وانحناء الفضاء لغير المتخصصين بأبسط أسلوب علمي."
       },
 
-      // 2. أبو حامد الغزالي
+      // الإمام أبو حامد الغزالي
       {
         id: 5,
+        code: "LIT-05",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "إحياء علوم الدين",
         author: "الإمام أبو حامد الغزالي",
         subject: "تزكية وفقه وأخلاق",
@@ -324,6 +493,9 @@
       },
       {
         id: 6,
+        code: "LIT-06",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "المنقذ من الضلال والمفصح بالأحوال",
         author: "الإمام أبو حامد الغزالي",
         subject: "منهجية البحث والعقل",
@@ -332,10 +504,13 @@
         pages: 132,
         downloads: 13650,
         quote: "من لم يشك لم ينظر، ومن لم ينظر لم يبصر، ومن لم يبصر بقي في العمى والضلال.",
-        excerpt: "البيان التأسيسي للمنهج النقدي في التراث العربي والإسلامي. يسرد فيه الغزالي رحلته بين مذاهب المتكلمين والباطنية والفلاسفة والمتصوفة حتى وصل إلى اليقين."
+        excerpt: "البيان التأسيسي للمنهج النقدي في التراث العربي والإسلامي. يسرد فيه الغزالي رحلته بين مذاهب المتكلمين والفلاسفة حتى وصل إلى برد اليقين."
       },
       {
         id: 7,
+        code: "LIT-07",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "تهافت الفلاسفة",
         author: "الإمام أبو حامد الغزالي",
         subject: "نقد المنطق والفلسفة",
@@ -344,10 +519,13 @@
         pages: 260,
         downloads: 9800,
         quote: "لا بد من محاججة الخصم بأدواته المنطقية ذاتها لبيان عواره واضطراب حججه.",
-        excerpt: "كتاب المحاججة الفلسفية الأكبر؛ ناقش فيه الغزالي فلاسفة المشائية كالفارابي وابن سينا في 20 مسألة كبرى حول أزلية العالم ونظام السببية ومعرفة الكليات."
+        excerpt: "كتاب المحاججة الفلسفية الأكبر؛ ناقش فيه الغزالي فلاسفة المشائية في 20 مسألة كبرى حول أزلية العالم ونظام السببية ومعرفة الكليات."
       },
       {
         id: 8,
+        code: "LIT-08",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "أيها الولد (رسالة المتعلم)",
         author: "الإمام أبو حامد الغزالي",
         subject: "تربية وسلوك الطالب",
@@ -356,12 +534,15 @@
         pages: 84,
         downloads: 16200,
         quote: "لو قرأت العلم مائة سنة وجمعت ألف كتاب، لم تكن مستعداً لرحمة الله إلا بالعمل.",
-        excerpt: "وصية تربوية جامعة وجهها الإمام لتلميذه النجيب، توضح كيف يستثمر الطالب وقته، وكيف ينقي نيته في طلب المعرفة ويحول العلوم النظرية إلى سلوك حي."
+        excerpt: "وصية تربوية جامعة توضح كيف يستثمر الطالب وقته، وكيف ينقي نيته في طلب المعرفة ويحول العلوم النظرية إلى سلوك حي ينفع الناس."
       },
 
-      // 3. الإمام الشافعي
+      // الإمام الشافعي
       {
         id: 9,
+        code: "LIT-09",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "الرسالة في أصول الفقه",
         author: "الإمام محمد بن إدريس الشافعي",
         subject: "أصول الاستدلال والتشريع",
@@ -370,10 +551,13 @@
         pages: 620,
         downloads: 14300,
         quote: "ما جادلت أحداً إلا تمنيت أن يظهر الله الحق على لسانه دوني.",
-        excerpt: "أول كتاب كُتب في تاريخ الإسلام لتقعيد علم أصول الفقه، وصياغة قواعد القياس والناسخ والمنسوخ، والبيان والعموم والخصوص، وضبط لغة الاستنباط التشريعي."
+        excerpt: "أول كتاب كُتب في تاريخ الإسلام لتقعيد علم أصول الفقه، وضبط قواعد القياس والناسخ والمنسوخ والاستنباط التشريعي الصارم."
       },
       {
         id: 10,
+        code: "LIT-10",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "ديوان الإمام الشافعي",
         author: "الإمام محمد بن إدريس الشافعي",
         subject: "حكمة وشعر وأخلاق طالب العلم",
@@ -386,6 +570,9 @@
       },
       {
         id: 11,
+        code: "LIT-11",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "الأم في الفقه المقارن",
         author: "الإمام محمد بن إدريس الشافعي",
         subject: "الفقه المقارن والمذهب الجديد",
@@ -397,9 +584,12 @@
         excerpt: "الموسوعة الفقهية الكبرى التي تمثل المذهب الجديد للإمام الشافعي بمصر، تتجلى فيها عبقرية المقارنة والترجيح بين الأدلة النقلية والعقلية بأعلى درجات الإنصاف."
       },
 
-      // 4. د. طه حسين
+      // د. طه حسين
       {
         id: 12,
+        code: "LIT-12",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "الأيام (السيرة الذاتية الكاملة)",
         author: "د. طه حسين",
         subject: "أدب وسيرة كفاح وإرادة",
@@ -412,6 +602,9 @@
       },
       {
         id: 13,
+        code: "LIT-13",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "في الشعر الجاهلي",
         author: "د. طه حسين",
         subject: "نقد أدبي ومنهج ديكارتي",
@@ -424,6 +617,9 @@
       },
       {
         id: 14,
+        code: "LIT-14",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "حديث الأربعاء (الأجزاء الثلاثة)",
         author: "د. طه حسين",
         subject: "تاريخ ونقد الشعر العربي",
@@ -436,6 +632,9 @@
       },
       {
         id: 15,
+        code: "LIT-15",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "مستقبل الثقافة في مصر",
         author: "د. طه حسين",
         subject: "فلسفة التعليم والنهضة",
@@ -447,9 +646,12 @@
         excerpt: "المانيفستو الاستراتيجي لبناء التعليم الحديث والمجاني؛ يطرح رؤية شاملة لتطوير المدارس والجامعات وإعداد المعلمين والربط بين الأصالة والمعاصرة."
       },
 
-      // 5. عباس محمود العقاد
+      // عباس محمود العقاد
       {
         id: 16,
+        code: "LIT-16",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "عبقرية محمد ﷺ",
         author: "عباس محمود العقاد",
         subject: "سيرة تحليلية ونفسية",
@@ -458,10 +660,13 @@
         pages: 230,
         downloads: 27500,
         quote: "إن العظمة في النبي ليست في جانب واحد، بل في تمام التوازن بين كل الصفات الإنسانية النبيلة.",
-        excerpt: "تحليل نفسي وعسكري وإنساني فذ للقيادة النبوية الشريفة؛ يبرز العقاد كيف اجتمعت صفات القائد العبقري، والحاكم العادل، والمربي الرحيم، والزوج والأب الودود."
+        excerpt: "تحليل نفسي وعسكري وإنساني فذ للقيادة النبوية الشريفة؛ يبرز العقاد كيف اجتمعت صفات القائد العبقري، والحاكم العادل، والمربي الرحيم."
       },
       {
         id: 17,
+        code: "LIT-17",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "عبقرية عمر بن الخطاب",
         author: "عباس محمود العقاد",
         subject: "سيرة وإدارة وعدالة",
@@ -470,10 +675,13 @@
         pages: 250,
         downloads: 21300,
         quote: "كان عمر رجلاً لا يخاف الحق، وأعظم ما فيه أنه كان يملك قوة النفس التي تقهر النفس.",
-        excerpt: "دراسة معمقة في الشخصية القيادية للفاروق عمر، وكيف أسس أركان الدولة المدنية، وفصل القضاء عن الولاية، ووضع قواعد الرقابة والمحاسبة الإدارية الصارمة."
+        excerpt: "دراسة معمقة في الشخصية القيادية للفاروق عمر، وكيف أسس أركان الدولة المدنية، وفصل القضاء عن الولاية، ووضع قواعد الرقابة والمحاسبة الإدارية."
       },
       {
         id: 18,
+        code: "LIT-18",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "التفكير فريضة إسلامية",
         author: "عباس محمود العقاد",
         subject: "فلسفة العقل في الإسلام",
@@ -486,6 +694,9 @@
       },
       {
         id: 19,
+        code: "LIT-19",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "أنا (السيرة الذاتية)",
         author: "عباس محمود العقاد",
         subject: "سيرة أدبية وتكوين عصامي",
@@ -498,6 +709,9 @@
       },
       {
         id: 20,
+        code: "LIT-20",
+        wing: "heritage",
+        level: "تراث وفكر",
         title: "الله (نشأة العقيدة الإلهية)",
         author: "عباس محمود العقاد",
         subject: "تاريخ الأديان والأنثروبولوجيا",
@@ -509,26 +723,34 @@
         excerpt: "دراسة تاريخية مقارنة لتطور الإدراك البشري لفكرة الألوهية عبر الحضارات القديمة: من الطوطمية إلى التعددية وصولاً إلى التوحيد الكامل في رسالات السماء."
       },
 
-      // 6. مناهج دراسية وملخصات معتمدة
+      // ==============================================================
+      // 4. جناح المناهج التأسيسية المدرسية والجامعية (STEM)
+      // ==============================================================
       {
         id: 21,
+        code: "STEM-01",
+        wing: "foundational",
+        level: "تأسيسي",
         title: "ملخص الفيزياء المتقدمة وحسابات كيرشوف",
-        author: "قسم الفيزياء بمنصة مِحور",
+        author: "قسم الفيزياء والدوائر الكهربائية",
         subject: "فيزياء ومحاكاة كهربائية",
         curriculum: "منهج الإمارات والوزاري",
-        category: "مناهج دراسية",
+        category: "مناهج تأسيسية",
         pages: 64,
         downloads: 18900,
         quote: "القانون الفيزيائي ليس معادلة تُحفظ، بل هو كشفٌ لكيفية سريان القوى وتوازن الطاقة في المادة.",
-        excerpt: "تفكيك شامل لقوانين كيرشوف للجهد والتيار، مع دوائر محاكاة بصرية، وحلول تفصيلية لنماذج اختبارات الثانوية العامة المتقدمة."
+        excerpt: "تفكيك شامل لقوانين كيرشوف للجهد والتيار، مع دوائر محاكاة بصرية، وحلول تفصيلية لنماذج اختبارات الثانوية والجامعة التأسيسية."
       },
       {
         id: 22,
+        code: "STEM-02",
+        wing: "foundational",
+        level: "تأسيسي",
         title: "مذكرة التفاضل والتكامل وتطبيقات المساحات",
-        author: "قسم الرياضيات بمنصة مِحور",
+        author: "قسم الرياضيات والتحليل الحسابي",
         subject: "رياضيات وتفاضل وتكامل",
         curriculum: "المنهج العام والثانوية",
-        category: "مناهج دراسية",
+        category: "مناهج تأسيسية",
         pages: 72,
         downloads: 24500,
         quote: "التفاضل يصف معدل تغير اللحظة، والتكامل يجمع تلك اللحظات لبناء الواقع.",
@@ -536,62 +758,153 @@
       },
       {
         id: 23,
+        code: "STEM-03",
+        wing: "foundational",
+        level: "تأسيسي",
         title: "دليل الكيمياء العضوية وتفاعلات الهيدروكربونات",
-        author: "قسم الكيمياء بمنصة مِحور",
+        author: "قسم الكيمياء والتحاليل المخبرية",
         subject: "كيمياء عضوية وتجارب",
         curriculum: "منهج الإمارات ومصر",
-        category: "مناهج دراسية",
+        category: "مناهج تأسيسية",
         pages: 58,
         downloads: 15300,
         quote: "الكيمياء تبدأ حين تدرك أن الرابطة الذرية ليست خطاً في ورقة، بل طاقة جذب تدير كل ما تراه حولك.",
         excerpt: "شرح تفاعلي لتسمية مركبات الألكانات والألكينات والكحولات، وميكانيكية تفاعلات الاستبدال والإضافة، مع خرائط مفاهيم ملونة."
-      },
-      {
-        id: 24,
-        title: "أساسيات الهندسة الهيدروليكية وحسابات السريان",
-        author: "م. عمرو سليم (Eng. Amr Selim)",
-        subject: "هندسة بنية تحتية ولاندسكيب",
-        curriculum: "ماستركلاس وتطبيقي",
-        category: "مناهج دراسية",
-        pages: 86,
-        downloads: 12900,
-        quote: "الهندسة هي رؤية المنشأ حياً في ذهنك قبل وضع أول حجر، والتنبؤ بسريان كل قطرة ماء وجهد كهربائي.",
-        excerpt: "دليل تطبيقي عملي لمهندسي المكتب الفني لحساب أقطار المواسير وفق معادلة هازن-ويليامز وهبوط الضغط بمشاريع دبي وأبوظبي."
       }
     ];
 
-    let activeAuthor = "";
-    let activeCategory = "";
+    let currentWing = "all";
+    let activeSubFilter = "";
+
+    function setWing(wing) {
+      currentWing = wing;
+      activeSubFilter = "";
+
+      // Update buttons
+      const wings = ['all', 'engineering', 'nexus', 'heritage', 'foundational'];
+      wings.forEach(w => {
+        const btn = document.getElementById(`wing-${w}`);
+        if (btn) {
+          btn.className = (w === wing) 
+            ? "wing-btn-active text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border" 
+            : "wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border";
+        }
+      });
+
+      // Update Sub-filters container
+      renderSubFilters();
+
+      // Update Header Text
+      const hTitle = document.getElementById("wingHeaderTitle");
+      const hDesc = document.getElementById("wingHeaderDesc");
+      if (wing === "engineering") {
+        hTitle.innerText = "جناح العلوم الهندسية والتطبيقية";
+        hDesc.innerText = "مناهج الري، محطات الضخ، اللاندسكيب الجاف، والمكتب الفني المعتمدة على الخبرة الميدانية";
+      } else if (wing === "nexus") {
+        hTitle.innerText = "جناح الاستدامة والنظم المتكاملة (WEF Nexus & LCA)";
+        hDesc.innerText = "دراسات ترابط المياه والطاقة والغذاء، تقييم دورة الحياة، والمحاسبة الكربونية";
+      } else if (wing === "heritage") {
+        hTitle.innerText = "جناح الفكر والتراث الإنساني";
+        hDesc.innerText = "كنوز مصطفى محمود، الغزالي، الشافعي، طه حسين، والعقاد";
+      } else if (wing === "foundational") {
+        hTitle.innerText = "جناح المناهج التأسيسية المدرسية والجامعية";
+        hDesc.innerText = "الفيزياء المتقدمة، التفاضل والتكامل، والكيمياء العضوية";
+      } else {
+        hTitle.innerText = "كل المناهج والمؤلفات المعتمدة";
+        hDesc.innerText = "تصفح وقراءة فورية مع استعراض فكرة الأثر وجوهر الفهم";
+      }
+
+      filterData();
+    }
+
+    function renderSubFilters() {
+      const container = document.getElementById("subFiltersContainer");
+      container.innerHTML = "";
+
+      if (currentWing === "heritage") {
+        const authors = [
+          { name: "جميع المؤلفين", val: "" },
+          { name: "د. مصطفى محمود (4)", val: "مصطفى محمود" },
+          { name: "الإمام الغزالي (4)", val: "الغزالي" },
+          { name: "الإمام الشافعي (3)", val: "الشافعي" },
+          { name: "د. طه حسين (4)", val: "طه حسين" },
+          { name: "عباس العقاد (5)", val: "العقاد" }
+        ];
+        authors.forEach((a, idx) => {
+          const btn = document.createElement("button");
+          btn.className = (idx === 0) ? "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer" : "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
+          btn.innerText = a.name;
+          btn.onclick = () => {
+            activeSubFilter = a.val;
+            Array.from(container.children).forEach(c => c.className = "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer");
+            btn.className = "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
+            filterData();
+          };
+          container.appendChild(btn);
+        });
+      } else if (currentWing === "engineering") {
+        const topics = [
+          { name: "جميع المناهج الهندسية (5)", val: "" },
+          { name: "هندسة الري والضخ", val: "الري" },
+          { name: "اللاندسكيب الجاف", val: "اللاندسكيب" },
+          { name: "المكتب الفني والـ BOQ", val: "المكتب الفني" },
+          { name: "الأراضي والملوحة", val: "التربة" }
+        ];
+        topics.forEach((t, idx) => {
+          const btn = document.createElement("button");
+          btn.className = (idx === 0) ? "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer" : "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
+          btn.innerText = t.name;
+          btn.onclick = () => {
+            activeSubFilter = t.val;
+            Array.from(container.children).forEach(c => c.className = "pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer");
+            btn.className = "pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer";
+            filterData();
+          };
+          container.appendChild(btn);
+        });
+      }
+    }
 
     function renderBooks(list) {
       const grid = document.getElementById("booksGrid");
       grid.innerHTML = "";
 
-      document.getElementById("booksCountBadge").innerText = `عرض ${list.length} كتاباً ومرجعاً`;
+      document.getElementById("booksCountBadge").innerText = `عرض ${list.length} مرجعاً ومنهجاً`;
 
       if (list.length === 0) {
         grid.innerHTML = `
-          <div class="col-span-full text-center py-12 bg-white rounded-2xl border border-sky-200">
+          <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-sky-200">
             <span class="text-4xl block mb-2">🔍</span>
-            <h3 class="text-base font-bold text-[#0c2340]">لم نجد نتائج مطابقة لبحثك</h3>
-            <p class="text-xs text-sky-700 mt-1">جرّب البحث باسم آخر أو اضغط زر إعادة الضبط في الأعلى.</p>
+            <h3 class="text-base font-bold text-[#0c2340]">لم نجد مناهج مطابقة لبحثك</h3>
+            <p class="text-xs text-sky-700 mt-1">جرّب البحث بكلمة أخرى أو اختر جناحاً آخر من الأعلى.</p>
           </div>
         `;
         return;
       }
 
       list.forEach(book => {
-        const isHeritage = book.category !== "مناهج دراسية";
+        const isEng = book.wing === "engineering";
+        const isNexus = book.wing === "nexus";
+        const isHeritage = book.wing === "heritage";
+
+        let badgeBg = "bg-sky-100 text-sky-800 border-sky-300";
+        if (isEng) badgeBg = "bg-blue-100 text-blue-800 border-blue-300";
+        if (isNexus) badgeBg = "bg-emerald-100 text-emerald-800 border-emerald-300";
+        if (isHeritage) badgeBg = "bg-amber-100 text-amber-800 border-amber-300";
+
         const card = document.createElement("div");
         card.className = "book-card p-5 flex flex-col justify-between";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full ${isHeritage ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-sky-100 text-sky-800 border border-sky-300'}">
-                ${book.category}
-              </span>
+              <div class="flex items-center gap-1.5">
+                ${book.code ? `<span class="text-[9px] font-mono font-bold bg-slate-800 text-cyan-300 px-2 py-0.5 rounded">${book.code}</span>` : ''}
+                <span class="text-[10px] font-black px-2.5 py-0.5 rounded-full border ${badgeBg}">
+                  ${book.category}
+                </span>
+              </div>
               <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                ${book.curriculum}
+                ${book.level || book.curriculum}
               </span>
             </div>
 
@@ -599,24 +912,27 @@
             
             <div class="text-xs font-bold text-sky-700 mb-2.5 flex items-center gap-1.5">
               <span>✍️</span>
-              <span>${book.author}</span>
+              <span class="truncate">${book.author}</span>
             </div>
 
-            <p class="text-xs text-[#254b73] line-clamp-3 leading-relaxed mb-4 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
-              "${book.quote || book.excerpt}"
-            </p>
+            <div class="bg-sky-50/60 p-3 rounded-xl border border-sky-100 mb-4">
+              <span class="text-[10px] font-black text-amber-800 block mb-1">💡 فكرة الأثر وجوهر الفهم:</span>
+              <p class="text-xs text-[#254b73] line-clamp-3 leading-relaxed italic">
+                "${book.quote}"
+              </p>
+            </div>
 
             <div class="flex items-center gap-3 text-[11px] text-slate-500 mb-4">
-              <span>📖 ${book.pages} صفحة</span>
+              <span>📖 ${book.pages} صفحة / وحدة</span>
               <span>·</span>
-              <span>👁️ ${book.downloads.toLocaleString()} قراءة</span>
+              <span>👁️ ${book.downloads.toLocaleString()} قراءة واعتماد</span>
             </div>
           </div>
 
           <div class="border-t border-sky-100 pt-3 flex items-center justify-between">
-            <span class="text-[11px] font-bold text-sky-800">${book.subject}</span>
+            <span class="text-[11px] font-bold text-sky-800 truncate max-w-[170px]">${book.subject}</span>
             <button onclick="openReaderModal(${book.id})" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1.5 transition cursor-pointer shadow-sm hover:shadow">
-              <span>اقرأ الكتاب الآن</span>
+              <span>استعراض المنهج</span>
               <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
           </div>
@@ -627,66 +943,40 @@
 
     function filterData() {
       const q = document.getElementById("libSearchInput").value.trim().toLowerCase();
-      const cat = document.getElementById("libCategorySelect").value;
+      const lvl = document.getElementById("libLevelSelect").value;
 
       const filtered = resources.filter(item => {
-        const matchQ = !q || item.title.toLowerCase().includes(q) || item.author.toLowerCase().includes(q) || item.subject.toLowerCase().includes(q) || item.quote.toLowerCase().includes(q) || item.excerpt.toLowerCase().includes(q);
-        const matchCat = !cat || item.category === cat;
-        const matchAuthorPill = !activeAuthor || item.author.includes(activeAuthor);
-        return matchQ && matchCat && matchAuthorPill;
+        // Wing filter
+        const matchWing = (currentWing === "all") || (item.wing === currentWing);
+        
+        // Search query
+        const matchQ = !q || 
+          item.title.toLowerCase().includes(q) || 
+          item.author.toLowerCase().includes(q) || 
+          item.subject.toLowerCase().includes(q) || 
+          item.quote.toLowerCase().includes(q) || 
+          item.excerpt.toLowerCase().includes(q) ||
+          (item.code && item.code.toLowerCase().includes(q));
+
+        // Level dropdown
+        const matchLvl = !lvl || (item.level && item.level.includes(lvl)) || item.category.includes(lvl);
+
+        // Sub filter (author or topic)
+        let matchSub = true;
+        if (activeSubFilter) {
+          matchSub = item.author.includes(activeSubFilter) || item.title.includes(activeSubFilter) || item.subject.includes(activeSubFilter);
+        }
+
+        return matchWing && matchQ && matchLvl && matchSub;
       });
 
       renderBooks(filtered);
     }
 
-    function setAuthorFilter(authorName) {
-      activeAuthor = authorName;
-      document.getElementById("libCategorySelect").value = "";
-      
-      // Update pills UI
-      const pills = ['all', 'mahmoud', 'ghazali', 'shafii', 'hussein', 'aqqad', 'stem'];
-      pills.forEach(p => {
-        const el = document.getElementById(`pill-${p}`);
-        if (el) {
-          el.className = 'pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-        }
-      });
-
-      if (!authorName) {
-        document.getElementById('pill-all').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      } else if (authorName.includes('مصطفى')) {
-        document.getElementById('pill-mahmoud').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      } else if (authorName.includes('الغزالي')) {
-        document.getElementById('pill-ghazali').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      } else if (authorName.includes('الشافعي')) {
-        document.getElementById('pill-shafii').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      } else if (authorName.includes('طه حسين')) {
-        document.getElementById('pill-hussein').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      } else if (authorName.includes('العقاد')) {
-        document.getElementById('pill-aqqad').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      }
-
-      filterData();
-    }
-
-    function setCategoryFilter(catName) {
-      activeAuthor = "";
-      document.getElementById("libCategorySelect").value = catName;
-      
-      const pills = ['all', 'mahmoud', 'ghazali', 'shafii', 'hussein', 'aqqad', 'stem'];
-      pills.forEach(p => {
-        const el = document.getElementById(`pill-${p}`);
-        if (el) el.className = 'pill-inactive text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-      });
-      document.getElementById('pill-stem').className = 'pill-active text-xs font-bold px-4 py-2 rounded-full transition cursor-pointer';
-
-      filterData();
-    }
-
     function resetFilters() {
       document.getElementById("libSearchInput").value = "";
-      document.getElementById("libCategorySelect").value = "";
-      setAuthorFilter("");
+      document.getElementById("libLevelSelect").value = "";
+      setWing("all");
     }
 
     // Modal Control Functions
@@ -696,16 +986,23 @@
 
       document.getElementById("modalBookTitle").innerText = book.title;
       document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category} · ${book.subject}`;
-      
-      if (book.quote.includes("— عمرو سليم")) {
-        const parts = book.quote.split("— عمرو سليم");
-        document.getElementById("modalBookQuote").innerHTML = `"${parts[0].trim()}" <span class="block mt-1 text-[11px] font-bold text-amber-700 not-italic tracking-wide">— عمرو سليم</span>`;
+      document.getElementById("modalBookQuote").innerText = `"${book.quote}"`;
+      document.getElementById("modalBookExcerpt").innerText = book.excerpt;
+      document.getElementById("modalBookPages").innerText = `المحتوى العلمي المعتمد: ${book.pages} صفحة / وحدة تطبيقية`;
+
+      const codeBadge = document.getElementById("modalBookCode");
+      if (book.code) {
+        codeBadge.innerText = book.code;
+        codeBadge.classList.remove("hidden");
       } else {
-        document.getElementById("modalBookQuote").innerText = `"${book.quote}"`;
+        codeBadge.classList.add("hidden");
       }
 
-      document.getElementById("modalBookExcerpt").innerText = book.excerpt;
-      document.getElementById("modalBookPages").innerText = `المخطوطة كاملة: ${book.pages} صفحة · حجم التحميل 4.2 MB`;
+      const iconEl = document.getElementById("modalBookIcon");
+      if (book.wing === "engineering") iconEl.innerText = "⚙️";
+      else if (book.wing === "nexus") iconEl.innerText = "🌐";
+      else if (book.wing === "heritage") iconEl.innerText = "📜";
+      else iconEl.innerText = "📐";
 
       const modal = document.getElementById("readerModal");
       modal.classList.add("active");
@@ -725,19 +1022,19 @@
     }
 
     function downloadBookAlert() {
-      alert("✅ جاري تجهيز وتحميل النسخة الرقمية المعتمدة لكتابك بصيغة PDF..");
+      alert("✅ جاري تجهيز وتحميل النسخة الرقمية المعتمدة للمنهج بصيغة PDF..");
     }
 
     // Attach search and select listeners
     document.getElementById("libSearchInput").addEventListener("input", filterData);
-    document.getElementById("libCategorySelect").addEventListener("change", filterData);
+    document.getElementById("libLevelSelect").addEventListener("change", filterData);
 
     // Initial load
-    renderBooks(resources);
+    setWing("all");
   </script>
 
   <!-- WhatsApp Support Widget -->
-  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%83%D8%AA%D8%A8%20%D9%88%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9"
+  <a href="https://wa.me/971500000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D9%90%D8%AD%D9%88%D8%B1%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%A7%D9%87%D8%AC%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%AF%D8%A7%D9%85%D8%A9%20%D9%88%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D8%A9%20%D9%88%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8%D8%A9"
      target="_blank"
      rel="noopener noreferrer"
      class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white px-5 py-3 rounded-full shadow-[0_8px_30px_rgba(16,185,129,0.4)] border-2 border-emerald-300/40 font-black text-xs transition-all hover:scale-105 group"
