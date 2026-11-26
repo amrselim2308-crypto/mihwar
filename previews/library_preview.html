@@ -142,32 +142,31 @@
       <!-- الأجنحة الكبرى للمكتبة (Main Library Wings) -->
       <div class="pt-6">
         <span class="text-xs font-black text-sky-800 uppercase tracking-widest block mb-2.5">اختر جناح المكتبة:</span>
-        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-          <button onclick="setWing('all')" id="wing-all" class="wing-btn-active text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+        <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
+          <button onclick="setWing('all')" id="wing-all" data-wing="all" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-gradient-to-r from-[#12BFC1] to-[#075B68] text-white border-cyan-400 shadow-[0_0_20px_rgba(18,191,193,0.35)] scale-105">
             <span>🏛️ كل الأجنحة</span>
-            <span id="badge-all" class="text-[10px] bg-white/20 px-2 py-0.5 rounded-full">30</span>
+            <span id="badge-all" class="text-[10px] bg-white/20 px-2 py-0.5 rounded-full font-mono">30</span>
           </button>
           
-          <button onclick="setWing('engineering')" id="wing-engineering" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
-            <span>⚙️ جناح العلوم الهندسية والتطبيقية</span>
-            <span class="text-[10px] bg-sky-100 text-sky-800 px-2 py-0.5 rounded-full font-bold">5</span>
+          <button onclick="setWing('engineering')" id="wing-engineering" data-wing="engineering" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-[rgba(10,48,69,0.6)] text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white scale-100">
+            <span>⚙️ العلوم الهندسية والتطبيقية</span>
+            <span class="text-[10px] bg-sky-950 text-cyan-300 border border-cyan-500/30 px-2 py-0.5 rounded-full font-mono font-bold">5</span>
           </button>
 
-          <button onclick="setWing('nexus')" id="wing-nexus" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
-            <span>🌐 الاستدامة والنظم المتكاملة (WEF)</span>
-            <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full font-bold">2</span>
+          <button onclick="setWing('nexus')" id="wing-nexus" data-wing="nexus" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-[rgba(10,48,69,0.6)] text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white scale-100">
+            <span>🌐 الاستدامة وترابط WEF</span>
+            <span class="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded-full font-mono font-bold">2</span>
           </button>
 
-          <button onclick="setWing('heritage')" id="wing-heritage" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
-            <span>📜 جناح الفكر والتراث الإنساني</span>
-            <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold">20</span>
+          <button onclick="setWing('heritage')" id="wing-heritage" data-wing="heritage" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-[rgba(10,48,69,0.6)] text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white scale-100">
+            <span>📜 الفكر والتراث الإنساني</span>
+            <span class="text-[10px] bg-amber-950 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full font-mono font-bold">20</span>
           </button>
 
-          <button onclick="setWing('foundational')" id="wing-foundational" class="wing-btn-inactive text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition cursor-pointer flex items-center gap-2 border">
+          <button onclick="setWing('foundational')" id="wing-foundational" data-wing="foundational" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-[rgba(10,48,69,0.6)] text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white scale-100">
             <span>📐 المناهج التأسيسية (STEM)</span>
-            <span class="text-[10px] bg-indigo-100 text-indigo-800 px-2 py-0.5 rounded-full font-bold">3</span>
-          </button>
-        </div>
+            <span class="text-[10px] bg-cyan-950 text-cyan-200 border border-cyan-400/30 px-2 py-0.5 rounded-full font-mono font-bold">3</span>
+          </button></div>
       </div>
 
       <!-- Quick Sub-filters / Author Pills -->
@@ -179,18 +178,18 @@
 
   <!-- Filter & Search Bar -->
   <main class="max-w-7xl mx-auto px-6 py-8">
-    <div class="bg-white border border-[rgba(57,216,240,0.18)] rounded-2xl p-4 shadow-sm mb-8">
+    <div class="bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 rounded-2xl p-4 shadow-lg mb-8 backdrop-blur-md">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
         <!-- Search Input -->
         <div class="md:col-span-6 relative">
           <input type="text" id="libSearchInput" placeholder="ابحث باسم المنهج، الموضوع، الكود، المؤلف، أو فكرة الأثر..." 
-                 class="w-full bg-[rgba(2,11,22,0.75)] text-white placeholder-slate-400 border border-[rgba(57,216,240,0.18)] rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:border-sky-500" />
+                 class="w-full bg-[#020B16] text-white placeholder-slate-400 border border-cyan-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-medium focus:outline-none focus:border-cyan-400" />
         </div>
 
         <!-- Level / Category Filter -->
         <div class="md:col-span-3">
-          <select id="libLevelSelect" class="w-full bg-[#f8fafc] border border-[rgba(57,216,240,0.18)] rounded-xl px-3 py-2.5 text-xs font-bold text-white focus:outline-none">
-            <option value="">جميع المستويات والتخصصات</option>
+          <select id="libLevelSelect" class="w-full bg-[#020B16] border border-cyan-400/30 rounded-xl px-3 py-2.5 text-xs font-bold text-slate-200 focus:outline-none focus:border-cyan-400">
+            <option value="all">جميع المستويات والتخصصات</option>
             <option value="تأسيسي">مستوى تأسيسي (Foundational)</option>
             <option value="متوسط">مستوى متوسط (Intermediate)</option>
             <option value="متقدم">مستوى متقدم (Advanced)</option>
@@ -201,25 +200,24 @@
 
         <!-- Reset Button -->
         <div class="md:col-span-3 flex gap-2">
-          <button onclick="resetFilters()" class="w-full bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-300 font-bold text-xs py-2.5 rounded-xl transition cursor-pointer">
-            إعادة ضبط الفلاتر
+          <button onclick="resetFilters()" class="w-full bg-gradient-to-r from-cyan-950 to-[#0A3045] hover:from-cyan-900 hover:to-cyan-950 text-cyan-200 border border-cyan-400/30 font-bold text-xs py-2.5 rounded-xl transition cursor-pointer">
+            🔄 إعادة ضبط الفلاتر
           </button>
         </div>
       </div>
     </div>
 
     <!-- Active Count Header -->
-    <div class="flex items-center justify-between mb-6 px-1">
+    <div class="flex items-center justify-between mb-6 px-1 flex-wrap gap-2">
       <div>
         <h2 id="wingHeaderTitle" class="text-xl font-black text-white">كل المناهج والمؤلفات المعتمدة</h2>
         <p id="wingHeaderDesc" class="text-xs text-slate-300 mt-0.5">تصفح وقراءة فورية مع استعراض فكرة الأثر وجوهر الفهم</p>
       </div>
-      <span id="booksCountBadge" class="text-xs font-bold bg-sky-100 text-sky-800 px-3.5 py-1.5 rounded-full border border-[rgba(57,216,240,0.18)] shadow-sm">
+      <span id="booksCountBadge" class="text-xs font-mono font-bold bg-[#020B16] text-cyan-300 px-4 py-1.5 rounded-full border border-cyan-400/30 shadow-sm">
         عرض 30 مرجعاً ومنهجاً
       </span>
     </div>
 
-    <!-- Books & Curricula Grid -->
     <div id="booksGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Generated via JS -->
     </div>
@@ -1612,15 +1610,39 @@
     // -------------------------------------------------------------
     function setWing(wing) {
       activeWing = wing;
+
+      // Update button visual states
       document.querySelectorAll(".wing-tab").forEach(tab => {
-        if (tab.dataset.wing === wing) {
-          tab.classList.add("bg-gradient-to-r", "from-[#12BFC1]", "to-[#075B68]", "text-white", "shadow-lg");
-          tab.classList.remove("text-slate-300", "bg-[rgba(10,48,69,0.6)]");
+        const tabWing = tab.getAttribute("data-wing");
+        if (tabWing === wing) {
+          tab.className = "wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-gradient-to-r from-[#12BFC1] to-[#075B68] text-white border-cyan-400 shadow-[0_0_20px_rgba(18,191,193,0.35)] scale-105";
         } else {
-          tab.classList.remove("bg-gradient-to-r", "from-[#12BFC1]", "to-[#075B68]", "text-white", "shadow-lg");
-          tab.classList.add("text-slate-300", "bg-[rgba(10,48,69,0.6)]");
+          tab.className = "wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-[rgba(10,48,69,0.6)] text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white scale-100";
         }
       });
+
+      // Update section header titles
+      const titleEl = document.getElementById("wingHeaderTitle");
+      const descEl = document.getElementById("wingHeaderDesc");
+      if (titleEl && descEl) {
+        if (wing === "engineering") {
+          titleEl.innerText = "جناح العلوم الهندسية والتطبيقية";
+          descEl.innerText = "مناهج المكتب الفني، شبكات الري، الهيدروليكا، وشيتات الإكسيل المعتمدة";
+        } else if (wing === "nexus") {
+          titleEl.innerText = "جناح الاستدامة وترابط المياه والطاقة والغذاء (WEF Nexus)";
+          descEl.innerText = "أبحاث الاقتصاد الدائري، المحاسبة الكربونية، وهندسة النظم المتكاملة";
+        } else if (wing === "heritage") {
+          titleEl.innerText = "جناح الفكر والتراث الإنساني (وقف معرفي حر)";
+          descEl.innerText = "مؤلفات الغزالي، الشافعي، العقاد، ومصطفى محمود المتاحة مجاناً بالكامل";
+        } else if (wing === "foundational") {
+          titleEl.innerText = "المناهج التأسيسية التخصصية (STEM)";
+          descEl.innerText = "مذكرات الفيزياء والرياضيات والكيمياء التأسيسية للجامعات";
+        } else {
+          titleEl.innerText = "كل المناهج والمؤلفات المعتمدة";
+          descEl.innerText = "تصفح وقراءة فورية مع استعراض فكرة الأثر وجوهر الفهم";
+        }
+      }
+
       renderSubFilters();
       filterData();
     }
@@ -1638,24 +1660,33 @@
       };
 
       const opts = levels[activeWing] || levels.all;
-      select.innerHTML = opts.map(l => `<option value="${l === 'الكل' ? 'all' : l}">${l}</option>`).join("");
+      select.innerHTML = opts.map(l => `<option value="${l === 'الكل' ? 'all' : l}">${l === 'الكل' ? 'جميع المستويات والتخصصات' : l}</option>`).join("");
       activeLevel = "all";
     }
 
     function renderBooks(data) {
       const grid = document.getElementById("booksGrid");
-      const emptyState = document.getElementById("libEmptyState");
-      const countEl = document.getElementById("libTotalCount");
+      const countEl = document.getElementById("booksCountBadge");
 
-      if (countEl) countEl.innerText = data.length;
-
-      if (!data || data.length === 0) {
-        grid.innerHTML = "";
-        emptyState.classList.remove("hidden");
-        return;
+      if (countEl) {
+        countEl.innerText = `عرض ${data.length} مرجعاً ومنهجاً`;
       }
 
-      emptyState.classList.add("hidden");
+      if (!grid) return;
+
+      if (!data || data.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-slate-400 bg-[rgba(10,48,69,0.3)] border border-cyan-400/20 rounded-2xl p-8">
+            <span class="text-4xl block mb-2">🔍</span>
+            <h4 class="text-base font-bold text-white">لا توجد مراجع مطابقة لبحثك في هذا الجناح</h4>
+            <p class="text-xs text-slate-400 mt-1">جرب تغيير كلمات البحث أو إعادة ضبط الفلاتر لاستعراض بقية المراجع.</p>
+            <button onclick="resetFilters()" class="mt-4 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-950 to-[#0A3045] text-cyan-200 border border-cyan-400/30 text-xs font-bold hover:text-white cursor-pointer transition">
+              🔄 استعراض كافة المراجع (30 مرجعاً)
+            </button>
+          </div>
+        `;
+        return;
+      }
 
       grid.innerHTML = data.map(book => {
         const isFree = (book.wing === 'heritage' || book.wing === 'foundational');
@@ -1666,7 +1697,7 @@
         const wingIcon = book.wing === 'engineering' ? '⚙️' : (book.wing === 'nexus' ? '🌐' : (book.wing === 'heritage' ? '📜' : '📐'));
 
         return `
-          <div class="rounded-2xl bg-gradient-to-b from-[#071A2D] to-[#020B16] border border-cyan-400/25 hover:border-cyan-400 transition-all duration-300 p-5 flex flex-col justify-between group shadow-lg hover:shadow-[0_0_30px_rgba(18,191,193,0.15)] relative overflow-hidden">
+          <div class="rounded-2xl bg-gradient-to-b from-[#071A2D] to-[#020B16] border border-cyan-400/25 hover:border-cyan-400 transition-all duration-300 p-5 flex flex-col justify-between group shadow-lg hover:shadow-[0_0_30px_rgba(18,191,193,0.2)] relative overflow-hidden">
             
             <div class="space-y-3">
               <div class="flex items-center justify-between">
@@ -1696,7 +1727,7 @@
                 ${book.pages} صفحة
               </span>
 
-              <button onclick="openReaderModal(${book.id})" class="btn-glow-cyan text-white text-xs font-bold py-1.5 px-4 rounded-xl cursor-pointer shadow">
+              <button onclick="openReaderModal(${book.id})" class="btn-glow-cyan text-white text-xs font-bold py-2 px-4 rounded-xl cursor-pointer shadow hover:scale-105 transition">
                 استعراض وقراءة 📖
               </button>
             </div>
@@ -1734,9 +1765,6 @@
       setWing("all");
     }
 
-    // -------------------------------------------------------------
-    // 4. READER MODAL LOGIC (Clean separation of Free vs Paid)
-    // -------------------------------------------------------------
     function openReaderModal(bookId) {
       const book = resources.find(b => b.id === bookId);
       if (!book) return;
