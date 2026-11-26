@@ -26,7 +26,7 @@
     .glass-card {
       background: rgba(7, 30, 27, 0.82);
       backdrop-filter: blur(14px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
@@ -38,15 +38,15 @@
       box-shadow: 0 16px 40px rgba(20, 184, 166, 0.4), inset 0 0 14px rgba(56, 189, 248, 0.15);
     }
     .filter-box {
-      background: rgba(6, 26, 23, 0.88);
+      background: rgba(10, 48, 69, 0.65);
       backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       border-radius: 18px;
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
     }
     .input-dark {
       background: rgba(8, 38, 34, 0.85);
-      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       color: #ffffff;
       border-radius: 10px;
     }
@@ -56,7 +56,7 @@
       box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
     }
     .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
       border: 1.5px solid rgba(94, 234, 212, 0.5);
       box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
       transition: all 0.2s;
@@ -71,14 +71,15 @@
       backdrop-filter: blur(16px);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-mesh-bg mihwar-dark-theme selection:bg-[#2dd4bf] selection:text-[#041210]">
 
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-[#0b2149]/90 backdrop-blur-md border-b border-[#38bdf8]/20">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-      <a href="hero_preview.html" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#38bdf8]/40">
+      <a href="mihwar_command_hub.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#38bdf8]/40">
           <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
         </div>
         <div>
@@ -88,10 +89,10 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
-        <a href="hero_preview.html" class="hover:text-[#38bdf8] transition-colors">الرئيسية</a>
+        <a href="mihwar_command_hub.html" class="hover:text-[#38bdf8] transition-colors">الرئيسية</a>
         <a href="teachers_directory_preview.html" class="hover:text-[#38bdf8] transition-colors">المعلمون</a>
         <a href="#" class="text-[#38bdf8] font-bold">المكتبة الرقمية</a>
-        <a href="hero_preview.html#study" class="hover:text-[#38bdf8] transition-colors flex items-center gap-1.5">
+        <a href="mihwar_command_hub.html#domains-grid" class="hover:text-[#38bdf8] transition-colors flex items-center gap-1.5">
           <span>مساعد الدراسة</span>
           <span class="bg-[#10b981]/25 text-[#6ee7b7] text-[10px] px-2 py-0.5 rounded-full border border-[#10b981]/40 font-bold">ذكاء اصطناعي</span>
         </a>
@@ -176,7 +177,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       <div class="bg-[#133575]/70 border border-[#38bdf8]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
           🇦🇪
         </div>
         <div class="flex-1 min-w-0">
@@ -190,7 +191,7 @@
       </div>
 
       <div class="bg-[#133575]/70 border border-[#38bdf8]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
           🇪🇬
         </div>
         <div class="flex-1 min-w-0">
@@ -204,7 +205,7 @@
       </div>
 
       <div class="bg-[#133575]/70 border border-[#38bdf8]/25 rounded-2xl p-4 flex items-start gap-3.5">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-[#fef08a] flex items-center justify-center font-bold text-lg flex-none border border-[#38bdf8]/30">
           🇸🇦
         </div>
         <div class="flex-1 min-w-0">

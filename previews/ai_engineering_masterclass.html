@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #020908;
+      background: #020B16;
       color: #f3efe6;
       margin: 0;
       padding: 0;
@@ -28,8 +28,8 @@
       filter: drop-shadow(0 2px 14px rgba(0,0,0,0.5));
     }
     .glass-card {
-      background: rgba(6, 26, 23, 0.88);
-      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      background: rgba(10, 48, 69, 0.65);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       backdrop-filter: blur(16px);
       border-radius: 20px;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -40,7 +40,7 @@
       box-shadow: 0 16px 40px rgba(20, 184, 166, 0.35);
     }
     .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
       border: 1.5px solid rgba(94, 234, 212, 0.5);
       box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
       transition: all 0.2s;
@@ -65,7 +65,7 @@
     }
     .prompt-box {
       background: #031411;
-      border: 1px dashed rgba(45, 212, 191, 0.4);
+      border: 1px dashed rgba(57, 216, 240, 0.25);
       border-radius: 12px;
     }
     .tab-btn.active {
@@ -74,8 +74,9 @@
       border-color: #2dd4bf;
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-mesh-bg mihwar-dark-theme selection:bg-[#2dd4bf] selection:text-[#041210]">
 
   <!-- Top Announcement Bar -->
   <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-teal-700 text-[#041210] font-extrabold text-xs py-2 px-4 text-center flex items-center justify-center gap-2 shadow-md">
@@ -84,10 +85,10 @@
   </div>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+  <header class="sticky top-0 z-50 bg-[#071A2D]/95 backdrop-blur-md border-b border-cyan-400/30">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
       <a href="https://mihwar-edu.com/" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-cyan-400/30">
           <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
         </div>
         <div>
@@ -114,7 +115,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="py-14 px-6 border-b border-[#2dd4bf]/20 bg-gradient-to-b from-[#061d19] via-[#041412] to-[#020908] relative overflow-hidden">
+  <section class="py-14 px-6 border-b border-cyan-400/30 bg-gradient-to-b from-[#061d19] via-[#041412] to-[#020908] relative overflow-hidden">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
       <!-- Copy Column -->
@@ -133,22 +134,22 @@
 
         <!-- Key Features Highlights -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs">
-          <div class="bg-[#041714] p-3 rounded-xl border border-[#2dd4bf]/25">
+          <div class="bg-[#041714] p-3 rounded-xl border border-cyan-400/30">
             <span class="text-[#fef08a] font-bold block text-sm">11+ سنة خبرة</span>
             <span class="text-[#a7f3d0]">مشاريع الإمارات ومصر</span>
           </div>
-          <div class="bg-[#041714] p-3 rounded-xl border border-[#2dd4bf]/25">
+          <div class="bg-[#041714] p-3 rounded-xl border border-cyan-400/30">
             <span class="text-[#2dd4bf] font-bold block text-sm">6 وحدات شاملة</span>
             <span class="text-[#a7f3d0]">تطبيق على CAD و Excel و PDF</span>
           </div>
-          <div class="bg-[#041714] p-3 rounded-xl border border-[#2dd4bf]/25">
+          <div class="bg-[#041714] p-3 rounded-xl border border-cyan-400/30">
             <span class="text-[#34d399] font-bold block text-sm">قوالب Prompts</span>
             <span class="text-[#a7f3d0]">جاهزة للنسخ الفوري والتنفيذ</span>
           </div>
         </div>
 
         <!-- Instructor Badge in Hero -->
-        <div class="flex items-center gap-4 p-4 rounded-2xl bg-[#031411]/90 border border-[#2dd4bf]/30">
+        <div class="flex items-center gap-4 p-4 rounded-2xl bg-[#031411]/90 border border-cyan-400/30">
           <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#0d5b55] to-[#f59e0b] p-0.5 shadow-md flex-shrink-0 overflow-hidden">
             <img src="/images/eng_amr_selim.jpg" alt="م. عمرو سليم" class="w-full h-full object-cover rounded-full" />
           </div>
@@ -182,10 +183,10 @@
 
       <!-- Visual Preview Column: Interactive Video Showcase & Pipeline Diagram -->
       <div class="lg:col-span-5">
-        <div class="glass-card p-5 border-2 border-[#2dd4bf]/40 relative overflow-hidden">
+        <div class="glass-card p-5 border-2 border-cyan-400/30 relative overflow-hidden">
           
           <!-- Video Mockup Player -->
-          <div class="relative rounded-xl overflow-hidden aspect-video bg-black border border-[#2dd4bf]/30 flex flex-col items-center justify-center text-center p-4 group cursor-pointer" onclick="openTrailer()">
+          <div class="relative rounded-xl overflow-hidden aspect-video bg-black border border-cyan-400/30 flex flex-col items-center justify-center text-center p-4 group cursor-pointer" onclick="openTrailer()">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
             
             <!-- Video background mockup texture -->
@@ -205,20 +206,20 @@
           </div>
 
           <!-- The Core Methodology: Input -> Processing -> Output -->
-          <div class="mt-4 p-4 rounded-xl bg-[#031411] border border-[#2dd4bf]/20">
+          <div class="mt-4 p-4 rounded-xl bg-[#031411] border border-cyan-400/30">
             <span class="text-[11px] font-bold text-[#fef08a] block mb-2">منظومة المهندس الذكي (System Architecture):</span>
             <div class="flex items-center justify-between text-center gap-1 text-[10px]">
-              <div class="bg-[#062420] p-2 rounded-lg border border-[#2dd4bf]/30 flex-1">
+              <div class="bg-[#062420] p-2 rounded-lg border border-cyan-400/30 flex-1">
                 <span class="text-[#38bdf8] block font-bold">1. المدخلات (Input)</span>
                 <span class="text-[#cbd5e1] text-[9px]">CAD, PDF, BOQ</span>
               </div>
               <span class="text-[#fef08a] font-bold">➜</span>
-              <div class="bg-[#062420] p-2 rounded-lg border border-[#2dd4bf]/30 flex-1">
+              <div class="bg-[#062420] p-2 rounded-lg border border-cyan-400/30 flex-1">
                 <span class="text-[#2dd4bf] block font-bold">2. المعالجة (Processing)</span>
                 <span class="text-[#cbd5e1] text-[9px]">AI Agent & Prompts</span>
               </div>
               <span class="text-[#fef08a] font-bold">➜</span>
-              <div class="bg-[#062420] p-2 rounded-lg border border-[#2dd4bf]/30 flex-1">
+              <div class="bg-[#062420] p-2 rounded-lg border border-cyan-400/30 flex-1">
                 <span class="text-[#34d399] block font-bold">3. المخرجات (Output)</span>
                 <span class="text-[#cbd5e1] text-[9px]">مخطط + جدول + تقرير</span>
               </div>
@@ -232,7 +233,7 @@
   </section>
 
   <!-- LinkedIn Story & Social Proof -->
-  <section class="py-10 px-6 border-b border-[#2dd4bf]/20 bg-[#03100e]">
+  <section class="py-10 px-6 border-b border-cyan-400/30 bg-[#03100e]">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-4">
         <div class="w-12 h-12 rounded-xl bg-[#0a66c2] text-white flex items-center justify-center font-black text-xl shadow-lg">
@@ -243,7 +244,7 @@
           <p class="text-xs text-[#a7f3d0]">بعد بوست حقق آلاف التفاعلات ومئات التعليقات من مهندسي الإمارات ومصر والسعودية يطلبون منظومة الربط العملية.</p>
         </div>
       </div>
-      <div class="flex items-center gap-2 bg-[#041714] px-4 py-2.5 rounded-full border border-[#2dd4bf]/30 text-xs font-bold text-[#fef08a]">
+      <div class="flex items-center gap-2 bg-[#041714] px-4 py-2.5 rounded-full border border-cyan-400/30 text-xs font-bold text-[#fef08a]">
         <span>⭐️ تقييم المهندسين المبدئي: 4.98 / 5.0</span>
       </div>
     </div>
@@ -252,7 +253,7 @@
   <!-- ========================================== -->
   <!-- THE 6 DETAILED MODULES (INTERACTIVE TABS)   -->
   <!-- ========================================== -->
-  <section id="modules" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#2dd4bf]/20">
+  <section id="modules" class="py-16 px-6 max-w-7xl mx-auto border-b border-cyan-400/30">
     <div class="text-center mb-12">
       <span class="text-xs font-bold text-[#2dd4bf] uppercase tracking-widest block mb-2">CURRICULUM SPECIFICATIONS</span>
       <h2 class="text-3xl sm:text-4xl font-black text-white">هيكل الكورس التفصيلي · 6 وحدات عملية 100%</h2>
@@ -266,14 +267,14 @@
 
       <!-- MODULE 1 -->
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#2dd4bf]">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#0d5b55] text-[#a7f3d0] text-[11px] font-bold px-3 py-1 rounded-md">الوحدة الأولى · 3 دروس</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">البداية الصح - عقلية مهندس AI</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">تغيير جذري في طريقة التفكير والتخطيط بدلاً من الاعتماد العشوائي على الشات</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ ساعتان و 15 دقيقة</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">⏱️ ساعتان و 15 دقيقة</span>
           </div>
         </div>
 
@@ -293,7 +294,7 @@
             </div>
 
             <!-- Practical Task & Download -->
-            <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
+            <div class="mt-4 pt-3 border-t border-cyan-400/30 flex flex-wrap items-center gap-3">
               <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
                 📄 ملخص خطوات الوحدة (PDF) جاهز للتحميل
               </span>
@@ -304,7 +305,7 @@
           </div>
 
           <!-- Prompt & Quick Quiz Mockup -->
-          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/25 flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-cyan-400/30 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between text-xs font-bold text-[#fef08a] mb-2">
                 <span>📝 اختبار قصير (Quiz 1)</span>
@@ -312,9 +313,9 @@
               </div>
               <p class="text-xs text-[#cbd5e1] mb-3">ما هو العيب الرئيسي لطلب حساب الكميات من نموذج لغوي دون ربطه بملف مجدول؟</p>
               <div class="space-y-1.5 text-xs">
-                <button onclick="checkQuiz(this, false)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">أ) بطء سرعة الاستجابة</button>
-                <button onclick="checkQuiz(this, true)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">ب) احتمالية الهلوسة وغياب دقة الحساب الجبري</button>
-                <button onclick="checkQuiz(this, false)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">ج) عدم معرفته باللغة العربية</button>
+                <button onclick="checkQuiz(this, false)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-cyan-400/30 text-[#e2ece6] block transition">أ) بطء سرعة الاستجابة</button>
+                <button onclick="checkQuiz(this, true)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-cyan-400/30 text-[#e2ece6] block transition">ب) احتمالية الهلوسة وغياب دقة الحساب الجبري</button>
+                <button onclick="checkQuiz(this, false)" class="w-full text-right p-2 rounded-lg bg-[#062420] hover:bg-[#0d3b35] border border-cyan-400/30 text-[#e2ece6] block transition">ج) عدم معرفته باللغة العربية</button>
               </div>
             </div>
             <div id="quizResult1" class="hidden mt-2 p-2 rounded text-xs font-bold text-center"></div>
@@ -324,14 +325,14 @@
 
       <!-- MODULE 2 -->
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#f59e0b]">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#f59e0b]/20 text-[#fef08a] text-[11px] font-bold px-3 py-1 rounded-md border border-[#f59e0b]/30">الوحدة الثانية · 4 دروس</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">هندسة الأوامر Prompt Engineering للمهندسين</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">كتابة أوامر احترافية لا تخطئ في استخراج المقايسات والمخططات والمواصفات</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ 3 ساعات</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">⏱️ 3 ساعات</span>
           </div>
         </div>
 
@@ -351,7 +352,7 @@
             </div>
 
             <!-- Practical Task & Download -->
-            <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
+            <div class="mt-4 pt-3 border-t border-cyan-400/30 flex flex-wrap items-center gap-3">
               <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
                 📄 بنك قوالب الأوامر الهندسية بصيغة Markdown & Word
               </span>
@@ -382,14 +383,14 @@
 
       <!-- MODULE 3 -->
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#38bdf8]">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#38bdf8]/20 text-[#7dd3fc] text-[11px] font-bold px-3 py-1 rounded-md border border-[#38bdf8]/30">الوحدة الثالثة · قلب الكورس · 5 دروس</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">ربط الأدوات ببعضها - منظومة الأتمتة الكاملة</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">كيفية دمج أدوات النصوص والجداول والمخططات في حلقة إنتاجية واحدة سريعة</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ 4 ساعات</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">⏱️ 4 ساعات</span>
           </div>
         </div>
 
@@ -408,7 +409,7 @@
               <span><strong>أتمتة الشغل المتكرر وحصر اللاندسكيب:</strong> تطبيق واقعي على مخطط زراعات بحيرة العلمين (<code>LAGOON_180_ZONING_PLANTING_REV02.dwg</code>): حصر مئات الأشجار والنخيل والمسطحات الخضراء ومطابقتها بمقايسة الـ BOQ وربطها بالاستهلاك الهيدروليكي اليومي لمياه الري بدقة 100%.</span>
             </div>
 
-            <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
+            <div class="mt-4 pt-3 border-t border-cyan-400/30 flex flex-wrap items-center gap-3">
               <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
                 📄 كود بايثون / سكربتات جاهزة للربط مع أوتوكاد
               </span>
@@ -418,15 +419,15 @@
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/25 flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-cyan-400/30 flex flex-col justify-between">
             <div class="text-xs">
               <span class="text-[#fef08a] font-bold block mb-2">⚡ النتيجة العملية المباشرة:</span>
               <div class="space-y-2 text-[#cbd5e1]">
-                <div class="flex justify-between border-b border-[#2dd4bf]/20 pb-1">
+                <div class="flex justify-between border-b border-cyan-400/30 pb-1">
                   <span>عمل المقايسة وحصر المخطط يدويًا:</span>
                   <span class="text-red-400 font-bold">6 إلى 8 ساعات</span>
                 </div>
-                <div class="flex justify-between border-b border-[#2dd4bf]/20 pb-1">
+                <div class="flex justify-between border-b border-cyan-400/30 pb-1">
                   <span>باستخدام منظومة الربط بالـ AI:</span>
                   <span class="text-[#34d399] font-bold">4 إلى 7 دقائق فقط!</span>
                 </div>
@@ -445,14 +446,14 @@
 
       <!-- MODULE 4 -->
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#a855f7]">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#a855f7]/20 text-[#d8b4fe] text-[11px] font-bold px-3 py-1 rounded-md border border-[#a855f7]/30">الوحدة الرابعة · دراسة حالة معتمدة IFC · 4 دروس</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">Clash Coordination بالذكاء الاصطناعي (155 تعارض حقيقي)</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">اكتشاف وحل التعارضات بين شبكات الري والصرف والمطر والتغذية قبل التنفيذ بالموقع</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ ساعتان و 45 دقيقة</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">⏱️ ساعتان و 45 دقيقة</span>
           </div>
         </div>
 
@@ -464,7 +465,7 @@
             </div>
             
             <!-- Real Project Spotlight: New Alamein West Waterfront IFC -->
-            <div class="bg-[#041714] border border-[#2dd4bf]/30 p-4 rounded-xl space-y-2">
+            <div class="bg-[#041714] border border-cyan-400/30 p-4 rounded-xl space-y-2">
               <div class="flex items-center justify-between">
                 <span class="bg-[#f59e0b] text-[#041210] text-[10px] font-black px-2 py-0.5 rounded uppercase">مشروع حي معتمد IFC</span>
                 <span class="text-[10px] text-[#a7f3d0] font-mono">لوحة رقم: 2224 DES-HYD CO PL 00 03 12 (R03)</span>
@@ -473,7 +474,7 @@
               <p class="text-[11px] text-[#cbd5e1] leading-relaxed">
                 <strong>المالك:</strong> وزارة الدفاع - الهيئة الهندسية للقوات المسلحة - إدارة الأشغال العسكرية · <strong>الاستشاري:</strong> مكتب هيدرو لدراسات الهيدرولوجيا والبيئة · <strong>المقاول:</strong> شركة طيبة لاند سكيب · <strong>إعداد وتدقيق:</strong> م / عمرو سليم.
               </p>
-              <div class="text-[10px] text-[#fef08a] bg-[#020b0a] p-2 rounded-lg border border-[#2dd4bf]/20">
+              <div class="text-[10px] text-[#fef08a] bg-[#020b0a] p-2 rounded-lg border border-cyan-400/30">
                 📏 <strong>المحددات الكودية للمراجعة المعتمدة:</strong> خلوص رأسي 0.30 م · خلوص أفقي 0.50 م · خط الري على بعد 1.50 م من المناهيل.
               </div>
             </div>
@@ -488,7 +489,7 @@
               <span><strong>توليد تقرير Clash معتمد:</strong> جاهز للمطابقة مع مهندسي الموقع والاستشاري لتفادي أوامر التغيير والتكسير.</span>
             </div>
 
-            <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
+            <div class="mt-4 pt-3 border-t border-cyan-400/30 flex flex-wrap items-center gap-3">
               <button onclick="openDrawingLightbox()" class="bg-[#0d5b55] hover:bg-[#14b8a6] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
                 🔍 استعراض المخطط التنفيذي الكامل (IFC Drawing)
               </button>
@@ -499,10 +500,10 @@
           </div>
 
           <!-- Real Clash Table & Interactive Image Preview -->
-          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/25 flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-cyan-400/30 flex flex-col justify-between">
             <div>
               <!-- Thumbnail with zoom overlay -->
-              <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-black border border-[#2dd4bf]/30 group cursor-pointer mb-3" onclick="openDrawingLightbox()">
+              <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-black border border-cyan-400/30 group cursor-pointer mb-3" onclick="openDrawingLightbox()">
                 <img src="/images/alamein_clash_drawing_r03.jpg" alt="لوحة كشف التعارضات - العلمين الجديدة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-2.5">
                   <span class="text-[11px] font-bold text-white flex items-center gap-1.5">
@@ -514,7 +515,7 @@
 
               <!-- Official Clash Breakdown Table (From Real Drawing) -->
               <div class="bg-[#020b0a] p-3 rounded-lg border border-purple-500/30 text-xs">
-                <div class="flex items-center justify-between pb-1.5 border-b border-[#2dd4bf]/20 text-[#fef08a] font-bold text-[11px]">
+                <div class="flex items-center justify-between pb-1.5 border-b border-cyan-400/30 text-[#fef08a] font-bold text-[11px]">
                   <span>جدول حصر التعارضات الحقيقي (CLASH SUMMARY)</span>
                   <span class="text-white">العدد</span>
                 </div>
@@ -539,7 +540,7 @@
                     <span>ري x منهول مطر (Irrigation x Storm MH):</span>
                     <strong class="text-white font-mono">27</strong>
                   </div>
-                  <div class="flex justify-between border-t border-[#2dd4bf]/20 pt-1 text-[#34d399] font-bold">
+                  <div class="flex justify-between border-t border-cyan-400/30 pt-1 text-[#34d399] font-bold">
                     <span>إجمالي التعارضات المرصودة (TOTAL):</span>
                     <strong class="text-[#fef08a] font-mono text-sm">155 تعارضاً</strong>
                   </div>
@@ -556,14 +557,14 @@
 
       <!-- MODULE 5 -->
       <div class="glass-card p-6 sm:p-8 border-r-4 border-r-[#10b981]">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#10b981]/20 text-[#6ee7b7] text-[11px] font-bold px-3 py-1 rounded-md border border-[#10b981]/30">الوحدة الخامسة · 3 دروس</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">التعامل مع كميات البيانات الكبيرة (Big Data)</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">معالجة ملفات Excel و PDF و CAD الضخمة دون تهنيج واستخراج الخطط التنفيذية</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">⏱️ ساعتان و 30 دقيقة</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">⏱️ ساعتان و 30 دقيقة</span>
           </div>
         </div>
 
@@ -582,14 +583,14 @@
               <span><strong>بناء الجدول الزمني وخطة التنفيذ:</strong> توليد تسلسل الأنشطة ومعدلات الإنتاج اليومية المتوافقة مع Primavera P6.</span>
             </div>
 
-            <div class="mt-4 pt-3 border-t border-[#2dd4bf]/20 flex flex-wrap items-center gap-3">
+            <div class="mt-4 pt-3 border-t border-cyan-400/30 flex flex-wrap items-center gap-3">
               <span class="bg-[#041714] text-[#a7f3d0] px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1.5">
                 📄 قوالب استخراج البيانات من ملفات الـ PDF الممسوحة ضوئياً
               </span>
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/25 flex flex-col justify-between">
+          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-cyan-400/30 flex flex-col justify-between">
             <div class="text-xs space-y-2">
               <span class="text-[#fef08a] font-bold block mb-1">📊 الأدوات المستخدمة في هذه الوحدة:</span>
               <ul class="space-y-1.5 text-[#cbd5e1]">
@@ -598,7 +599,7 @@
                 <li class="flex items-center gap-2">🔹 OCR متقدم لقراءة اللوحات والمخططات القديمة</li>
               </ul>
             </div>
-            <div class="mt-3 bg-[#041714] p-2.5 rounded-lg border border-[#2dd4bf]/20 text-[11px] text-[#a7f3d0]">
+            <div class="mt-3 bg-[#041714] p-2.5 rounded-lg border border-cyan-400/30 text-[11px] text-[#a7f3d0]">
               تعلّم كيف تستخرج جدول كميات كامل من مخطط يزيد حجمه عن 100 ميجابايت خلال ثوانٍ معدودة.
             </div>
           </div>
@@ -607,14 +608,14 @@
 
       <!-- MODULE 6 -->
       <div class="glass-card p-6 sm:p-8 border-2 border-[#fef08a] bg-gradient-to-br from-[#061d19] via-[#041412] to-[#0d5b55]/40">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-[#2dd4bf]/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-4 border-b border-cyan-400/30">
           <div>
             <span class="bg-[#fef08a] text-[#041210] text-[11px] font-black px-3 py-1 rounded-md uppercase">الوحدة السادسة · مشروع التخرج العملي</span>
             <h3 class="text-xl sm:text-2xl font-black text-white mt-2">مشروع التخرج - بناء منظومتك الخاصة المتكاملة</h3>
             <p class="text-xs text-[#cbd5e1] mt-1">تطبيق عملي كامل وتسلّم حزمة هندسية متكاملة تحت إشراف ومراجعة المدرب م. عمرو سليم</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">🎓 تقييم معتمد</span>
+            <span class="text-xs font-mono bg-[#031411] text-[#fef08a] px-3 py-1 rounded-lg border border-cyan-400/30">🎓 تقييم معتمد</span>
           </div>
         </div>
 
@@ -639,7 +640,7 @@
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-[#2dd4bf]/30 flex flex-col justify-between text-center">
+          <div class="lg:col-span-5 bg-[#031411] p-4 rounded-xl border border-cyan-400/30 flex flex-col justify-between text-center">
             <div>
               <div class="w-12 h-12 rounded-full bg-[#fef08a]/20 text-[#fef08a] flex items-center justify-center mx-auto mb-2 text-xl font-bold">
                 📜
@@ -649,7 +650,7 @@
                 يقوم م. عمرو سليم بمراجعة مشروعك وتقديم ملاحظات تدقيق مهنية قبل منحك الشهادة المعتمدة من منصة مِحور.
               </p>
             </div>
-            <div class="mt-3 inline-block bg-[#041714] text-[#a7f3d0] border border-[#2dd4bf]/30 py-1.5 px-3 rounded-lg text-xs font-bold">
+            <div class="mt-3 inline-block bg-[#041714] text-[#a7f3d0] border border-cyan-400/30 py-1.5 px-3 rounded-lg text-xs font-bold">
               متاح إعادة التسليم حتى الوصول للمستوى الاحترافي
             </div>
           </div>
@@ -662,8 +663,8 @@
   <!-- ========================================== -->
   <!-- INSTRUCTOR PROFILE SECTION                 -->
   <!-- ========================================== -->
-  <section id="instructor" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#2dd4bf]/20">
-    <div class="glass-card p-8 sm:p-12 border-2 border-[#2dd4bf]/30">
+  <section id="instructor" class="py-16 px-6 max-w-7xl mx-auto border-b border-cyan-400/30">
+    <div class="glass-card p-8 sm:p-12 border-2 border-cyan-400/30">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
         <div class="lg:col-span-4 text-center">
@@ -672,7 +673,7 @@
           </div>
           <h3 class="text-2xl font-black text-white mt-4">م. عمرو سليم</h3>
           <p class="text-xs font-bold text-[#fef08a] mt-1">Senior Landscape & Infrastructure Engineer</p>
-          <span class="inline-block mt-2 text-[11px] bg-[#0d5b55] text-[#e2ece6] px-3.5 py-1 rounded-full border border-[#2dd4bf]/30 font-semibold">
+          <span class="inline-block mt-2 text-[11px] bg-[#0d5b55] text-[#e2ece6] px-3.5 py-1 rounded-full border border-cyan-400/30 font-semibold">
             استشاري وخبير هندسة البنية التحتية واللاندسكيب والمكتب الفني
           </span>
           <div class="mt-3 flex items-center justify-center gap-2 text-xs text-[#a7f3d0]">
@@ -685,11 +686,11 @@
         </div>
 
         <div class="lg:col-span-8 space-y-4 text-xs sm:text-sm text-[#cbd5e1] leading-relaxed">
-          <div class="flex items-center justify-between pb-2 border-b border-[#2dd4bf]/20">
+          <div class="flex items-center justify-between pb-2 border-b border-cyan-400/30">
             <h4 class="text-lg font-bold text-white flex items-center gap-2">
               <span>عن المدرب ومسيرته الهندسية</span>
             </h4>
-            <span class="text-xs font-mono text-[#fef08a] bg-[#031411] px-3 py-1 rounded-lg border border-[#2dd4bf]/30">
+            <span class="text-xs font-mono text-[#fef08a] bg-[#031411] px-3 py-1 rounded-lg border border-cyan-400/30">
               18 مشروعاً وبرنامجاً هندسياً رائداً
             </span>
           </div>
@@ -704,33 +705,33 @@
 
           <!-- Core Disciplines 6-grid from Portfolio -->
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-[11px]">
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#fef08a] block">1. Landscape Development</strong>
               <span class="text-[#a7f3d0]">Softscape, Hardscape & Resort Design</span>
             </div>
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#38bdf8] block">2. Infrastructure & Utilities</strong>
               <span class="text-[#a7f3d0]">5-Network Coordination & Clash Resolution</span>
             </div>
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#34d399] block">3. Irrigation Systems</strong>
               <span class="text-[#a7f3d0]">Hydraulics, Scheduling & Automation</span>
             </div>
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#d8b4fe] block">4. Technical Office</strong>
               <span class="text-[#a7f3d0]">Shop Drawings, BOQ Take-offs & Submittals</span>
             </div>
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#fb923c] block">5. Asset Management</strong>
               <span class="text-[#a7f3d0]">Operations, Maintenance & QA/QC</span>
             </div>
-            <div class="bg-[#031411] p-2.5 rounded-xl border border-[#2dd4bf]/20">
+            <div class="bg-[#031411] p-2.5 rounded-xl border border-cyan-400/30">
               <strong class="text-[#6ee7b7] block">6. Greenhouses & Agritech</strong>
               <span class="text-[#a7f3d0]">Hydroponics & Climate Control Systems</span>
             </div>
           </div>
 
-          <div class="p-4 rounded-xl bg-[#031411] border border-[#2dd4bf]/25 text-xs text-[#e2ece6] mt-3">
+          <div class="p-4 rounded-xl bg-[#031411] border border-cyan-400/30 text-xs text-[#e2ece6] mt-3">
             <strong class="text-[#fef08a] block mb-1">فلسفة المهندس عمرو سليم في الكورس:</strong>
             "الكورس ده مش دروس نظرية أو كلام عام منقول من الإنترنت.. ده عصارة 11 سنة من العمل تحت شمس المواقع وفي غرف المكاتب الفنية بالإمارات ومصر. صممت لك المنظومة دي عشان تخلص شغل أسبوع كامل في نصف ساعة، وبدقة تفوق التوقعات."
           </div>
@@ -743,7 +744,7 @@
   <!-- ========================================== -->
   <!-- CERTIFICATE OF COMPLETION SHOWCASE         -->
   <!-- ========================================== -->
-  <section id="certificate" class="py-16 px-6 max-w-7xl mx-auto border-b border-[#2dd4bf]/20 text-center">
+  <section id="certificate" class="py-16 px-6 max-w-7xl mx-auto border-b border-cyan-400/30 text-center">
     <div class="max-w-3xl mx-auto mb-8">
       <span class="text-xs font-bold text-[#fef08a] uppercase tracking-widest block mb-2">OFFICIAL MIHWAR CREDENTIAL</span>
       <h2 class="text-3xl font-black text-white">شهادة إتمام معتمدة وموثقة رقمياً</h2>
@@ -753,7 +754,7 @@
     </div>
 
     <!-- Certificate Mockup Card -->
-    <div class="max-w-2xl mx-auto glass-card p-8 border-4 border-[#2dd4bf]/40 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] text-center bg-gradient-to-b from-[#061e1a] to-[#03100e]">
+    <div class="max-w-2xl mx-auto glass-card p-8 border-4 border-cyan-400/30 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] text-center bg-gradient-to-b from-[#061e1a] to-[#03100e]">
       
       <!-- Watermark Emblem -->
       <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
@@ -761,12 +762,12 @@
       </div>
 
       <div class="relative z-10 space-y-4">
-        <div class="flex items-center justify-between border-b border-[#2dd4bf]/25 pb-3">
+        <div class="flex items-center justify-between border-b border-cyan-400/30 pb-3">
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 rounded-lg bg-[#0d5b55] text-white flex items-center justify-center font-bold text-sm">م</div>
             <span class="text-sm font-extrabold text-white">منصة مِحور للتعليم التخصصي</span>
           </div>
-          <span class="text-[10px] font-mono text-[#a7f3d0] border border-[#2dd4bf]/30 px-2 py-0.5 rounded">ID: MIHWAR-AI-ENG-2026</span>
+          <span class="text-[10px] font-mono text-[#a7f3d0] border border-cyan-400/30 px-2 py-0.5 rounded">ID: MIHWAR-AI-ENG-2026</span>
         </div>
 
         <div class="py-4">
@@ -783,7 +784,7 @@
           </p>
         </div>
 
-        <div class="flex items-center justify-between pt-4 border-t border-[#2dd4bf]/25 text-xs text-right">
+        <div class="flex items-center justify-between pt-4 border-t border-cyan-400/30 text-xs text-right">
           <div>
             <span class="text-[10px] text-[#a7f3d0] block">مدرب ومراجع الدورة</span>
             <strong class="text-white">م. عمرو سليم (Eng. Amr Selim)</strong>
@@ -821,7 +822,7 @@
       </p>
 
       <!-- Pricing Box -->
-      <div class="max-w-md mx-auto bg-[#031411] border border-[#2dd4bf]/40 p-6 rounded-2xl mb-8 shadow-xl">
+      <div class="max-w-md mx-auto bg-[#031411] border border-cyan-400/30 p-6 rounded-2xl mb-8 shadow-xl">
         <div class="flex items-center justify-center gap-3">
           <span class="text-gray-400 line-through text-lg font-mono">1,200 درهم</span>
           <span class="text-4xl sm:text-5xl font-black text-[#fef08a] font-mono">490 درهم</span>
@@ -852,11 +853,11 @@
 
   <!-- Checkout & Booking Modal (Simulated) -->
   <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
-    <div class="bg-[#051a17] border border-[#2dd4bf]/40 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
+    <div class="bg-[#051a17] border border-cyan-400/30 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
       <button onclick="closeCheckoutModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white text-xl">✕</button>
       
       <div class="text-center mb-6">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-bold text-xl mx-auto mb-2">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-bold text-xl mx-auto mb-2">
           م
         </div>
         <h3 class="text-lg font-bold text-white">تأكيد الاشتراك في الكورس</h3>
@@ -866,22 +867,22 @@
       <form id="enrollForm" onsubmit="handleEnroll(event)" class="space-y-4 text-xs">
         <div>
           <label class="block text-[#a7f3d0] font-semibold mb-1">الاسم الكامل (كما سيظهر بالشهادة):</label>
-          <input type="text" required placeholder="مثال: م. أحمد مصطفى" class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
+          <input type="text" required placeholder="مثال: م. أحمد مصطفى" class="w-full bg-[#031411] border border-cyan-400/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
         </div>
 
         <div>
           <label class="block text-[#a7f3d0] font-semibold mb-1">البريد الإلكتروني:</label>
-          <input type="email" required placeholder="name@domain.com" class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
+          <input type="email" required placeholder="name@domain.com" class="w-full bg-[#031411] border border-cyan-400/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
         </div>
 
         <div>
           <label class="block text-[#a7f3d0] font-semibold mb-1">رقم الهاتف / واتساب (مع كود الدولة):</label>
-          <input type="tel" required placeholder="+971 50 123 4567" class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
+          <input type="tel" required placeholder="+971 50 123 4567" class="w-full bg-[#031411] border border-cyan-400/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]" />
         </div>
 
         <div>
           <label class="block text-[#a7f3d0] font-semibold mb-1">التخصص الهندسي:</label>
-          <select class="w-full bg-[#031411] border border-[#2dd4bf]/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]">
+          <select class="w-full bg-[#031411] border border-cyan-400/30 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-[#2dd4bf]">
             <option>مهندس مكتب فني (Technical Office)</option>
             <option>مهندس تنفيذ وموقع (Site Engineer)</option>
             <option>مهندس لاندسكيب وبنية تحتية</option>
@@ -901,10 +902,10 @@
 
   <!-- Trailer Video Modal -->
   <div id="trailerModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-[#051a17] border border-[#2dd4bf]/40 rounded-2xl p-4 sm:p-6 max-w-3xl w-full relative">
+    <div class="bg-[#051a17] border border-cyan-400/30 rounded-2xl p-4 sm:p-6 max-w-3xl w-full relative">
       <button onclick="closeTrailer()" class="absolute top-3 left-3 text-white text-xl z-10 bg-black/60 rounded-full w-8 h-8 flex items-center justify-center">✕</button>
       
-      <div class="aspect-video bg-black rounded-xl overflow-hidden flex flex-col items-center justify-center text-center p-6 border border-[#2dd4bf]/30">
+      <div class="aspect-video bg-black rounded-xl overflow-hidden flex flex-col items-center justify-center text-center p-6 border border-cyan-400/30">
         <div class="w-16 h-16 rounded-full bg-[#f59e0b] text-[#041210] flex items-center justify-center mb-4">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
@@ -917,8 +918,8 @@
 
   <!-- IFC Drawing Lightbox Modal -->
   <div id="drawingModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="bg-[#051a17] border border-[#2dd4bf]/40 rounded-2xl p-4 max-w-5xl w-full max-h-[90vh] flex flex-col relative shadow-2xl">
-      <div class="flex items-center justify-between pb-3 border-b border-[#2dd4bf]/20">
+    <div class="bg-[#051a17] border border-cyan-400/30 rounded-2xl p-4 max-w-5xl w-full max-h-[90vh] flex flex-col relative shadow-2xl">
+      <div class="flex items-center justify-between pb-3 border-b border-cyan-400/30">
         <div>
           <h4 class="text-sm font-bold text-white">لوحة التنسيق والتعارض بين الشبكات (IFC R03) - مشروع الواجهة الغربية للعلمين الجديدة</h4>
           <span class="text-[10px] text-[#a7f3d0]">إدارة الأشغال العسكرية · مكتب هيدرو · طيبة لاند سكيب · إعداد وتدقيق: م / عمرو سليم</span>
@@ -926,9 +927,9 @@
         <button onclick="closeDrawingLightbox()" class="text-gray-400 hover:text-white text-2xl px-2">✕</button>
       </div>
       <div class="flex-1 overflow-auto p-2 flex items-center justify-center">
-        <img src="/images/alamein_clash_drawing_r03.jpg" alt="لوحة كشف التعارضات المعتمدة IFC" class="max-w-full max-h-[72vh] object-contain rounded-lg shadow-2xl border border-[#2dd4bf]/30" />
+        <img src="/images/alamein_clash_drawing_r03.jpg" alt="لوحة كشف التعارضات المعتمدة IFC" class="max-w-full max-h-[72vh] object-contain rounded-lg shadow-2xl border border-cyan-400/30" />
       </div>
-      <div class="flex flex-wrap items-center justify-between pt-2 border-t border-[#2dd4bf]/20 text-xs text-[#fef08a] gap-2">
+      <div class="flex flex-wrap items-center justify-between pt-2 border-t border-cyan-400/30 text-xs text-[#fef08a] gap-2">
         <span>📌 155 تعارضاً حقيقياً مرصوداً ومحلولاً كودياً (ري، صرف صحي، مطر، تغذية)</span>
         <a href="/images/alamein_clash_drawing_r03.jpg" target="_blank" class="bg-[#0d5b55] hover:bg-[#14b8a6] text-white px-3 py-1 rounded text-xs font-bold transition">
           فتح الصورة الأصلية بالحجم الكامل ↗
@@ -938,7 +939,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="py-10 px-6 border-t border-[#2dd4bf]/20 bg-[#020908] text-center text-xs text-[#a0b0a8]">
+  <footer class="py-10 px-6 border-t border-cyan-400/30 bg-[#020908] text-center text-xs text-[#a0b0a8]">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <div class="w-6 h-6 rounded bg-[#0d5b55] text-white flex items-center justify-center font-bold text-xs">م</div>

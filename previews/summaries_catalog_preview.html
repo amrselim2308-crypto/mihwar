@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #020908;
+      background: #020B16;
       color: #f3efe6;
       margin: 0;
       padding: 0;
@@ -24,8 +24,8 @@
       filter: drop-shadow(0 2px 14px rgba(0,0,0,0.5));
     }
     .glass-card {
-      background: rgba(6, 26, 23, 0.82);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      background: rgba(10, 48, 69, 0.65);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       backdrop-filter: blur(14px);
       border-radius: 18px;
       transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
@@ -38,7 +38,7 @@
     }
     .input-dark {
       background: #041412;
-      border: 1px solid rgba(45, 212, 191, 0.3);
+      border: 1px solid rgba(57, 216, 240, 0.25);
       color: #ffffff;
       border-radius: 12px;
     }
@@ -48,7 +48,7 @@
       box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
     }
     .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
       border: 1.5px solid rgba(94, 234, 212, 0.5);
       box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
       transition: all 0.2s;
@@ -63,14 +63,15 @@
       backdrop-filter: blur(18px);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-mesh-bg mihwar-dark-theme selection:bg-[#2dd4bf] selection:text-[#041210]">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+  <header class="sticky top-0 z-40 bg-[#071A2D]/95 backdrop-blur-md border-b border-cyan-400/30">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
       <a href="https://mihwar-edu.com/" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-cyan-400/30">
           <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
         </div>
         <div>
@@ -88,7 +89,7 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="https://mihwar-edu.com/previews/master_hub.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#2dd4bf] border border-[#2dd4bf]/40 px-4 py-2 rounded-full text-xs font-bold transition">
+        <a href="https://mihwar-edu.com/previews/master_hub.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#2dd4bf] border border-cyan-400/30 px-4 py-2 rounded-full text-xs font-bold transition">
           مركز القيادة
         </a>
       </div>
@@ -96,9 +97,9 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="py-12 px-6 border-b border-[#2dd4bf]/20 bg-gradient-to-b from-[#051c18] to-[#020908] text-center">
+  <section class="py-12 px-6 border-b border-cyan-400/30 bg-gradient-to-b from-[#051c18] to-[#020908] text-center">
     <div class="max-w-4xl mx-auto">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d5b55]/40 border border-[#2dd4bf]/30 text-[#fef08a] text-xs font-bold mb-4">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0d5b55]/40 border border-cyan-400/30 text-[#fef08a] text-xs font-bold mb-4">
         📚 بنك المعرفة الأكاديمية الشامل
       </div>
       <h1 class="text-3xl sm:text-5xl font-black golden-title mb-4 leading-tight">
@@ -160,9 +161,9 @@
   <!-- Interactive PDF Reader Modal -->
   <div id="pdfModal" class="fixed inset-0 z-50 reader-backdrop hidden flex flex-col justify-between p-3 sm:p-6">
     <!-- Top Bar -->
-    <div class="bg-[#06201c] border border-[#2dd4bf]/40 rounded-2xl px-6 py-3 flex items-center justify-between text-white shadow-2xl">
+    <div class="bg-[#06201c] border border-cyan-400/30 rounded-2xl px-6 py-3 flex items-center justify-between text-white shadow-2xl">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-lg bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+        <div class="w-8 h-8 rounded-lg bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-cyan-400/30">
           PDF
         </div>
         <div>
@@ -183,7 +184,7 @@
     </div>
 
     <!-- Paper View Area with Real Educational Content -->
-    <div class="flex-1 my-3 bg-[#08221e]/90 border border-[#2dd4bf]/30 rounded-2xl p-6 sm:p-10 overflow-y-auto flex items-center justify-center shadow-inner">
+    <div class="flex-1 my-3 bg-[#08221e]/90 border border-cyan-400/30 rounded-2xl p-6 sm:p-10 overflow-y-auto flex items-center justify-center shadow-inner">
       <div class="bg-[#fbfbf9] text-[#1c2a27] max-w-2xl w-full rounded-2xl shadow-2xl p-8 sm:p-12 min-h-[500px] flex flex-col justify-between border border-[#e2e8df]" dir="rtl">
         <div>
           <div class="flex items-center justify-between border-b-2 border-[#0d5b55]/20 pb-4 mb-6">
@@ -206,7 +207,7 @@
       </div>
     </div>
 
-    <div class="bg-[#06201c] border border-[#2dd4bf]/20 rounded-xl px-4 py-2 text-center text-xs text-[#a7f3d0]">
+    <div class="bg-[#06201c] border border-cyan-400/30 rounded-xl px-4 py-2 text-center text-xs text-[#a7f3d0]">
       💡 تم مراجعة هذا الملخص وتدقيقه وفق الأوزان النسبية والمخرجات التعليمية المعتمدة رسمياً.
     </div>
   </div>
@@ -429,7 +430,7 @@
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="bg-[#0d5b55] text-[#a7f3d0] border border-[#2dd4bf]/30 text-xs font-bold px-3 py-1 rounded-lg">
+              <span class="bg-[#0d5b55] text-[#a7f3d0] border border-cyan-400/30 text-xs font-bold px-3 py-1 rounded-lg">
                 ${item.subject}
               </span>
               <span class="text-xs text-[#fef08a] bg-[#f59e0b]/15 px-2.5 py-0.5 rounded-full border border-[#f59e0b]/30 font-semibold">
@@ -452,7 +453,7 @@
             </div>
           </div>
 
-          <div class="border-t border-[#2dd4bf]/20 pt-4 flex items-center justify-between">
+          <div class="border-t border-cyan-400/30 pt-4 flex items-center justify-between">
             <span class="text-xs font-bold text-[#fef08a]">صيغة PDF مدمجة</span>
             <button onclick="openSummary(${item.id})" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-2 cursor-pointer">
               <span>اقرأ الملخص</span>

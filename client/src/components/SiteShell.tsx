@@ -33,17 +33,18 @@ export function SiteShell({
   const [menuOpen, setMenuOpen] = useState(false);
   const logout = trpc.auth.logout.useMutation({ onSuccess: () => window.location.assign("/") });
   const navItems = [
-    ["/", t(lang, "Home", "الرئيسية")],
+    ["/previews/mihwar_command_hub.html", t(lang, "Command Hub", "مركز القيادة")],
     ["/teachers", t(lang, "Teachers", "المعلمون")],
-    ["/library", t(lang, "Library", "المكتبة")],
+    ["/previews/library_preview.html", t(lang, "Library", "المكتبة الرقمية")],
+    ["/previews/curricula_guide_preview.html", t(lang, "Curricula", "دليل المناهج")],
+    ["/previews/competitions_arena.html", t(lang, "Competitions", "ساحات التحدي")],
     ["/study", t(lang, "AI Study", "مساعد الدراسة")],
     ["/parent", t(lang, "Parents", "أولياء الأمور")],
-    ["/teacher/apply", t(lang, "Join as Teacher", "انضم كمعلم")],
   ] as const;
 
   return (
     <div className="site-frame" dir={lang === "ar" ? "rtl" : "ltr"}>
-      <div className="announcement-bar"><span className="announcement-dot" />{t(lang, "A more personal way to learn — built around your child's curriculum.", "تعلّم أكثر خصوصية، يبدأ من منهج طفلك واحتياجه.")}<ArrowUpRight size={14} /></div>
+      <div className="announcement-bar"><span className="announcement-dot" />{t(lang, "MIHWAR Command Hub: من الفهم إلى الإدراك والوعي", "مِحــور: منظومة القيادة المعرفية والتعليمية المتكاملة — من الفهم إلى الإدراك والوعي")}<ArrowUpRight size={14} /></div>
       <header className="site-header">
         <div className="header-inner">
           <Brand />

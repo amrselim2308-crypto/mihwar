@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #020908;
+      background: #020B16;
       color: #f3efe6;
       margin: 0;
       padding: 0;
@@ -22,8 +22,8 @@
       font-family: 'JetBrains Mono', monospace;
     }
     .glass-panel {
-      background: rgba(6, 26, 23, 0.92);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      background: rgba(10, 48, 69, 0.85);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       backdrop-filter: blur(16px);
     }
     .active-lesson {
@@ -37,7 +37,7 @@
       border-color: #2dd4bf;
     }
     .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
       border: 1.5px solid rgba(94, 234, 212, 0.5);
       box-shadow: 0 4px 18px rgba(20, 184, 166, 0.45);
       transition: all 0.2s;
@@ -47,13 +47,14 @@
       box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210] flex flex-col h-screen overflow-hidden">
+<body class="mihwar-mesh-bg mihwar-dark-theme selection:bg-[#2dd4bf] selection:text-[#041210] flex flex-col h-screen overflow-hidden">
 
   <!-- Top Classroom Bar -->
-  <header class="flex-none bg-[#051815] border-b border-[#2dd4bf]/20 px-6 py-3 flex items-center justify-between gap-4 z-40">
+  <header class="flex-none bg-[#051815] border-b border-cyan-400/30 px-6 py-3 flex items-center justify-between gap-4 z-40">
     <div class="flex items-center gap-3">
-      <a href="ai_engineering_masterclass.html" class="bg-[#031411] hover:bg-[#062420] text-[#2dd4bf] p-2 rounded-xl border border-[#2dd4bf]/30 flex items-center justify-center transition" title="رجوع لصفحة الكورس">
+      <a href="ai_engineering_masterclass.html" class="bg-[#031411] hover:bg-[#062420] text-[#2dd4bf] p-2 rounded-xl border border-cyan-400/30 flex items-center justify-center transition" title="رجوع لصفحة الكورس">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
       </a>
       <div>
@@ -67,7 +68,7 @@
 
     <!-- Progress & Instructor Badge -->
     <div class="flex items-center gap-4">
-      <div class="hidden md:flex items-center gap-3 bg-[#031411] px-3.5 py-1.5 rounded-xl border border-[#2dd4bf]/20 text-xs">
+      <div class="hidden md:flex items-center gap-3 bg-[#031411] px-3.5 py-1.5 rounded-xl border border-cyan-400/30 text-xs">
         <span class="text-[#cbd5e1]">التقدم في الدورة:</span>
         <div class="w-32 bg-gray-800 h-2 rounded-full overflow-hidden">
           <div class="bg-gradient-to-r from-teal-400 to-[#fef08a] h-full w-[35%] rounded-full"></div>
@@ -76,7 +77,7 @@
       </div>
 
       <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full overflow-hidden border border-[#2dd4bf]/40">
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-cyan-400/30">
           <img src="/images/eng_amr_selim.jpg" alt="م. عمرو سليم" class="w-full h-full object-cover" />
         </div>
         <span class="hidden sm:inline text-xs font-bold text-white">م. عمرو سليم</span>
@@ -91,7 +92,7 @@
     <main class="flex-1 flex flex-col overflow-y-auto bg-[#020b0a] p-4 sm:p-6 space-y-6">
 
       <!-- Simulated Video Player Container -->
-      <div class="relative rounded-2xl overflow-hidden aspect-video bg-black border border-[#2dd4bf]/30 shadow-2xl flex flex-col justify-between p-4 group">
+      <div class="relative rounded-2xl overflow-hidden aspect-video bg-black border border-cyan-400/30 shadow-2xl flex flex-col justify-between p-4 group">
         
         <!-- Video Header Overlay -->
         <div class="flex items-center justify-between text-xs text-white z-10 bg-black/60 backdrop-blur-sm p-3 rounded-xl border border-white/10">
@@ -109,7 +110,7 @@
           <div class="relative z-10 w-20 h-20 rounded-full bg-[#f59e0b] text-[#041210] flex items-center justify-center shadow-[0_0_35px_rgba(245,158,11,0.7)] cursor-pointer hover:scale-110 transition-transform">
             <svg class="w-9 h-9 transform translate-x-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </div>
-          <span class="relative z-10 mt-3 text-xs font-bold text-white bg-black/70 px-4 py-1.5 rounded-full border border-[#2dd4bf]/40">
+          <span class="relative z-10 mt-3 text-xs font-bold text-white bg-black/70 px-4 py-1.5 rounded-full border border-cyan-400/30">
             انقر للمتابعة مع المهندس عمرو سليم
           </span>
         </div>
@@ -122,7 +123,7 @@
             <button class="text-white hover:text-[#2dd4bf]">⏭ 10 ثوان</button>
           </div>
           <div class="flex items-center gap-3">
-            <span class="bg-[#031411] text-[#fef08a] px-2 py-0.5 rounded font-mono border border-[#2dd4bf]/30">1.25x</span>
+            <span class="bg-[#031411] text-[#fef08a] px-2 py-0.5 rounded font-mono border border-cyan-400/30">1.25x</span>
             <button class="text-white hover:text-[#2dd4bf]">🔊 100%</button>
             <button class="text-white hover:text-[#2dd4bf]">⛶ ملء الشاشة</button>
           </div>
@@ -131,20 +132,20 @@
       </div>
 
       <!-- Tabbed Engineering Workbench -->
-      <div class="glass-panel rounded-2xl p-5 border border-[#2dd4bf]/30 flex-1">
+      <div class="glass-panel rounded-2xl p-5 border border-cyan-400/30 flex-1">
         
         <!-- Workbench Navigation Tabs -->
-        <div class="flex items-center gap-2 border-b border-[#2dd4bf]/20 pb-3 mb-4 overflow-x-auto text-xs font-bold">
-          <button onclick="switchTab('promptsTab', this)" class="tab-btn active px-4 py-2 rounded-xl border border-[#2dd4bf]/30 transition">
+        <div class="flex items-center gap-2 border-b border-cyan-400/30 pb-3 mb-4 overflow-x-auto text-xs font-bold">
+          <button onclick="switchTab('promptsTab', this)" class="tab-btn active px-4 py-2 rounded-xl border border-cyan-400/30 transition">
             📋 قوالب الأوامر والـ AI Sandbox
           </button>
-          <button onclick="switchTab('drawingTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-[#2dd4bf]/30 text-[#cbd5e1] hover:text-white transition">
+          <button onclick="switchTab('drawingTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-cyan-400/30 text-[#cbd5e1] hover:text-white transition">
             📐 اللوحة الهندسية المعتمدة (155 تعارضاً)
           </button>
-          <button onclick="switchTab('filesTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-[#2dd4bf]/30 text-[#cbd5e1] hover:text-white transition">
+          <button onclick="switchTab('filesTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-cyan-400/30 text-[#cbd5e1] hover:text-white transition">
             📁 ملفات المشروع والـ DWG للتحميل
           </button>
-          <button onclick="switchTab('quizTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-[#2dd4bf]/30 text-[#cbd5e1] hover:text-white transition">
+          <button onclick="switchTab('quizTab', this)" class="tab-btn px-4 py-2 rounded-xl border border-cyan-400/30 text-[#cbd5e1] hover:text-white transition">
             📝 اختبار الوحدة الفوري
           </button>
         </div>
@@ -157,7 +158,7 @@
               نسخ الأمر الهندسي 📋
             </button>
           </div>
-          <div id="classroomPrompt" class="code-font text-xs text-[#cbd5e1] bg-[#020b0a] p-4 rounded-xl border border-[#2dd4bf]/25 leading-relaxed select-all">
+          <div id="classroomPrompt" class="code-font text-xs text-[#cbd5e1] bg-[#020b0a] p-4 rounded-xl border border-cyan-400/30 leading-relaxed select-all">
 أنت مهندس مكتب فني أول وخبير في تنسيق شبكات المرافق (Wet Utilities Coordination):
 المعطيات: تم رفع مسارات شبكات الصرف الصحي، صرف المطر، خطوط الري، وشبكة مياه الشرب من لوحات AutoCAD.
 المحددات الكودية للمراجعة:
@@ -181,7 +182,7 @@
               فتح الصورة بالحجم الكامل ↗
             </a>
           </div>
-          <div class="rounded-xl overflow-hidden border border-[#2dd4bf]/30 aspect-[16/9] bg-black">
+          <div class="rounded-xl overflow-hidden border border-cyan-400/30 aspect-[16/9] bg-black">
             <img src="/images/alamein_clash_drawing_r03.jpg" alt="IFC Drawing" class="w-full h-full object-contain" />
           </div>
         </div>
@@ -191,7 +192,7 @@
           <h3 class="text-sm font-bold text-[#fef08a] mb-2">الملفات التدريبية والمخططات الحقيقية المرفقة مع الدرس:</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             
-            <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/20 flex items-center justify-between">
+            <div class="bg-[#031411] p-3.5 rounded-xl border border-cyan-400/30 flex items-center justify-between">
               <div>
                 <strong class="text-white block">مخطط زراعات لاجون 180 (CAD DWG)</strong>
                 <span class="text-[10px] text-[#a7f3d0]">LAGOON_180_ZONING_PLANTING_REV02.dwg (2.9 MB)</span>
@@ -201,7 +202,7 @@
               </button>
             </div>
 
-            <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/20 flex items-center justify-between">
+            <div class="bg-[#031411] p-3.5 rounded-xl border border-cyan-400/30 flex items-center justify-between">
               <div>
                 <strong class="text-white block">شيت الحسابات الهيدروليكية - مصفح والفلاح</strong>
                 <span class="text-[10px] text-[#a7f3d0]">Hydraulic Calculation - musaffah.xlsx (47 KB)</span>
@@ -211,7 +212,7 @@
               </button>
             </div>
 
-            <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/20 flex items-center justify-between">
+            <div class="bg-[#031411] p-3.5 rounded-xl border border-cyan-400/30 flex items-center justify-between">
               <div>
                 <strong class="text-white block">جدول حصر الـ 155 تعارضاً بالعلمين</strong>
                 <span class="text-[10px] text-[#a7f3d0]">Alamein_West_155_Clashes_Matrix.xlsx</span>
@@ -221,7 +222,7 @@
               </button>
             </div>
 
-            <div class="bg-[#031411] p-3.5 rounded-xl border border-[#2dd4bf]/20 flex items-center justify-between">
+            <div class="bg-[#031411] p-3.5 rounded-xl border border-cyan-400/30 flex items-center justify-between">
               <div>
                 <strong class="text-white block">دليل هندسة الأوامر (PDF Guide)</strong>
                 <span class="text-[10px] text-[#a7f3d0]">AI_Prompt_Engineering_for_Engineers.pdf</span>
@@ -236,7 +237,7 @@
 
         <!-- TAB 4: INTERACTIVE QUIZ -->
         <div id="quizTab" class="hidden space-y-4">
-          <div class="flex items-center justify-between pb-2 border-b border-[#2dd4bf]/20">
+          <div class="flex items-center justify-between pb-2 border-b border-cyan-400/30">
             <h3 class="text-sm font-bold text-[#fef08a]">اختبار الوحدة الرابعة: كشف التعارضات الهندسية</h3>
             <span class="text-xs text-[#34d399] font-mono">سؤال 1 من 2</span>
           </div>
@@ -244,13 +245,13 @@
             وفق المحددات المعتمدة في مشروع العلمين (R03 IFC)، ما هو الحد الأدنى للخلوص الرأسي والمسافة الآمنة لخط الري عن غرف التفتيش (Manholes)؟
           </p>
           <div class="space-y-2 text-xs">
-            <button onclick="checkLessonQuiz(this, false)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">
+            <button onclick="checkLessonQuiz(this, false)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-cyan-400/30 text-[#e2ece6] block transition">
               أ) خلوص رأسي 0.10 م وخط الري على بعد 0.50 م من المنهول
             </button>
-            <button onclick="checkLessonQuiz(this, true)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">
+            <button onclick="checkLessonQuiz(this, true)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-cyan-400/30 text-[#e2ece6] block transition">
               ب) خلوص رأسي 0.30 م وخط الري على بعد 1.50 م على الأقل من المنهول ✅
             </button>
-            <button onclick="checkLessonQuiz(this, false)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-[#2dd4bf]/20 text-[#e2ece6] block transition">
+            <button onclick="checkLessonQuiz(this, false)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-cyan-400/30 text-[#e2ece6] block transition">
               ج) لا يشترط أي مسافة طالما الخطان في مستويين مختلفين
             </button>
           </div>
@@ -262,9 +263,9 @@
     </main>
 
     <!-- Right Sidebar: Modules & Lessons Playlist -->
-    <aside class="w-full lg:w-96 bg-[#041412] border-t lg:border-t-0 lg:border-r border-[#2dd4bf]/20 flex flex-col overflow-y-auto">
+    <aside class="w-full lg:w-96 bg-[#041412] border-t lg:border-t-0 lg:border-r border-cyan-400/30 flex flex-col overflow-y-auto">
       
-      <div class="p-4 border-b border-[#2dd4bf]/20 bg-[#031411]">
+      <div class="p-4 border-b border-cyan-400/30 bg-[#031411]">
         <h2 class="text-xs font-bold uppercase tracking-widest text-[#a7f3d0]">قائمة المحاضرات (21 درساً)</h2>
         <span class="text-[11px] text-[#cbd5e1] block mt-0.5">6 وحدات عملية متدرجة من الصفر للاحتراف</span>
       </div>
@@ -366,7 +367,7 @@
       </div>
 
       <!-- Help & VIP Support -->
-      <div class="mt-auto p-4 bg-[#031411] border-t border-[#2dd4bf]/20 text-center">
+      <div class="mt-auto p-4 bg-[#031411] border-t border-cyan-400/30 text-center">
         <span class="text-[11px] text-[#a7f3d0] block mb-2">هل لديك استفسار تنفيذي حول الدرس؟</span>
         <a href="https://linkedin.com/in/amrabdelshafi2308" target="_blank" class="glow-teal-btn text-white text-xs font-bold py-2 px-4 rounded-xl block">
           تواصل مع المهندس عمرو سليم 💬

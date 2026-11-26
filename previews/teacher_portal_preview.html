@@ -11,7 +11,7 @@
   <style>
     body {
       font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #041210;
+      background: #020B16;
       color: #f3efe6;
       margin: 0;
       padding: 0;
@@ -24,16 +24,16 @@
       filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
     }
     .glass-card {
-      background: rgba(6, 26, 23, 0.88);
+      background: rgba(10, 48, 69, 0.65);
       backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       border-radius: 20px;
       box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
     }
     .metric-card {
-      background: rgba(8, 38, 34, 0.78);
+      background: rgba(10, 48, 69, 0.75);
       backdrop-filter: blur(14px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.35);
       transition: all 0.2s ease;
@@ -45,7 +45,7 @@
     }
     .input-dark {
       background: rgba(8, 38, 34, 0.85);
-      border: 1.2px solid rgba(45, 212, 191, 0.32);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       color: #ffffff;
       border-radius: 10px;
     }
@@ -55,7 +55,7 @@
       box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
     }
     .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+      background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
       border: 1.5px solid rgba(94, 234, 212, 0.5);
       box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
       transition: all 0.2s;
@@ -66,14 +66,15 @@
       filter: brightness(1.08);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-mesh-bg mihwar-dark-theme selection:bg-[#2dd4bf] selection:text-[#041210]">
 
   <!-- Header -->
-  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
+  <header class="sticky top-0 z-40 bg-[#071A2D]/95 backdrop-blur-md border-b border-cyan-400/30">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-      <a href="hero_preview.html" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
+      <a href="mihwar_command_hub.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-cyan-400/30">
           <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
         </div>
         <div>
@@ -83,14 +84,14 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
-        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
+        <a href="mihwar_command_hub.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
         <a href="teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
         <a href="library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
         <a href="parent_dashboard_preview.html" class="hover:text-[#2dd4bf] transition-colors">بوابة ولي الأمر</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <div class="flex items-center gap-2 bg-[#0d5b55]/60 border border-[#2dd4bf]/30 px-3.5 py-1.5 rounded-full text-xs text-[#a7f3d0]">
+        <div class="flex items-center gap-2 bg-[#0d5b55]/60 border border-cyan-400/30 px-3.5 py-1.5 rounded-full text-xs text-[#a7f3d0]">
           <span class="w-2 h-2 rounded-full bg-[#34d399] animate-pulse"></span>
           <span>المعلم: د. أحمد الشناوي (معتمد)</span>
         </div>
@@ -116,7 +117,7 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="teacher_profile_preview.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#a7f3d0] border border-[#2dd4bf]/40 px-5 py-2.5 rounded-full text-xs font-bold transition">
+        <a href="teacher_profile_preview.html" class="bg-[#082622] hover:bg-[#0d3b35] text-[#a7f3d0] border border-cyan-400/30 px-5 py-2.5 rounded-full text-xs font-bold transition">
           معاينة ملفك للجمهور
         </a>
       </div>
@@ -160,7 +161,7 @@
         
         <!-- Incoming Lesson Requests -->
         <div class="glass-card p-6 sm:p-7 space-y-5">
-          <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+          <div class="flex items-center justify-between border-b border-cyan-400/30 pb-4">
             <div>
               <span class="text-xs font-bold text-[#fef08a] block">طلبات جديدة واردة</span>
               <h2 class="text-lg font-bold text-white">طلبات الحصص بانتظار موافقتك</h2>
@@ -169,11 +170,11 @@
           </div>
 
           <div id="requestsList" class="space-y-3">
-            <div id="req-1" class="bg-[#082622]/85 border border-[#2dd4bf]/30 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div id="req-1" class="bg-[#082622]/85 border border-cyan-400/30 rounded-xl p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <div class="flex items-center gap-2 mb-1">
                   <strong class="text-sm font-bold text-white">الطالب: راشد محمد</strong>
-                  <span class="text-[10px] bg-[#0d5b55] text-[#a7f3d0] px-2 py-0.5 rounded border border-[#2dd4bf]/25">الصف 12 متقدم</span>
+                  <span class="text-[10px] bg-[#0d5b55] text-[#a7f3d0] px-2 py-0.5 rounded border border-cyan-400/30">الصف 12 متقدم</span>
                 </div>
                 <p class="text-xs text-[#cbd5e1]">المادة: الرياضيات (التفاضل وتطبيقات القيم القصوى)</p>
                 <p class="text-[11px] text-[#a7f3d0] mt-1">الموعد المقترح: الأربعاء القادم · 6:00 مساءً (60 دقيقة)</p>
@@ -194,7 +195,7 @@
 
         <!-- Upcoming Sessions Calendar -->
         <div class="glass-card p-6 sm:p-7 space-y-5">
-          <div class="flex items-center justify-between border-b border-[#2dd4bf]/20 pb-4">
+          <div class="flex items-center justify-between border-b border-cyan-400/30 pb-4">
             <div>
               <span class="text-xs font-bold text-[#6ee7b7] block">الحصص المؤكدة</span>
               <h2 class="text-lg font-bold text-white">جدول تدريسك لهذا الأسبوع</h2>
@@ -202,9 +203,9 @@
           </div>
 
           <div id="confirmedSchedule" class="space-y-3">
-            <div class="bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="bg-[#082622]/70 border border-cyan-400/30 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-cyan-400/30">
                   اليوم
                 </div>
                 <div>
@@ -218,9 +219,9 @@
               </button>
             </div>
 
-            <div class="bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="bg-[#082622]/70 border border-cyan-400/30 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+                <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-cyan-400/30">
                   غداً
                 </div>
                 <div>
@@ -286,7 +287,7 @@
         <!-- Hourly Rate & Subject Settings -->
         <div class="glass-card p-6 space-y-3">
           <h2 class="text-base font-bold text-white">سعر الساعة المعتمد</h2>
-          <div class="bg-[#082622]/80 border border-[#2dd4bf]/25 rounded-xl p-3 flex items-center justify-between">
+          <div class="bg-[#082622]/80 border border-cyan-400/30 rounded-xl p-3 flex items-center justify-between">
             <span class="text-xs text-[#cbd5e1]">السعر لكل 60 دقيقة:</span>
             <strong class="text-base font-extrabold text-[#fef08a]">130 AED</strong>
           </div>
@@ -309,10 +310,10 @@
 
       const list = document.getElementById("confirmedSchedule");
       const div = document.createElement("div");
-      div.className = "bg-[#082622]/70 border border-[#2dd4bf]/20 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in";
+      div.className = "bg-[#082622]/70 border border-cyan-400/30 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in";
       div.innerHTML = `
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-[#2dd4bf]/30">
+          <div class="w-10 h-10 rounded-xl bg-[#0d5b55] text-[#fef08a] flex items-center justify-center font-bold text-xs border border-cyan-400/30">
             جديد
           </div>
           <div>

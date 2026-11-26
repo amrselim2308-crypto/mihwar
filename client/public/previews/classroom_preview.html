@@ -26,13 +26,13 @@
       -webkit-text-fill-color: transparent;
     }
     .glass-bar {
-      background: rgba(5, 24, 21, 0.95);
+      background: rgba(7, 26, 45, 0.95);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(45, 212, 191, 0.25);
+      border-bottom: 1px solid rgba(57, 216, 240, 0.25);
     }
     .tool-btn {
       background: rgba(8, 38, 34, 0.85);
-      border: 1px solid rgba(45, 212, 191, 0.3);
+      border: 1px solid rgba(57, 216, 240, 0.25);
       color: #cbd5e1;
       transition: all 0.18s ease;
     }
@@ -42,23 +42,23 @@
       color: #ffffff;
     }
     .tool-btn.active {
-      background: linear-gradient(135deg, #0d5b55, #14b8a6);
+      background: linear-gradient(135deg, #075B68, #12BFC1);
       border-color: #5eead4;
       color: #ffffff;
       box-shadow: 0 0 14px rgba(20, 184, 166, 0.5);
     }
     .canvas-container {
-      background: #041210;
+      background: #020B16;
       background-image: 
-        radial-gradient(rgba(45, 212, 191, 0.15) 1px, transparent 1px),
-        linear-gradient(to right, rgba(45, 212, 191, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+        radial-gradient(rgba(57, 216, 240, 0.25) 1px, transparent 1px),
+        linear-gradient(to right, rgba(57, 216, 240, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(57, 216, 240, 0.25) 1px, transparent 1px);
       background-size: 24px 24px, 48px 48px, 48px 48px;
     }
     .video-tile {
-      background: rgba(6, 26, 23, 0.9);
+      background: rgba(10, 48, 69, 0.85);
       backdrop-filter: blur(14px);
-      border: 1.5px solid rgba(45, 212, 191, 0.35);
+      border: 1.5px solid rgba(57, 216, 240, 0.25);
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
@@ -72,14 +72,15 @@
       box-shadow: 0 0 22px rgba(239, 68, 68, 0.6);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-dark-theme mihwar-mesh-bg selection:bg-cyan-900 selection:text-cyan-200">
 
   <!-- Top Classroom Bar -->
   <header class="glass-bar flex-none px-6 py-3 flex items-center justify-between gap-4 z-40">
     <div class="flex items-center gap-3">
-      <a href="hero_preview.html" class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-lg border border-[#2dd4bf]/40">
+      <a href="mihwar_command_hub.html" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-white flex items-center justify-center font-extrabold text-lg border border-cyan-400/30">
           م
         </div>
         <div>
@@ -88,15 +89,15 @@
         </div>
       </a>
 
-      <div class="hidden sm:flex items-center gap-2 border-r border-[#2dd4bf]/20 pr-3 mr-2">
+      <div class="hidden sm:flex items-center gap-2 border-r border-cyan-400/30 pr-3 mr-2">
         <span class="text-xs font-bold text-white">الرياضيات (التفاضل المتقدم)</span>
-        <span class="text-[10px] bg-[#0d5b55] text-[#fef08a] px-2 py-0.5 rounded-full border border-[#2dd4bf]/30">المنهج الإماراتي · الصف 12</span>
+        <span class="text-[10px] bg-[#0d5b55] text-[#fef08a] px-2 py-0.5 rounded-full border border-cyan-400/30">المنهج الإماراتي · الصف 12</span>
       </div>
     </div>
 
     <!-- Live Timer & Room Status -->
     <div class="flex items-center gap-3">
-      <div class="flex items-center gap-2 bg-[#041412] border border-[#2dd4bf]/30 px-3.5 py-1.5 rounded-full text-xs font-mono">
+      <div class="flex items-center gap-2 bg-[#041412] border border-cyan-400/30 px-3.5 py-1.5 rounded-full text-xs font-mono">
         <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
         <span class="text-[#fef08a] font-bold" id="liveTimer">48:15</span>
         <span class="text-[#cbd5e1] text-[10px]">/ 60:00 دقيقة</span>
@@ -112,7 +113,7 @@
   <main class="flex-1 flex overflow-hidden relative">
     
     <!-- Left Tools Palette (Vertical Bar) -->
-    <aside class="w-16 flex-none bg-[#051815]/90 border-l border-[#2dd4bf]/20 flex flex-col items-center py-4 gap-3 z-30">
+    <aside class="w-16 flex-none bg-[#071A2D]/95 border-l border-cyan-400/30 flex flex-col items-center py-4 gap-3 z-30">
       <button onclick="setTool('pen', this)" class="tool-btn active w-11 h-11 rounded-xl flex items-center justify-center cursor-pointer" title="قلم ذكي">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
       </button>
@@ -142,7 +143,7 @@
       <canvas id="whiteboard" class="w-full h-full cursor-crosshair"></canvas>
 
       <!-- Overlay Floating Controls (Bottom Center) -->
-      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#06201c]/90 backdrop-blur-md border border-[#2dd4bf]/40 px-5 py-2.5 rounded-full flex items-center gap-4 shadow-2xl z-30">
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#06201c]/90 backdrop-blur-md border border-cyan-400/30 px-5 py-2.5 rounded-full flex items-center gap-4 shadow-2xl z-30">
         <button onclick="alert('الميكروفون مفعّل وقيد الاستخدام')" class="w-10 h-10 rounded-full bg-[#0d5b55] text-white flex items-center justify-center hover:bg-[#14b8a6] cursor-pointer" title="الميكروفون">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
         </button>
@@ -165,7 +166,7 @@
     </div>
 
     <!-- Right Side: Video Tiles Overlay & Live Chat (Width: 320px) -->
-    <aside class="w-80 flex-none bg-[#051815]/95 border-r border-[#2dd4bf]/20 flex flex-col justify-between p-4 gap-4 z-30">
+    <aside class="w-80 flex-none bg-[#051815]/95 border-r border-cyan-400/30 flex flex-col justify-between p-4 gap-4 z-30">
       
       <!-- Video Tiles -->
       <div class="space-y-3">
@@ -174,12 +175,12 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
           
           <div class="relative z-10 flex items-center justify-between text-[11px]">
-            <span class="bg-[#0d5b55] text-white px-2 py-0.5 rounded font-bold border border-[#2dd4bf]/30">المعلم (مباشر)</span>
+            <span class="bg-[#0d5b55] text-white px-2 py-0.5 rounded font-bold border border-cyan-400/30">المعلم (مباشر)</span>
             <span class="w-2 h-2 rounded-full bg-[#34d399] animate-pulse"></span>
           </div>
 
           <div class="flex items-center justify-center my-auto">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-[#fef08a] flex items-center justify-center text-xl font-bold border-2 border-[#2dd4bf]/40">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#075B68] to-[#12BFC1] text-[#fef08a] flex items-center justify-center text-xl font-bold border-2 border-cyan-400/30">
               أ ش
             </div>
           </div>
@@ -195,12 +196,12 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none"></div>
           
           <div class="relative z-10 flex items-center justify-between text-[11px]">
-            <span class="bg-[#041210] text-[#a7f3d0] px-2 py-0.5 rounded font-bold border border-[#2dd4bf]/20">الطالب</span>
+            <span class="bg-[#041210] text-[#a7f3d0] px-2 py-0.5 rounded font-bold border border-cyan-400/30">الطالب</span>
             <span class="w-2 h-2 rounded-full bg-[#34d399]"></span>
           </div>
 
           <div class="flex items-center justify-center my-auto">
-            <div class="w-12 h-12 rounded-full bg-[#0d5b55] text-white flex items-center justify-center text-xl font-bold border border-[#2dd4bf]/30">
+            <div class="w-12 h-12 rounded-full bg-[#0d5b55] text-white flex items-center justify-center text-xl font-bold border border-cyan-400/30">
               ر
             </div>
           </div>
@@ -213,26 +214,26 @@
       </div>
 
       <!-- In-Class Live Chat -->
-      <div class="flex-1 bg-[#041412] border border-[#2dd4bf]/20 rounded-2xl p-3 flex flex-col justify-between overflow-hidden">
-        <div class="text-xs font-bold text-[#fef08a] border-b border-[#2dd4bf]/15 pb-2 mb-2 flex items-center justify-between">
+      <div class="flex-1 bg-[#041412] border border-cyan-400/30 rounded-2xl p-3 flex flex-col justify-between overflow-hidden">
+        <div class="text-xs font-bold text-[#fef08a] border-b border-cyan-400/30 pb-2 mb-2 flex items-center justify-between">
           <span>الملاحظات والمحادثة المباشرة</span>
           <span class="text-[10px] text-[#a7f3d0]">مشفرة وآمنة</span>
         </div>
 
         <div id="chatMessages" class="flex-1 overflow-y-auto space-y-2 text-xs pr-1">
-          <div class="bg-[#082622] p-2 rounded-lg border border-[#2dd4bf]/15">
+          <div class="bg-[#082622] p-2 rounded-lg border border-cyan-400/30">
             <strong class="text-[#2dd4bf] block text-[10px]">د. أحمد الشناوي:</strong>
             <p class="text-[#f3efe6] mt-0.5">أهلاً بك يا راشد، سنبدأ بمراجعة قاعدة تفاضل الدوال المثلثية المركبة.</p>
           </div>
 
-          <div class="bg-[#0d3b35]/60 p-2 rounded-lg border border-[#2dd4bf]/25 text-left">
+          <div class="bg-[#0d3b35]/60 p-2 rounded-lg border border-cyan-400/30 text-left">
             <strong class="text-[#fef08a] block text-[10px]">راشد محمد:</strong>
             <p class="text-[#f3efe6] mt-0.5 text-right">تمام يا دكتور، جهزت أسئلة نموذج الوزارة لعام 2025.</p>
           </div>
         </div>
 
-        <form onsubmit="handleSendChat(event)" class="mt-2 pt-2 border-t border-[#2dd4bf]/15 flex items-center gap-1.5">
-          <input type="text" id="chatInput" placeholder="اكتب سؤالاً أو معادلة..." class="w-full bg-[#082622] border border-[#2dd4bf]/30 text-xs text-white px-3 py-1.5 rounded-lg outline-none focus:border-[#38bdf8]">
+        <form onsubmit="handleSendChat(event)" class="mt-2 pt-2 border-t border-cyan-400/30 flex items-center gap-1.5">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالاً أو معادلة..." class="w-full bg-[#082622] border border-cyan-400/30 text-xs text-white px-3 py-1.5 rounded-lg outline-none focus:border-[#38bdf8]">
           <button type="submit" class="bg-[#14b8a6] text-white p-1.5 rounded-lg hover:bg-[#0d9488] cursor-pointer flex-none">
             <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </button>
@@ -359,7 +360,7 @@
 
       const container = document.getElementById('chatMessages');
       const msg = document.createElement('div');
-      msg.className = 'bg-[#082622] p-2 rounded-lg border border-[#2dd4bf]/20 animate-fade-in';
+      msg.className = 'bg-[#082622] p-2 rounded-lg border border-cyan-400/30 animate-fade-in';
       msg.innerHTML = `
         <strong class="text-[#34d399] block text-[10px]">أنت:</strong>
         <p class="text-white mt-0.5">${text}</p>

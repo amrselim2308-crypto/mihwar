@@ -1,0 +1,157 @@
+/**
+ * MIHWAR UNIFIED DESIGN SYSTEM (V2.0 - 2026)
+ * Strict Palette: Deep Navy + Petrol Blue + Turquoise + Cyan
+ */
+
+:root {
+  --mihwar-bg-base: #020B16;
+  --mihwar-deep-navy: #071A2D;
+  --mihwar-petrol-blue: #0A3045;
+  --mihwar-dark-turquoise: #075B68;
+  --mihwar-turquoise: #12BFC1;
+  --mihwar-cyan: #39D8F0;
+  --mihwar-soft-cyan: #8AEAF1;
+  --mihwar-text-main: #F0FDF4;
+  --mihwar-text-muted: #94A3B8;
+  --mihwar-border-subtle: rgba(57, 216, 240, 0.16);
+  --mihwar-border-focus: rgba(57, 216, 240, 0.45);
+  --mihwar-card-bg: rgba(10, 48, 69, 0.55);
+  --mihwar-card-hover: rgba(10, 48, 69, 0.82);
+}
+
+/* Base Body Standard */
+body.mihwar-dark-theme {
+  background-color: var(--mihwar-bg-base);
+  color: #E2E8F0;
+  font-family: 'Cairo', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Background Mesh */
+.mihwar-mesh-bg {
+  background: 
+    radial-gradient(circle at 18% 22%, rgba(18, 191, 193, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 82% 65%, rgba(57, 216, 240, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(7, 26, 45, 0.95) 0%, #020B16 100%);
+}
+
+/* Universal Card Glass */
+.mihwar-card {
+  background: var(--mihwar-card-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--mihwar-border-subtle);
+  border-radius: 20px;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mihwar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(57, 216, 240, 0.35), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mihwar-card:hover {
+  transform: translateY(-4px);
+  background: var(--mihwar-card-hover);
+  border-color: var(--mihwar-border-focus);
+  box-shadow: 0 14px 34px rgba(2, 11, 22, 0.6), 0 0 24px rgba(57, 216, 240, 0.12);
+}
+
+.mihwar-card:hover::before {
+  opacity: 1;
+}
+
+/* Universal Sidebar Glass */
+.mihwar-sidebar {
+  background: rgba(7, 26, 45, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid var(--mihwar-border-subtle);
+}
+
+/* Universal Topbar Glass */
+.mihwar-topbar {
+  background: rgba(7, 26, 45, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--mihwar-border-subtle);
+}
+
+/* Nav Link States */
+.mihwar-nav-active {
+  background: rgba(57, 216, 240, 0.12);
+  color: #39D8F0;
+  border-right: 3px solid #39D8F0;
+  box-shadow: inset 0 0 16px rgba(57, 216, 240, 0.08);
+  font-weight: 800;
+}
+
+.mihwar-nav-inactive {
+  color: #94A3B8;
+  border-right: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 700;
+}
+
+.mihwar-nav-inactive:hover {
+  background: rgba(10, 48, 69, 0.45);
+  color: #E2E8F0;
+  border-right-color: rgba(57, 216, 240, 0.4);
+}
+
+/* Primary Cyan Button */
+.mihwar-btn-primary {
+  background: linear-gradient(135deg, #12BFC1 0%, #075B68 100%);
+  border: 1px solid rgba(57, 216, 240, 0.4);
+  color: #FFFFFF;
+  box-shadow: 0 4px 18px rgba(18, 191, 193, 0.25);
+  transition: all 0.22s ease;
+  font-weight: 800;
+}
+
+.mihwar-btn-primary:hover {
+  background: linear-gradient(135deg, #39D8F0 0%, #12BFC1 100%);
+  box-shadow: 0 6px 26px rgba(57, 216, 240, 0.4);
+  transform: translateY(-1.5px);
+  color: #020B16;
+}
+
+/* Secondary Petrol Button */
+.mihwar-btn-secondary {
+  background: rgba(10, 48, 69, 0.7);
+  border: 1px solid rgba(57, 216, 240, 0.25);
+  color: #8AEAF1;
+  transition: all 0.22s ease;
+  font-weight: 700;
+}
+
+.mihwar-btn-secondary:hover {
+  background: rgba(10, 48, 69, 0.95);
+  border-color: #39D8F0;
+  color: #FFFFFF;
+  transform: translateY(-1.5px);
+}
+
+/* Universal Badge */
+.mihwar-badge-cyan {
+  background: rgba(57, 216, 240, 0.12);
+  border: 1px solid rgba(57, 216, 240, 0.35);
+  color: #8AEAF1;
+}
+
+.mihwar-badge-gold {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FCD34D;
+}

@@ -13,7 +13,7 @@
       font-family: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
       margin: 0;
       padding: 0;
-      background: #041824;
+      background: #020B16;
       color: #f3efe6;
       overflow-x: hidden;
     }
@@ -69,7 +69,7 @@
     .card-glass {
       background: rgba(6, 38, 62, 0.9);
       backdrop-filter: blur(12px);
-      border: 1.2px solid rgba(45, 212, 191, 0.32);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -84,7 +84,7 @@
     .stat-glass {
       background: rgba(6, 28, 25, 0.72);
       backdrop-filter: blur(14px);
-      border: 1.2px solid rgba(45, 212, 191, 0.3);
+      border: 1.2px solid rgba(57, 216, 240, 0.25);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
       transition: all 0.2s ease;
     }
@@ -123,7 +123,7 @@
 
     .browse-pill-btn {
       background: rgba(9, 46, 41, 0.75);
-      border: 1.5px solid rgba(45, 212, 191, 0.45);
+      border: 1.5px solid rgba(57, 216, 240, 0.25);
       backdrop-filter: blur(12px);
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
       transition: all 0.2s;
@@ -133,11 +133,27 @@
       background: rgba(13, 91, 85, 0.9);
       border-color: #2dd4bf;
       transform: translateY(-2px);
-      box-shadow: 0 8px 26px rgba(45, 212, 191, 0.4);
+      box-shadow: 0 8px 26px rgba(57, 216, 240, 0.25);
     }
   </style>
+  <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
-<body class="antialiased selection:bg-[#06b6d4] selection:text-[#041824]">
+<body class="mihwar-mesh-bg mihwar-dark-theme antialiased selection:bg-[#06b6d4] selection:text-[#041824]">
+
+  <!-- MIHWAR COMMAND HUB TELEPORT BANNER -->
+  <div id="command-hub-teleport-banner" class="sticky top-0 z-[60] bg-gradient-to-r from-[#071A2D] via-[#0A3045] to-[#071A2D] border-b border-cyan-400/40 px-4 py-2.5 shadow-[0_4px_20px_rgba(57,216,240,0.25)]">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-right">
+      <div class="flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-200">
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 animate-pulse text-xs">🚀</span>
+        <span>تم تدشين <strong class="text-cyan-300 font-extrabold">مركز القيادة المعرفية الجديد (Command Hub)</strong> بالهوية البصرية الرسمية الموحدة</span>
+      </div>
+      <a href="mihwar_command_hub.html" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#12BFC1] to-[#075B68] hover:from-[#39D8F0] hover:to-[#12BFC1] text-[#020B16] font-black text-xs transition-all shadow-[0_0_12px_rgba(18,191,193,0.45)]">
+        <span>الانتقال لمركز القيادة</span>
+        <span>←</span>
+      </a>
+    </div>
+  </div>
+
 
   <!-- شريط التنقل العلوي المتناسق والسينمائي -->
   <header class="sticky top-0 z-40 bg-[#0a1e3f]/95 backdrop-blur-md border-b border-[#38bdf8]/25">
@@ -751,7 +767,7 @@
     </div>
 
     <!-- شريط البحث السريع المتناسق مع السمة الداكنة -->
-    <div class="relative z-10 max-w-5xl mx-auto w-full mt-10 bg-[#061c19]/88 backdrop-blur-md border border-[#2dd4bf]/25 rounded-2xl p-3 shadow-2xl">
+    <div class="relative z-10 max-w-5xl mx-auto w-full mt-10 bg-[#061c19]/88 backdrop-blur-md border border-cyan-400/30 rounded-2xl p-3 shadow-2xl">
       <div class="flex items-center justify-between text-xs font-bold text-[#7dd3fc] px-3 pb-2">
         <span>بداية موفقة · ابحث عن المعلم الأنسب حسب المادة والصف والمنهج</span>
         <span class="text-[#34d399]">M / 01</span>
@@ -1027,13 +1043,13 @@
                 <button type="button" class="mode-btn p-2 rounded-xl border border-[#2dd4bf] bg-[#14b8a6]/25 text-[#5eead4] font-bold text-start flex items-center gap-1.5 shadow" data-mode="explain">
                   <span>💡 شرح مفاهيمي</span>
                 </button>
-                <button type="button" class="mode-btn p-2 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="step">
+                <button type="button" class="mode-btn p-2 rounded-xl border border-cyan-400/30 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="step">
                   <span>🔢 خطوة بخطوة</span>
                 </button>
-                <button type="button" class="mode-btn p-2 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="quiz">
+                <button type="button" class="mode-btn p-2 rounded-xl border border-cyan-400/30 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="quiz">
                   <span>📝 تدريب واختبار</span>
                 </button>
-                <button type="button" class="mode-btn p-2 rounded-xl border border-[#2dd4bf]/25 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="summary">
+                <button type="button" class="mode-btn p-2 rounded-xl border border-cyan-400/30 bg-[#031411]/60 text-[#a0b0a8] font-semibold text-start flex items-center gap-1.5 hover:bg-[#062420]" data-mode="summary">
                   <span>📑 تلخيص مركز</span>
                 </button>
               </div>
@@ -1095,20 +1111,20 @@
           <!-- شريط الرموز الرياضية والعلمية السريعة -->
           <div class="px-4 py-2 bg-[#041512] border-t border-[#38bdf8]/25 flex items-center gap-1.5 overflow-x-auto text-xs text-[#7dd3fc]">
             <span class="text-[10px] font-bold text-[#6ee7b7] shrink-0 me-1">رموز سريعة:</span>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">π</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">√x</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">x²</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">θ</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">Δ</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">±</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">×</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">÷</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">≤</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">≥</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">∞</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">→</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">∫</button>
-            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-[#2dd4bf]/25 transition font-mono">∑</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">π</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">√x</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">x²</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">θ</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">Δ</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">±</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">×</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">÷</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">≤</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">≥</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">∞</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">→</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">∫</button>
+            <button class="hub-sym px-2 py-0.5 rounded bg-[#082622] hover:bg-[#14b8a6] hover:text-white border border-cyan-400/30 transition font-mono">∑</button>
           </div>
 
           <!-- شريط الإدخال -->

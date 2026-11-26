@@ -3,156 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>دليل المناهج والمسارات التعليمية | منصة مِحور</title>
+  <title>دليل المناهج والمسارات التعليمية | منصة مِـحـوَر</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mihwar_design_system.css">
   <style>
-    body {
-      font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      background: #041210;
-      color: #f3efe6;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    .golden-title {
-      background: linear-gradient(135deg, #ffffff 15%, #fef08a 55%, #f59e0b 95%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 2px 14px rgba(0,0,0,0.6));
-    }
-    .glass-card {
-      background: rgba(6, 26, 23, 0.88);
-      backdrop-filter: blur(16px);
-      border: 1.2px solid rgba(45, 212, 191, 0.28);
-      border-radius: 20px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .glass-card:hover {
-      transform: translateY(-3px);
-      border-color: #38bdf8;
-      box-shadow: 0 16px 45px rgba(20, 184, 166, 0.4);
-    }
-    .curriculum-tab {
-      background: rgba(8, 38, 34, 0.7);
-      border: 1.2px solid rgba(45, 212, 191, 0.25);
-      color: #cbd5e1;
-      transition: all 0.2s ease;
-    }
-    .curriculum-tab:hover {
-      border-color: #2dd4bf;
+    .curriculum-tab-active {
+      background: linear-gradient(135deg, #075b68 0%, #12bfc1 100%);
       color: #ffffff;
+      border-color: #39d8f0;
+      box-shadow: 0 4px 20px rgba(57, 216, 240, 0.35);
+      font-weight: 800;
     }
-    .curriculum-tab.active {
-      background: linear-gradient(135deg, #0d5b55, #14b8a6);
-      border-color: #5eead4;
-      color: #ffffff;
-      box-shadow: 0 0 20px rgba(20, 184, 166, 0.5);
-      font-weight: 700;
+    .curriculum-tab-inactive {
+      background: rgba(10, 48, 69, 0.45);
+      color: #94a3b8;
+      border: 1px solid rgba(57, 216, 240, 0.18);
+      transition: all 0.22s ease;
     }
-    .glow-teal-btn {
-      background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
-      border: 1.5px solid rgba(94, 234, 212, 0.5);
-      box-shadow: 0 4px 20px rgba(20, 184, 166, 0.45);
-      transition: all 0.2s;
+    .curriculum-tab-inactive:hover {
+      background: rgba(10, 48, 69, 0.75);
+      color: #e2e8f0;
+      border-color: rgba(57, 216, 240, 0.4);
     }
-    .glow-teal-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(20, 184, 166, 0.65);
-      filter: brightness(1.08);
+
+    #curriculumReaderModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(2, 11, 22, 0.88);
+      backdrop-filter: blur(14px);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    #curriculumReaderModal.active {
+      display: flex !important;
     }
   </style>
 </head>
-<body class="selection:bg-[#2dd4bf] selection:text-[#041210]">
+<body class="mihwar-dark-theme mihwar-mesh-bg selection:bg-cyan-900 selection:text-cyan-200">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 bg-[#051815]/90 backdrop-blur-md border-b border-[#2dd4bf]/20">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
-      <a href="hero_preview.html" class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#0d5b55] to-[#14b8a6] text-white flex items-center justify-center font-extrabold text-2xl shadow-lg border border-[#2dd4bf]/40">
-          <svg width="26" height="26" viewBox="0 0 44 44" fill="none"><path d="M8 30.5C8 18.7 14.5 9 22 9s14 9.7 14 21.5" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><path d="M13.5 31c1.1-6.7 4.1-11 8.5-11s7.4 4.3 8.5 11" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/><circle cx="22" cy="31.5" r="3.5" fill="#fef08a"/><path d="M22 35v4" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/></svg>
+  <div class="flex min-h-screen">
+    
+    <!-- Sidebar -->
+    <aside class="mihwar-sidebar w-64 flex-none fixed inset-y-0 right-0 z-40 hidden lg:flex flex-col justify-between">
+      <div>
+        <div class="h-20 flex items-center gap-3 px-6 border-b border-[rgba(57,216,240,0.12)]">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0a3045] to-[#12bfc1] flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(57,216,240,0.25)] border border-cyan-400/30">
+            <img src="/mihwar-icon.svg" alt="مِحور" class="w-7 h-7" onerror="this.src='/images/mihwar-logo-new.svg'" />
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-xl font-black text-white tracking-wider">مِـحـوَر</span>
+              <span class="text-[9px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-500/30 px-1.5 py-0.2 rounded">GUIDE</span>
+            </div>
+            <span class="text-[10px] text-cyan-200/70 block mt-0.5">دليل المناهج والمسارات</span>
+          </div>
         </div>
-        <div>
-          <span class="text-2xl font-black tracking-tight text-white block leading-none">مِحور</span>
-          <span class="text-[9px] font-bold tracking-[0.28em] text-[#a7f3d0] uppercase">MIHWAR</span>
-        </div>
-      </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-[#e2ece6]">
-        <a href="hero_preview.html" class="hover:text-[#2dd4bf] transition-colors">الرئيسية</a>
-        <a href="teachers_directory_preview.html" class="hover:text-[#2dd4bf] transition-colors">دليل المعلمين</a>
-        <a href="#" class="text-[#2dd4bf] font-bold">المناهج والمسارات</a>
-        <a href="library_preview.html" class="hover:text-[#2dd4bf] transition-colors">المكتبة الرقمية</a>
-        <a href="hero_preview.html#study" class="hover:text-[#2dd4bf] transition-colors">مساعد الدراسة</a>
-      </nav>
+        <nav class="p-3.5 space-y-1 text-xs font-bold">
+          <a href="mihwar_command_hub.html" class="mihwar-nav-inactive flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">🎛️</span>
+            <span>مركز القيادة الرئيسي</span>
+          </a>
+          <a href="curricula_guide_preview.html" class="mihwar-nav-active flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">🗺️</span>
+            <span>دليل المناهج والمسارات</span>
+          </a>
+          <a href="library_preview.html" class="mihwar-nav-inactive flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">📚</span>
+            <span>المكتبة العلمية والتراث</span>
+          </a>
+          <a href="teachers_directory_preview.html" class="mihwar-nav-inactive flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">👨‍🏫</span>
+            <span>دليل المعلمين المعتمدين</span>
+          </a>
+          <a href="competitions_arena.html" class="mihwar-nav-inactive flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">🏆</span>
+            <span>ساحات التحدي والجوائز</span>
+          </a>
+          <a href="ai_engineering_masterclass.html" class="mihwar-nav-inactive flex items-center gap-3 px-4 py-3 rounded-xl transition">
+            <span class="text-base">⚡</span>
+            <span>ماستركلاس الذكاء الهندسي</span>
+          </a>
+        </nav>
+      </div>
 
-      <div class="flex items-center gap-3">
-        <a href="teachers_directory_preview.html" class="glow-teal-btn text-white text-[13px] font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5">
-          <span>احجز معلماً متألقاً</span>
+      <div class="p-4 border-t border-[rgba(57,216,240,0.12)]">
+        <a href="mihwar_command_hub.html" class="mihwar-btn-secondary w-full py-2.5 rounded-xl text-center block text-xs font-bold">
+          ← العودة لمركز القيادة
         </a>
       </div>
-    </div>
-  </header>
+    </aside>
 
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-b from-[#061e1b] via-[#051815] to-[#041210] border-b border-[#2dd4bf]/20 py-12 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <div class="inline-flex items-center gap-2 text-xs font-bold text-[#6ee7b7] tracking-wider mb-2">
-          <span class="w-6 h-[2px] bg-[#34d399] inline-block"></span>
-          <span>دليل التخصص والمسارات الأكاديمية</span>
+    <!-- Main Content -->
+    <div class="flex-1 lg:mr-64 flex flex-col min-h-screen">
+      
+      <!-- Topbar -->
+      <header class="mihwar-topbar h-20 sticky top-0 z-30 px-6 sm:px-8 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <a href="mihwar_command_hub.html" class="lg:hidden text-cyan-300 font-bold text-xs bg-[rgba(10,48,69,0.6)] px-3 py-1.5 rounded-lg border border-cyan-400/30">
+            ← مركز القيادة
+          </a>
+          <h1 class="text-sm sm:text-base font-black text-white">دليل المناهج الدراسية والمسارات الأكاديمية</h1>
         </div>
-        <h1 class="text-3xl sm:text-5xl font-extrabold golden-title leading-tight">
-          المناهج الدراسية والمسارات المعتمدة
-        </h1>
-        <p class="text-sm sm:text-base text-[#e2dad0] mt-2 max-w-2xl leading-relaxed">
-          استكشف تفاصيل المسارات التعليمية في الإمارات ومصر والسعودية والمناهج الدولية، وتعرف على خطط المواد والاختبارات القياسية المؤهلة للجامعات.
+
+        <div class="flex items-center gap-3">
+          <a href="teachers_directory_preview.html" class="mihwar-btn-primary text-xs font-black px-4 py-2 rounded-xl flex items-center gap-1.5">
+            <span>دليل المعلمين</span>
+            <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Body -->
+      <main class="flex-1 p-6 sm:p-8 space-y-8 max-w-7xl mx-auto w-full">
+        
+        <!-- Header Banner -->
+        <section class="mihwar-card p-6 sm:p-8 border-cyan-400/30">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="mihwar-badge-cyan text-[10px] font-mono px-3 py-1 rounded-full uppercase tracking-widest inline-block mb-2 font-bold">
+                CURRICULA DIRECTORY · 2026
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-white leading-tight">
+                اختر المنهج الدراسي وافتح مخطط المواد وبنوك الأسئلة
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-300 mt-2 max-w-2xl leading-relaxed">
+                تغطي منصة مِحور أربعة نظم تعليمية معتمدة مع تفكيك الشعب والمسارات وربطها المباشر بالمعلمين والمكتبة الرقمية.
+              </p>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-cyan-300 bg-cyan-950/70 border border-cyan-500/30 px-3.5 py-2 rounded-xl">
+                4 مناهج دولية ووزارية مدعومة
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Curricula Switcher Tabs -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs sm:text-sm font-bold">
+          <button onclick="selectCurriculum('uae', this)" class="curriculum-tab-active p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border">
+            <span class="text-xl">🇦🇪</span>
+            <span>المنهج الإماراتي (وزاري)</span>
+          </button>
+
+          <button onclick="selectCurriculum('egypt', this)" class="curriculum-tab-inactive p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border">
+            <span class="text-xl">🇪🇬</span>
+            <span>المنهج المصري (ثانوية عامة)</span>
+          </button>
+
+          <button onclick="selectCurriculum('saudi', this)" class="curriculum-tab-inactive p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border">
+            <span class="text-xl">🇸🇦</span>
+            <span>المنهج السعودي (نظام المسارات)</span>
+          </button>
+
+          <button onclick="selectCurriculum('international', this)" class="curriculum-tab-inactive p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border">
+            <span class="text-xl">🌐</span>
+            <span>المناهج الدولية (IGCSE & IB)</span>
+          </button>
+        </div>
+
+        <!-- Injected Curriculum Content -->
+        <div id="curriculumContent" class="space-y-6">
+          <!-- Dynamic Content Rendered Here -->
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="mihwar-topbar border-t border-[rgba(57,216,240,0.12)] p-6 text-center text-xs text-slate-400 space-y-2">
+        <p class="text-[11px] text-slate-500 font-mono">
+          منصة مِـحـوَر المعرفية (MIHWAR Curricula Guide) — جميع الحقوق محفوظة © 2026
         </p>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive Curriculum Syllabus & Exam Modal -->
+  <div id="curriculumReaderModal" onclick="if(event.target.id==='curriculumReaderModal') closeCurriculumModal()">
+    <div class="mihwar-card bg-[#071a2d] max-w-3xl w-full border border-cyan-400/40 p-6 sm:p-8 space-y-5 max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between border-b border-cyan-500/20 pb-4">
+        <div>
+          <span id="modalTrackBadge" class="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-500/30">مسار معتمد</span>
+          <h3 id="modalTrackTitle" class="text-xl font-black text-white mt-1">عنوان المسار</h3>
+        </div>
+        <button onclick="closeCurriculumModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-white flex items-center justify-center font-bold">
+          &times;
+        </button>
       </div>
 
-      <div class="flex items-center gap-4 bg-[#082622]/80 border border-[#2dd4bf]/30 rounded-2xl p-4 text-center">
-        <div>
-          <div class="text-2xl sm:text-3xl font-extrabold text-[#fef08a]">4</div>
-          <div class="text-xs text-[#a7f3d0] font-semibold">أنظمة تعليمية متكاملة</div>
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div class="bg-[rgba(10,48,69,0.6)] p-4 rounded-xl border border-cyan-500/20">
+          <strong class="text-white block mb-1">📌 طبيعة المنهج والأهداف التعليمية:</strong>
+          <p id="modalTrackDesc">تفاصيل المنهج...</p>
+        </div>
+
+        <div class="space-y-2">
+          <strong class="text-cyan-300 block">📚 المواد الأساسية والوحدات المقررة:</strong>
+          <div id="modalTrackSubjects" class="flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="bg-amber-950/40 p-4 rounded-xl border border-amber-500/30 text-amber-200 text-xs">
+          <strong>🎯 الوجهات والتخصصات الجامعية المؤهلة:</strong>
+          <p id="modalTrackTarget" class="mt-1">كليات الهندسة والعلوم...</p>
         </div>
       </div>
+
+      <div class="border-t border-cyan-500/20 pt-4 flex items-center justify-between">
+        <a id="modalTeacherLink" href="teachers_directory_preview.html" class="mihwar-btn-primary text-xs font-black px-5 py-2.5 rounded-full inline-flex items-center gap-2">
+          <span>حجز حصة مع معلم هذا المسار</span>
+          <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <button onclick="closeCurriculumModal()" class="text-xs text-slate-400 hover:text-white">
+          إغلاق النافذة
+        </button>
+      </div>
     </div>
-  </section>
-
-  <!-- Curricula Tabs Selector -->
-  <main class="max-w-7xl mx-auto px-6 py-10 space-y-8">
-    
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs sm:text-sm font-bold">
-      <button onclick="selectCurriculum('uae', this)" class="curriculum-tab active p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
-        <span class="text-xl">🇦🇪</span>
-        <span>المنهج الإماراتي (وزاري)</span>
-      </button>
-
-      <button onclick="selectCurriculum('egypt', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
-        <span class="text-xl">🇪🇬</span>
-        <span>المنهج المصري (ثانوية عامة)</span>
-      </button>
-
-      <button onclick="selectCurriculum('saudi', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
-        <span class="text-xl">🇸🇦</span>
-        <span>المنهج السعودي (نظام المسارات)</span>
-      </button>
-
-      <button onclick="selectCurriculum('international', this)" class="curriculum-tab p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer">
-        <span class="text-xl">🌐</span>
-        <span>المناهج الدولية (IGCSE & IB)</span>
-      </button>
-    </div>
-
-    <!-- Active Curriculum Details Display -->
-    <div id="curriculumContent" class="space-y-6">
-      <!-- Injected via JavaScript -->
-    </div>
-
-  </main>
+  </div>
 
   <script>
     const data = {
@@ -165,25 +240,29 @@
             name: "المسار المتقدم (Advanced Track)",
             summary: "يركز على الرياضيات التخصصية المتقدمة والفيزياء والكيمياء والأحياء لإعداد الطلاب لكليات الهندسة، الطب، وتكنولوجيا المعلومات.",
             subjects: ["الرياضيات المتقدمة (تفاضل وتكامل)", "الفيزياء المتقدمة", "الكيمياء", "الأحياء", "اللغة الإنجليزية الأكاديمية"],
-            target: "كليات الهندسة، الطب، الذكاء الاصطناعي، والعلوم التطبيقية"
+            target: "كليات الهندسة، الطب، الذكاء الاصطناعي، والعلوم التطبيقية",
+            subjectCode: "Physics"
           },
           {
             name: "المسار العام (General Track)",
             summary: "يوفر تعليماً متوازناً بين العلوم والرياضيات التطبيقية والعلوم الإنسانية واللغات، لفتح مسارات دراسية متنوعة.",
             subjects: ["الرياضيات العامة", "العلوم المتكاملة", "اللغة العربية", "اللغة الإنجليزية", "الدراسات الاجتماعية والتربية الوطنية"],
-            target: "إدارة الأعمال، القانون، الإعلام، والعلوم الإنسانية"
+            target: "إدارة الأعمال، القانون، الإعلام، والعلوم الإنسانية",
+            subjectCode: "Mathematics"
           },
           {
             name: "مسار النخبة (Elite Track)",
             summary: "برنامج مكثف للطلبة المتميزين في مواد الـ STEM يعتمد حل المشكلات والأبحاث العلمية المتقدمة.",
             subjects: ["Advanced Calculus", "Physics with Calculus", "Advanced Computing & AI", "Research Methodologies"],
-            target: "أرقى الجامعات العالمية وبرامج النخبة الوطنية"
+            target: "أرقى الجامعات العالمية وبرامج النخبة الوطنية",
+            subjectCode: "Computer Science"
           },
           {
             name: "اختبارات الإمارات القياسية (EmSAT)",
             summary: "اختبارات إلكترونية وطنية تقيس كفاءة الطالب في الرياضيات، اللغة الإنجليزية، الفيزياء، الكيمياء، والأحياء كشرط للقبول الجامعي.",
             subjects: ["EmSAT Math", "EmSAT English", "EmSAT Physics", "EmSAT Chemistry"],
-            target: "شرط القبول في الجامعات الحكومية والخاصة والابتعاث"
+            target: "شرط القبول في الجامعات الحكومية والخاصة والابتعاث",
+            subjectCode: "English"
           }
         ]
       },
@@ -196,55 +275,62 @@
             name: "شعبة علمي علوم (Medical & Biological Sciences)",
             summary: "التركيز على الأحياء، الكيمياء، الفيزياء، والجيولوجيا والعلوم البيئية للتأهيل للقطاع الصحي والطبي.",
             subjects: ["الأحياء (الوراثة والمناعة)", "الكيمياء (العضوية وغير العضوية)", "الفيزياء الحديثة", "الجيولوجيا والعلوم البيئية"],
-            target: "كليات الطب البشري، طب الأسنان، الصيدلة، والعلاج الطبيعي"
+            target: "كليات الطب البشري، طب الأسنان، الصيدلة، والعلاج الطبيعي",
+            subjectCode: "Biology"
           },
           {
             name: "شعبة علمي رياضة (Engineering & Mathematics)",
             summary: "التركيز المتعمق على فروع الرياضيات الأربعة مع الفيزياء لتأهيل مهندسي المستقبل وخبراء الحوسبة.",
             subjects: ["التفاضل والتكامل", "الجبر والهندسة الفراغية", "الاستاتيكا والديناميكا", "الفيزياء الكهربية والذرية"],
-            target: "كليات الهندسة، الحاسبات والذكاء الاصطناعي، والفنون التطبيقية"
+            target: "كليات الهندسة، الحاسبات والذكاء الاصطناعي، والفنون التطبيقية",
+            subjectCode: "Mathematics"
           },
           {
-            name: "الشعبة الأدبية (Humanities & Social Sciences)",
-            summary: "دراسة عميقة للتاريخ والحضارات، الفلسفة والمنطق، علم النفس والاجتماع، والجغرافيا السياسية.",
-            subjects: ["التاريخ الحديث والمعاصر", "الجغرافيا السياسية", "الفلسفة والمنطق الصوري", "علم النفس والاجتماع"],
-            target: "كليات الاقتصاد والعلوم السياسية، الألسن، الإعلام، والحقوق"
+            name: "الشعبة الأدبية (Humanities & Arts)",
+            summary: "بناء الحس النقدي واللغوي والتاريخي والجغرافي وتعميق الفلسفة والمنطق وعلم النفس.",
+            subjects: ["التاريخ والحضارات", "الجغرافيا السياسية", "الفلسفة والمنطق", "علم النفس والاجتماع", "اللغة العربية والبلاغة"],
+            target: "كليات الاقتصاد والعلوم السياسية، الألسن، الإعلام، والآداب",
+            subjectCode: "Arabic"
           }
         ]
       },
       saudi: {
         country: "المملكة العربية السعودية",
-        badge: "وزارة التعليم السعودية - نظام المسارات ورؤية 2030",
-        desc: "نظام المسارات الثانوي يقدم تعليماً تخصصياً حديثاً يتواءم مع متطلبات سوق العمل المستقبلي واختبارات المركز الوطني للقياس (قدرات وتحصيلي).",
+        badge: "وزارة التعليم السعودية — رؤية 2030",
+        desc: "نظام مسارات الثانوية العامة الحديث بالمملكة يمنح الطالب تعليماً تخصصياً مرناً يلائم متطلبات سوق العمل والجامعات التنافسية واختبارات القدرات والتحصيلي (قياس).",
         tracks: [
           {
-            name: "مسار علوم الحاسب والهندسة",
-            summary: "يركز على البرمجة، إنترنت الأشياء، الذكاء الاصطناعي، والرياضيات التطبيقية المتقدمة.",
-            subjects: ["علم البيانات", "الذكاء الاصطناعي", "الرياضيات الهندسية", "الفيزياء والتحكم الرقمي"],
-            target: "كليات الهندسة وعلوم الحاسب والتقنيات الرقمية"
+            name: "مسار علوم الحاسب والهندسة (Computer & Engineering Track)",
+            summary: "يركز على البرمجة، إنترنت الأشياء، الروبوتات، وهندسة البرمجيات مع الرياضيات والفيزياء المتقدمة.",
+            subjects: ["علم البيانات", "الذكاء الاصطناعي", "هندسة البرمجيات", "الرياضيات المتقدمة", "الفيزياء التطبيقية"],
+            target: "كليات الهندسة، الحاسب الآلي، ونظم المعلومات",
+            subjectCode: "Computer Science"
           },
           {
-            name: "مسار الصحة والحياة",
-            summary: "يركز على الأحياء الدقيقة، الكيمياء الحيوية، العلوم الطبية الإكلينيكية، والصحة العامة.",
-            subjects: ["علم البيئة والأحياء المتقدمة", "الكيمياء الحيوية", "مبادئ العلوم الصحية", "الإحصاء الحيوي"],
-            target: "كليات الطب، العلوم الطبية التطبيقية، والتمريض"
+            name: "مسار الصحة والحياة (Health & Life Sciences Track)",
+            summary: "تأهيل طبي وصحي مكثف في الكيمياء الحيوية، الأحياء المتقدمة، وفسيولوجيا الكائنات الحية.",
+            subjects: ["الأحياء والوراثة", "الكيمياء الحيوية", "مبادئ العلوم الصحية", "الإحصاء الحيوي"],
+            target: "كليات الطب، الصيدلة، العلوم الطبية التطبيقية، والتمريض",
+            subjectCode: "Biology"
           },
           {
-            name: "مسار إدارة الأعمال",
-            summary: "إعداد رواد أعمال ومحللين ماليين عبر دراسة المحاسبة، الإدارة المالية، والتسويق الرقمي.",
-            subjects: ["مبادئ الإدارة والتسويق", "المحاسبة المالية", "الاقتصاد والاستثمار", "القانون التجاري"],
-            target: "كليات إدارة الأعمال، المالية، والاقتصاد"
+            name: "مسار إدارة الأعمال (Business Administration Track)",
+            summary: "تأهيل الطالب في المحاسبة، الإدارة المالية، الاقتصاد، والقانون والأعمال الرقمية.",
+            subjects: ["مبادئ الإدارة", "الإحصاء للأعمال", "الاقتصاد", "المحاسبة المالية"],
+            target: "كليات إدارة الأعمال، المالية، والتسويق الرقمي",
+            subjectCode: "Mathematics"
           },
           {
-            name: "اختبارات قياس (القدرات والتحصيلي)",
-            summary: "برامج تدريب مكثفة لاجتياز اختبارات القدرات العامة (الكمي واللفظي) والاختبار التحصيلي للتفوق في القبول الجامعي.",
-            subjects: ["القدرات (القسم الكمي)", "القدرات (القسم اللفظي)", "التحصيلي العلمي", "التحصيلي الأدبي"],
-            target: "معيار القبول الأساسي في الجامعات السعودية والبعثات"
+            name: "المسار العام وبرامج القدرات والتحصيلي (Qiyas & General)",
+            summary: "إعداد شامل للمسار العام واجتياز اختبارات مركز قياس (القدرات العامة والتحصيل الدراسي) لضمان أعلى نسب موزونة.",
+            subjects: ["القدرات الكمية", "القدرات اللفظية", "التحصيلي العلمي", "التحصيلي الأدبي"],
+            target: "القبول الموزون في جميع الجامعات السعودية وبرامج الابتعاث",
+            subjectCode: "Skills"
           }
         ]
       },
       international: {
-        country: "المناهج الدولية المعتمدة",
+        country: "المناهج الدولية (International Boards)",
         badge: "Cambridge, Edexcel, IB, & American Boards",
         desc: "تغطي منصة مِحور أرقى المناهج الدولية المعتمدة في المدارس الخاصة والدولية بالخليج والشرق الأوسط مع معلمين معتمدين دولياً.",
         tracks: [
@@ -252,19 +338,22 @@
             name: "البريطاني: IGCSE & A-Levels",
             summary: "برامج كامبردج وإدكسل المعترف بها عالمياً مع تدريب مركز على أسئلة الـ Past Papers والتطبيقات العملية.",
             subjects: ["Mathematics (Extended & Further)", "Physics (CIE/Edexcel)", "Chemistry", "Biology", "English as a Second Language"],
-            target: "القبول المباشر في الجامعات البريطانية والعالمية"
+            target: "القبول المباشر في الجامعات البريطانية والعالمية",
+            subjectCode: "Physics"
           },
           {
             name: "البكالوريا الدولية: International Baccalaureate (IB)",
             summary: "برنامج دبلوم البكالوريا الدولية (IB DP) بمستوييه العالي (HL) والقياسي (SL) مع الإشراف على مقالات الـ IA والـ EE.",
             subjects: ["Math AA / AI (HL & SL)", "Physics HL/SL", "Chemistry HL/SL", "Economics", "TOK Support"],
-            target: "أعرق جامعات النخبة عالمياً والجامعات الأمريكية والكندية"
+            target: "أعرق جامعات النخبة عالمياً والجامعات الأمريكية والكندية",
+            subjectCode: "Chemistry"
           },
           {
             name: "الأمريكي: American Diploma & AP & SAT",
             summary: "مقررات الدبلومة الأمريكية وبرامج التسكين المتقدم (Advanced Placement - AP) واختبارات الـ SAT و ACT.",
             subjects: ["AP Calculus AB/BC", "AP Physics 1/2/C", "AP Chemistry", "Digital SAT Math & Reading"],
-            target: "الجامعات الأمريكية وبرامج المنح الدراسية المرموقة"
+            target: "الجامعات الأمريكية وبرامج المنح الدراسية المرموقة",
+            subjectCode: "Mathematics"
           }
         ]
       }
@@ -275,43 +364,48 @@
       const container = document.getElementById("curriculumContent");
 
       container.innerHTML = `
-        <div class="glass-card p-7 sm:p-8 space-y-4">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#2dd4bf]/20 pb-4">
+        <div class="mihwar-card p-6 sm:p-8 space-y-4 border-cyan-400/30">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[rgba(57,216,240,0.15)] pb-4">
             <div>
-              <span class="text-xs font-bold text-[#6ee7b7] block">${c.badge}</span>
-              <h2 class="text-2xl font-extrabold text-white golden-title">${c.country}</h2>
+              <span class="text-xs font-mono font-bold text-cyan-300 block mb-1">${c.badge}</span>
+              <h2 class="text-2xl font-black text-white">${c.country}</h2>
             </div>
-            <a href="teachers_directory_preview.html" class="glow-teal-btn text-white text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5 self-start sm:self-auto cursor-pointer shadow">
+            <a href="teachers_directory_preview.html" class="mihwar-btn-primary text-xs font-bold px-5 py-2.5 rounded-full inline-flex items-center gap-1.5 shadow">
               <span>تصفح معلمي هذا المنهج</span>
               <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
-          <p class="text-sm text-[#cbd5e1] leading-relaxed max-w-4xl">${c.desc}</p>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-4xl">${c.desc}</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          ${c.tracks.map(t => `
-            <div class="glass-card p-6 flex flex-col justify-between">
+          ${c.tracks.map((t, idx) => `
+            <div class="mihwar-card p-6 flex flex-col justify-between">
               <div>
-                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-[#fef08a]"></span>
-                  <span>${t.name}</span>
-                </h3>
-                <p class="text-xs text-[#cbd5e1] leading-relaxed mb-4">${t.summary}</p>
+                <div class="flex items-center justify-between mb-2">
+                  <h3 class="text-base sm:text-lg font-black text-white flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                    <span>${t.name}</span>
+                  </h3>
+                  <button onclick="openCurriculumModal('${key}', ${idx})" class="text-[11px] font-bold text-cyan-300 hover:text-white bg-cyan-950/70 border border-cyan-500/30 px-3 py-1 rounded-full cursor-pointer transition">
+                    📖 استعراض المنهج
+                  </button>
+                </div>
+                <p class="text-xs text-slate-300 leading-relaxed mb-4">${t.summary}</p>
                 
                 <div class="space-y-2 mb-4">
-                  <span class="text-[11px] font-bold text-[#a7f3d0] block">المواد الأساسية المدعومة:</span>
+                  <span class="text-[11px] font-bold text-cyan-200 block">المواد المقررة:</span>
                   <div class="flex flex-wrap gap-1.5">
-                    ${t.subjects.map(s => `<span class="bg-[#082622] text-[#f3efe6] border border-[#2dd4bf]/25 px-2.5 py-1 rounded-md text-[10.5px] font-semibold">${s}</span>`).join("")}
+                    ${t.subjects.map(s => `<span class="bg-[rgba(7,26,45,0.8)] text-slate-200 border border-[rgba(57,216,240,0.2)] px-2.5 py-1 rounded-md text-[11px] font-semibold">${s}</span>`).join("")}
                   </div>
                 </div>
               </div>
 
-              <div class="border-t border-[#2dd4bf]/20 pt-3 flex items-center justify-between text-xs">
-                <span class="text-[#fef08a] font-medium">الوجهة: ${t.target}</span>
-                <a href="teachers_directory_preview.html" class="text-[#2dd4bf] hover:text-white font-bold flex items-center gap-1 cursor-pointer">
+              <div class="border-t border-[rgba(57,216,240,0.15)] pt-3 flex items-center justify-between text-xs">
+                <span class="text-amber-300 font-medium truncate max-w-[220px]">الوجهة: ${t.target}</span>
+                <a href="teachers_directory_preview.html?subject=${encodeURIComponent(t.subjectCode || 'Physics')}" class="text-cyan-300 hover:text-white font-bold flex items-center gap-1 cursor-pointer">
                   <span>احجز حصة</span>
-                  <span>&larr;</span>
+                  <span>←</span>
                 </a>
               </div>
             </div>
@@ -321,13 +415,41 @@
     }
 
     function selectCurriculum(key, btn) {
-      document.querySelectorAll(".curriculum-tab").forEach(tab => tab.classList.remove("active"));
-      btn.classList.add("active");
+      document.querySelectorAll("button[onclick^='selectCurriculum']").forEach(tab => {
+        tab.className = "curriculum-tab-inactive p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border";
+      });
+      btn.className = "curriculum-tab-active p-4 rounded-2xl flex items-center justify-center gap-2.5 cursor-pointer border";
       renderCurriculum(key);
+    }
+
+    function openCurriculumModal(key, trackIdx) {
+      const track = data[key].tracks[trackIdx];
+      if (!track) return;
+
+      document.getElementById("modalTrackTitle").innerText = track.name;
+      document.getElementById("modalTrackBadge").innerText = data[key].badge;
+      document.getElementById("modalTrackDesc").innerText = track.summary;
+      document.getElementById("modalTrackTarget").innerText = track.target;
+
+      const subCont = document.getElementById("modalTrackSubjects");
+      subCont.innerHTML = track.subjects.map(s => `<span class="bg-cyan-950 text-cyan-200 border border-cyan-400/30 px-3 py-1 rounded-lg text-xs font-bold">${s}</span>`).join("");
+
+      document.getElementById("modalTeacherLink").href = `teachers_directory_preview.html?subject=${encodeURIComponent(track.subjectCode || 'Physics')}`;
+
+      const modal = document.getElementById("curriculumReaderModal");
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCurriculumModal() {
+      const modal = document.getElementById("curriculumReaderModal");
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
     }
 
     // Initial render
     renderCurriculum("uae");
   </script>
+
 </body>
 </html>
