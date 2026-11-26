@@ -127,7 +127,7 @@
   <!-- Hero Section -->
   <section class="py-12 px-6 bg-gradient-to-b from-[rgba(10,48,69,0.7)] to-[rgba(7,26,45,0.9)] border-b border-[rgba(57,216,240,0.18)]">
     <div class="max-w-5xl mx-auto text-center space-y-4">
-      <div class="inline-flex items-center gap-2 bg-sky-600 text-white text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-[#0A3045] to-[#075B68] border border-cyan-400/30 text-cyan-200 text-xs font-extrabold px-4 py-1.5 rounded-full shadow-sm">
         <span>📚 منظومة المعرفة المتكاملة: من الفهم إلى الإدراك والوعي</span>
       </div>
       
@@ -141,7 +141,7 @@
 
       <!-- الأجنحة الكبرى للمكتبة (Main Library Wings) -->
       <div class="pt-6">
-        <span class="text-xs font-black text-sky-800 uppercase tracking-widest block mb-2.5">اختر جناح المكتبة:</span>
+        <span class="text-xs font-black text-cyan-300 font-bold uppercase tracking-widest block mb-2.5">اختر جناح المكتبة:</span>
         <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5">
           <button onclick="setWing('all')" id="wing-all" data-wing="all" class="wing-tab text-xs sm:text-sm font-black px-5 py-2.5 rounded-2xl transition-all cursor-pointer flex items-center gap-2 border bg-gradient-to-r from-[#12BFC1] to-[#075B68] text-white border-cyan-400 shadow-[0_0_20px_rgba(18,191,193,0.35)] scale-105">
             <span>🏛️ كل الأجنحة</span>
@@ -1648,20 +1648,69 @@
     }
 
     function renderSubFilters() {
-      const select = document.getElementById("libLevelSelect");
-      if (!select) return;
+      const container = document.getElementById("subFiltersContainer");
+      if (!container) return;
 
-      const levels = {
-        all: ["الكل"],
-        engineering: ["الكل", "مكتب فني", "تنفيذ وإشراف", "تصميم هيدروليكي", "تسميد وتربة"],
-        nexus: ["الكل", "استدامة", "حوكمة ونظم", "اقتصاد دائري", "طاقة ومياه"],
-        heritage: ["الكل", "فكر وفلسفة", "تراث وفكر", "تاريخ وعمران", "أصول وفقه"],
-        foundational: ["الكل", "تأسيس جامعي", "رياضيات وفيزياء", "بيئة ونظم"]
+      const filtersByWing = {
+        all: [
+          { label: "كل المراجع (30)", query: "" },
+          { label: "الإمام الغزالي (4)", query: "الغزالي" },
+          { label: "م. عمرو سليم (شبكات الري)", query: "عمرو سليم" },
+          { label: "عباس العقاد (5)", query: "العقاد" },
+          { label: "د. مصطفى محمود (4)", query: "مصطفى محمود" },
+          { label: "الإمام الشافعي (3)", query: "الشافعي" },
+          { label: "د. طه حسين (4)", query: "طه حسين" },
+          { label: "المكتب الفني والهندسة", query: "المكتب الفني" },
+          { label: "الاستدامة و WEF", query: "Nexus" }
+        ],
+        engineering: [
+          { label: "كل المناهج الهندسية (5)", query: "" },
+          { label: "م. عمرو سليم (الري واللاندسكيب)", query: "عمرو سليم" },
+          { label: "المكتب الفني وجداول الـ BOQ", query: "المكتب الفني" },
+          { label: "محطات الضخ واختيار المضخات", query: "الضخ" },
+          { label: "كيمياء التربة ومحاليل المياه", query: "التربة" }
+        ],
+        nexus: [
+          { label: "كل أبحاث الاستدامة (2)", query: "" },
+          { label: "ترابط WEF Nexus والنظم", query: "ترابط" },
+          { label: "تقييم دورة الحياة LCA والمحاسبة الكربونية", query: "دورة الحياة" }
+        ],
+        heritage: [
+          { label: "كل مؤلفات التراث (20)", query: "" },
+          { label: "الإمام الغزالي (الإحياء، المنقذ، التهافت، أيها الولد)", query: "الغزالي" },
+          { label: "عباس العقاد (عبقرية محمد، عمر، التفكير، أنا)", query: "العقاد" },
+          { label: "د. مصطفى محمود (الشك للإيمان، صديقي الملحد، النسبية)", query: "مصطفى محمود" },
+          { label: "الإمام الشافعي (الرسالة، الديوان، الأم)", query: "الشافعي" },
+          { label: "د. طه حسين (الأيام، الشعر الجاهلي، حديث الأربعاء)", query: "طه حسين" }
+        ],
+        foundational: [
+          { label: "المناهج التأسيسية كاملة (3)", query: "" },
+          { label: "الفيزياء المتقدمة وكيرشوف", query: "الفيزياء" },
+          { label: "التفاضل والتكامل وحساب المساحات", query: "التفاضل" },
+          { label: "الكيمياء العضوية والهيدروكربونات", query: "الكيمياء" }
+        ]
       };
 
-      const opts = levels[activeWing] || levels.all;
-      select.innerHTML = opts.map(l => `<option value="${l === 'الكل' ? 'all' : l}">${l === 'الكل' ? 'جميع المستويات والتخصصات' : l}</option>`).join("");
-      activeLevel = "all";
+      const list = filtersByWing[activeWing] || filtersByWing.all;
+      
+      container.innerHTML = list.map((item, idx) => `
+        <button onclick="applySubFilter('${item.query}', this)" class="subfilter-pill text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all cursor-pointer border ${idx === 0 ? 'bg-gradient-to-r from-[#12BFC1] to-[#075B68] text-white border-cyan-400 shadow-md scale-105' : 'bg-[#020B16]/85 text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white'}">
+          ${item.label}
+        </button>
+      `).join("");
+    }
+
+    function applySubFilter(query, btn) {
+      document.querySelectorAll('.subfilter-pill').forEach(p => {
+        p.className = 'subfilter-pill text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all cursor-pointer border bg-[#020B16]/85 text-slate-300 border-cyan-400/20 hover:border-cyan-400 hover:text-white';
+      });
+      if (btn) {
+        btn.className = 'subfilter-pill text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all cursor-pointer border bg-gradient-to-r from-[#12BFC1] to-[#075B68] text-white border-cyan-400 shadow-md scale-105';
+      }
+
+      const searchInput = document.getElementById('libSearchInput');
+      if (searchInput) searchInput.value = query;
+      filterData();
     }
 
     function renderBooks(data) {
