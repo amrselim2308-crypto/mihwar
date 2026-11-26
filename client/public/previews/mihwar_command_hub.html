@@ -113,6 +113,147 @@
       }
     });
 
+
+    // INTERACTIVE MATRIX DATA & LOGIC
+    const matrixData = {
+      math: {
+        title: "الرياضيات والتفاضل والتكامل (Calculus & Mathematical Modeling)",
+        axiom: "التفاضل يصف معدل تغير اللحظة، والتكامل يجمع تلك اللحظات المتناهية في الصغر لبناء الواقع المستمر.",
+        formula: "\\frac{df}{dt} = \\lim_{\\Delta t \\to 0} \\frac{f(t+\\Delta t) - f(t)}{\\Delta t} \\quad \\& \\quad \\int_{a}^{b} f(x) dx",
+        relations: [
+          { name: "الهندسة الهيدروليكية", desc: "اشتقاق تغيرات الضغط والفاقد مع تباعد المخارج" },
+          { name: "الفيزياء الديناميكية", desc: "السرعة والتسارع كمشتقات أولى وثانية للمسافة" },
+          { name: "الذكاء الاصطناعي", desc: "خوارزميات الانحدار التدريجي (Gradient Descent) في شبكات التعلم العميق" }
+        ],
+        fieldApp: "تصميم أنظمة التغذية التلقائية في محطات التحلية وحساب تدفقات مخرات السيول في المدن الجديدة.",
+        link: "curricula_guide_preview.html",
+        linkText: "استعراض مسار التفاضل والتكامل في المناهج"
+      },
+      hydraulic: {
+        title: "الهندسة والهيدروليكا التطبيقية (Applied Hydraulic Engineering)",
+        axiom: "شبكة الري ليست مجرد مواسير مدفونة تضخ الماء، بل هي ميزان هيدروليكي دقيق يتساوى فيه عطش النبات الأول مع الأخير حين يتساوى فرق الضغط بينهما بالمعادلة.",
+        formula: "h_f = 10.67 \\cdot L \\cdot Q^{1.852} \\cdot C^{-1.852} \\cdot D^{-4.87} \\cdot F",
+        relations: [
+          { name: "الفيزياء", desc: "قانون حفظ الطاقة ومعادلة برنولي بين نقاط السريان" },
+          { name: "الاستدامة والري", desc: "معامل الانتظام الإروائي (Emission Uniformity EU) لترشيد المياه" },
+          { name: "التكلفة والمكتب الفني", desc: "تحسين أقطار المواسير لتقليل تكلفة رأس المال ومصاريف الطاقة" }
+        ],
+        fieldApp: "مشاريع اللاندسكيب الاستراتيجية بدبي (مثل توازن شبكات المجمعات السكنية) ومزارع الدلتا الجديدة بمصر.",
+        link: "library_preview.html?code=APP-201",
+        linkText: "قراءة مخطوطة الحسابات الهيدروليكية المعتمدة (APP-201)"
+      },
+      physics: {
+        title: "فيزياء الحركة والموائع (Fluid Dynamics & Mechanics)",
+        axiom: "المادة والطاقة لا تفنيان؛ كل هبوط في الضغط هو تحول للطاقة إلى سرعة أو احتكاك يتطلب تعويضاً محسوباً.",
+        formula: "P_1 + \\frac{1}{2} \\rho v_1^2 + \\rho g h_1 = P_2 + \\frac{1}{2} \\rho v_2^2 + \\rho g h_2 + \\Delta P_{loss}",
+        relations: [
+          { name: "الهندسة الميكانيكية", desc: "تصميم عنفات المضخات ومحابس تخفيف الضغط (PRVs)" },
+          { name: "الطاقة والكهرباء", desc: "حساب قدرة مواتير الديزل والكهرباء Brake Horsepower" }
+        ],
+        fieldApp: "حماية خطوط الطرد الرئيسية من الانهيار الناتج عن ظاهرة المطرقة المائية (Water Hammer).",
+        link: "curricula_guide_preview.html",
+        linkText: "استعراض مسار الفيزياء التطبيقية"
+      },
+      chemistry: {
+        title: "الكيمياء الحركية وروابط الطاقة (Kinetic Chemistry & Bonds)",
+        axiom: "الكيمياء ليست حفظ معادلات جافة، بل فهمٌ لألفة الإلكترونات، وتوازن درجات الحموضة، وكيف يُحدث تغير أيون واحد فارقاً في خصوبة التربة أو صلاحية المياه.",
+        formula: "pH = -\\log[H^+] \\quad \\& \\quad SAR = \\frac{Na^+}{\\sqrt{\\frac{Ca^{2+} + Mg^{2+}}{2}}}",
+        relations: [
+          { name: "الزراعة والتربة", desc: "حساب نسبة امتزاز الصوديوم (SAR) وجودة مياه الري" },
+          { name: "معالجة المياه", desc: "الترسيب والتخثر وأغشية التناضح العكسي (Reverse Osmosis)" }
+        ],
+        fieldApp: "معالجة مياه الآبار الجوفية المالحة واستخدامها بأمان في زراعة النباتات المقاومة للملوحة.",
+        link: "curricula_guide_preview.html",
+        linkText: "استعراض مسار دال الكيمياء"
+      },
+      nexus: {
+        title: "الاستدامة وترابط الموارد (Water-Energy-Food WEF Nexus)",
+        axiom: "لا يمكن حل أزمة الغذاء بمعزل عن الماء، ولا استخراج الماء دون طاقة؛ المنظومة الناجحة هي التي تُدار كدورة مغلقة تعيد استثمار كل فاقد.",
+        formula: "\\eta_{system} = \\frac{E_{output} + W_{recovered} + F_{yield}}{Input_{Total}}",
+        relations: [
+          { name: "الاقتصاد الدائري", desc: "إعادة تدوير المياه الرمادية واستخلاص الأسمدة العضوية" },
+          { name: "الطاقة المتجددة", desc: "تشغيل محطات الضخ بأنظمة الطاقة الشمسية الكهروضوئية" }
+        ],
+        fieldApp: "مجمعات الزراعة المغلقة الذكية والمدن الخضراء المستدامة في الخليج والشرق الأوسط.",
+        link: "library_preview.html#nexus",
+        linkText: "استعراض جناح الاستدامة والـ Nexus"
+      },
+      heritage: {
+        title: "الفكر الإنساني وأصول المعرفة (Human Heritage & Principles)",
+        axiom: "الوعي بالماضي ليس استرجاعاً لأحداثه، بل استلهامٌ لجوهر الحكمة؛ فالقوانين التي تُقيم العدل وتُنظم المجتمعات لا تختلف في جوهرها عن القوانين التي تضبط حركة الأفلاك.",
+        formula: "العدل = ميزان الحقوق + وضوح الواجبات + استدامة الأثر",
+        relations: [
+          { name: "فلسفة القيادة", desc: "إدارة الموارد وبناء المؤسسات (نموذج عبقرية عمر للعقاد)" },
+          { name: "أصول الفهم", desc: "قواعد الاستدلال المنطقي وتكامل الأدلة (الرسالة للشافعي)" }
+        ],
+        fieldApp: "بناء العقلية النقدية والتحليلية لدى الطلاب لتجاوز مرحلة الحفظ والتلقين إلى القيادة والإبداع.",
+        link: "library_preview.html",
+        linkText: "استعراض موسوعة روائع التراث الإنساني"
+      }
+    };
+
+    function selectMatrixTab(key, btn) {
+      document.querySelectorAll('#matrixSelectorTabs .matrix-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+
+      const data = matrixData[key] || matrixData.math;
+      const card = document.getElementById('matrixDetailCard');
+      if (!card) return;
+
+      card.innerHTML = `
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[rgba(57,216,240,0.15)] pb-4">
+          <div>
+            <span class="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-400/30 uppercase">THE CORE INSIGHT</span>
+            <h4 class="text-lg sm:text-xl font-black text-white mt-1">${data.title}</h4>
+          </div>
+          <a href="${data.link}" class="btn-glow-cyan text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-1.5 self-start md:self-auto">
+            <span>${data.linkText}</span>
+            <span>←</span>
+          </a>
+        </div>
+
+        <div class="p-4 rounded-xl bg-amber-500/10 border-r-4 border-amber-400 text-amber-200 text-xs sm:text-sm font-semibold italic leading-relaxed">
+          💡 "${data.axiom}"
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch pt-1">
+          <!-- Relations Column -->
+          <div class="lg:col-span-7 space-y-2">
+            <span class="text-xs font-black text-cyan-400 uppercase tracking-wider block">🔗 شبكة العلاقات بالعلوم الأخرى:</span>
+            <div class="space-y-2">
+              ${data.relations.map(r => `
+                <div class="p-2.5 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 flex items-start gap-2.5 text-xs">
+                  <span class="text-cyan-300 font-mono">✦</span>
+                  <div>
+                    <strong class="text-white font-bold">${r.name}:</strong>
+                    <span class="text-slate-300 text-[11px] mr-1">${r.desc}</span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Field Application Column -->
+          <div class="lg:col-span-5 flex flex-col justify-between p-4 rounded-xl bg-[rgba(2,11,22,0.7)] border border-cyan-400/20">
+            <div>
+              <span class="text-xs font-black text-emerald-400 uppercase tracking-wider block mb-1.5">🛠️ التطبيق الميداني الحقيقي:</span>
+              <p class="text-xs text-slate-300 leading-relaxed font-medium">
+                ${data.fieldApp}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-[rgba(57,216,240,0.12)] text-[11px] text-cyan-300/80 font-mono">
+              معتمد ومُدمج في مسارات مِحـوَر التعليمية
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Initialize Matrix with math tab on load
+    window.addEventListener('DOMContentLoaded', () => {
+      selectMatrixTab('math', document.querySelector('#matrixSelectorTabs .matrix-pill'));
+    });
+
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -246,7 +387,26 @@
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-  </style>
+  
+    .matrix-pill {
+      background: rgba(10, 48, 69, 0.6);
+      border: 1.2px solid rgba(57, 216, 240, 0.22);
+      color: #94A3B8;
+      cursor: pointer;
+    }
+    .matrix-pill:hover {
+      background: rgba(10, 48, 69, 0.85);
+      color: #ffffff;
+      border-color: rgba(57, 216, 240, 0.45);
+    }
+    .matrix-pill.active {
+      background: linear-gradient(135deg, rgba(18, 191, 193, 0.25) 0%, rgba(10, 48, 69, 0.95) 100%);
+      border-color: #39D8F0;
+      color: #F0FDF4;
+      box-shadow: 0 0 16px rgba(18, 191, 193, 0.35);
+    }
+
+</style>
   <link rel="stylesheet" href="mihwar_design_system.css">
 </head>
 <body class="mihwar-mesh-bg mihwar-dark-theme command-mesh-bg selection:bg-cyan-900 selection:text-cyan-200">
