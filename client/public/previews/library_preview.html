@@ -940,6 +940,7 @@
     // 2. MANUSCRIPT DATABASE (Classical Heritage + Applied)
     // -------------------------------------------------------------
     const manuscriptDatabase = {
+
       // -----------------------------------------------------------
       // BOOK 5: إحياء علوم الدين - الإمام أبو حامد الغزالي
       // -----------------------------------------------------------
@@ -947,8 +948,6 @@
         isFree: true,
         fullContent: `
 <div class="space-y-6 text-slate-200 font-sans" dir="rtl">
-  
-  <!-- Endowment Declaration Banner -->
   <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40 shadow-md">
     <div class="flex items-center justify-between flex-wrap gap-2">
       <div class="flex items-center gap-2">
@@ -964,10 +963,9 @@
     </div>
   </div>
 
-  <!-- Book Header Profile -->
   <div class="border-b border-cyan-400/20 pb-4">
     <div class="flex items-center justify-between flex-wrap gap-2">
-      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المرجع: LIT-05 · تصنيف: تراث وفقه وسلوك</span>
+      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المرجع: LIT-05 · تصنيف: تزكية وفقه وسلوك</span>
       <span class="text-xs font-bold text-emerald-300 bg-emerald-950/80 border border-emerald-400/30 px-3 py-1 rounded-full">
         4 أرباع كاملة · 40 كتاباً جامعاً
       </span>
@@ -976,81 +974,383 @@
     <p class="text-xs sm:text-sm text-cyan-200 mt-1 font-semibold">تأليف: حجة الإسلام الإمام أبو حامد محمد بن محمد الغزالي الطوسي (ت 505 هـ)</p>
   </div>
 
-  <!-- The 4 Quarters Structure -->
   <div class="space-y-3">
     <strong class="text-sm font-black text-white block flex items-center gap-2">
       <span class="text-cyan-400">🏛️</span> الهيكل الجامع لأرباع الإحياء الأربعة:
     </strong>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-      <!-- Quarter 1 -->
       <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
-        <div class="flex items-center justify-between">
-          <strong class="text-cyan-300 font-black text-xs">١. ربع العبادات (١٠ كتب)</strong>
-          <span class="text-[10px] text-slate-400 font-mono">طهارة الباطن والظاهر</span>
-        </div>
+        <strong class="text-cyan-300 font-black text-xs block">١. ربع العبادات (١٠ كتب)</strong>
         <p class="text-[11px] text-slate-300 leading-relaxed">
-          كتاب العلم وفضله وفرض طلبه، قواعد العقائد، أسرار الطهارة، أسرار الصلاة وأهميتها، أسرار الزكاة، أسرار الصوم، أسرار الحج، آداب تلاوة القرآن، الأذكار والدعوات، وترتيب الأوراد وتفصيل إحياء الليل.
+          كتاب العلم وفضله وفرض طلبه، قواعد العقائد، أسرار الطهارة، الصلاة، الزكاة، الصوم، الحج، آداب تلاوة القرآن، الأذكار والدعوات، وترتيب الأوراد.
         </p>
       </div>
-
-      <!-- Quarter 2 -->
       <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
-        <div class="flex items-center justify-between">
-          <strong class="text-cyan-300 font-black text-xs">٢. ربع العادات (١٠ كتب)</strong>
-          <span class="text-[10px] text-slate-400 font-mono">معاملات وأخلاق المجتمع</span>
-        </div>
+        <strong class="text-cyan-300 font-black text-xs block">٢. ربع العادات (١٠ كتب)</strong>
         <p class="text-[11px] text-slate-300 leading-relaxed">
-          آداب الأكل والضيافة، آداب النكاح وكسر الشهوة، آداب الكسب والمعاش والحلال والحرام، آداب الصحبة وحقوق الأخوة، آداب العزلة، آداب السفر، السماع والوجد، الأمر بالمعروف والنهي عن المنكر، وآداب المعيشة وأخلاق النبوة.
+          آداب الأكل والضيافة، النكاح، الكسب والمعاش والحلال والحرام، الصحبة وحقوق الأخوة، العزلة، السفر، السماع، الأمر بالمعروف، وأخلاق النبوة.
         </p>
       </div>
-
-      <!-- Quarter 3 -->
       <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
-        <div class="flex items-center justify-between">
-          <strong class="text-amber-300 font-black text-xs">٣. ربع المهلكات (١٠ كتب)</strong>
-          <span class="text-[10px] text-slate-400 font-mono">تشخيص علل النفوس</span>
-        </div>
+        <strong class="text-amber-300 font-black text-xs block">٣. ربع المهلكات (١٠ كتب)</strong>
         <p class="text-[11px] text-slate-300 leading-relaxed">
-          شرح عجائب القلب ومداخله، رياضة النفس وتهذيب الأخلاق، كسر شهوتي البطن والفرج، آفات اللسان العشرون، ذم الغضب والحقد والحسد، ذم الدنيا وحقيقتها، ذم البخل وحب المال، ذم الجاه والرياء، ذم الكبر والعجب، وذم الغرور ومراتبه.
+          شرح عجائب القلب، رياضة النفس، كسر شهوتي البطن والفرج، آفات اللسان العشرون، الغضب والحقد والحسد، ذم الدنيا، ذم البخل، ذم الجاه والرياء، ذم الكبر، وذم الغرور.
         </p>
       </div>
-
-      <!-- Quarter 4 -->
       <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 space-y-2">
-        <div class="flex items-center justify-between">
-          <strong class="text-emerald-300 font-black text-xs">٤. ربع المنجيات (١٠ كتب)</strong>
-          <span class="text-[10px] text-slate-400 font-mono">مدارج السالكين للحق</span>
-        </div>
+        <strong class="text-emerald-300 font-black text-xs block">٤. ربع المنجيات (١٠ كتب)</strong>
         <p class="text-[11px] text-slate-300 leading-relaxed">
-          كتاب التوبة وشروطها، الصبر والشكر، الخوف والرجاء، الفقر والزهد، التوحيد والتوكل، المحبة والشوق والأنس والرضا، النية والصدق والإخلاص، المراقبة والمحاسبة، التفكر، وذكر الموت وما بعده وأهوال القيامة.
+          التوبة وشروطها، الصبر والشكر، الخوف والرجاء، الفقر والزهد، التوحيد والتوكل، المحبة والشوق، النية والصدق والإخلاص، المراقبة والمحاسبة، التفكر، وذكر الموت.
         </p>
       </div>
     </div>
   </div>
 
-  <!-- Direct Classical Excerpt from Kitab al-Ilm -->
   <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 space-y-3 font-serif">
     <div class="flex items-center justify-between border-b border-cyan-400/20 pb-2">
       <strong class="text-xs font-black text-amber-300 font-sans">📖 نص من كتاب العلم (الباب الأول: في فضل العلم والتعليم والتعلّم):</strong>
       <span class="text-[10px] text-slate-400 font-mono">نص المخطوط الأصلي</span>
     </div>
     <div class="p-3 rounded-xl bg-cyan-950/20 border-r-4 border-cyan-400 text-xs sm:text-sm text-slate-100 leading-loose">
-      «... اعلم أن العلم أشرف ما يرغب فيه الراغب، وأفضل ما يكتسبه الكاسب؛ إذ هو الموصل إلى سعادة الأبد، والوسيلة إلى القرب من رب العالمين. وقد قال رسول الله ﷺ: "من سلك طريقاً يلتمس فيه علماً سلك الله به طريقاً إلى الجنة، وإن الملائكة لتضع أجنحتها رضاً لطالب العلم".<br><br>
-      ثم اعلم أن مثل العالم بعلمه كمثل السراج يضيء لغيره ولا يحترق في نفسه إذا راعى الإخلاص؛ وإنما هلك من هلك من العلماء لما طلبوا الدنيا بالدين، وجعلوا العلم سلماً إلى نيل المراتب والتفاخر على الأقران. فالطالب الحقيقي هو الذي يتعلم ليزكي نفسه، ويرفع الجهل عن عقله، ويعمل بما علم ليكون علمه حجة له لا عليه...»
+      «... اعلم أن العلم أشرف ما يرغب فيه الراغب، وأفضل ما يكتسبه الكاسب؛ إذ هو الموصل إلى سعادة الأبد، والوسيلة إلى القرب من رب العالمين... واعلم أن مثل العالم بعلمه كمثل السراج يضيء لغيره ولا يحترق في نفسه إذا راعى الإخلاص؛ فالطالب الحقيقي هو الذي يتعلم ليزكي نفسه، ويرفع الجهل عن عقله، ويعمل بما علم ليكون علمه حجة له لا عليه...»
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 6: المنقذ من الضلال والمفصح بالأحوال - الإمام أبو حامد الغزالي
+      // -----------------------------------------------------------
+      6: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">السيرة الفكرية والشك المنهجي نحو اليقين</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-06</span>
     </div>
   </div>
 
-  <!-- Mihwar Academic Synthesis -->
-  <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.5)] border border-cyan-400/20 space-y-2">
-    <strong class="text-xs font-bold text-cyan-300 block">✨ ميثاق التعلم في منصة مِحور المستلهم من فكر الغزالي:</strong>
-    <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside">
-      <li><strong>أسبقية التزكية والفهم:</strong> لا قيمة لأي علم هندسي أو تقني أو ذكاء اصطناعي إن لم يكن محكوماً بضمير مهني وأخلاقي ناصع.</li>
-      <li><strong>التدرج المعرفي:</strong> الانتقال من حفظ المعادلات الصماء إلى استيعاب فلسفة الظاهرة وأثرها الميداني.</li>
-      <li><strong>مسؤولية المتعلم:</strong> العلم أمانة تُستثمر لعمارة الأرض وإصلاح حياة الناس والمجتمعات.</li>
-    </ul>
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">المنقذ من الضلال والمفصح بالأحوال</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: الإمام أبو حامد الغزالي — خلاصة التجربة الروحية والمعرفية</p>
   </div>
 
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 مسارات البحث عن الحقيقة في المنقذ:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. مدخل الشك المنهجي:</strong> إسقاط الثقة بالحواس والبديهيات العقلية للوصول إلى اليقين المطلق.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. محاكمة المتكلمين والباطنية:</strong> كشف حدود علم الكلام ونقد فكرة التعليم المغلق عند الباطنية.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. تفكيك الفلسفة والمنطق:</strong> فرز العلوم الرياضية والطبيعية عن الإلهيات ومواطن الزلل الفلسفي.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. طريق الذوق واليقين:</strong> الانكشاف القلبي ونور النبوة، والانتقال من العلم بالشيء إلى تذوقه والتحقق به.
+      </div>
+    </div>
+  </div>
+
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-relaxed text-slate-100 font-serif">
+    «... فأعضل هذا الداء ودام قريباً من شهرين، أنا فيهما على مذهب السفسطة بحكم الحال لا بحكم النطق والمقال؛ حتى شفى الله تعالى من ذلك المرض، وعادت النفس إلى الصحة والاعتدال، ولم يكن ذلك بنظم دليل وترتيب كلام، بل بنور قذفه الله تعالى في الصدر، وذلك النور هو مفتاح أكثر المعارف...»
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 7: تهافت الفلاسفة - الإمام الغزالي
+      // -----------------------------------------------------------
+      7: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">نقد المنطق الأرسطي وتأسيس نظرية السببية</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-07</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">تهافت الفلاسفة</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: الإمام أبو حامد الغزالي — 340 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 المسائل العشرين ونظرية السببية:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. نقد قدم العالم:</strong> إثبات حدوث الكون بالدليل العقلي والرياضي الصارم.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. نظرية الاقتران لا العلية:</strong> السببية اقتران عادي متكرر بمشيئة الخالق، وليست ضرورة ذاتية كاحتراق القطن بملامسة النار.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. إحاطة العلم الإلهي:</strong> إثبات علم الله التام بالكليات والجزئيات ودقائق الذرات.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. البعث والمعاد:</strong> إثبات حشر الأجساد والأرواح وبطلان قصر الثواب والعقاب على التجرد العقلي.
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 8: أيها الولد (رسالة المتعلم) - الإمام الغزالي
+      // -----------------------------------------------------------
+      8: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">الوصية الذهبية لإصلاح النية وقيمة الوقت والعمل</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-08</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">أيها الولد (رسالة إلى طالب العلم)</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: الإمام أبو حامد الغزالي</p>
+  </div>
+
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-relaxed text-slate-100 font-serif">
+    «... أيها الولد، كم من ليلة أحييتها بتكرار العلم ومطالعة الكتب، وحرمت على نفسك النوم! فلا أعلم ما كان الباعث لك؟ إن كانت نيتك نيل عرض الدنيا وجذب حطامها والمباهاة بين الأقران، فويل لك ثم ويل لك! وإن كان قصدك إحياء شريعة النبي ﷺ وتهذيب أخلاقك وكسر النفس الأمارة بالسوء، فطوبى لك ثم طوبى لك... أيها الولد: العلم بلا عمل جنون، والعمل بغير علم لا يكون!...»
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 9: الرسالة في أصول الفقه - الإمام محمد بن إدريس الشافعي
+      // -----------------------------------------------------------
+      9: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">أول كتاب كُتب في علم أصول الفقه ومناهج الاستدلال</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-09</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">الرسالة في أصول الفقه</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: الإمام أبو عبد الله محمد بن إدريس الشافعي المطلبي (ت 204 هـ)</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 القواعد التأسيسية لفلسفة التشريع في الرسالة:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. مراتب البيان الخمسة:</strong> نص القرآن المجرد، البيان بالسنة المؤكدة، البيان بالسنة المفسرة للمجمل، والبيان بالاجتهاد والقياس.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. حجية خبر الآحاد:</strong> إرساء القواعد العلمية الصارمة لتوثيق الرواة وقبول الحديث الصحيح.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. الناسخ والمنسوخ:</strong> فقه السياق والترتيب الزمني لنزول التشريعات.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. ضوابط القياس:</strong> ربط الفرع بالأصل بعلة جامعة مستنبطة، وإبطال الاستحسان المبني على الهوى.
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 10: ديوان الإمام الشافعي
+      // -----------------------------------------------------------
+      10: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">روائع الحكمة والأخلاق وعزة النفس</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-10</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">ديوان الإمام الشافعي</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">جمع وتحقيق درر الحكمة الشعرية للإمام الشافعي</p>
+  </div>
+
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-loose text-slate-100 font-serif space-y-3">
+    <p>دَعِ الأَيَّامَ تَفْعَلُ مَا تَشَاءُ ... وَطِبْ نَفْساً إِذَا حَكَمَ القَضَاءُ<br>
+    وَلا تَجْزَعْ لِحَادِثَةِ اللَّيَالِي ... فَمَا لِحَوَادِثِ الدُّنْيَا بَقَاءُ<br>
+    وَكُنْ رَجُلاً عَلَى الأَهْوَالِ جَلْداً ... وَشِيمَتُكَ السَّمَاحَةُ وَالوَفَاءُ</p>
+    <hr class="border-cyan-400/20 my-2">
+    <p>تَعَلَّمْ فَلَيْسَ المَرْءُ يُولَدُ عَالِماً ... وَلَيْسَ أَخُو عِلْمٍ كَمَنْ هُوَ جَاهِلُ<br>
+    وَإِنَّ كَبِيرَ القَوْمِ لا عِلْمَ عِنْدَهُ ... صَغِيرٌ إِذَا التَفَّتْ عَلَيْهِ المَحَافِلُ</p>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 16: عبقرية محمد ﷺ - عباس محمود العقاد
+      // -----------------------------------------------------------
+      16: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">تحليل العبقرية الإنسانية والقيادية للنبي الخاتم</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-16</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">عبقرية محمد ﷺ</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: عملاق الفكر العربي عباس محمود العقاد — 240 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 وجوه العبقرية في سيرة النبي الأعظم:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. عبقرية الداعية:</strong> مواءمة الخطاب مع طبائع النفوس وتحويل الأعراب إلى أمة قائدة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. العبقرية العسكرية:</strong> الشجاعة الثابتة، التخطيط الاستراتيجي، وحقن الدماء عند فتح مكة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. العبقرية السياسية:</strong> وثيقة المدينة كأول دستور مدني يضمن حقوق المواطنة والتعايش.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. العبقرية الإنسانية:</strong> الصدق المطلق، الرحمة بالضعفاء، والتواضع في ذروة النصر.
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 17: عبقرية عمر بن الخطاب - عباس محمود العقاد
+      // -----------------------------------------------------------
+      17: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">فلسفة العدل، بناء الدولة، وحقوق الإنسان</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-17</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">عبقرية عمر بن الخطاب</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: عباس محمود العقاد — 220 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 مفاتيح شخصية الفاروق:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. الجندي والعدل المحض:</strong> القوة التي تخضع للحق بلا تردد، ومحاسبة الولاة وأولياء العهد.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. تأسيس الإدارة المدنية:</strong> تدوين الدواوين، تنظيم البريد، التقويم الهجري، وإنشاء بيت المال.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. فقه المصلحة والواقع:</strong> اجتهادات عام الرمادة، وإيقاف سهم المؤلفة قلوبهم لتبدل العلة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. الإعلان الخالد للحرية:</strong> «متى استعبدتم الناس وقد ولدتهم أمهاتهم أحراراً؟».
+      </div>
+    </div>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 18: التفكير فريضة إسلامية - عباس محمود العقاد
+      // -----------------------------------------------------------
+      18: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">إلزامية العقل والتدبر في المنظور القرآني</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-18</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">التفكير فريضة إسلامية</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: عباس محمود العقاد — 192 صفحة</p>
+  </div>
+
+  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-relaxed text-slate-100 font-serif">
+    «... إن القرآن الكريم لا يذكر العقل إلا في مقام التعظيم والحث على العمل به؛ فالإسلام لا يكتفي بإباحة التفكير، بل يوجبه ويجعله فريضة دينية محكمة على كل مسلم... ولا يقبل من الإنسان أن يعطل عقله بالتقليد الأعمى للموروثات أو اتباع الظن والهوى...»
+  </div>
 </div>
 `
       },
@@ -1097,9 +1397,51 @@
       </div>
     </div>
   </div>
+</div>
+`
+      },
 
-  <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/30 text-xs sm:text-sm leading-relaxed text-slate-200">
-    «... إن الشك ليس عيباً إذا كان وسيلة للمعرفة والبحث عن الحق؛ وإنما العيب هو التعصب للجهل وإنكار الدليل العقلي الواضح. الكون كله ينبض بنظام رياضي محكم يستحيل أن يكون وليد صدفة عشوائية...»
+      // -----------------------------------------------------------
+      // BOOK 2: رحلتي من الشك إلى الإيمان - د. مصطفى محمود
+      // -----------------------------------------------------------
+      2: {
+        isFree: true,
+        fullContent: `
+<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
+  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📜</span>
+        <div>
+          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
+          <span class="text-[11px] text-slate-300">رحلة البحث عن الحقيقة عبر العلم والتأمل</span>
+        </div>
+      </div>
+      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-02</span>
+    </div>
+  </div>
+
+  <div class="border-b border-cyan-400/20 pb-4">
+    <h3 class="text-xl font-black text-white">رحلتي من الشك إلى الإيمان</h3>
+    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: د. مصطفى محمود — 160 صفحة</p>
+  </div>
+
+  <div class="space-y-3">
+    <strong class="text-sm font-black text-white block">📑 محطات الرحلة الفكرية الثمانية:</strong>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">١. النبأ العظيم:</strong> معضلة الوجود، ولماذا نحن هنا؟
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٢. الجسد والروح:</strong> تشريح الخلية الحية وسر الوعي الذي يتجاوز المادة.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٣. العدل الأزلي:</strong> ميزان القسط الكوني وحتمية الحساب العادل.
+      </div>
+      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
+        <strong class="text-cyan-300 block mb-1">٤. الوصول إلى النور:</strong> سكون النفس بالطمأنينة بعد عواصف القلق الفلسفي.
+      </div>
+    </div>
   </div>
 </div>
 `
@@ -1152,63 +1494,16 @@
       },
 
       // -----------------------------------------------------------
-      // BOOK 6: مقدمة ابن خلدون
-      // -----------------------------------------------------------
-      6: {
-        isFree: true,
-        fullContent: `
-<div class="space-y-6 text-slate-200 font-sans" dir="rtl">
-  <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 via-[#0A3045] to-[#020B16] border border-emerald-400/40">
-    <div class="flex items-center justify-between flex-wrap gap-2">
-      <div class="flex items-center gap-2">
-        <span class="text-xl">📜</span>
-        <div>
-          <h4 class="text-sm font-black text-emerald-300">وقف معرفي حر ومجاني 100%</h4>
-          <span class="text-[11px] text-slate-300">تأسيس علم الاجتماع وفلسفة العمران البشري</span>
-        </div>
-      </div>
-      <span class="text-xs font-mono font-bold text-emerald-200 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-400/30">LIT-06</span>
-    </div>
-  </div>
-
-  <div class="border-b border-cyan-400/20 pb-4">
-    <h3 class="text-xl font-black text-white">مقدمة ابن خلدون</h3>
-    <p class="text-xs text-cyan-200 mt-1 font-semibold">تأليف: العلامة عبد الرحمن بن محمد بن خلدون (ت 808 هـ) — 980 صفحة</p>
-  </div>
-
-  <div class="space-y-3">
-    <strong class="text-sm font-black text-white block">📑 النظريات التأسيسية في فكر ابن خلدون:</strong>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
-        <strong class="text-cyan-300 block mb-1">١. نظرية العصبية:</strong> الرابطة الاجتماعية كعنصر حاسم في نشأة الدول وتماسكها.
-      </div>
-      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
-        <strong class="text-cyan-300 block mb-1">٢. أطوار الدولة الخمسة:</strong> الظفر، الاستبداد، الفراغ والدعة، القنوع، والإسراف والهرم.
-      </div>
-      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
-        <strong class="text-cyan-300 block mb-1">٣. قوانين الجباية والضرائب:</strong> "في أول الدولة تكون الضرائب قليلة والإيرادات كثيرة، وفي آخرها تكون الضرائب فادحة والإيرادات ضئيلة".
-      </div>
-      <div class="p-3 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20">
-        <strong class="text-cyan-300 block mb-1">٤. طبائع العمران والصنائع:</strong> تقسيم العمل وتأثير الجغرافيا والبيئة على سلوك الشعوب.
-      </div>
-    </div>
-  </div>
-</div>
-`
-      },
-
-      // -----------------------------------------------------------
       // BOOK 101: دبلومة شبكات الري الذكية والذكاء الاصطناعي - م. عمرو سليم
       // -----------------------------------------------------------
       101: {
         isFree: false,
         fullContent: `
 <div class="space-y-5 text-slate-200 font-sans" dir="rtl">
-  
   <div class="border-b border-cyan-400/20 pb-3 mb-4">
     <div class="flex items-center justify-between flex-wrap gap-2">
       <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المنهج: APP-201 · معتمد للعام 2026</span>
-      <span class="text-xs font-bold text-amber-300 bg-amber-950/80 border border-amber-400/30 px-3 py-1 rounded-full">
+      <span class="text-xs font-bold text-amber-300 bg-amber-950/80 border border-amber-400/30 px-3 py-1 rounded-full font-mono">
         دبلومة مهنية متقدمة مع شيتات الإكسيل
       </span>
     </div>
@@ -1226,16 +1521,16 @@
   <div class="space-y-2.5">
     <strong class="text-white text-xs font-bold block">📑 الوحدات التدريبية المعتمدة في هذا المنهج:</strong>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-300">
-      <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
+      <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
         ✓ <strong>الوحدة الأولى:</strong> هيدروليكا خطوط الأنابيب وفواقد الاحتكاك والمحابس.
       </div>
-      <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
+      <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
         ✓ <strong>الوحدة الثانية:</strong> حسابات المناوبات وقطاعات الري المتزامنة.
       </div>
-      <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
+      <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
         ✓ <strong>الوحدة الثالثة:</strong> نمذجة شبكات الري والمحاكاة التفاعلية عبر EPANET.
       </div>
-      <div class="p-2.5 rounded-lg bg-[rgba(2,11,22,0.6)] border border-cyan-400/15">
+      <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
         ✓ <strong>الوحدة الرابعة:</strong> شيتات الإكسيل التفاعلية لحساب أقطار المواسير وتكلفة المشروع.
       </div>
     </div>
@@ -1250,10 +1545,66 @@
       💳 الحصول على المنهج المعتمد والملفات الآن
     </button>
   </div>
+</div>
+`
+      },
 
+      // -----------------------------------------------------------
+      // BOOK 102: المكتب الفني وحصر الكميات والـ BOQ
+      // -----------------------------------------------------------
+      102: {
+        isFree: false,
+        fullContent: `
+<div class="space-y-5 text-slate-200 font-sans" dir="rtl">
+  <div class="border-b border-cyan-400/20 pb-3 mb-4">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المنهج: SPC-301 · معتمد للعام 2026</span>
+      <span class="text-xs font-bold text-amber-300 bg-amber-950/80 border border-amber-400/30 px-3 py-1 rounded-full font-mono">
+        إدارة المشروعات والمكتب الفني
+      </span>
+    </div>
+    <h3 class="text-xl font-black text-white mt-2.5">ممارسات المكتب الفني، حصر الكميات، وإعداد جداول الـ BOQ</h3>
+    <p class="text-xs text-slate-300 mt-1 font-semibold">قسم إدارة المشروعات والمكتب الفني — منصة مِحور</p>
+  </div>
+
+  <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20 space-y-2">
+    <strong class="text-cyan-300 text-xs font-bold block">🎯 محاور المنهج المهني:</strong>
+    <p class="text-xs leading-relaxed text-slate-200">
+      دليل تطبيقي شامل لحصر أعمال شبكات المياه، الحفر والردم، صمامات العزل، محابس الهواء والضغط، وربط بنود المقايسة (BOQ) بمعدلات استهلاك العمالة والمعدات وتحليل الأسعار التنافسي.
+    </p>
+  </div>
+</div>
+`
+      },
+
+      // -----------------------------------------------------------
+      // BOOK 201: ترابط المياه والطاقة والغذاء (WEF Nexus)
+      // -----------------------------------------------------------
+      201: {
+        isFree: false,
+        fullContent: `
+<div class="space-y-5 text-slate-200 font-sans" dir="rtl">
+  <div class="border-b border-cyan-400/20 pb-3 mb-4">
+    <div class="flex items-center justify-between flex-wrap gap-2">
+      <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950 px-3 py-1 rounded-full border border-cyan-500/30">كود المنهج: SYS-401 · معتمد للعام 2026</span>
+      <span class="text-xs font-bold text-cyan-300 bg-cyan-950/80 border border-cyan-400/30 px-3 py-1 rounded-full font-mono">
+        هندسة النظم واستدامة الموارد
+      </span>
+    </div>
+    <h3 class="text-xl font-black text-white mt-2.5">ترابط المياه والطاقة والغذاء (WEF Nexus): الحسابات والنظم والسياسات</h3>
+    <p class="text-xs text-slate-300 mt-1 font-semibold">فريق أبحاث الاستدامة وهندسة النظم — منصة مِحور</p>
+  </div>
+
+  <div class="p-4 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/20 space-y-2">
+    <strong class="text-cyan-300 text-xs font-bold block">🌐 الأبعاد الاستراتيجية للترابط:</strong>
+    <p class="text-xs leading-relaxed text-slate-200">
+      نمذجة العلاقات التبادلية بين استهلاك الطاقة في تحلية المياه وضخها، واستخدام المياه في توليد الطاقة والإنتاج الزراعي، مع تحليل السيناريوهات المناخية وحساب البصمة البيئية الشاملة.
+    </p>
+  </div>
 </div>
 `
       }
+
     };
 
     // -------------------------------------------------------------
