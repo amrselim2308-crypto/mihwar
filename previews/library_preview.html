@@ -4,7 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>خزانة الفكر والأدب والمناهج | منصة مِحور</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    let currentOrder = null;
+
+    function handleSmartBuy(code, title) {
+      currentOrder = { code, title };
+      const modal = document.getElementById('paymentGatewayModal');
+      const cfg = countryConfig[currentCountry];
+      const book = resources.find(b => b.code === code) || currentOpenedBook;
+      
+      const priceText = book && book.price ? `${book.price[currentCountry]} ${cfg.currency}` : `75 ${cfg.currency}`;
+      
+      document.getElementById('payItemTitle').innerText = title;
+      document.getElementById('payItemCode').innerText = `كود: ${code} · معتمد بدولة ${cfg.name}`;
+      document.getElementById('payItemPrice').innerText = priceText;
+
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closePaymentModal() {
+      const modal = document.getElementById('paymentGatewayModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function submitOrderViaWhatsApp() {
+      if (!currentOrder) return;
+      const name = document.getElementById('payStudentName').value.trim() || 'طالب منصة مِحور';
+      const email = document.getElementById('payStudentEmail').value.trim() || 'غير محدد';
+      const channel = document.querySelector('input[name="payChannel"]:checked')?.value === 'instant' ? 'تحويل فوري / محفظة' : 'بطاقة بنكية / أونلاين';
+      const cfg = countryConfig[currentCountry];
+
+      const msg = encodeURIComponent(
+        `طلب اعتماد وشراء منهج من منصة مِحور:\n` +
+        `• المنهج: ${currentOrder.title} (${currentOrder.code})\n` +
+        `• الدولة: ${cfg.name}\n` +
+        `• الاسم: ${name}\n` +
+        `• البريد: ${email}\n` +
+        `• وسيلة الدفع المفضلة: ${channel}\n` +
+        `• برجاء إرسال تفاصيل السداد الفوري وتفعيل النسخة المعتمدة.`
+      );
+
+      window.open(`https://wa.me/971500000000?text=${msg}`, '_blank');
+      closePaymentModal();
+    }
+
+</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -727,7 +771,7 @@
       list.forEach(r => {
         const isHeritage = r.category === "أدب وفكر" || r.category === "فقه وأصول" || r.category === "سير وتراجم";
         const card = document.createElement("article");
-        card.className = "glass-card p-5 flex flex-col justify-between";
+        card.className = "bg-[rgba(10,48,69,0.55)] hover:bg-[rgba(10,48,69,0.85)] border border-[rgba(57,216,240,0.18)] hover:border-cyan-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(2,11,22,0.6)] backdrop-blur-md group";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
@@ -885,5 +929,102 @@
     <svg class="w-6 h-6 flex-none" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.004.57 2.019.882 3.197.882 3.181 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.765-5.769-5.765zm3.435 8.196c-.144.404-.83.774-1.173.824-.343.05-.785.076-2.285-.544-1.879-.776-3.085-2.698-3.178-2.823-.093-.125-.765-1.017-.765-1.939 0-.922.483-1.376.655-1.563.172-.187.376-.234.502-.234.126 0 .252.001.362.006.115.006.269-.044.421.322.157.376.533 1.303.579 1.397.046.094.077.204.015.33-.063.125-.094.204-.188.314-.094.11-.198.245-.282.33-.094.094-.192.196-.083.384.11.188.488.805 1.047 1.302.721.642 1.328.841 1.516.935.188.094.298.078.408-.047.11-.125.469-.548.594-.736.125-.188.25-.157.422-.094.172.063 1.096.517 1.284.611.188.094.313.141.36.219.047.078.047.453-.097.857zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
     <span>تواصل عبر واتساب</span>
   </a>
+
+  <!-- ============================================================== -->
+  <!-- MIHWAR SECURE CHECKOUT & PAYMENT GATEWAY MODAL                 -->
+  <!-- ============================================================== -->
+  <div id="paymentGatewayModal" class="fixed inset-0 z-[100000] bg-[#020B16]/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-xl shadow-[0_0_50px_rgba(57,216,240,0.25)] overflow-hidden flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-[rgba(57,216,240,0.2)] bg-[rgba(10,48,69,0.7)] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-lg font-bold shadow-md">
+            🔒
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white">بوابة الدفع الآمن والحصول على النسخة المعتمدة</h3>
+            <span class="text-[11px] text-cyan-300 block">منصة مِحـوَر التعليمية المعتمدة · MIHWAR Secure Pay</span>
+          </div>
+        </div>
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white flex items-center justify-center border border-cyan-400/30 text-sm">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5 text-xs text-slate-200 max-h-[75vh] overflow-y-auto">
+        
+        <!-- Summary Box -->
+        <div class="p-4 rounded-2xl bg-[rgba(2,11,22,0.7)] border border-cyan-400/25 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-cyan-300 font-mono block">المنهج المطلوب:</span>
+            <strong id="payItemTitle" class="text-sm text-white font-black block mt-0.5">الحسابات الهيدروليكية لشبكات الري</strong>
+            <span id="payItemCode" class="text-[10px] text-slate-400 font-mono">كود: APP-201 · معتمد للعام 2026</span>
+          </div>
+          <div class="text-left">
+            <span class="text-[10px] text-slate-400 block">إجمالي المبلغ:</span>
+            <div id="payItemPrice" class="text-2xl font-black text-amber-300 font-mono">75 AED</div>
+          </div>
+        </div>
+
+        <!-- Payment Channels Selection -->
+        <div class="space-y-2.5">
+          <label class="block text-xs font-bold text-white">اختر وسيلة الدفع المفضلة لديك:</label>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Channel 1: Cards / Apple Pay -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="card" checked class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">بطاقة بنكية / Apple Pay</strong>
+                <span class="text-[10px] text-slate-400">Visa · Mastercard · Mada</span>
+              </div>
+            </label>
+
+            <!-- Channel 2: Local Instant Transfer -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="instant" class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">تحويل فوري / محفظة</strong>
+                <span class="text-[10px] text-slate-400">InstaPay / فودافون كاش / STC</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Student Data Inputs -->
+        <div class="space-y-3">
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">الاسم الكامل للطالب أو المهندس:</label>
+            <input type="text" id="payStudentName" placeholder="الاسم ثلاثي..." class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
+          </div>
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">البريد الإلكتروني (لاستلام ملفات المرجع وشيتات الإكسيل):</label>
+            <input type="email" id="payStudentEmail" placeholder="name@example.com" class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
+          </div>
+        </div>
+
+        <!-- Guarantee Note -->
+        <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-[11px] text-emerald-200 flex items-center gap-2">
+          <span>✓</span>
+          <span>ضمان مِحور الأكاديمي: استلام فوري للملفات، ودعم فني ممتد مع التحديثات.</span>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[rgba(2,11,22,0.9)] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <button onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2">
+          <span>💬 تأكيد الطلب وتفعيل النسخة المعتمدة فـوراً</span>
+        </button>
+        <button onclick="closePaymentModal()" class="w-full sm:w-auto bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-xs font-bold transition">
+          إلغاء
+        </button>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>

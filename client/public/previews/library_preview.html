@@ -260,8 +260,8 @@
         </div>
 
         <!-- Detailed Syllabus / Overview -->
-        <div class="bg-white p-5 rounded-2xl border border-[rgba(57,216,240,0.12)] shadow-sm space-y-3">
-          <h4 class="text-sm font-black text-sky-900 flex items-center gap-2">
+        <div class="bg-[rgba(10,48,69,0.65)] p-5 rounded-2xl border border-cyan-400/25 shadow-sm space-y-3 text-slate-200">
+          <h4 class="text-sm font-black text-white flex items-center gap-2">
             <span>📜</span>
             <span id="modalExcerptLabel">المحاور العلمية وجوهر المنهج:</span>
           </h4>
@@ -271,8 +271,8 @@
         </div>
 
         <!-- Mihwar Value & Practical Application Box -->
-        <div class="bg-gradient-to-r from-sky-50 to-cyan-50 p-4 rounded-2xl border border-[rgba(57,216,240,0.18)] text-xs sm:text-sm text-sky-950 space-y-1.5">
-          <strong class="block font-black text-sky-800">✨ الأثر التطبيقي والمهني في منصة مِحور (من الفهم إلى الإدراك):</strong>
+        <div class="bg-[rgba(7,26,45,0.85)] p-4 rounded-2xl border border-cyan-400/25 text-xs sm:text-sm text-slate-200 space-y-1.5">
+          <strong class="block font-black text-cyan-300">✨ الأثر التطبيقي والمهني في منصة مِحور (من الفهم إلى الإدراك):</strong>
           <p id="modalMihwarValue" class="leading-relaxed text-slate-300">
             دراسة هذا المنهج تحرر عقل المتعلم من الحفظ الصوري وتمنحه القدرة على ربط القوانين الرياضية بالمشروعات والقرارات الهندسية الواقعية.
           </p>
@@ -280,13 +280,13 @@
       </div>
 
       <!-- Modal Footer -->
-      <div class="bg-white border-t border-[rgba(57,216,240,0.12)] px-6 py-3.5 flex items-center justify-between">
-        <span id="modalBookPages" class="text-xs font-bold text-sky-700">عدد الصفحات / الوحدات التدريبية</span>
+      <div class="bg-[#071A2D] border-t border-cyan-400/20 px-6 py-3.5 flex items-center justify-between">
+        <span id="modalBookPages" class="text-xs font-bold text-cyan-400">عدد الصفحات / الوحدات التدريبية</span>
         <div class="flex items-center gap-2">
-          <button onclick="downloadBookAlert()" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-5 py-2.5 rounded-full transition cursor-pointer shadow-sm">
+          <button onclick="downloadBookAlert()" class="btn-glow-cyan text-white font-black text-xs px-5 py-2.5 rounded-full transition cursor-pointer shadow-sm">
             تحميل المذكرة المعتمدة PDF
           </button>
-          <button onclick="closeReaderModal()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-xs px-4 py-2.5 rounded-full transition cursor-pointer">
+          <button onclick="closeReaderModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-200 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
             إغلاق
           </button>
         </div>
@@ -904,7 +904,7 @@
         if (isHeritage) badgeBg = "bg-amber-100 text-amber-800 border-amber-300";
 
         const card = document.createElement("div");
-        card.className = "mihwar-card p-5 flex flex-col justify-between";
+        card.className = "bg-[rgba(10,48,69,0.55)] hover:bg-[rgba(10,48,69,0.85)] border border-[rgba(57,216,240,0.18)] hover:border-cyan-400/50 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(2,11,22,0.6)] backdrop-blur-md group";
         card.innerHTML = `
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
@@ -941,8 +941,8 @@
           </div>
 
           <div class="border-t border-[rgba(57,216,240,0.12)] pt-3 flex items-center justify-between">
-            <span class="text-[11px] font-bold text-sky-800 truncate max-w-[170px]">${book.subject}</span>
-            <button onclick="openReaderModal(${book.id})" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1.5 transition cursor-pointer shadow-sm hover:shadow">
+            <span class="text-[11px] font-bold text-cyan-300 truncate max-w-[170px]">${book.subject}</span>
+            <button onclick="openReaderModal(${book.id})" class="btn-glow-cyan text-white font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1.5 transition cursor-pointer">
               <span>استعراض المنهج</span>
               <svg class="w-3.5 h-3.5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </button>
@@ -1022,8 +1022,6 @@
       const book = resources.find(b => b.id === bookId);
       if (!book) return;
       currentOpenedBook = book;
-      const book = resources.find(b => b.id === bookId);
-      if (!book) return;
 
       document.getElementById("modalBookTitle").innerText = book.title;
       document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category} · ${book.subject}`;
@@ -1195,9 +1193,104 @@
   <script>
     // Trigger print/save as PDF immediately when opened
     window.onload = function() {
-      window.print();
-    };
-  </script>
+      window.print();\n    };\n  <\/script>
+
+  <!-- ============================================================== -->
+  <!-- MIHWAR SECURE CHECKOUT & PAYMENT GATEWAY MODAL                 -->
+  <!-- ============================================================== -->
+  <div id="paymentGatewayModal" class="fixed inset-0 z-[100000] bg-[#020B16]/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-xl shadow-[0_0_50px_rgba(57,216,240,0.25)] overflow-hidden flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-[rgba(57,216,240,0.2)] bg-[rgba(10,48,69,0.7)] flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-lg font-bold shadow-md">
+            🔒
+          </div>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-white">بوابة الدفع الآمن والحصول على النسخة المعتمدة</h3>
+            <span class="text-[11px] text-cyan-300 block">منصة مِحـوَر التعليمية المعتمدة · MIHWAR Secure Pay</span>
+          </div>
+        </div>
+        <button onclick="closePaymentModal()" class="w-8 h-8 rounded-full bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white flex items-center justify-center border border-cyan-400/30 text-sm">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-5 text-xs text-slate-200 max-h-[75vh] overflow-y-auto">
+        
+        <!-- Summary Box -->
+        <div class="p-4 rounded-2xl bg-[rgba(2,11,22,0.7)] border border-cyan-400/25 flex items-center justify-between">
+          <div>
+            <span class="text-[10px] text-cyan-300 font-mono block">المنهج المطلوب:</span>
+            <strong id="payItemTitle" class="text-sm text-white font-black block mt-0.5">الحسابات الهيدروليكية لشبكات الري</strong>
+            <span id="payItemCode" class="text-[10px] text-slate-400 font-mono">كود: APP-201 · معتمد للعام 2026</span>
+          </div>
+          <div class="text-left">
+            <span class="text-[10px] text-slate-400 block">إجمالي المبلغ:</span>
+            <div id="payItemPrice" class="text-2xl font-black text-amber-300 font-mono">75 AED</div>
+          </div>
+        </div>
+
+        <!-- Payment Channels Selection -->
+        <div class="space-y-2.5">
+          <label class="block text-xs font-bold text-white">اختر وسيلة الدفع المفضلة لديك:</label>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Channel 1: Cards / Apple Pay -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="card" checked class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">بطاقة بنكية / Apple Pay</strong>
+                <span class="text-[10px] text-slate-400">Visa · Mastercard · Mada</span>
+              </div>
+            </label>
+
+            <!-- Channel 2: Local Instant Transfer -->
+            <label class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.6)] border border-cyan-400/30 flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition">
+              <input type="radio" name="payChannel" value="instant" class="accent-cyan-400">
+              <div>
+                <strong class="text-white block text-xs">تحويل فوري / محفظة</strong>
+                <span class="text-[10px] text-slate-400">InstaPay / فودافون كاش / STC</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Student Data Inputs -->
+        <div class="space-y-3">
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">الاسم الكامل للطالب أو المهندس:</label>
+            <input type="text" id="payStudentName" placeholder="الاسم ثلاثي..." class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
+          </div>
+          <div>
+            <label class="block text-[11px] text-slate-300 font-bold mb-1">البريد الإلكتروني (لاستلام ملفات المرجع وشيتات الإكسيل):</label>
+            <input type="email" id="payStudentEmail" placeholder="name@example.com" class="w-full bg-[rgba(2,11,22,0.8)] border border-cyan-400/30 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-cyan-400" />
+          </div>
+        </div>
+
+        <!-- Guarantee Note -->
+        <div class="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/30 text-[11px] text-emerald-200 flex items-center gap-2">
+          <span>✓</span>
+          <span>ضمان مِحور الأكاديمي: استلام فوري للملفات، ودعم فني ممتد مع التحديثات.</span>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[rgba(2,11,22,0.9)] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <button onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2">
+          <span>💬 تأكيد الطلب وتفعيل النسخة المعتمدة فـوراً</span>
+        </button>
+        <button onclick="closePaymentModal()" class="w-full sm:w-auto bg-[rgba(10,48,69,0.8)] text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-xs font-bold transition">
+          إلغاء
+        </button>
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>`;
 
