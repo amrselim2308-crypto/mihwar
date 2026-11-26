@@ -936,6 +936,148 @@
           </div>
         </section>
 
+      
+        <!-- ============================================================== -->
+        <!-- 5. مصفوفة جوهر الفهم وشبكة العلاقات العلمية (INTERACTIVE KNOWLEDGE MATRIX) -->
+        <!-- ============================================================== -->
+        <section id="insight-matrix-section" class="hub-card p-6 sm:p-8 border-cyan-400/30 space-y-6">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-[rgba(57,216,240,0.15)] pb-4">
+            <div>
+              <span class="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950 px-2.5 py-1 rounded border border-cyan-500/30 uppercase tracking-widest block mb-1">
+                COGNITIVE DEPTH & AXIOMS
+              </span>
+              <h3 class="text-xl sm:text-2xl font-black text-white">مصفوفة جوهر الفهم: من الفكرة إلى الواقع</h3>
+              <p class="text-xs text-slate-300 mt-1">انقر على أي علم لاستكشاف جوهر الأثر، القانون الحاكم، والتطبيق الميداني الحقيقي</p>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 bg-[rgba(10,48,69,0.7)] px-3 py-1.5 rounded-full border border-cyan-400/30">
+              6 CORE DISCIPLINES
+            </span>
+          </div>
+
+          <!-- Discipline Selector Pills -->
+          <div class="flex flex-wrap gap-2 pt-1" id="matrixSelectorTabs">
+            <button onclick="selectMatrixTab('math', this)" class="matrix-pill active px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>📐</span>
+              <span>الرياضيات والتفاضل</span>
+            </button>
+            <button onclick="selectMatrixTab('hydraulic', this)" class="matrix-pill px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>⚙️</span>
+              <span>الهندسة والهيدروليكا</span>
+            </button>
+            <button onclick="selectMatrixTab('physics', this)" class="matrix-pill px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>⚡</span>
+              <span>فيزياء الحركة والموائع</span>
+            </button>
+            <button onclick="selectMatrixTab('chemistry', this)" class="matrix-pill px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>🧪</span>
+              <span>الكيمياء وروابط الطاقة</span>
+            </button>
+            <button onclick="selectMatrixTab('nexus', this)" class="matrix-pill px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>🌐</span>
+              <span>الاستدامة والـ Nexus</span>
+            </button>
+            <button onclick="selectMatrixTab('heritage', this)" class="matrix-pill px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2">
+              <span>📜</span>
+              <span>الفكر وأصول المعرفة</span>
+            </button>
+          </div>
+
+          <!-- Interactive Dynamic Detail Box -->
+          <div id="matrixDetailCard" class="bg-[rgba(7,26,45,0.75)] border border-cyan-400/25 rounded-2xl p-6 sm:p-7 space-y-5 transition-all">
+            <!-- Will be dynamically injected via script -->
+          </div>
+        </section>
+
+        <!-- ============================================================== -->
+        <!-- 6. المخطوطات الأكثر طلباً وقراءة (FEATURED MANUSCRIPTS SPOTLIGHT) -->
+        <!-- ============================================================== -->
+        <section class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-xl sm:text-2xl font-black text-white">المخطوطات والمناهج الأكثر طلباً</h3>
+              <p class="text-xs text-slate-400 mt-0.5">دراسات هندسية وأكاديمية متكاملة مدعمة بنماذج وحالات دراسية حية</p>
+            </div>
+            <a href="library_preview.html" class="text-xs font-bold text-cyan-300 hover:text-white transition flex items-center gap-1">
+              <span>المكتبة الشاملة (30 مرجعاً)</span>
+              <span>←</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <!-- Manuscript 1 -->
+            <div class="hub-card p-6 flex flex-col justify-between border-cyan-500/25 group">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-mono text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-500/30">APP-201</span>
+                  <span class="text-[10px] font-bold text-emerald-300 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">114 صفحة</span>
+                </div>
+                <h4 class="text-base font-black text-white group-hover:text-cyan-300 transition-colors">الحسابات الهيدروليكية لشبكات الري</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  دراسة شاملة لمعادلات السريان المضغوط (Hazen-Williams)، هيدروليكا الخطوط متعددة المخارج (معامل F)، وتطبيق حي لمشروع لاندسكيب بدبي ومصر.
+                </p>
+                <div class="mt-4 p-3 rounded-xl bg-[rgba(2,11,22,0.6)] border border-cyan-400/15 text-[11px] text-cyan-200 italic">
+                  💡 "شبكة الري ميزان هيدروليكي؛ توازن الضغط هو الذي يضمن عدالة الارتواء للنبات الأول كالأخير."
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-[rgba(57,216,240,0.12)] flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-300">م. عمرو سليم</span>
+                <a href="library_preview.html?code=APP-201" class="text-xs font-black text-cyan-400 hover:text-white transition flex items-center gap-1">
+                  <span>فتح المخطوطة</span>
+                  <span class="group-hover:translate-x-[-3px] transition-transform">←</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Manuscript 2 -->
+            <div class="hub-card p-6 flex flex-col justify-between border-teal-500/25 group">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-mono text-teal-300 bg-teal-950 px-2 py-0.5 rounded border border-teal-500/30">APP-202</span>
+                  <span class="text-[10px] font-bold text-teal-300 bg-teal-950/80 px-2 py-0.5 rounded border border-teal-500/30">96 صفحة</span>
+                </div>
+                <h4 class="text-base font-black text-white group-hover:text-teal-300 transition-colors">محطات الضخ ومخمدات المطرقة المائية</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  منحنيات أداء المضخات (Pump Curves)، حساب الـ NPSH لمنع التكهف (Cavitation)، وحسابات حجم خزانات الضغط Surge Vessels.
+                </p>
+                <div class="mt-4 p-3 rounded-xl bg-[rgba(2,11,22,0.6)] border border-teal-400/15 text-[11px] text-teal-200 italic">
+                  💡 "المضخة قلب الناقل المائي، وسلامة المنظومة تبدأ من السيطرة على موجات الصدمة اللحظية."
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-[rgba(57,216,240,0.12)] flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-300">م. عمرو سليم</span>
+                <a href="library_preview.html?code=APP-202" class="text-xs font-black text-teal-300 hover:text-white transition flex items-center gap-1">
+                  <span>فتح المخطوطة</span>
+                  <span class="group-hover:translate-x-[-3px] transition-transform">←</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Manuscript 3 -->
+            <div class="hub-card p-6 flex flex-col justify-between border-amber-500/25 group">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-[10px] font-mono text-amber-300 bg-amber-950 px-2 py-0.5 rounded border border-amber-500/30">HER-101</span>
+                  <span class="text-[10px] font-bold text-amber-300 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-500/30">تحليل فكري</span>
+                </div>
+                <h4 class="text-base font-black text-white group-hover:text-amber-300 transition-colors">عبقرية عمر وفلسفة العدل وإدارة النظم</h4>
+                <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+                  دراسة فكرية وأدبية من روائع عباس محمود العقاد؛ تفكيك عبقرية القيادة، وبناء المؤسسات، وفلسفة ميزان العدالة كقانون استقرار مجتمعي.
+                </p>
+                <div class="mt-4 p-3 rounded-xl bg-[rgba(2,11,22,0.6)] border border-amber-400/15 text-[11px] text-amber-200 italic">
+                  💡 "العدل ليس شعاراً عاطفياً بل بناء مؤسسي دقيق تتوازن فيه الحقوق والواجبات."
+                </div>
+              </div>
+              <div class="mt-5 pt-3 border-t border-[rgba(57,216,240,0.12)] flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-300">عباس محمود العقاد</span>
+                <a href="library_preview.html?code=HER-101" class="text-xs font-black text-amber-300 hover:text-white transition flex items-center gap-1">
+                  <span>فتح المخطوطة</span>
+                  <span class="group-hover:translate-x-[-3px] transition-transform">←</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <!-- Footer -->
