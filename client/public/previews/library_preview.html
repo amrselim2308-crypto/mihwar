@@ -1020,6 +1020,9 @@
     function openReaderModal(bookId) {
       const book = resources.find(b => b.id === bookId);
       if (!book) return;
+      currentOpenedBook = book;
+      const book = resources.find(b => b.id === bookId);
+      if (!book) return;
 
       document.getElementById("modalBookTitle").innerText = book.title;
       document.getElementById("modalBookAuthor").innerText = `${book.author} · ${book.category} · ${book.subject}`;
@@ -1074,8 +1077,146 @@
       }
     }
 
+    let currentOpenedBook = null;
+
     function downloadBookAlert() {
-      alert("✅ جاري تجهيز وتحميل النسخة الرقمية المعتمدة للمنهج بصيغة PDF..");
+      if (!currentOpenedBook) return;
+      
+      const book = currentOpenedBook;
+      const title = book.title;
+      const author = book.author;
+      const code = book.code || "MIHWAR-REF";
+      const excerptHtml = document.getElementById("modalBookExcerpt").innerHTML;
+      const quote = book.quote;
+
+      // Construct a clean, fully-styled, standalone printable HTML/PDF document
+      const docContent = `<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>${title} - منصة مِحور</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+    body {
+      font-family: 'Cairo', system-ui, sans-serif;
+      margin: 40px;
+      color: #0c2340;
+      background: #ffffff;
+      line-height: 1.8;
+    }
+    .header-box {
+      border-bottom: 3px solid #0284c7;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-badge {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-weight: 900;
+      font-size: 16px;
+    }
+    .code-tag {
+      font-family: monospace;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 900;
+      color: #0c2340;
+      margin: 10px 0 5px;
+    }
+    .author-meta {
+      font-size: 13px;
+      color: #0284c7;
+      font-weight: bold;
+    }
+    .quote-box {
+      background: #fef3c7;
+      border-right: 5px solid #f59e0b;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #78350f;
+      font-weight: 600;
+    }
+    .content-area {
+      font-size: 14px;
+      color: #1e293b;
+    }
+    .footer {
+      margin-top: 50px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 15px;
+      text-align: center;
+      font-size: 11px;
+      color: #64748b;
+    }
+    @media print {
+      body { margin: 20px; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header-box">
+    <div>
+      <span class="code-tag">${code} · معتمد للعام 2026</span>
+      <h1>${title}</h1>
+      <span class="author-meta">إعداد: ${author}</span>
+    </div>
+    <div class="logo-badge">منصة مِـحـوَر</div>
+  </div>
+
+  <div class="quote-box">
+    <strong>💡 فكرة الأثر وجوهر الفهم:</strong><br>
+    "${quote}"
+  </div>
+
+  <div class="content-area">
+    ${excerptHtml}
+  </div>
+
+  <div class="footer">
+    وثيقة رسمية صادرة من منصة مِحور التعليمية (mihwar-edu.com) — جميع الحقوق محفوظة © 2026
+  </div>
+
+  <script>
+    // Trigger print/save as PDF immediately when opened
+    window.onload = function() {
+      window.print();
+    };
+  </script>
+</body>
+</html>`;
+
+      // 1. Trigger Direct File Download (.html / offline readable document)
+      const blob = new Blob([docContent], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `مِحور - ${title}.html`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      // 2. Also open print window directly so user can click "Save as PDF" instantly
+      const printWin = window.open('', '_blank');
+      if (printWin) {
+        printWin.document.write(docContent);
+        printWin.document.close();
+      }
     }
 
     // Attach search and select listeners
