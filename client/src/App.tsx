@@ -47,7 +47,7 @@ function AppRouter() {
           <Suspense fallback={<div className="route-loading" role="status">{lang === "ar" ? "جارٍ التحميل…" : "Loading page…"}</div>}>
             <Switch>
               <Route path="/login">{() => <LoginPage />}</Route>
-              <Route path="/">{() => <HomePage {...shared} />}</Route>
+              <Route path="/">{() => { useEffect(() => { window.location.replace("/previews/mihwar_command_hub.html"); }, []); return <div className="route-loading">جاري الانتقال لمركز القيادة...</div>; }}</Route>
               <Route path="/teachers">{() => <TeachersPage {...shared} />}</Route>
               <Route path="/teachers/:id">{params => <TeacherProfilePage {...shared} teacherId={Number(params.id)} />}</Route>
               <Route path="/parent">{() => <ParentDashboard {...shared} />}</Route>

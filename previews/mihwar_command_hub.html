@@ -12,6 +12,107 @@
       }
     }
 
+
+    // COMMAND PALETTE SEARCH ENGINE (30 References, 10 Curricula, Teachers, Arenas)
+    const platformCatalog = [
+      // Books & Heritage
+      { type: 'كتاب ومخطوطة', title: 'الحسابات الهيدروليكية المتقدمة لشبكات الري', code: 'APP-201', author: 'م. عمرو سليم', link: 'library_preview.html?code=APP-201', badge: 'هندسة' },
+      { type: 'كتاب ومخطوطة', title: 'تصميم محطات الضخ ومخمدات المطرقة المائية', code: 'APP-202', author: 'م. عمرو سليم', link: 'library_preview.html?code=APP-202', badge: 'هندسة' },
+      { type: 'كتاب ومخطوطة', title: 'لاندسكيب البيئات الجافة وترشيد مياه الري', code: 'APP-203', author: 'م. عمرو سليم', link: 'library_preview.html?code=APP-203', badge: 'هندسة' },
+      { type: 'كتاب ومخطوطة', title: 'المكتب الفني وإعداد الـ BOQ وحساب الكميات', code: 'APP-204', author: 'م. عمرو سليم', link: 'library_preview.html?code=APP-204', badge: 'مكتب فني' },
+      { type: 'كتاب ومخطوطة', title: 'عبقرية عمر', code: 'HER-101', author: 'عباس محمود العقاد', link: 'library_preview.html', badge: 'تراث وفكر' },
+      { type: 'كتاب ومخطوطة', title: 'إحياء علوم الدين', code: 'HER-102', author: 'أبو حامد الغزالي', link: 'library_preview.html', badge: 'تراث وفكر' },
+      { type: 'كتاب ومخطوطة', title: 'الرسالة في أصول الفقه', code: 'HER-103', author: 'الإمام محمد بن إدريس الشافعي', link: 'library_preview.html', badge: 'أصول وفهم' },
+      { type: 'كتاب ومخطوطة', title: 'أينشتاين والنسبية', code: 'HER-104', author: 'د. مصطفى محمود', link: 'library_preview.html', badge: 'علوم وفكر' },
+      { type: 'كتاب ومخطوطة', title: 'مقدمة ابن خلدون', code: 'HER-105', author: 'عبد الرحمن بن خلدون', link: 'library_preview.html', badge: 'علم الاجتماع' },
+      
+      // Curricula Tracks
+      { type: 'منهج تخصصي', title: 'أساسيات الهندسة التطبيقية وهيدروليكا السوائل', code: 'ENG-TRACK', author: 'قسم الهندسة بمنصة محور', link: 'curricula_guide_preview.html', badge: 'منهج أكاديمي' },
+      { type: 'منهج تخصصي', title: 'منهج ترابط المياه والغذاء والطاقة (WEF Nexus)', code: 'NEXUS-TRACK', author: 'قسم الاستدامة', link: 'curricula_guide_preview.html', badge: 'استدامة' },
+      { type: 'منهج تخصصي', title: 'منهج التفاضل والتكامل بروح الفهم التطبيقي', code: 'MATH-CALC', author: 'نخبة معلمي الرياضيات', link: 'curricula_guide_preview.html', badge: 'رياضيات' },
+      { type: 'منهج تخصصي', title: 'منهج فيزياء الحركة والديناميكا العملية', code: 'PHYS-DYN', author: 'نخبة معلمي الفيزياء', link: 'curricula_guide_preview.html', badge: 'فيزياء' },
+      { type: 'منهج تخصصي', title: 'منهج دال الكيمياء والتفاعلات الحركية', code: 'CHEM-CORE', author: 'نخبة معلمي الكيمياء', link: 'curricula_guide_preview.html', badge: 'كيمياء' },
+
+      // Masterclasses & Arenas
+      { type: 'كورس ماستر كلاس', title: 'ربط أدوات الذكاء الاصطناعي بالمخططات الهندسية', code: 'AI-ENG-01', author: 'م. عمرو سليم', link: 'ai_engineering_masterclass.html', badge: 'ماستر كلاس' },
+      { type: 'ساحة التحدي', title: 'أولمبياد الفهم والإدراك العلمي', code: 'ARENA-OLYMP', author: 'منصة محور', link: 'competitions_arena.html', badge: 'تحديات وجوائز' },
+      { type: 'معلم معتمد', title: 'دليل نخبة المعلمين المعتمدين لمناهج الإمارات والسعودية ومصر', code: 'TEACHERS', author: 'إدارة التعليم بمحور', link: 'teachers_directory_preview.html', badge: 'معلمون' }
+    ];
+
+    function openCommandPalette() {
+      const modal = document.getElementById('commandPaletteModal');
+      const input = document.getElementById('paletteSearchInput');
+      if (modal) {
+        modal.classList.remove('hidden');
+        if (input) {
+          input.value = '';
+          input.focus();
+          renderPaletteResults('');
+        }
+      }
+    }
+
+    function closeCommandPalette() {
+      const modal = document.getElementById('commandPaletteModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderPaletteResults(query) {
+      const box = document.getElementById('paletteResultsBox');
+      if (!box) return;
+
+      const q = query.toLowerCase().trim();
+      const filtered = q === '' 
+        ? platformCatalog.slice(0, 6) 
+        : platformCatalog.filter(item => 
+            item.title.toLowerCase().includes(q) || 
+            item.code.toLowerCase().includes(q) || 
+            item.author.toLowerCase().includes(q) ||
+            item.type.toLowerCase().includes(q)
+          );
+
+      if (filtered.length === 0) {
+        box.innerHTML = '<div class="text-center py-8 text-slate-400">لم يتم العثور على نتائج مطابقة لـ "' + query + '"</div>';
+        return;
+      }
+
+      box.innerHTML = filtered.map(item => `
+        <div onclick="window.location.href='${item.link}'" class="p-3 rounded-xl bg-[rgba(10,48,69,0.65)] hover:bg-[rgba(10,48,69,0.95)] border border-cyan-400/20 hover:border-cyan-400 cursor-pointer transition flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-950 text-cyan-300 border border-cyan-500/30">${item.badge}</span>
+            <div>
+              <div class="text-white font-bold text-xs group-hover:text-cyan-300 transition-colors">${item.title}</div>
+              <div class="text-slate-400 text-[10px] mt-0.5">${item.type} · ${item.author} (${item.code})</div>
+            </div>
+          </div>
+          <span class="text-cyan-400 text-xs font-bold group-hover:translate-x-[-4px] transition-transform">←</span>
+        </div>
+      `).join('');
+    }
+
+    // Connect Palette Events
+    const paletteSearch = document.getElementById('paletteSearchInput');
+    if (paletteSearch) {
+      paletteSearch.addEventListener('input', (e) => renderPaletteResults(e.target.value));
+    }
+
+    // Connect top search bar to palette
+    const cmdSearch = document.getElementById('commandSearchInput');
+    if (cmdSearch) {
+      cmdSearch.addEventListener('focus', openCommandPalette);
+      cmdSearch.addEventListener('click', openCommandPalette);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        openCommandPalette();
+      }
+      if (e.key === 'Escape') {
+        closeCommandPalette();
+      }
+    });
+
 </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -769,6 +870,32 @@
 
       <div class="pt-4 border-t border-cyan-400/20 text-center text-[10px] text-slate-400">
         من الفهم إلى الإدراك والوعي
+      </div>
+    </div>
+  </div>
+
+
+  <!-- LIVE COMMAND PALETTE MODAL (CTRL+K) -->
+  <div id="commandPaletteModal" class="fixed inset-0 z-50 bg-[#020B16]/85 backdrop-blur-md hidden flex items-start justify-center pt-20 px-4">
+    <div class="bg-[#071A2D] border border-cyan-400/40 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]">
+      <!-- Search Input in Palette -->
+      <div class="p-4 border-b border-[rgba(57,216,240,0.18)] flex items-center gap-3 bg-[rgba(10,48,69,0.5)]">
+        <span class="text-cyan-400 text-lg">🔍</span>
+        <input type="text" id="paletteSearchInput" placeholder="اكتب للبحث الفوري في الكتب، المناهج، الكورسات، والمعلمين..." 
+               class="bg-transparent text-white text-sm focus:outline-none w-full placeholder-slate-400 font-medium" />
+        <span class="text-[10px] text-cyan-300 font-mono bg-cyan-950/80 px-2 py-1 rounded border border-cyan-400/30">ESC للخروج</span>
+        <button onclick="closeCommandPalette()" class="text-slate-400 hover:text-white text-sm px-2">✕</button>
+      </div>
+
+      <!-- Live Results Box -->
+      <div id="paletteResultsBox" class="p-4 overflow-y-auto space-y-4 text-xs">
+        <!-- Will be populated dynamically by JavaScript -->
+      </div>
+
+      <!-- Quick Shortcuts Footer -->
+      <div class="px-4 py-3 bg-[#020B16]/80 border-t border-[rgba(57,216,240,0.12)] flex items-center justify-between text-[11px] text-slate-400 font-mono">
+        <span>استخدم الأسهم ⬆ ⬇ للتنقل</span>
+        <span>منصة مِحور المعرفية · إصدار 2026</span>
       </div>
     </div>
   </div>

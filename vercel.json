@@ -4,6 +4,10 @@
   "outputDirectory": "dist/public",
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/previews/mihwar_command_hub.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }

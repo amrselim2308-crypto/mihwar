@@ -4,7 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>دليل المناهج والمسارات التعليمية | منصة مِـحـوَر</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+    function updateCurriculumPrices(country) {
+      localStorage.setItem('mihwar_user_country', country);
+      const rates = {
+        'AE': { price: '120 AED', sub: 'لكل مقرر تخصصي معتمد' },
+        'SA': { price: '120 SAR', sub: 'لكل مقرر تخصصي معتمد' },
+        'EG': { price: '950 EGP', sub: 'لكل مقرر تخصصي معتمد' }
+      };
+      const info = rates[country] || rates['AE'];
+      document.querySelectorAll('.track-tuition-price').forEach(el => {
+        el.innerText = info.price;
+      });
+      document.querySelectorAll('.track-tuition-sub').forEach(el => {
+        el.innerText = info.sub;
+      });
+    }
+
+    // Auto-sync country on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('mihwar_user_country') || 'AE';
+      const select = document.getElementById('curriculumCountrySelect');
+      if (select) {
+        select.value = saved;
+        updateCurriculumPrices(saved);
+      }
+    });
+
+</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
@@ -106,6 +133,16 @@
       <!-- Topbar -->
       <header class="mihwar-topbar h-20 sticky top-0 z-30 px-6 sm:px-8 flex items-center justify-between gap-4">
         <div class="flex items-center gap-3">
+
+      <div class="bg-[rgba(10,48,69,0.7)] border border-cyan-400/30 rounded-full px-3 py-1.5 flex items-center gap-2 text-xs font-bold text-white shadow-sm">
+        <span class="text-[10px] text-cyan-300 font-mono">العملة:</span>
+        <select id="curriculumCountrySelect" onchange="updateCurriculumPrices(this.value)" class="bg-transparent text-xs text-white focus:outline-none cursor-pointer">
+          <option value="AE" class="bg-[#071a2d]">🇦🇪 الإمارات (AED)</option>
+          <option value="SA" class="bg-[#071a2d]">🇸🇦 السعودية (SAR)</option>
+          <option value="EG" class="bg-[#071a2d]">🇪🇬 مصر (EGP)</option>
+        </select>
+      </div>
+    
           <a href="mihwar_command_hub.html" class="lg:hidden text-cyan-300 font-bold text-xs bg-[rgba(10,48,69,0.6)] px-3 py-1.5 rounded-lg border border-cyan-400/30">
             ← مركز القيادة
           </a>
