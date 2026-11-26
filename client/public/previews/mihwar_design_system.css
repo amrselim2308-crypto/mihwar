@@ -155,3 +155,35 @@ body.mihwar-dark-theme {
   border: 1px solid rgba(245, 158, 11, 0.35);
   color: #FCD34D;
 }
+
+/* ============================================================== */
+/* MIHWAR SLEEK SCROLLBAR & INTERACTIVE UTILITIES                */
+/* ============================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020B16;
+}
+::-webkit-scrollbar-thumb {
+  background: #075B68;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #12BFC1;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(2, 11, 22, 0.5);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(18, 191, 193, 0.4);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(57, 216, 240, 0.8);
+}
