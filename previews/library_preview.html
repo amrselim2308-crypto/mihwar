@@ -9,85 +9,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@600;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --sky-top: #0284c7;
-      --sky-cyan: #06b6d4;
-      --sky-light: #f0f9ff;
-      --ink-dark: #0c2340;
-    }
-    body {
-      font-family: 'Cairo', 'IBM Plex Sans Arabic', system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #020B16;
-      color: #0c2340;
-      overflow-x: hidden;
-    }
-
-    .mihwar-topbar {
-      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
-      color: #ffffff;
-    }
-
-    .wing-btn-active {
-      background: #0284c7;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
-      border-color: #0284c7;
-    }
-    .wing-btn-inactive {
-      background: #ffffff;
-      color: #254b73;
-      border: 1.5px solid #bae6fd;
-    }
-    .wing-btn-inactive:hover {
-      background: #e0f2fe;
-      color: #0284c7;
-    }
-
-    .mihwar-card {
-      background: #ffffff;
-      border: 1.5px solid #e0f2fe;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(12, 74, 110, 0.06);
-      transition: all 0.25s ease;
-    }
-    .mihwar-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 32px rgba(12, 74, 110, 0.12);
-      border-color: #38bdf8;
-    }
-
-    .pill-active {
-      background: #0284c7;
-      color: #ffffff;
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-      border-color: #0284c7;
-    }
-    .pill-inactive {
-      background: #ffffff;
-      color: #0c2340;
-      border: 1.2px solid #bae6fd;
-    }
-    .pill-inactive:hover {
-      background: #e0f2fe;
-      color: #0284c7;
-    }
-
-    /* Modal styling */
+    /* Mihwar Modal Visibility Guarantees */
     #readerModal {
       display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(12, 35, 64, 0.85);
-      backdrop-filter: blur(8px);
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
     }
-    #readerModal.active {
+    #readerModal.active,
+    #readerModal.flex,
+    #readerModal:not(.hidden) {
       display: flex !important;
+    }
+
+    #paymentGatewayModal {
+      display: none;
+    }
+    #paymentGatewayModal.active,
+    #paymentGatewayModal.flex,
+    #paymentGatewayModal:not(.hidden) {
+      display: flex !important;
+    }
+
+    /* Print styles */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
     }
   </style>
   <link rel="stylesheet" href="mihwar_design_system.css">
@@ -1919,8 +1864,11 @@
       }
 
       const modal = document.getElementById("readerModal");
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
+      if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex", "active");
+        modal.style.display = "flex";
+      }
       document.body.style.overflow = "hidden";
     }
 
@@ -1956,8 +1904,11 @@
 
     function closeReaderModal() {
       const modal = document.getElementById("readerModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex", "active");
+        modal.style.display = "none";
+      }
       document.body.style.overflow = "auto";
     }
 
@@ -2132,15 +2083,21 @@
       switchCurrency(selectedCurrency);
 
       const modal = document.getElementById("paymentGatewayModal");
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
+      if (modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex", "active");
+        modal.style.display = "flex";
+      }
       document.body.style.overflow = "hidden";
     }
 
     function closePaymentModal() {
       const modal = document.getElementById("paymentGatewayModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex", "active");
+        modal.style.display = "none";
+      }
       document.body.style.overflow = "auto";
     }
 
