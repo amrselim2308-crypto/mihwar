@@ -98,7 +98,7 @@
         <div class="flex items-center justify-between text-xs text-white z-10 bg-black/60 backdrop-blur-sm p-3 rounded-xl border border-white/10">
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse"></span>
-            <span class="font-bold text-[#fef08a]" id="currentLessonTitle">الوحدة 4 · الدرس 2: دراسة حالة حقيقية - كشف وفك 155 تعارضاً بالعلمين R03</span>
+            <span class="font-bold text-[#fef08a]" id="currentLessonTitle">الوحدة 4 · الدرس 2: دراسة حالة حقيقية - كشف وفك 155 تعارضاً كودياً بالشبكات (نموذج R03)</span>
           </div>
           <span class="font-mono text-[#a7f3d0]">18:45 / 32:10 دقيقة</span>
         </div>
@@ -176,7 +176,7 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-sm font-bold text-white">لوحة التنسيق والتعارض (IFC Drawing No: 2224 DES-HYD CO PL 00 03 12)</h3>
-              <p class="text-xs text-[#a7f3d0]">إدارة الأشغال العسكرية · مكتب هيدرو · طيبة لاند سكيب · إعداد وتدقيق: م. عمرو سليم</p>
+              <p class="text-xs text-[#a7f3d0]">مواصفات المكتب الفني الموحدة · إعداد وتدقيق: م. عمرو سليم</p>
             </div>
             <a href="/images/alamein_clash_drawing_r03.jpg" target="_blank" class="bg-[#0d5b55] hover:bg-[#14b8a6] text-white px-3 py-1.5 rounded-lg text-xs font-bold transition">
               فتح الصورة بالحجم الكامل ↗
@@ -214,8 +214,8 @@
 
             <div class="bg-[#031411] p-3.5 rounded-xl border border-cyan-400/30 flex items-center justify-between">
               <div>
-                <strong class="text-white block">جدول حصر الـ 155 تعارضاً بالعلمين</strong>
-                <span class="text-[10px] text-[#a7f3d0]">Alamein_West_155_Clashes_Matrix.xlsx</span>
+                <strong class="text-white block">مصفوفة حصر الـ 155 تعارضاً كودياً</strong>
+                <span class="text-[10px] text-[#a7f3d0]">Mihwar_155_Utility_Clashes_Matrix.xlsx</span>
               </div>
               <button onclick="alert('جدول التعارضات الكامل متوفر للتطبيق العملي!')" class="bg-[#0d5b55] text-white px-3 py-1.5 rounded-lg font-bold">
                 تحميل ⬇
@@ -242,7 +242,7 @@
             <span class="text-xs text-[#34d399] font-mono">سؤال 1 من 2</span>
           </div>
           <p class="text-xs text-white leading-relaxed">
-            وفق المحددات المعتمدة في مشروع العلمين (R03 IFC)، ما هو الحد الأدنى للخلوص الرأسي والمسافة الآمنة لخط الري عن غرف التفتيش (Manholes)؟
+            وفق المحددات المعتمدة وفق المعايير الهندسية المعتمدة (R03 IFC)، ما هو الحد الأدنى للخلوص الرأسي والمسافة الآمنة لخط الري عن غرف التفتيش (Manholes)؟
           </p>
           <div class="space-y-2 text-xs">
             <button onclick="checkLessonQuiz(this, false)" class="w-full text-right p-3 rounded-xl bg-[#031411] hover:bg-[#062420] border border-cyan-400/30 text-[#e2ece6] block transition">
@@ -338,7 +338,7 @@
               <span class="text-[10px] font-mono">14:05</span>
             </div>
             <div class="p-2 rounded-lg active-lesson font-bold flex items-center justify-between">
-              <span>4.2 دراسة حالة: حل 155 تعارضاً بالعلمين</span>
+              <span>4.2 دراسة حالة: حل 155 تعارضاً في الشبكات الخماسية</span>
               <span class="text-[10px] font-mono">32:10</span>
             </div>
             <div class="p-2 rounded-lg text-[#cbd5e1] flex items-center justify-between">
@@ -405,7 +405,7 @@
         res.innerHTML = "✅ إجابة نموذجية! الخلوص الرأسي المعتمد 0.30م ويبعد خط الري 1.50م عن المناهيل لضمان سهولة الصيانة وتفادي هبوط التربة.";
       } else {
         res.classList.add('bg-red-500/20', 'text-red-300');
-        res.innerHTML = "❌ إجابة غير دقيقة. راجع ملاحظات اللوحة رقم R03 المعتمدة في مشروع العلمين.";
+        res.innerHTML = "❌ إجابة غير دقيقة. راجع ملاحظات اللوحة رقم R03 المعتمدة في المخطط التنفيذي المعتمد (R03).";
       }
     }
   </script>
