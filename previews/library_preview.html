@@ -248,9 +248,25 @@
             <span id="modalBookAuthor" class="text-xs text-cyan-200/90 font-medium block">الإمام أبو حامد الغزالي</span>
           </div>
         </div>
-        <button onclick="closeReaderModal()" class="w-9 h-9 rounded-full bg-[#020B16]/80 text-slate-300 hover:text-white hover:bg-cyan-900/60 transition flex items-center justify-center border border-cyan-400/30 text-lg cursor-pointer" title="إغلاق">
-          ✕
-        </button>
+        <div class="flex items-center gap-2">
+          <!-- Font size controls -->
+          <div class="hidden sm:flex items-center bg-[#020B16]/70 rounded-xl p-1 border border-cyan-400/25 text-[11px] font-bold text-cyan-200">
+            <button onclick="changeFontSize(-1)" class="px-2 py-0.5 rounded-lg hover:bg-cyan-900/60 transition cursor-pointer" title="تصغير الخط">A-</button>
+            <span class="w-[1px] h-3 bg-cyan-400/20 mx-0.5"></span>
+            <button onclick="changeFontSize(1)" class="px-2 py-0.5 rounded-lg hover:bg-cyan-900/60 transition cursor-pointer" title="تكبير الخط">A+</button>
+          </div>
+
+          <!-- Copy Quote button -->
+          <button onclick="copyCurrentBookQuote()" class="hidden sm:flex items-center gap-1 bg-[#020B16]/70 hover:bg-cyan-900/60 text-cyan-200 px-2.5 py-1.5 rounded-xl border border-cyan-400/25 text-[11px] font-bold transition cursor-pointer" title="نسخ حكمة المرجع">
+            <span>📋</span>
+            <span id="copyQuoteLabel">اقتباس</span>
+          </button>
+
+          <!-- Close Modal -->
+          <button onclick="closeReaderModal()" class="w-9 h-9 rounded-full bg-[#020B16]/80 text-slate-300 hover:text-white hover:bg-cyan-900/60 transition flex items-center justify-center border border-cyan-400/30 text-lg cursor-pointer" title="إغلاق النافذة">
+            ✕
+          </button>
+        </div>
       </div>
 
       <!-- Modal Body (Scrollable) -->
@@ -1906,6 +1922,36 @@
       modal.classList.remove("hidden");
       modal.classList.add("flex");
       document.body.style.overflow = "hidden";
+    }
+
+    let currentReaderFontSize = 14;
+
+    function changeFontSize(delta) {
+      currentReaderFontSize = Math.min(22, Math.max(12, currentReaderFontSize + (delta * 2)));
+      const excerptEl = document.getElementById("modalBookExcerpt");
+      if (excerptEl) {
+        excerptEl.style.fontSize = currentReaderFontSize + "px";
+        excerptEl.style.lineHeight = (currentReaderFontSize * 1.85) + "px";
+      }
+    }
+
+    function copyCurrentBookQuote() {
+      if (!currentOpenedBook) return;
+      const quoteText = `"${currentOpenedBook.quote || ''}" — ${currentOpenedBook.title} (${currentOpenedBook.author}) · منصة مِحور المعرفية`;
+      navigator.clipboard.writeText(quoteText).then(() => {
+        const label = document.getElementById("copyQuoteLabel");
+        if (label) {
+          const oldText = label.innerText;
+          label.innerText = "تم النسخ ✓";
+          label.classList.add("text-emerald-300");
+          setTimeout(() => {
+            label.innerText = oldText;
+            label.classList.remove("text-emerald-300");
+          }, 2000);
+        }
+      }).catch(err => {
+        console.error('Copy failed:', err);
+      });
     }
 
     function closeReaderModal() {
