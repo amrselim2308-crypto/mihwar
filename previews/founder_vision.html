@@ -56,6 +56,7 @@
       <nav class="hidden lg:flex items-center gap-6 text-xs font-bold text-slate-200">
         <a href="mihwar_command_hub.html" class="hover:text-cyan-300 transition-colors">لوحة القيادة</a>
         <a href="library_preview.html" class="hover:text-cyan-300 transition-colors">المكتبة المعرفية</a>
+        <a href="#founder-books" class="text-cyan-300 font-black hover:text-white transition-colors">مؤلفات المؤسس</a>
         <a href="#philosophy" class="hover:text-cyan-300 transition-colors">الثالوث المعرفي</a>
         <a href="#ai-role" class="hover:text-cyan-300 transition-colors">فلسفة الذكاء الاصطناعي</a>
         <a href="amr_selim_portfolio.html" class="hover:text-cyan-300 transition-colors">الخبرة والنظم الهندسية</a>
@@ -96,8 +97,8 @@
 
         <!-- Buttons -->
         <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#philosophy" class="btn-glow-cyan text-white text-xs sm:text-sm font-black px-7 py-3 rounded-full inline-flex items-center gap-2 shadow-lg">
-            <span>اكتشف رحلة الفهم والإدراك</span>
+          <a href="#founder-books" class="btn-glow-cyan text-white text-xs sm:text-sm font-black px-7 py-3 rounded-full inline-flex items-center gap-2 shadow-lg">
+            <span>مكتبة ومؤلفات المؤسس</span>
             <span>↓</span>
           </a>
           <a href="library_preview.html" class="bg-[rgba(10,48,69,0.7)] hover:bg-cyan-950 text-cyan-200 border border-cyan-400/35 text-xs sm:text-sm font-bold px-7 py-3 rounded-full inline-flex items-center gap-2 transition">
@@ -197,6 +198,72 @@
   </section>
 
   <!-- ========================================== -->
+  
+  <!-- ========================================== -->
+  <!-- FOUNDER'S AUTHORED BOOKS SHELF             -->
+  <!-- ========================================== -->
+  <section id="founder-books" class="py-20 px-6 max-w-7xl mx-auto border-b border-cyan-400/20">
+    <div class="text-center mb-14">
+      <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest block mb-2">AUTHOR'S COLLECTION</span>
+      <h2 class="text-3xl sm:text-4xl font-black text-white">مؤلفات وإصدارات المؤسس</h2>
+      <p class="text-xs sm:text-sm text-slate-300 mt-3 max-w-2xl mx-auto leading-relaxed">
+        كتب وتأملات خُطّت من قلب الميدان والتجربة الحية، لتُقرأ بالبصيرة لا بالعين وحدها. (سلسلة متجددة تُضاف إليها الإصدارات تباعاً)
+      </p>
+    </div>
+
+    <div id="founderBooksGrid" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Populated dynamically from founderBooks array for easy future expansion -->
+    </div>
+  </section>
+
+  <!-- Interactive Book Reader Modal for Founder's Books -->
+  <div id="founderBookModal" class="fixed inset-0 z-[100000] bg-[#020B16]/90 backdrop-blur-md hidden items-center justify-center p-3 sm:p-5" onclick="closeFounderBookModal()">
+    <div class="bg-[#071A2D] border-2 border-cyan-400/40 rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col shadow-[0_0_50px_rgba(18,191,193,0.3)]" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-cyan-400/20 bg-gradient-to-r from-[#020B16] via-[#0A3045] to-[#075B68] flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#12BFC1] to-[#075B68] text-white flex items-center justify-center text-xl shadow-lg border border-cyan-300/30 flex-none">
+            📖
+          </div>
+          <div>
+            <span id="fbModalTag" class="text-[10px] font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-400/30">الكتاب الأول · تأليف عمرو سليم</span>
+            <h3 id="fbModalTitle" class="text-base sm:text-xl font-black text-white mt-1">ما يدخل الصدر</h3>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex items-center bg-[#020B16]/70 rounded-xl p-1 border border-cyan-400/25 text-[11px] font-bold text-cyan-200">
+            <button onclick="scaleFounderBookFont(-1)" class="px-2 py-0.5 rounded-lg hover:bg-cyan-900/60 transition cursor-pointer" title="تصغير الخط">A-</button>
+            <span class="w-[1px] h-3 bg-cyan-400/20 mx-0.5"></span>
+            <button onclick="scaleFounderBookFont(1)" class="px-2 py-0.5 rounded-lg hover:bg-cyan-900/60 transition cursor-pointer" title="تكبير الخط">A+</button>
+          </div>
+          <button onclick="closeFounderBookModal()" class="w-9 h-9 rounded-full bg-[#020B16]/80 text-slate-300 hover:text-white hover:bg-cyan-900/60 transition flex items-center justify-center border border-cyan-400/30 text-lg cursor-pointer">
+            ✕
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div id="fbModalBody" class="p-5 sm:p-7 overflow-y-auto max-h-[calc(90vh-150px)] text-slate-200 space-y-5 text-sm leading-relaxed custom-scrollbar">
+        <!-- Populated dynamically -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-[#020B16] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span id="fbModalMeta" class="text-xs font-mono text-cyan-400 font-bold">62 صفحة · الطبعة الأولى</span>
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+          <a id="fbModalPdfBtn" href="/books/ma-yadkhul-al-sadr.pdf" target="_blank" download="ما يدخل الصدر - عمرو سليم.pdf" class="btn-glow-cyan text-white font-black text-xs px-6 py-2.5 rounded-full transition flex items-center gap-2 shadow">
+            <span>📥</span> تحميل وقراءة النسخة الكاملة (PDF)
+          </a>
+          <button onclick="closeFounderBookModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
+            إغلاق
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- AI & HUMAN INTELLIGENCE + ETHICAL MODEL    -->
   <!-- ========================================== -->
   <section id="ai-role" class="py-20 px-6 max-w-7xl mx-auto border-b border-cyan-400/20">
@@ -270,6 +337,209 @@
       </div>
     </div>
   </footer>
+
+
+  <script>
+    // Modular Author Books Array — Ready to add more books cleanly!
+    const founderBooks = [
+      {
+        id: "ma-yadkhul-al-sadr",
+        status: "متاح للقراءة والتحميل",
+        edition: "الطبعة الأولى · 62 صفحة",
+        title: "ما يدخل الصدر",
+        subtitle: "قصص من قلب التجربة وتأملات في النفس البشرية",
+        quote: "«ما يدخل صدرك يشكّل ما تراه»",
+        dedication: "إلى ابنيّ.. أحمد ويحيى، وإلى كل من يجد في هذه الصفحات ما ينفعه.",
+        pdfUrl: "/books/ma-yadkhul-al-sadr.pdf",
+        downloadName: "ما يدخل الصدر - عمرو سليم.pdf",
+        chapters: [
+          "المقدمة: قبل الأماكن.. ما كان يجري في صدري",
+          "الفصل الأول: جسر التنفس والإدراك",
+          "الفصل الثاني: صدمة الأيام العشرة",
+          "الفصل الثالث: ما وراء الواجهة",
+          "الفصل الرابع: العودة إلى الجذور",
+          "الفصل الخامس: مسرح الأضداد",
+          "الفصل السادس: العزلة الواعية",
+          "الفصل السابع: دستور الأحياء",
+          "الفصل الثامن: فلسفة البناء والاستدامة",
+          "الفصل التاسع: معادن الرجال في الشدائد",
+          "الفصل العاشر: وصايا البصيرة"
+        ],
+        excerpts: [
+          {
+            heading: "١. غرفتان (من المقدمة)",
+            text: "ثمة كتب تُولَد في غرف مغلقة.. وثمة كتب أخرى لا تُكتب بقدر ما تُنتزع. تُنتزع من غبار المواقع كما تُنتزع الشتلة من تربة صلبة. هذا الكتاب من النوع الثاني. لم أجلس لأكتبه؛ جلستُ لأنه كان قد كُتب فيّ منذ زمن، وكل ما فعلته أني فتحتُ له باب الصدر."
+          },
+          {
+            heading: "٢. جسر التنفس والإدراك",
+            text: "ما يدخل الصدر يشكّل ما تراه. وليس بين النَّفْس بمعنى الذات، والنَّفَس بمعنى التنفس، انفصال حقيقي في التجربة الإنسانية؛ إنه الجسر الذي يمرّ عليه الجسد إلى الإدراك، والإدراك إلى الجسد."
+          },
+          {
+            heading: "٣. الخندق الذي لا يلتقطه أحد",
+            text: "حين يزور الناس مشروعاً مكتملاً، يمشون على العشب ويرفعون عيونهم إلى الأشجار. لا أحد يلتقط صورة لخندق مدفون. غير أني تعلّمتُ قاعدة لا تُكتب في المواصفات: ما تُهمله تحت الأرض يعود إليك فوقها. قد يتأخر، لكنه يعود."
+          },
+          {
+            heading: "٤. الأرض شاهدٌ لا يُجامل",
+            text: "يمكنك أن تُجمّل الكلام، لكن لا يمكنك أن تُجمّل التربة. فليس في الأرض مجاملة، ولا في العلاقة معها مفاوضة. ما تُعطيه تأخذه، وما تُهمله تدفع ثمنه، وإن تأخر الحساب."
+          }
+        ]
+      }
+    ];
+
+    function renderFounderBooks() {
+      const grid = document.getElementById("founderBooksGrid");
+      if (!grid) return;
+
+      const activeCards = founderBooks.map(book => `
+        <div class="lg:col-span-2 glass-card p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center border border-cyan-400/35 relative overflow-hidden">
+          <!-- Symbolic Book Cover (Inspired by the Tree & Roots Artwork) -->
+          <div class="w-44 h-64 flex-none rounded-2xl bg-gradient-to-b from-[#020B16] via-[#0A3045] to-[#071A2D] border-2 border-amber-400/50 p-4 flex flex-col items-center justify-between text-center shadow-[0_15px_35px_rgba(0,0,0,0.7)] relative group">
+            <span class="text-[10px] font-bold text-amber-300/90 tracking-widest">عمرو سليم</span>
+            <!-- Tree & Roots SVG -->
+            <div class="w-16 h-16 rounded-full border border-amber-400/50 flex items-center justify-center bg-[#020B16]/60">
+              <svg class="w-10 h-10 text-cyan-300" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+                <line x1="6" y1="20" x2="34" y2="20" stroke="#f59e0b" stroke-width="1.5"/>
+                <line x1="20" y1="20" x2="20" y2="9"/>
+                <line x1="20" y1="15" x2="14" y2="11"/>
+                <line x1="20" y1="13" x2="26" y2="10"/>
+                <circle cx="14" cy="10" r="2" fill="currentColor"/>
+                <circle cx="20" cy="8" r="2.2" fill="currentColor"/>
+                <circle cx="26" cy="9" r="2" fill="currentColor"/>
+                <path d="M20 20 L20 31 M20 23 L14 29 M20 24 L26 30 M18 27 L12 32 M22 27 L27 32" stroke="#94a3b8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-lg font-black text-white leading-tight">${book.title}</h4>
+              <span class="text-[9px] text-cyan-300 block mt-1">${book.quote}</span>
+            </div>
+          </div>
+
+          <!-- Book Info & Actions -->
+          <div class="flex-1 space-y-4 text-right">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="text-[11px] font-bold text-emerald-300 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-400/30">
+                ✓ ${book.status}
+              </span>
+              <span class="text-[11px] font-mono text-cyan-300">${book.edition}</span>
+            </div>
+
+            <div>
+              <h3 class="text-2xl font-black text-white">${book.title}</h3>
+              <p class="text-xs sm:text-sm text-cyan-200 font-semibold mt-1">${book.subtitle}</p>
+            </div>
+
+            <p class="text-xs text-slate-300 leading-relaxed italic border-r-2 border-amber-400 pr-3">
+              "${book.excerpts[0].text}"
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button onclick="openFounderBookModal('${book.id}')" class="btn-glow-cyan text-white text-xs font-black px-5 py-2.5 rounded-full cursor-pointer shadow flex items-center gap-1.5">
+                <span>📖</span> تصفح الفصول والقراءة
+              </button>
+              <a href="${book.pdfUrl}" target="_blank" download="${book.downloadName}" class="bg-[rgba(10,48,69,0.85)] hover:bg-cyan-950 text-cyan-200 border border-cyan-400/35 text-xs font-bold px-5 py-2.5 rounded-full transition flex items-center gap-1.5">
+                <span>📥</span> تحميل الكتاب (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      const upcomingCard = `
+        <div class="glass-card p-6 sm:p-8 flex flex-col justify-center items-center text-center border-dashed border-2 border-cyan-400/30 bg-[#020B16]/50 space-y-4">
+          <div class="w-16 h-16 rounded-2xl bg-cyan-950/80 border border-cyan-400/30 flex items-center justify-center text-3xl">
+            ✍️
+          </div>
+          <div>
+            <span class="text-[10px] font-mono text-amber-300 bg-amber-950/60 px-3 py-1 rounded-full border border-amber-400/30">قريباً في هذه السلسلة</span>
+            <h4 class="text-lg font-black text-white mt-3">إصدارات ومؤلفات قادمة</h4>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">
+              تُضاف هنا تباعاً بقية الكتب الفكرية والهندسية للمهندس عمرو سليم لتكون مرجعاً مفتوحاً ومستداماً للقراء والمهندسين.
+            </p>
+          </div>
+        </div>
+      `;
+
+      grid.innerHTML = activeCards + upcomingCard;
+    }
+
+    let fbFontSize = 14;
+    function scaleFounderBookFont(delta) {
+      fbFontSize = Math.min(22, Math.max(12, fbFontSize + delta * 2));
+      const body = document.getElementById("fbModalBody");
+      if (body) {
+        body.style.fontSize = fbFontSize + "px";
+        body.style.lineHeight = (fbFontSize * 1.9) + "px";
+      }
+    }
+
+    function openFounderBookModal(bookId) {
+      const book = founderBooks.find(b => b.id === bookId);
+      if (!book) return;
+
+      document.getElementById("fbModalTitle").innerText = book.title + " — " + book.subtitle;
+      document.getElementById("fbModalMeta").innerText = book.edition;
+      
+      const pdfBtn = document.getElementById("fbModalPdfBtn");
+      pdfBtn.href = book.pdfUrl;
+      pdfBtn.setAttribute("download", book.downloadName);
+
+      const chaptersList = book.chapters.map((ch, idx) => `
+        <div class="p-2.5 rounded-xl bg-[#020B16]/80 border border-cyan-400/20 text-xs text-slate-200 flex items-center gap-2">
+          <span class="text-cyan-400 font-mono font-bold">${String(idx + 1).padStart(2, '0')}</span>
+          <span>${ch}</span>
+        </div>
+      `).join("");
+
+      const excerptsList = book.excerpts.map(ex => `
+        <div class="p-4 rounded-2xl bg-[rgba(10,48,69,0.5)] border-r-4 border-amber-400 space-y-1.5">
+          <strong class="text-amber-300 text-xs sm:text-sm block">${ex.heading}</strong>
+          <p class="text-slate-200 leading-loose">${ex.text}</p>
+        </div>
+      `).join("");
+
+      document.getElementById("fbModalBody").innerHTML = `
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/60 to-[#020B16] border border-cyan-400/25 text-center space-y-1">
+          <span class="text-[11px] text-amber-300 font-bold block">إهداء المؤلف</span>
+          <p class="text-xs sm:text-sm text-white font-semibold italic">${book.dedication}</p>
+        </div>
+
+        <div class="space-y-3">
+          <strong class="text-sm font-black text-cyan-300 block">📑 فهرس فصول الكتاب:</strong>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            ${chaptersList}
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <strong class="text-sm font-black text-amber-300 block">📖 مقتطفات أصيلة من صفحات الكتاب:</strong>
+          <div class="space-y-3">
+            ${excerptsList}
+          </div>
+        </div>
+      `;
+
+      const modal = document.getElementById("founderBookModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeFounderBookModal() {
+      const modal = document.getElementById("founderBookModal");
+      if (modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        modal.style.display = "none";
+      }
+      document.body.style.overflow = "auto";
+    }
+
+    document.addEventListener("DOMContentLoaded", renderFounderBooks);
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      renderFounderBooks();
+    }
+  </script>
 
 </body>
 </html>
