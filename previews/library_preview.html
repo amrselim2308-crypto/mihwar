@@ -369,9 +369,9 @@
 
       <!-- Modal Footer -->
       <div class="p-4 bg-[#020B16] border-t border-cyan-400/20 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <button onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+        <a id="paySubmitWhatsAppBtn" href="javascript:void(0)" onclick="submitOrderViaWhatsApp()" class="w-full sm:w-auto flex-1 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white font-black text-xs py-3 px-6 rounded-full transition shadow-lg flex items-center justify-center gap-2 cursor-pointer text-center">
           <span>💬 تأكيد الطلب وتفعيل النسخة المعتمدة فـوراً عبر واتساب</span>
-        </button>
+        </a>
         <button onclick="closePaymentModal()" class="w-full sm:w-auto bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-xs font-bold transition border border-cyan-400/30 cursor-pointer">
           إلغاء
         </button>
@@ -1820,18 +1820,21 @@
               <strong class="text-cyan-300 block mb-1">📖 نبذة عن المرجع وأهميته:</strong>
               <p class="leading-relaxed text-slate-300">${book.excerpt}</p>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
-                ✓ <strong>الباب الأول:</strong> الأسس والمفاهيم الجوهرية وفلسفة الفهم.
-              </div>
-              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
-                ✓ <strong>الباب الثاني:</strong> التحليل النظري والقوانين الحاكمة للتخصص.
-              </div>
-              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
-                ✓ <strong>الباب الثالث:</strong> التطبيقات الواقعية ونماذج الحل الميداني.
-              </div>
-              <div class="p-2.5 rounded-lg bg-[#020B16] border border-cyan-400/15">
-                ✓ <strong>الباب الرابع:</strong> خلاصة الأثر المعرفي والتقييم الختامي.
+            <div class="p-4 rounded-2xl bg-[#020B16] border border-cyan-400/20 space-y-3">
+              <strong class="text-amber-300 text-xs sm:text-sm font-black block">🎯 المحاور الأكاديمية والدروس المستفادة:</strong>
+              <div class="space-y-2 text-xs text-slate-300">
+                <div class="p-2.5 rounded-xl bg-[rgba(10,48,69,0.4)] border border-cyan-400/15 flex items-start gap-2">
+                  <span class="text-cyan-400 font-bold">١.</span>
+                  <span><strong>الأسس المنهجية والتأصيل الفكري:</strong> تفكيك المفاهيم الجوهرية للمرجع وبناء قاعدة الفهم الرصين.</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[rgba(10,48,69,0.4)] border border-cyan-400/15 flex items-start gap-2">
+                  <span class="text-cyan-400 font-bold">٢.</span>
+                  <span><strong>التحليل التطبيقي والقوانين الحاكمة:</strong> الانتقال من المعرفة النظرية إلى استنباط القواعد الحاكمة للسلوك والقرارات.</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[rgba(10,48,69,0.4)] border border-cyan-400/15 flex items-start gap-2">
+                  <span class="text-cyan-400 font-bold">٣.</span>
+                  <span><strong>إسقاطات الواقع والميدان المعاصر:</strong> كيفية توظيف حكمة وخبرة هذا الأثر في مواجهة التحديات الهندسية والإنسانية الراهنة.</span>
+                </div>
               </div>
             </div>
           </div>
@@ -1842,8 +1845,11 @@
       const actionsContainer = document.getElementById("modalActionButtons");
       if (isFree) {
         actionsContainer.innerHTML = `
-          <button onclick="downloadBookAlert()" class="btn-glow-cyan text-white text-xs font-black py-2.5 px-6 rounded-full cursor-pointer shadow flex items-center gap-2">
-            <span>📥</span> تحميل وطباعة الكتاب (PDF / Offline)
+          <button onclick="requestBookViaWhatsApp()" class="bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white text-xs font-black py-2.5 px-5 rounded-full cursor-pointer shadow flex items-center gap-2">
+            <span>📥</span> استلام نسخة PDF عبر واتساب فوراً
+          </button>
+          <button onclick="printBookReaderView()" class="btn-glow-cyan text-white text-xs font-bold py-2.5 px-4 rounded-full cursor-pointer shadow flex items-center gap-1.5">
+            <span>📑</span> طباعة وحفظ المخطوطة
           </button>
           <button onclick="closeReaderModal()" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-300 font-bold text-xs px-4 py-2.5 rounded-full transition border border-cyan-400/30 cursor-pointer">
             إغلاق
@@ -2130,24 +2136,36 @@
     }
 
     function submitOrderViaWhatsApp() {
-      if (!selectedPayBook) return;
-      const name = document.getElementById("payStudentName").value.trim() || "طالب / مهندس مِحور";
-      const email = document.getElementById("payStudentEmail").value.trim() || "غير مسجل";
+      const book = selectedPayBook || currentOpenedBook || { title: "المنهج التخصصي المعتمد", code: "APP-201" };
+      const name = (document.getElementById("payStudentName")?.value || "").trim() || "طالب / مهندس مِحور";
+      const email = (document.getElementById("payStudentEmail")?.value || "").trim() || "غير مسجل";
       const channel = document.querySelector('input[name="payChannel"]:checked')?.value || "card";
       const channelName = channel === "card" ? "بطاقة بنكية / فيزا / ماستركارد" : "تحويل فوري (InstaPay / فودافون كاش / STC)";
+      const priceText = document.getElementById("payItemPrice")?.innerText || "75 AED";
 
       const message = `مرحباً منصة مِحور، أود التسجيل والحصول على المنهج المعتمد:
-- اسم الدبلومة: ${selectedPayBook.title}
-- كود المرجع: ${selectedPayBook.code || 'APP-201'}
+- اسم الدبلومة: ${book.title}
+- كود المرجع: ${book.code || 'APP-201'}
 - وسيلة الدفع المفضلة: ${channelName}
-- العملة والسعر: ${document.getElementById("payItemPrice").innerText}
+- العملة والسعر: ${priceText}
 - الاسم: ${name}
 - البريد: ${email}
 يرجى إرسال رابط الدفع المباشر وملفات المرجع وشيتات الإكسيل.`;
 
       const whatsappUrl = `https://wa.me/201035075006?text=${encodeURIComponent(message)}`;
-      window.open(whatsappUrl, '_blank');
-      closePaymentModal();
+      
+      // CRITICAL FOR MOBILE BROWSERS: window.location.href directly triggers the native WhatsApp app
+      window.location.href = whatsappUrl;
+    }
+
+    function requestBookViaWhatsApp() {
+      const book = currentOpenedBook || selectedPayBook || { title: "مرجع علمي من مِحور", author: "مِحور" };
+      const msg = `مرحباً منصة مِحور، أود استلام نسخة الـ PDF المعتمدة للمرجع المجاني (وقف معرفي حر):\n- اسم الكتاب: ${book.title}\n- المؤلف: ${book.author}\n- كود المرجع: ${book.code || 'REF'}\nيرجى إرسال ملف الـ PDF عبر الواتساب.`;
+      window.location.href = `https://wa.me/201035075006?text=${encodeURIComponent(msg)}`;
+    }
+
+    function printBookReaderView() {
+      window.print();
     }
 
     // -------------------------------------------------------------

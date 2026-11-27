@@ -591,13 +591,14 @@
     }
 
     function handleCourseSubmit(e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       const courseTitle = document.getElementById("modalCourseTitle") ? document.getElementById("modalCourseTitle").innerText : "كورس مِحور";
       const name = document.getElementById("courseStudentName") ? document.getElementById("courseStudentName").value : "";
       const phone = document.getElementById("courseStudentPhone") ? document.getElementById("courseStudentPhone").value : "";
       const level = document.getElementById("courseStudentLevel") ? document.getElementById("courseStudentLevel").value : "";
       const message = `مرحباً منصة مِحور، أود التسجيل في:\n- اسم الكورس: ${courseTitle}\n- الاسم: ${name}\n- الهاتف: ${phone}\n- المستوى: ${level}`;
-      window.open(`https://wa.me/201035075006?text=${encodeURIComponent(message)}`, '_blank');
+      const whatsappUrl = `https://wa.me/201035075006?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappUrl;
       closeCourseModal();
     }
 

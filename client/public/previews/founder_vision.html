@@ -340,49 +340,19 @@
 
 
   <script>
-    // Modular Author Books Array — Ready to add more books cleanly!
+    // Modular Author Books Array — Genuine Book Data
     const founderBooks = [
       {
         id: "ma-yadkhul-al-sadr",
-        status: "متاح للقراءة والتحميل",
-        edition: "الطبعة الأولى · 62 صفحة",
+        status: "متاح للقراءة والتحميل المباشر",
+        edition: "الطبعة الأولى الكاملة · 62 صفحة",
         title: "ما يدخل الصدر",
-        subtitle: "قصص من قلب التجربة وتأملات في النفس البشرية",
-        quote: "«ما يدخل صدرك يشكّل ما تراه»",
+        subtitle: "تأملات في الفهم والإدراك الإنساني وبصيرة الميدان",
+        quote: "«ما يدخل صدرك يشكّل ما تراه وتصنعه في الحياة»",
         dedication: "إلى ابنيّ.. أحمد ويحيى، وإلى كل من يجد في هذه الصفحات ما ينفعه.",
         pdfUrl: "/books/ma-yadkhul-al-sadr.pdf",
         downloadName: "ما يدخل الصدر - عمرو سليم.pdf",
-        chapters: [
-          "المقدمة: قبل الأماكن.. ما كان يجري في صدري",
-          "الفصل الأول: جسر التنفس والإدراك",
-          "الفصل الثاني: صدمة الأيام العشرة",
-          "الفصل الثالث: ما وراء الواجهة",
-          "الفصل الرابع: العودة إلى الجذور",
-          "الفصل الخامس: مسرح الأضداد",
-          "الفصل السادس: العزلة الواعية",
-          "الفصل السابع: دستور الأحياء",
-          "الفصل الثامن: فلسفة البناء والاستدامة",
-          "الفصل التاسع: معادن الرجال في الشدائد",
-          "الفصل العاشر: وصايا البصيرة"
-        ],
-        excerpts: [
-          {
-            heading: "١. غرفتان (من المقدمة)",
-            text: "ثمة كتب تُولَد في غرف مغلقة.. وثمة كتب أخرى لا تُكتب بقدر ما تُنتزع. تُنتزع من غبار المواقع كما تُنتزع الشتلة من تربة صلبة. هذا الكتاب من النوع الثاني. لم أجلس لأكتبه؛ جلستُ لأنه كان قد كُتب فيّ منذ زمن، وكل ما فعلته أني فتحتُ له باب الصدر."
-          },
-          {
-            heading: "٢. جسر التنفس والإدراك",
-            text: "ما يدخل الصدر يشكّل ما تراه. وليس بين النَّفْس بمعنى الذات، والنَّفَس بمعنى التنفس، انفصال حقيقي في التجربة الإنسانية؛ إنه الجسر الذي يمرّ عليه الجسد إلى الإدراك، والإدراك إلى الجسد."
-          },
-          {
-            heading: "٣. الخندق الذي لا يلتقطه أحد",
-            text: "حين يزور الناس مشروعاً مكتملاً، يمشون على العشب ويرفعون عيونهم إلى الأشجار. لا أحد يلتقط صورة لخندق مدفون. غير أني تعلّمتُ قاعدة لا تُكتب في المواصفات: ما تُهمله تحت الأرض يعود إليك فوقها. قد يتأخر، لكنه يعود."
-          },
-          {
-            heading: "٤. الأرض شاهدٌ لا يُجامل",
-            text: "يمكنك أن تُجمّل الكلام، لكن لا يمكنك أن تُجمّل التربة. فليس في الأرض مجاملة، ولا في العلاقة معها مفاوضة. ما تُعطيه تأخذه، وما تُهمله تدفع ثمنه، وإن تأخر الحساب."
-          }
-        ]
+        overview: "إصدار فكري تأملي خاص للمهندس عمرو سليم، يوثق فيه رحلة الانتقال من الفهم النظري إلى الإدراك الحي وبصيرة العمل، كاشفاً أن ما يحمله الإنسان في صدره من صدق ووعي هو الذي ينعكس على كل قرار، وبناء، وعلاقة في الواقع."
       }
     ];
 
@@ -392,25 +362,15 @@
 
       const activeCards = founderBooks.map(book => `
         <div class="lg:col-span-2 glass-card p-6 sm:p-8 flex flex-col sm:flex-row gap-6 items-center border border-cyan-400/35 relative overflow-hidden">
-          <!-- Symbolic Book Cover (Inspired by the Tree & Roots Artwork) -->
-          <div class="w-44 h-64 flex-none rounded-2xl bg-gradient-to-b from-[#020B16] via-[#0A3045] to-[#071A2D] border-2 border-amber-400/50 p-4 flex flex-col items-center justify-between text-center shadow-[0_15px_35px_rgba(0,0,0,0.7)] relative group">
-            <span class="text-[10px] font-bold text-amber-300/90 tracking-widest">عمرو سليم</span>
-            <!-- Tree & Roots SVG -->
-            <div class="w-16 h-16 rounded-full border border-amber-400/50 flex items-center justify-center bg-[#020B16]/60">
-              <svg class="w-10 h-10 text-cyan-300" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
-                <line x1="6" y1="20" x2="34" y2="20" stroke="#f59e0b" stroke-width="1.5"/>
-                <line x1="20" y1="20" x2="20" y2="9"/>
-                <line x1="20" y1="15" x2="14" y2="11"/>
-                <line x1="20" y1="13" x2="26" y2="10"/>
-                <circle cx="14" cy="10" r="2" fill="currentColor"/>
-                <circle cx="20" cy="8" r="2.2" fill="currentColor"/>
-                <circle cx="26" cy="9" r="2" fill="currentColor"/>
-                <path d="M20 20 L20 31 M20 23 L14 29 M20 24 L26 30 M18 27 L12 32 M22 27 L27 32" stroke="#94a3b8" stroke-linecap="round"/>
-              </svg>
+          <!-- Symbolic Book Cover -->
+          <div class="w-48 h-68 flex-none rounded-2xl bg-gradient-to-b from-[#020B16] via-[#0A3045] to-[#071A2D] border-2 border-amber-400/50 p-5 flex flex-col items-center justify-between text-center shadow-[0_15px_35px_rgba(0,0,0,0.7)] relative group">
+            <span class="text-[11px] font-bold text-amber-300 tracking-widest">تأليف: م. عمرو سليم</span>
+            <div class="w-16 h-16 rounded-full border border-amber-400/50 flex items-center justify-center bg-[#020B16]/80 text-3xl shadow-inner">
+              📖
             </div>
             <div>
-              <h4 class="text-lg font-black text-white leading-tight">${book.title}</h4>
-              <span class="text-[9px] text-cyan-300 block mt-1">${book.quote}</span>
+              <h4 class="text-xl font-black text-white leading-tight">${book.title}</h4>
+              <span class="text-[10px] text-cyan-300 block mt-1 font-semibold">${book.edition}</span>
             </div>
           </div>
 
@@ -426,18 +386,20 @@
             <div>
               <h3 class="text-2xl font-black text-white">${book.title}</h3>
               <p class="text-xs sm:text-sm text-cyan-200 font-semibold mt-1">${book.subtitle}</p>
+              <p class="text-xs text-amber-200/90 italic mt-2 font-medium">"${book.dedication}"</p>
             </div>
 
-            <p class="text-xs text-slate-300 leading-relaxed italic border-r-2 border-amber-400 pr-3">
-              "${book.excerpts[0].text}"
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              ${book.overview}
             </p>
 
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <button onclick="openFounderBookModal('${book.id}')" class="btn-glow-cyan text-white text-xs font-black px-5 py-2.5 rounded-full cursor-pointer shadow flex items-center gap-1.5">
-                <span>📖</span> تصفح الفصول والقراءة
+            <div class="pt-2 flex items-center gap-3 flex-wrap">
+              <button onclick="openFounderBookModal('${book.id}')" class="btn-glow-cyan text-white text-xs font-black px-6 py-2.5 rounded-full cursor-pointer shadow hover:scale-105 transition flex items-center gap-2">
+                <span>📖</span> استعراض وقراءة الكتاب أونلاين
               </button>
-              <a href="${book.pdfUrl}" target="_blank" download="${book.downloadName}" class="bg-[rgba(10,48,69,0.85)] hover:bg-cyan-950 text-cyan-200 border border-cyan-400/35 text-xs font-bold px-5 py-2.5 rounded-full transition flex items-center gap-1.5">
-                <span>📥</span> تحميل الكتاب (PDF)
+
+              <a href="${book.pdfUrl}" target="_blank" download="${book.downloadName}" class="bg-[rgba(10,48,69,0.8)] hover:bg-cyan-950 text-slate-200 hover:text-white text-xs font-bold px-5 py-2.5 rounded-full transition border border-cyan-400/30 flex items-center gap-2">
+                <span>📥</span> تحميل ملف الـ PDF الأصلي
               </a>
             </div>
           </div>
@@ -462,59 +424,42 @@
       grid.innerHTML = activeCards + upcomingCard;
     }
 
-    let fbFontSize = 14;
-    function scaleFounderBookFont(delta) {
-      fbFontSize = Math.min(22, Math.max(12, fbFontSize + delta * 2));
-      const body = document.getElementById("fbModalBody");
-      if (body) {
-        body.style.fontSize = fbFontSize + "px";
-        body.style.lineHeight = (fbFontSize * 1.9) + "px";
-      }
-    }
-
     function openFounderBookModal(bookId) {
       const book = founderBooks.find(b => b.id === bookId);
       if (!book) return;
 
-      document.getElementById("fbModalTitle").innerText = book.title + " — " + book.subtitle;
+      document.getElementById("fbModalTitle").innerText = book.title + " — تأليف م. عمرو سليم";
       document.getElementById("fbModalMeta").innerText = book.edition;
       
       const pdfBtn = document.getElementById("fbModalPdfBtn");
       pdfBtn.href = book.pdfUrl;
       pdfBtn.setAttribute("download", book.downloadName);
 
-      const chaptersList = book.chapters.map((ch, idx) => `
-        <div class="p-2.5 rounded-xl bg-[#020B16]/80 border border-cyan-400/20 text-xs text-slate-200 flex items-center gap-2">
-          <span class="text-cyan-400 font-mono font-bold">${String(idx + 1).padStart(2, '0')}</span>
-          <span>${ch}</span>
-        </div>
-      `).join("");
-
-      const excerptsList = book.excerpts.map(ex => `
-        <div class="p-4 rounded-2xl bg-[rgba(10,48,69,0.5)] border-r-4 border-amber-400 space-y-1.5">
-          <strong class="text-amber-300 text-xs sm:text-sm block">${ex.heading}</strong>
-          <p class="text-slate-200 leading-loose">${ex.text}</p>
-        </div>
-      `).join("");
-
       document.getElementById("fbModalBody").innerHTML = `
-        <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/60 to-[#020B16] border border-cyan-400/25 text-center space-y-1">
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/80 to-[#020B16] border border-cyan-400/30 text-center space-y-1.5">
           <span class="text-[11px] text-amber-300 font-bold block">إهداء المؤلف</span>
-          <p class="text-xs sm:text-sm text-white font-semibold italic">${book.dedication}</p>
+          <p class="text-xs sm:text-sm text-white font-semibold italic">"${book.dedication}"</p>
         </div>
 
-        <div class="space-y-3">
-          <strong class="text-sm font-black text-cyan-300 block">📑 فهرس فصول الكتاب:</strong>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            ${chaptersList}
+        <div class="p-3.5 rounded-xl bg-[rgba(10,48,69,0.55)] border border-cyan-400/25 flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <span class="text-xs font-bold text-cyan-300 block">📑 النسخة الرقمية الأصلية المعتمدة (كاملة 62 صفحة)</span>
+            <span class="text-[11px] text-slate-300">يمكنك التصفح والقراءة المباشرة أدناه أو فتحها في صفحة مستقلة</span>
           </div>
+          <a href="${book.pdfUrl}" target="_blank" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-500 hover:to-teal-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
+            <span>🔍</span> فتح بملء الشاشة
+          </a>
         </div>
 
-        <div class="space-y-3">
-          <strong class="text-sm font-black text-amber-300 block">📖 مقتطفات أصيلة من صفحات الكتاب:</strong>
-          <div class="space-y-3">
-            ${excerptsList}
-          </div>
+        <!-- Real PDF Embedded Viewer -->
+        <div class="w-full h-[65vh] rounded-2xl overflow-hidden border-2 border-cyan-400/35 bg-[#020B16] shadow-2xl relative">
+          <iframe src="${book.pdfUrl}#toolbar=1" class="w-full h-full border-0" title="${book.title}"></iframe>
+        </div>
+
+        <div class="text-center pt-2">
+          <a href="${book.pdfUrl}" target="_blank" download="${book.downloadName}" class="btn-glow-cyan text-white text-xs font-bold px-8 py-3 rounded-full inline-flex items-center gap-2 shadow-lg">
+            <span>📥</span> تحميل نسخة PDF المباشرة على هاتفك / جهازك
+          </a>
         </div>
       `;
 

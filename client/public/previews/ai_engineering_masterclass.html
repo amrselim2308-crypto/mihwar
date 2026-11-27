@@ -1014,8 +1014,13 @@
     }
 
     function handleEnroll(e) {
-      e.preventDefault();
-      alert("تم تسجيل بياناتك بنجاح! سيتم تحويلك الآن لبوابة الدفع الآمنة (Paymob)، وسيتواصل معك فريق مِحور عبر الواتساب لتفعيل حسابك فوراً.");
+      if (e) e.preventDefault();
+      const name = (document.getElementById("studentName")?.value || "").trim() || "مهندس / باحث";
+      const email = (document.getElementById("studentEmail")?.value || "").trim() || "غير مسجل";
+      const phone = (document.getElementById("studentPhone")?.value || "").trim() || "";
+      const message = `مرحباً منصة مِحور، أود الاشتراك في ماستركلاس الذكاء الاصطناعي التخصصي للأنظمة الهندسية:\n- الاسم: ${name}\n- البريد: ${email}\n- الهاتف: ${phone}\n- الرسوم المعتمدة: 490 درهم (أو ما يعادلها)`;
+      const whatsappUrl = `https://wa.me/201035075006?text=${encodeURIComponent(message)}`;
+      window.location.href = whatsappUrl;
       closeCheckoutModal();
     }
   </script>
